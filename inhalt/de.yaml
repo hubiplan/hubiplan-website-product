@@ -39,20 +39,20 @@ start:
         titel: Mitglieder im Blick
         bild: Mitgliederliste eines erfundenen Demovereins in HUBIplan
       - name: szene-termine
-        titel: Termine mit Zu- und Absagen
-        bild: Terminliste mit Rückmeldungen eines erfundenen Demovereins
-      - name: szene-rechnungen
-        titel: Beiträge abrechnen
-        bild: Rechnungen eines Beitragslaufs in einem erfundenen Demoverein
+        titel: Termine für Verein, Korps und Züge
+        bild: Monatskalender mit Schützenfest und Zugabenden eines erfundenen Demovereins
+      - name: szene-korps
+        titel: Korps und Züge frei verschachtelt
+        bild: Korps mit ihren Zügen, Gründungsjahren und Mitgliederzahlen in einem erfundenen Demoverein
       - name: szene-wettbewerbe
         titel: Wettbewerbe auswerten
-        bild: Ergebnisse eines Wettbewerbs in einem erfundenen Demoverein
+        bild: Auswertung eines Korpspokalschießens in einem erfundenen Demoverein
       - name: szene-rundschreiben
-        titel: Rundschreiben verschicken
-        bild: Rundschreiben eines erfundenen Demovereins
+        titel: Rundschreiben verfassen
+        bild: Rundschreiben „Antreten zum Schützenfest“ im Editor eines erfundenen Demovereins
       - name: szene-mein-bereich
         titel: Mein Bereich für jedes Mitglied
-        bild: Mitgliedsausweis im persönlichen Bereich eines Demo-Mitglieds
+        bild: Persönlicher Bereich eines Demo-Mitglieds mit Ausweis, Terminen, Ergebnissen und Rechnungen
   versprechen:
     - titel: Alles an einem Ort
       text: >-

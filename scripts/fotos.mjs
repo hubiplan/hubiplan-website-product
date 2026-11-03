@@ -67,29 +67,35 @@ for (const language of ['de', 'en']) {
         locale: language === 'en' ? 'en-GB' : 'de-DE',
       })
       const page = await context.newPage()
-      try {
-        await page.goto(`${hubiplan}/anmelden`)
-        await page.locator('input[autocomplete="username"]').fill(`${user}@${domain}`)
-        await page.locator('input[autocomplete="current-password"]').fill(password)
-        await page.locator('button[type="submit"]').first().click()
-        await page.waitForURL((u) => !u.pathname.startsWith('/anmelden'))
-        const status = await page.evaluate(async (code) => {
-          const csrf = document.cookie.match(/csrftoken=([^;]+)/)?.[1] ?? ''
-          const r = await fetch('/api/me/language/', {
-            method: 'PATCH',
-            headers: { 'Content-Type': 'application/json', 'X-CSRFToken': csrf },
-            body: JSON.stringify({ language: code }),
+      // Zwei Versuche: nach der Anmeldung kann die Oberfläche noch einmal neu laden
+      for (let versuch = 1; versuch <= 2; versuch++) {
+        try {
+          await page.goto(`${hubiplan}/anmelden`)
+          if (page.url().includes('/anmelden')) {
+            await page.locator('input[autocomplete="username"]').fill(`${user}@${domain}`)
+            await page.locator('input[autocomplete="current-password"]').fill(password)
+            await page.locator('button[type="submit"]').first().click()
+            await page.waitForURL((u) => !u.pathname.startsWith('/anmelden'))
+          }
+          await page.waitForLoadState('networkidle')
+          // Sprache über die API des Browserkontexts setzen (gleiche Cookies, unabhängig von der Seite)
+          const csrf = (await context.cookies()).find((c) => c.name === 'csrftoken')?.value ?? ''
+          const r = await context.request.patch(`${hubiplan}/api/me/language/`, {
+            headers: { 'X-CSRFToken': csrf, Referer: `${hubiplan}/` },
+            data: { language },
           })
-          return r.status
-        }, language)
-        if (status !== 200) throw new Error(`Sprache ${language} nicht wählbar (HTTP ${status})`)
-        await page.goto(`${hubiplan}${b.seite}`)
-        await ruhig(page)
-        await page.screenshot({ path: join(out, language, `${b.name}.png`) })
-        console.log(`ok   ${language}/${b.name}`)
-      } catch (e) {
-        failed++
-        console.error(`FEHLER ${language}/${b.name}: ${e.message}`)
+          if (r.status() !== 200) throw new Error(`Sprache ${language} nicht wählbar (HTTP ${r.status()})`)
+          await page.goto(`${hubiplan}${b.seite}`)
+          await ruhig(page)
+          await page.screenshot({ path: join(out, language, `${b.name}.png`) })
+          console.log(`ok   ${language}/${b.name}`)
+          break
+        } catch (e) {
+          if (versuch === 2) {
+            failed++
+            console.error(`FEHLER ${language}/${b.name}: ${e.message}`)
+          }
+        }
       }
       await context.close()
     }

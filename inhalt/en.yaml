@@ -39,20 +39,20 @@ start:
         titel: Members at a glance
         bild: Member list of a made-up demo club in HUBIplan
       - name: szene-termine
-        titel: Events with RSVPs
-        bild: Event list with responses of a made-up demo club
-      - name: szene-rechnungen
-        titel: Collecting fees
-        bild: Invoices from a fee run in a made-up demo club
+        titel: Events for the club, corps and platoons
+        bild: Monthly calendar with the shooting festival and platoon evenings of a made-up demo club
+      - name: szene-korps
+        titel: Corps and platoons, nested freely
+        bild: Corps with their platoons, founding years and member counts in a made-up demo club
       - name: szene-wettbewerbe
         titel: Competition results
-        bild: Results of a competition in a made-up demo club
+        bild: Results of a corps cup shooting in a made-up demo club
       - name: szene-rundschreiben
-        titel: Sending newsletters
-        bild: Newsletters of a made-up demo club
+        titel: Writing newsletters
+        bild: Newsletter in the editor of a made-up demo club
       - name: szene-mein-bereich
         titel: A personal area for every member
-        bild: Membership card in a demo member's personal area
+        bild: Personal area of a demo member with membership card, events, results and invoices
   versprechen:
     - titel: Everything in one place
       text: >-
