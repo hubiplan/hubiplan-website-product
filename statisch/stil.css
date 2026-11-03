@@ -120,7 +120,7 @@ a:focus-visible, .knopf:focus-visible { outline: 3px solid var(--gold); outline-
 /* Häufige Fragen: aufklappbar ohne Skript */
 .fragen { max-width: 52rem; display: grid; gap: .6rem; }
 .fragen details { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: .9rem 1.2rem; }
-.fragen summary { cursor: pointer; font-weight: 700; list-style-position: outside; }
+.fragen summary { cursor: pointer; font-weight: 700; }
 .fragen summary:hover, .fragen details[open] summary { color: var(--link); }
 .fragen details p { margin: .7rem 0 0; color: var(--text-leise); }
 /* Bilderkarussell oben: ohne Skript seitlich wischbar, mit Skript Knöpfe und Punkte */
