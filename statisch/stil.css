@@ -117,6 +117,12 @@ a:focus-visible, .knopf:focus-visible { outline: 3px solid var(--gold); outline-
 .bausteine p:last-child { color: inherit; }
 
 .held-raster > *, .zwei-spalten > *, .bausteine > * { min-width: 0; }
+/* Häufige Fragen: aufklappbar ohne Skript */
+.fragen { max-width: 52rem; display: grid; gap: .6rem; }
+.fragen details { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: .9rem 1.2rem; }
+.fragen summary { cursor: pointer; font-weight: 700; list-style-position: outside; }
+.fragen summary:hover, .fragen details[open] summary { color: var(--link); }
+.fragen details p { margin: .7rem 0 0; color: var(--text-leise); }
 /* Bilderkarussell oben: ohne Skript seitlich wischbar, mit Skript Knöpfe und Punkte */
 .karussell-spur { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 4px 14px; margin: -4px; }
 .karussell-spur::-webkit-scrollbar { display: none; }
