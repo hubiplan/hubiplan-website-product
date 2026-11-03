@@ -13,7 +13,7 @@
 #   HUBIPLAN_REPO  (Standard ~/hubiplan)          am besten auf dem Release-Tag
 #   WEBSITE_REPO   (Standard ~/hubiplan-website)
 #
-# Braucht Docker. Läuft nur lokal auf Ralfs PC (nie auf einem Server) und belegt einen
+# Braucht Docker. Läuft nur auf dem lokalen Entwicklungsrechner (nie auf einem Server) und belegt einen
 # Testplatz (höchstens zwei gleichzeitig, je höchstens 8 Kerne; testplatz).
 # Docker braucht nur dieses Skript; die fertige Seite läuft ohne.
 set -euo pipefail

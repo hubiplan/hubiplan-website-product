@@ -43,7 +43,7 @@ MAIL = re.compile(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+")
 # Erfundene Adressen und die Kontaktadresse aus dem Impressum
 MAIL_ERLAUBT = re.compile(r"(?:@(?:[\w-]+\.)*example\.(?:org|com|net)|^kontakt@philipsen-edv\.de)$")
 PLATZHALTER = "[Angaben folgen]"
-# Einzige erlaubte Nennung eines echten Vereins: die Widmung (Ralf 03.11.2026), nur wörtlich so
+# Einzige erlaubte Nennung eines echten Vereins: die ausdrücklich freigegebene Widmung, nur wörtlich so
 WIDMUNG = "Hubertus-Schützenverein Neuss-Grimlinghausen von 1920"
 
 
