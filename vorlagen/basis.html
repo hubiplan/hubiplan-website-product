@@ -9,6 +9,7 @@
 <link rel="icon" href="{{ datei('statisch/bilder/logo.svg') }}" type="image/svg+xml">
 <link rel="stylesheet" href="{{ datei('statisch/stil.css') }}">
 <script src="{{ datei('statisch/karussell.js') }}" defer></script>
+<script src="{{ datei('statisch/bildansicht.js') }}" defer></script>
 {% if seite is defined %}
 {% for s in sprachen %}
 <link rel="alternate" hreflang="{{ s }}" href="{{ url(seite.name, s) }}">
@@ -51,5 +52,10 @@
     </p>
   </div>
 </footer>
+<dialog class="bildansicht" aria-label="{{ t.bildansicht.name }}">
+  <button type="button" class="bildansicht-zu" aria-label="{{ t.bildansicht.schliessen }}">×</button>
+  <img alt="">
+  <p class="bildansicht-text"></p>
+</dialog>
 </body>
 </html>

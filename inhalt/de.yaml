@@ -208,6 +208,10 @@ start:
           jederzeit als Excel exportieren. Weil der Quellcode offen ist, kann jeder HUBIplan
           weiter betreiben und weiterentwickeln.
 
+bildansicht:
+  name: Bildansicht
+  schliessen: Schließen
+
 bild_folgt: Bildschirmfoto folgt
 
 fuss:
