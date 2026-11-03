@@ -5,6 +5,7 @@
   if (!fenster || typeof fenster.showModal !== 'function') return
   const bild = fenster.querySelector('img')
   const text = fenster.querySelector('.bildansicht-text')
+  let zuletzt = null
 
   document.addEventListener('click', (e) => {
     const link = e.target.closest('.rahmen a[href]')
@@ -12,6 +13,7 @@
     const klein = link.querySelector('img')
     if (!klein) return
     e.preventDefault()
+    zuletzt = link
     bild.src = link.href
     bild.alt = klein.alt
     const unterschrift = link.closest('figure')?.querySelector('figcaption')
@@ -21,5 +23,8 @@
   fenster.querySelector('.bildansicht-zu').addEventListener('click', () => fenster.close())
   // Klick neben das Bild (auf den abgedunkelten Hintergrund) schließt ebenfalls
   fenster.addEventListener('click', (e) => { if (e.target === fenster) fenster.close() })
-  fenster.addEventListener('close', () => bild.removeAttribute('src'))
+  fenster.addEventListener('close', () => {
+    bild.removeAttribute('src')
+    zuletzt?.focus()
+  })
 })()
