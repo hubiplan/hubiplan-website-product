@@ -4,10 +4,10 @@
     {"name": "mitglieder", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/mitglieder", "breite": 1440, "hoehe": 900},
     {"name": "baustein-hubiplan", "quelle": "hubiplan", "zugang": "kasse", "seite": "/finanzen/kassenbuch", "breite": 1280, "hoehe": 800},
     {"name": "baustein-website", "quelle": "website", "seite": "/", "breite": 1280, "hoehe": 800},
-    {"name": "szene-termine", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/termine", "breite": 1440, "hoehe": 900},
-    {"name": "szene-rechnungen", "quelle": "hubiplan", "zugang": "kasse", "seite": "/finanzen/rechnungen", "breite": 1440, "hoehe": 900},
-    {"name": "szene-wettbewerbe", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/wettbewerbe", "breite": 1440, "hoehe": 900},
-    {"name": "szene-rundschreiben", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/rundschreiben", "breite": 1440, "hoehe": 900},
-    {"name": "szene-mein-bereich", "quelle": "hubiplan", "zugang": "mitglied", "seite": "/mein-bereich/ausweis", "breite": 1440, "hoehe": 900}
+    {"name": "szene-termine", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/termine?datum=2027-07-10", "breite": 1440, "hoehe": 900},
+    {"name": "szene-korps", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/untereinheiten", "breite": 1440, "hoehe": 900},
+    {"name": "szene-wettbewerbe", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/wettbewerbe/2/auswertung", "breite": 1440, "hoehe": 900},
+    {"name": "szene-rundschreiben", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/rundschreiben/1", "breite": 1440, "hoehe": 900},
+    {"name": "szene-mein-bereich", "quelle": "hubiplan", "zugang": "mitglied", "seite": "/mein-bereich", "breite": 1440, "hoehe": 900}
   ]
 }
