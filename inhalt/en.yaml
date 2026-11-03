@@ -207,6 +207,10 @@ start:
           Excel at any time. Because the source code is open, anyone can keep running and
           developing HUBIplan.
 
+bildansicht:
+  name: Picture view
+  schliessen: Close
+
 bild_folgt: Screenshot coming soon
 
 fuss:
