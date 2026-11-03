@@ -8,6 +8,7 @@
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="{{ datei('statisch/bilder/logo.svg') }}" type="image/svg+xml">
 <link rel="stylesheet" href="{{ datei('statisch/stil.css') }}">
+<script src="{{ datei('statisch/karussell.js') }}" defer></script>
 {% if seite is defined %}
 {% for s in sprachen %}
 <link rel="alternate" hreflang="{{ s }}" href="{{ url(seite.name, s) }}">

@@ -117,6 +117,22 @@ a:focus-visible, .knopf:focus-visible { outline: 3px solid var(--gold); outline-
 .bausteine p:last-child { color: inherit; }
 
 .held-raster > *, .zwei-spalten > *, .bausteine > * { min-width: 0; }
+/* Bilderkarussell oben: ohne Skript seitlich wischbar, mit Skript Knöpfe und Punkte */
+.karussell-spur { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 4px 14px; margin: -4px; }
+.karussell-spur::-webkit-scrollbar { display: none; }
+.karussell-spur:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; border-radius: 12px; }
+.karussell-spur > .rahmen { flex: 0 0 100%; scroll-snap-align: start; }
+.karussell figcaption { padding: .6rem 1rem; font-weight: 600; border-top: 1px solid var(--linie); background: var(--karte); }
+.karussell-steuerung { display: none; align-items: center; justify-content: center; gap: .5rem; margin-top: .5rem; }
+.karussell.mit-skript .karussell-steuerung { display: flex; }
+.karussell-knopf { font: inherit; font-size: 1.1rem; line-height: 1; width: 2.25rem; height: 2.25rem; border-radius: 50%; border: 1px solid var(--linie);
+  background: var(--karte); color: var(--text); cursor: pointer; }
+.karussell-knopf:hover, .karussell-knopf:focus-visible { border-color: var(--link); color: var(--link); }
+.karussell-pause { font-size: .75rem; margin-left: .5rem; }
+.karussell-punkte { display: flex; gap: .4rem; }
+.karussell-punkte a { width: .65rem; height: .65rem; border-radius: 50%; background: var(--linie); }
+.karussell-punkte a[aria-current] { background: var(--link); }
+
 .zwei-spalten { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
 .klein { font-size: .9rem; color: var(--text-leise); margin-bottom: .4rem; }
 pre { margin: 0; background: var(--code); color: var(--code-text); border-radius: 10px; padding: 1rem 1.25rem; overflow-x: auto; font-size: .92rem; line-height: 1.55; }
