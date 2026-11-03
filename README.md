@@ -59,6 +59,20 @@ Demoverein an und speichert die Bilder unter `statisch/fotos/<sprache>/<name>.pn
 dem Einchecken ansehen. Fehlt ein Bild, zeigt die Seite einen Platzhalter. Docker braucht nur
 dieses Skript, nicht die fertige Seite.
 
+Das Bild der Android-App (`baustein-android.png`, Terminliste, 1080 × 2400) entsteht von Hand
+im Android-Emulator, weil die App nur HTTPS mit System-Zertifikaten zulässt:
+
+1. Demoverein-Backend wie in `scripts/fotos.sh` starten (Wegwerf-Container, `seed_demoverein`),
+   davor einen HTTPS-Proxy (z. B. Caddy) mit einem Wegwerf-Zertifikat für `10.0.2.2`, Port 8443.
+2. Die Variante `foss` von `hubiplan-android` (main) als Debug bauen, mit einer nur lokal
+   abgelegten `app/src/debug/res/xml/network_security_config.xml`, die zusätzlich der
+   Wegwerf-CA vertraut (nie einchecken).
+3. Emulator mit `-read-only` starten, App installieren, als `mitglied@sv-musterstadt.test`
+   an `https://10.0.2.2:8443` anmelden, Statusleiste im Demo-Modus (9:30, voller Akku, keine
+   Benachrichtigungen), Sprache mit `adb shell cmd locale set-app-locales de.hubiplan.app
+   --locales de-DE` bzw. `en-US`, dann `adb exec-out screencap -p > baustein-android.png`.
+4. Danach Emulator, Container, Zertifikat und Debug-Build wegwerfen.
+
 ## Ausrollen
 
 Das Ergebnis ist ein Ordner mit fertigen Dateien. Er läuft auf jedem Webspace und Webserver
