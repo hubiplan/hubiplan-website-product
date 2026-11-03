@@ -159,6 +159,54 @@ start:
     sicherheit: Report a vulnerability privately
     releases: Releases and changes
 
+  fragen:
+    ueberschrift: Frequently asked questions
+    liste:
+      - frage: What does HUBIplan cost?
+        antwort: >-
+          Nothing. HUBIplan is free software under the AGPL, with no licence fees and no price per
+          member. The only cost is your own server, i.e. renting a small Linux server.
+      - frage: Who runs the server, and what does it take?
+        antwort: >-
+          The club itself or someone it trusts. A rented Linux server with Docker is enough;
+          HUBIplan obtains its HTTPS certificate by itself, and backups run daily and encrypted.
+          The [guide to running it](https://github.com/hubiplan/hubiplan#selbst-betreiben)
+          describes the steps.
+      - frage: Where is our data, and is it GDPR-compliant?
+        antwort: >-
+          The data is only on the server the club chooses, not in a vendor's cloud. Confidential
+          fields and files are encrypted with one key per club. There are permissions per role, a
+          change log, consent for photos and retention periods. The club remains the controller
+          under the GDPR.
+      - frage: How do we get our members in from Excel or another program?
+        antwort: >-
+          Members can be imported from an Excel spreadsheet, with a duplicate check. Whole clubs
+          can be transferred between HUBIplan installations as a file.
+      - frage: Do all members need an account?
+        antwort: >-
+          No. The board maintains the data for members without an account too, and newsletters
+          reach members without email as a mail merge letter. Anyone who wants one gets their own
+          account for events, membership card and personal data.
+      - frage: Does it suit sports, music or cultural clubs?
+        antwort: >-
+          Yes. The pictures show a shooting club because that is where HUBIplan was born.
+          Departments are named the way the club wants, and areas such as competitions or honours
+          can be switched off.
+      - frage: Is there an app for Android and iPhone?
+        antwort: >-
+          There is an Android app, also in a version without Google services. There is no iPhone
+          app yet, but HUBIplan runs in the browser on any phone.
+      - frage: Who helps when something does not work?
+        antwort: >-
+          The application has help with screenshots and explanations right on the pages. Bugs and
+          questions go to the [issues on GitHub](https://github.com/hubiplan/hubiplan/issues). There is
+          no paid support or hosting; HUBIplan is meant to be run by the club itself.
+      - frage: Can we leave again, and what happens if the project ends?
+        antwort: >-
+          The data belongs to the club and lives on its server. Member lists can be exported to
+          Excel at any time. Because the source code is open, anyone can keep running and
+          developing HUBIplan.
+
 bild_folgt: Screenshot coming soon
 
 fuss:

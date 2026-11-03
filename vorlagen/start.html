@@ -120,4 +120,17 @@ docker compose up --build</code></pre>
     </ul>
   </div>
 </section>
+<section id="fragen" class="abschnitt abschnitt-flaeche">
+  <div class="breite">
+    <h2>{{ s.fragen.ueberschrift }}</h2>
+    <div class="fragen">
+      {% for f in s.fragen.liste %}
+      <details>
+        <summary>{{ f.frage }}</summary>
+        <p>{{ f.antwort | md }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 {% endblock %}

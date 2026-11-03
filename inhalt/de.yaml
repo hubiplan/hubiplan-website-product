@@ -159,6 +159,55 @@ start:
     sicherheit: Sicherheitslücke vertraulich melden
     releases: Versionen und Änderungen
 
+  fragen:
+    ueberschrift: Häufige Fragen
+    liste:
+      - frage: Was kostet HUBIplan?
+        antwort: >-
+          Nichts. HUBIplan ist freie Software unter der AGPL, ohne Lizenzgebühren und ohne Preis je
+          Mitglied. Kosten entstehen nur für den eigenen Server, also die Miete eines kleinen
+          Linux-Servers.
+      - frage: Wer betreibt den Server, und was braucht man dafür?
+        antwort: >-
+          Der Verein selbst oder jemand seines Vertrauens. Es genügt ein gemieteter Linux-Server
+          mit Docker; das HTTPS-Zertifikat holt sich HUBIplan selbst, Backups laufen täglich und
+          verschlüsselt. Die [Anleitung zum Betreiben](https://github.com/hubiplan/hubiplan#selbst-betreiben)
+          beschreibt die Schritte.
+      - frage: Wo liegen unsere Daten, und ist das DSGVO-tauglich?
+        antwort: >-
+          Die Daten liegen nur auf dem Server, den der Verein wählt, nicht in einer Cloud des
+          Herstellers. Vertrauliche Felder und Dateien sind mit einem Schlüssel je Verein
+          verschlüsselt. Es gibt Rechte je Rolle, ein Änderungsprotokoll, Einwilligungen für Fotos
+          und Löschfristen. Verantwortlich im Sinne der DSGVO bleibt der Verein.
+      - frage: Wie kommen unsere Mitglieder aus Excel oder einem anderen Programm hinein?
+        antwort: >-
+          Mitglieder lassen sich aus einer Excel-Tabelle einlesen, mit Prüfung auf Dubletten.
+          Ganze Vereine lassen sich zwischen HUBIplan-Installationen als Datei übertragen.
+      - frage: Brauchen alle Mitglieder einen Zugang?
+        antwort: >-
+          Nein. Der Vorstand pflegt die Daten auch für Mitglieder ohne Zugang, und Rundschreiben
+          gehen an Mitglieder ohne E-Mail als Serienbrief. Wer möchte, bekommt einen eigenen
+          Zugang für Termine, Ausweis und eigene Daten.
+      - frage: Passt das auch zu Sport-, Musik- oder Kulturvereinen?
+        antwort: >-
+          Ja. Die Bilder zeigen einen Schützenverein, weil HUBIplan dort entstanden ist. Abteilungen
+          heißen so, wie der Verein es will, und Bereiche wie Wettbewerbe oder Würden lassen sich
+          abschalten.
+      - frage: Gibt es eine App für Android und iPhone?
+        antwort: >-
+          Für Android gibt es eine App, auch in einer Fassung ohne Google-Dienste. Eine eigene
+          iPhone-App gibt es noch nicht; HUBIplan läuft aber im Browser auf jedem Handy.
+      - frage: Wer hilft, wenn etwas nicht klappt?
+        antwort: >-
+          In der Anwendung gibt es Hilfe mit Bildschirmfotos und Erklärungen direkt auf den Seiten.
+          Fehler und Fragen gehen an die [Issues bei GitHub](https://github.com/hubiplan/hubiplan/issues).
+          Bezahlten Support oder Hosting gibt es nicht; HUBIplan ist zum Selbstbetreiben gedacht.
+      - frage: Kommen wir wieder heraus, und was passiert, wenn das Projekt endet?
+        antwort: >-
+          Die Daten gehören dem Verein und liegen auf seinem Server. Mitgliederlisten lassen sich
+          jederzeit als Excel exportieren. Weil der Quellcode offen ist, kann jeder HUBIplan
+          weiter betreiben und weiterentwickeln.
+
 bild_folgt: Bildschirmfoto folgt
 
 fuss:
