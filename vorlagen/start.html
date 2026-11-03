@@ -15,7 +15,25 @@
         <a class="knopf knopf-zweit" href="{{ links.hubiplan }}">{{ s.kopf.knopf_github }}</a>
       </p>
     </div>
-    {{ foto_rahmen("mitglieder", s.kopf.bild) }}
+    {% set k = s.kopf.karussell %}
+    {% set anzahl = s.kopf.bilder | length %}
+    <div class="karussell" role="region" aria-roledescription="carousel" aria-label="{{ k.name }}"
+         data-anhalten="{{ k.anhalten }}" data-abspielen="{{ k.abspielen }}">
+      <div class="karussell-spur" tabindex="0">
+        {% for b in s.kopf.bilder %}
+        {{ foto_rahmen(b.name, b.bild, "browser", b.titel,
+             (' id="szene-%d" role="group" aria-roledescription="slide" aria-label="%s"' % (loop.index, k.bild_nr | replace("{n}", loop.index | string) | replace("{m}", anzahl | string))) | safe) }}
+        {% endfor %}
+      </div>
+      <div class="karussell-steuerung">
+        <button type="button" class="karussell-knopf" data-schritt="-1" aria-label="{{ k.zurueck }}">‹</button>
+        <span class="karussell-punkte">
+          {% for b in s.kopf.bilder %}<a href="#szene-{{ loop.index }}" aria-label="{{ b.titel }}"></a>{% endfor %}
+        </span>
+        <button type="button" class="karussell-knopf" data-schritt="1" aria-label="{{ k.weiter }}">›</button>
+        <button type="button" class="karussell-knopf karussell-pause" aria-label="{{ k.anhalten }}">❚❚</button>
+      </div>
+    </div>
   </div>
 </section>
 

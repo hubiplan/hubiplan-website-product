@@ -27,7 +27,32 @@ start:
       und auf dem eigenen Server.
     knopf_funktionen: Funktionen ansehen
     knopf_github: Quellcode auf GitHub
-    bild: Mitgliederliste eines erfundenen Demovereins in HUBIplan
+    karussell:
+      name: Bildschirmfotos aus dem Demoverein
+      zurueck: Vorheriges Bild
+      weiter: Nächstes Bild
+      anhalten: Bildwechsel anhalten
+      abspielen: Bildwechsel starten
+      bild_nr: Bild {n} von {m}
+    bilder:
+      - name: mitglieder
+        titel: Mitglieder im Blick
+        bild: Mitgliederliste eines erfundenen Demovereins in HUBIplan
+      - name: szene-termine
+        titel: Termine mit Zu- und Absagen
+        bild: Terminliste mit Rückmeldungen eines erfundenen Demovereins
+      - name: szene-rechnungen
+        titel: Beiträge abrechnen
+        bild: Rechnungen eines Beitragslaufs in einem erfundenen Demoverein
+      - name: szene-wettbewerbe
+        titel: Wettbewerbe auswerten
+        bild: Ergebnisse eines Wettbewerbs in einem erfundenen Demoverein
+      - name: szene-rundschreiben
+        titel: Rundschreiben verschicken
+        bild: Rundschreiben eines erfundenen Demovereins
+      - name: szene-mein-bereich
+        titel: Mein Bereich für jedes Mitglied
+        bild: Mitgliedsausweis im persönlichen Bereich eines Demo-Mitglieds
   versprechen:
     - titel: Alles an einem Ort
       text: >-

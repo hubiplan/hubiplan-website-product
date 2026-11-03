@@ -27,7 +27,32 @@ start:
       your own server.
     knopf_funktionen: See the features
     knopf_github: Source code on GitHub
-    bild: Member list of a made-up demo club in HUBIplan
+    karussell:
+      name: Screenshots from the demo club
+      zurueck: Previous picture
+      weiter: Next picture
+      anhalten: Pause slideshow
+      abspielen: Play slideshow
+      bild_nr: Picture {n} of {m}
+    bilder:
+      - name: mitglieder
+        titel: Members at a glance
+        bild: Member list of a made-up demo club in HUBIplan
+      - name: szene-termine
+        titel: Events with RSVPs
+        bild: Event list with responses of a made-up demo club
+      - name: szene-rechnungen
+        titel: Collecting fees
+        bild: Invoices from a fee run in a made-up demo club
+      - name: szene-wettbewerbe
+        titel: Competition results
+        bild: Results of a competition in a made-up demo club
+      - name: szene-rundschreiben
+        titel: Sending newsletters
+        bild: Newsletters of a made-up demo club
+      - name: szene-mein-bereich
+        titel: A personal area for every member
+        bild: Membership card in a demo member's personal area
   versprechen:
     - titel: Everything in one place
       text: >-
