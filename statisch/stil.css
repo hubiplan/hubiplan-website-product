@@ -1,0 +1,137 @@
+/* Produktwebseite HUBIplan. Farben und Schrift aus dem Gestaltungshandbuch:
+   Hubi-Grün #0E7C66, Hubi-Gold #F2B33D (nie Schrift auf Weiß), Tinte #10241F,
+   Fläche #F3F7F5, Mint #5FD3B3 im Dunkelmodus. Links nie unterstrichen. */
+
+@font-face { font-family: "Outfit"; font-weight: 300; font-display: swap; src: url("schrift/outfit-latin-300-normal.woff2") format("woff2"); }
+@font-face { font-family: "Outfit"; font-weight: 800; font-display: swap; src: url("schrift/outfit-latin-800-normal.woff2") format("woff2"); }
+
+:root {
+  --gruen: #0e7c66;
+  --gruen-dunkel: #0a5e4d;
+  --gold: #f2b33d;
+  --tinte: #10241f;
+  --text: #10241f;
+  --text-leise: #4a5c57;
+  --grund: #ffffff;
+  --flaeche: #f3f7f5;
+  --linie: #d7e3df;
+  --link: #0a6b58;
+  --karte: #ffffff;
+  --code: #10241f;
+  --code-text: #e8f3ef;
+  --schatten: 0 1px 2px rgb(16 36 31 / 6%), 0 8px 24px rgb(16 36 31 / 8%);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #e6efec;
+    --text-leise: #a9bdb7;
+    --grund: #0d1a17;
+    --flaeche: #13241f;
+    --linie: #24403a;
+    --link: #5fd3b3;
+    --karte: #162a25;
+    --code: #07110f;
+    --schatten: 0 1px 2px rgb(0 0 0 / 30%), 0 8px 24px rgb(0 0 0 / 30%);
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--grund);
+}
+h1, h2, h3, .marke { font-family: "Outfit", system-ui, sans-serif; font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0 0 1rem; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0 0 .75rem; }
+h3 { font-size: 1.2rem; margin: 0 0 .4rem; }
+p { margin: 0 0 1rem; }
+a { color: var(--link); font-weight: 600; text-decoration: none; }
+a:hover, a:focus-visible { color: var(--gruen-dunkel); }
+@media (prefers-color-scheme: dark) { a:hover, a:focus-visible { color: #8fe6cd; } }
+a:focus-visible, .knopf:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+
+.breite { width: min(1120px, 100% - 2rem); margin-inline: auto; }
+.sprung { position: absolute; left: -999px; top: .5rem; background: var(--grund); padding: .5rem 1rem; z-index: 10; }
+.sprung:focus { left: 1rem; }
+
+/* Kopf */
+.kopf { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--grund) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--linie); }
+.kopf-zeile { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: .6rem 0; }
+.marke { display: flex; align-items: center; gap: .55rem; color: var(--text); font-size: 1.35rem; }
+.marke:hover { color: var(--text); }
+.navigation { display: flex; flex-wrap: wrap; gap: .25rem 1.1rem; font-size: .98rem; }
+.navigation a { color: var(--text); font-weight: 600; }
+.navigation a:hover { color: var(--link); }
+.navigation .sprache { color: var(--link); }
+
+/* Kopfbereich der Startseite */
+.held { background: linear-gradient(180deg, var(--flaeche), var(--grund)); padding: clamp(2.5rem, 6vw, 5rem) 0; }
+.held-raster { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.zeile { color: var(--link); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; margin-bottom: .6rem; }
+.gross { font-size: 1.2rem; color: var(--text-leise); }
+.knoepfe { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+.knopf { display: inline-block; padding: .75rem 1.25rem; border-radius: 10px; background: var(--gruen); color: #fff; font-weight: 700; }
+.knopf:hover, .knopf:focus-visible { background: var(--gruen-dunkel); color: #fff; }
+.knopf-zweit { background: transparent; color: var(--link); box-shadow: inset 0 0 0 2px currentColor; }
+.knopf-zweit:hover, .knopf-zweit:focus-visible { background: transparent; color: var(--link); box-shadow: inset 0 0 0 3px currentColor; }
+
+/* Rahmen für Bildschirmfotos */
+.rahmen { margin: 0; background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; box-shadow: var(--schatten); overflow: hidden; }
+.rahmen img { display: block; width: 100%; height: auto; }
+.rahmen-leiste { display: flex; gap: 6px; padding: 9px 12px; background: var(--flaeche); border-bottom: 1px solid var(--linie); }
+.rahmen-leiste span { width: 10px; height: 10px; border-radius: 50%; background: var(--linie); }
+.rahmen-handy { max-width: 210px; margin-inline: auto; border-radius: 28px; border-width: 8px; border-color: var(--tinte); }
+.platzhalter { display: grid; place-content: center; text-align: center; gap: .35rem; aspect-ratio: 16 / 10; padding: 1.5rem; color: var(--text-leise);
+  background: repeating-linear-gradient(135deg, var(--flaeche) 0 14px, var(--grund) 14px 28px); }
+.rahmen-handy .platzhalter { aspect-ratio: 9 / 18; }
+.platzhalter span { font-family: "Outfit", system-ui, sans-serif; font-weight: 800; color: var(--link); }
+.platzhalter small { font-size: .85rem; }
+
+/* Abschnitte */
+.abschnitt { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
+.abschnitt-flaeche { background: var(--flaeche); }
+.einleitung { max-width: 46rem; color: var(--text-leise); font-size: 1.1rem; margin-bottom: 2rem; }
+.versprechen { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; padding: 2.5rem 0 1rem; }
+.versprechen h2 { font-size: 1.25rem; }
+.versprechen div { border-top: 4px solid var(--gold); padding-top: 1rem; }
+.versprechen p { color: var(--text-leise); }
+
+.kacheln { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+.kacheln li { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: 1.25rem; }
+.kacheln h3 { color: var(--link); }
+.kacheln p { margin: 0; font-size: .97rem; color: var(--text-leise); }
+
+.ebenen { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; max-width: 40rem; }
+.ebenen li { margin-left: calc(var(--stufe) * 1.75rem); background: var(--karte); border: 1px solid var(--linie); border-left: 5px solid var(--gruen); border-radius: 10px; padding: .7rem 1rem; }
+.ebenen span { color: var(--text-leise); }
+
+.bausteine { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; align-items: start; }
+.bausteine .rahmen { margin-bottom: 1.25rem; }
+.bausteine p { color: var(--text-leise); }
+.bausteine p:last-child { color: inherit; }
+
+.held-raster > *, .zwei-spalten > *, .bausteine > * { min-width: 0; }
+.zwei-spalten { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+.klein { font-size: .9rem; color: var(--text-leise); margin-bottom: .4rem; }
+pre { margin: 0; background: var(--code); color: var(--code-text); border-radius: 10px; padding: 1rem 1.25rem; overflow-x: auto; font-size: .92rem; line-height: 1.55; }
+code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
+
+.linkliste { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .75rem 2rem; }
+.text { max-width: 46rem; }
+
+/* Fuß */
+.fuss { border-top: 1px solid var(--linie); padding: 1.75rem 0; font-size: .92rem; color: var(--text-leise); }
+.fuss p { margin: .25rem 0; }
+.fuss .widmung { font-style: italic; margin-bottom: .6rem; }
+
+@media (max-width: 860px) {
+  .held-raster, .zwei-spalten { grid-template-columns: 1fr; }
+  .versprechen, .bausteine { grid-template-columns: 1fr; }
+  .ebenen li { margin-left: calc(var(--stufe) * 1rem); }
+}

@@ -1,0 +1,105 @@
+{% extends "basis.html" %}
+{% from "_foto.html" import foto_rahmen with context %}
+{% set s = t.start %}
+{% block titel %}{{ s.titel }}{% endblock %}
+{% block beschreibung %}{{ s.beschreibung }}{% endblock %}
+{% block inhalt %}
+<section class="held">
+  <div class="breite held-raster">
+    <div>
+      <p class="zeile">{{ s.kopf.zeile }}</p>
+      <h1>{{ s.kopf.ueberschrift }}</h1>
+      <p class="gross">{{ s.kopf.text }}</p>
+      <p class="knoepfe">
+        <a class="knopf" href="#funktionen">{{ s.kopf.knopf_funktionen }}</a>
+        <a class="knopf knopf-zweit" href="{{ links.hubiplan }}">{{ s.kopf.knopf_github }}</a>
+      </p>
+    </div>
+    {{ foto_rahmen("mitglieder", s.kopf.bild) }}
+  </div>
+</section>
+
+<section class="breite versprechen" aria-label="HUBIplan">
+  {% for v in s.versprechen %}
+  <div>
+    <h2>{{ v.titel }}</h2>
+    <p>{{ v.text }}</p>
+  </div>
+  {% endfor %}
+</section>
+
+<section id="funktionen" class="abschnitt">
+  <div class="breite">
+    <h2>{{ s.funktionen.ueberschrift }}</h2>
+    <p class="einleitung">{{ s.funktionen.einleitung }}</p>
+    <ul class="kacheln">
+      {% for f in s.funktionen.liste %}
+      <li>
+        <h3>{{ f.titel }}</h3>
+        <p>{{ f.text }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="abschnitt abschnitt-flaeche">
+  <div class="breite">
+    <h2>{{ s.ebenen.ueberschrift }}</h2>
+    <p class="einleitung">{{ s.ebenen.text }}</p>
+    <ol class="ebenen">
+      {% for e in s.ebenen.stufen %}
+      <li style="--stufe: {{ loop.index0 }}"><strong>{{ e.titel }}</strong> <span>{{ e.text }}</span></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section id="bausteine" class="abschnitt">
+  <div class="breite">
+    <h2>{{ s.bausteine.ueberschrift }}</h2>
+    <div class="bausteine">
+      {% for b in s.bausteine.liste %}
+      <article>
+        {{ foto_rahmen("baustein-" ~ b.repo, b.bild, "handy" if b.repo == "android" else "browser") }}
+        <h3>{{ b.titel }}</h3>
+        <p>{{ b.text }}</p>
+        <p><a href="{{ links[b.repo] }}">{{ s.bausteine.zum_repo }} →</a></p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="ausprobieren" class="abschnitt abschnitt-flaeche">
+  <div class="breite zwei-spalten">
+    <div>
+      <h2>{{ s.ausprobieren.ueberschrift }}</h2>
+      <p>{{ s.ausprobieren.text }}</p>
+      <p>
+        <a href="{{ links.ausprobieren }}">{{ s.ausprobieren.link }} →</a><br>
+        <a href="{{ links.betreiben }}">{{ s.ausprobieren.betreiben }} →</a>
+      </p>
+    </div>
+    <div>
+      <p class="klein">{{ s.ausprobieren.befehle_titel }}</p>
+<pre><code>git clone https://github.com/hubiplan/hubiplan.git
+cd hubiplan
+docker compose up --build</code></pre>
+    </div>
+  </div>
+</section>
+
+<section id="mitmachen" class="abschnitt">
+  <div class="breite">
+    <h2>{{ s.mitmachen.ueberschrift }}</h2>
+    <p class="einleitung">{{ s.mitmachen.text }}</p>
+    <ul class="linkliste">
+      <li><a href="{{ links.issues }}">{{ s.mitmachen.issues }}</a></li>
+      <li><a href="{{ links.mitwirken }}">{{ s.mitmachen.mitwirken }}</a></li>
+      <li><a href="{{ links.sicherheit }}">{{ s.mitmachen.sicherheit }}</a></li>
+      <li><a href="{{ links.releases }}">{{ s.mitmachen.releases }}</a></li>
+    </ul>
+  </div>
+</section>
+{% endblock %}

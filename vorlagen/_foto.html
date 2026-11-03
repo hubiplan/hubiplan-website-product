@@ -1,0 +1,12 @@
+{# Bildschirmfoto im Rahmen; ohne Datei ein Platzhalter. art: "browser" oder "handy" #}
+{% macro foto_rahmen(name, alt, art="browser") %}
+{% set pfad = foto(name) %}
+<figure class="rahmen rahmen-{{ art }}">
+  {% if art == "browser" %}<div class="rahmen-leiste" aria-hidden="true"><span></span><span></span><span></span></div>{% endif %}
+  {% if pfad %}
+  <a href="{{ pfad }}"><img src="{{ pfad }}" alt="{{ alt }}" loading="lazy"></a>
+  {% else %}
+  <div class="platzhalter" role="img" aria-label="{{ alt }}"><span>{{ t.bild_folgt }}</span><small>{{ alt }}</small></div>
+  {% endif %}
+</figure>
+{% endmacro %}

@@ -1,0 +1,8 @@
+{
+  "_hinweis": "Bildschirmfotos der Produktwebseite, erzeugt mit scripts/fotos.sh aus dem erfundenen Demoverein (seed_demoverein). quelle: hubiplan (Oberfläche, mit zugang) oder website (Vereinswebseite); seite: Pfad; breite/hoehe: Fenstergröße in Pixeln. Name = Datei statisch/fotos/<sprache>/<name>.png.",
+  "bilder": [
+    {"name": "mitglieder", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/mitglieder", "breite": 1440, "hoehe": 900},
+    {"name": "baustein-hubiplan", "quelle": "hubiplan", "zugang": "kasse", "seite": "/finanzen/kassenbuch", "breite": 1280, "hoehe": 800},
+    {"name": "baustein-website", "quelle": "website", "seite": "/", "breite": 1280, "hoehe": 800}
+  ]
+}

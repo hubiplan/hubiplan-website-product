@@ -1,0 +1,13 @@
+[project]
+name = "hubiplan-website-product"
+version = "0"
+description = "Produktwebseite von HUBIplan (statische Seiten)"
+license = "AGPL-3.0-or-later"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]

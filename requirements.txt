@@ -1,0 +1,4 @@
+# Nur zum Bauen auf dem eigenen Rechner; auf dem Webserver läuft nichts davon.
+Jinja2==3.1.6
+Markdown==3.11.2
+PyYAML==6.0.3

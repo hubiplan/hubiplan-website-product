@@ -1,0 +1,242 @@
+# Texte der Produktwebseite auf Deutsch. Gleiche Schlüssel wie en.yaml (scripts/pruefen.py).
+# Kurze Texte dürfen Markdown enthalten (Fett, Links, `Code`).
+sprache_name: Deutsch
+sprache_wechsel: English
+titel_zusatz: Freie Vereinsverwaltung
+
+navigation:
+  menue: Menü
+  funktionen: Funktionen
+  bausteine: Bausteine
+  ausprobieren: Ausprobieren
+  mitmachen: Mitmachen
+  github: GitHub
+  zum_inhalt: Zum Inhalt springen
+
+start:
+  titel: HUBIplan – freie Vereinsverwaltung
+  beschreibung: >-
+    HUBIplan ist eine freie, webbasierte Vereinsverwaltung für Vereine jeder Art, von 10 bis 10.000
+    Mitgliedern: Mitglieder, Beiträge und SEPA, Kasse, Termine, Rundschreiben, Vereinswebseite und App.
+  kopf:
+    zeile: Freie Vereinsverwaltung
+    ueberschrift: Ihr Verein an einem Ort, im Browser, am Handy und auf der eigenen Webseite.
+    text: >-
+      HUBIplan ersetzt Excel-Listen, Papierordner und Zettelkasse durch eine gemeinsame Anwendung
+      für Vorstand, Abteilungen und Mitglieder. Für Vereine von 10 bis 10.000 Mitgliedern, frei
+      und auf dem eigenen Server.
+    knopf_funktionen: Funktionen ansehen
+    knopf_github: Quellcode auf GitHub
+    bild: Mitgliederliste eines erfundenen Demovereins in HUBIplan
+  versprechen:
+    - titel: Alles an einem Ort
+      text: >-
+        Mitglieder, Beiträge, Kasse, Termine, Rundschreiben, Dokumente, Vereinswebseite und App
+        greifen ineinander. Nichts wird doppelt gepflegt.
+    - titel: Frei und selbst betrieben
+      text: >-
+        Quelloffen unter der AGPL. Ihre Daten liegen auf Ihrem Server, ohne Lizenzgebühren und
+        ohne Bindung an einen Anbieter.
+    - titel: Datenschutz eingebaut
+      text: >-
+        Vertrauliche Daten verschlüsselt mit einem Schlüssel je Verein, Mandanten zusätzlich in der
+        Datenbank getrennt, Rechte je Rolle und Abteilung.
+  funktionen:
+    ueberschrift: Was HUBIplan kann
+    einleitung: >-
+      Jeder Bereich lässt sich einzeln ein- und ausschalten. So passt HUBIplan zum Sportverein
+      genauso wie zum Schützenverein mit vielen Zügen oder zum Dachverband.
+    liste:
+      - titel: Mitglieder
+        text: >-
+          Mitgliedsarten, Aufnahme mit Dublettenprüfung, Ehrungen und Jubiläen, Ämter und Würden mit
+          Chronik, Mitgliedsausweis mit QR-Code, Import und Export als Excel.
+      - titel: Zugänge und Rechte
+        text: >-
+          Anmeldung mit Zwei-Faktor-Schutz, Rollen mit frei wählbaren Rechten je Einheit, „Ansicht
+          als Rolle“ und Anmeldung an der Vereins-Nextcloud.
+      - titel: Beiträge und Finanzen
+        text: >-
+          Beitragslauf, Rechnungen mit QR-Code, Mahnstufen, SEPA-Lastschrift, Kasse nach GoBD,
+          Kontoauszüge einlesen, digitale Quittungen und Zuwendungsbestätigungen.
+      - titel: Termine
+        text: >-
+          Kalender für Verband, Verein und Abteilungen, Zu- und Absagen mit Anmeldeschluss,
+          Erinnerungen per E-Mail, Jahresprogramm als PDF und Kalender-Abo.
+      - titel: Wettbewerbe
+        text: >-
+          Schießen und andere Wettbewerbe mit Einzel- und Mannschaftswertung, Erfassen auch ohne
+          Netz, Live-Tabellen, Urkunden und Meldungen an fremde Veranstalter.
+      - titel: Kommunikation
+        text: >-
+          Rundschreiben als E-Mail, Serienbrief oder Push in die App, Mailverteiler, Briefvorlage
+          und Dokumentenablage mit Rechten.
+      - titel: Datenschutz
+        text: >-
+          Verschlüsselte Felder und Dateien, Änderungsprotokoll, Einwilligungen für Fotos und
+          Veröffentlichung, Löschfristen.
+      - titel: Hilfe und Sprache
+        text: >-
+          Hilfe mit Bildschirmfotos und Suche, Erklärungen direkt auf der Seite, Glossar,
+          Oberfläche auf Deutsch oder Englisch.
+  ebenen:
+    ueberschrift: Für einzelne Vereine und ganze Verbände
+    text: >-
+      Eine Installation trägt viele Vereine. Jeder Verein verwaltet seine Mitglieder selbst,
+      Abteilungen, Züge oder Gruppen lassen sich beliebig verschachteln und heißen so, wie der
+      Verein es will. Ein Dachverband sieht nur, was seine Vereine freigeben.
+    stufen:
+      - titel: Plattform
+        text: die Installation; schaltet Module frei
+      - titel: Dachverband
+        text: optional, mit eigenem Vorstand
+      - titel: Verein
+        text: verwaltet seine Mitglieder selbst
+      - titel: Abteilungen
+        text: frei verschachtelt und benannt
+  bausteine:
+    ueberschrift: Drei Bausteine, ein Datenbestand
+    liste:
+      - titel: Vereinsverwaltung
+        text: >-
+          Die Anwendung im Browser für Vorstand, Kasse, Abteilungen und Mitglieder. Django, React
+          und PostgreSQL.
+        repo: hubiplan
+        bild: Kasse eines erfundenen Demovereins in HUBIplan
+      - titel: Vereinswebseite
+        text: >-
+          Eine öffentliche Webseite unter der Domain des Vereins, gespeist aus HUBIplan: Termine,
+          Vorstand, Abteilungen, Chronik. Ohne zweites Redaktionssystem.
+        repo: website
+        bild: Startseite der Webseite eines erfundenen Demovereins
+      - titel: Android-App
+        text: >-
+          Termine, Mitteilungen, Mitgliedsausweis und Vereinsverwaltung unterwegs. Variante ohne
+          Google-Dienste für F-Droid.
+        repo: android
+        bild: Terminliste in der Android-App
+    zum_repo: Zum Repository
+  ausprobieren:
+    ueberschrift: Selbst ausprobieren
+    text: >-
+      Mit Docker läuft HUBIplan in wenigen Minuten auf dem eigenen Rechner, mit erfundenen
+      Demodaten zum Anschauen.
+    befehle_titel: Im Terminal
+    link: Anleitung zum Ausprobieren
+    betreiben: Selbst betreiben
+  mitmachen:
+    ueberschrift: Mitmachen
+    text: >-
+      HUBIplan ist freie Software. Fehlermeldungen, Ideen und Pull Requests sind willkommen,
+      auch auf Englisch.
+    issues: Fehler oder Idee melden
+    mitwirken: Beitragsbedingungen
+    sicherheit: Sicherheitslücke vertraulich melden
+    releases: Versionen und Änderungen
+
+bild_folgt: Bildschirmfoto folgt
+
+fuss:
+  widmung: >-
+    HUBIplan ist dem Hubertus-Schützenverein Neuss-Grimlinghausen von 1920 gewidmet. Seine
+    Abläufe waren der Anstoß und lieferten die Anwendungsfälle.
+  lizenz: >-
+    HUBIplan steht unter der [GNU Affero General Public License 3.0 oder später](https://github.com/hubiplan/hubiplan/blob/main/LICENSE).
+  copyright: © 2026 Ralf Philipsen (Philipsen EDV)
+  impressum: Impressum
+  datenschutz: Datenschutz
+  quelle: Quellcode dieser Seite
+
+impressum:
+  titel: Impressum
+  beschreibung: Impressum der Produktwebseite von HUBIplan
+  inhalt: |
+    ## Angaben gemäß § 5 DDG
+
+    Ralf Philipsen<br>
+    Philipsen EDV-Dienstleistungen (Einzelunternehmen)<br>
+    Norfer Straße 48<br>
+    41468 Neuss
+
+    ## Kontakt
+
+    Telefon: 02131 319217<br>
+    E-Mail: [kontakt@philipsen-edv.de](mailto:kontakt@philipsen-edv.de)
+
+    ## Verantwortlich für den Inhalt
+
+    Ralf Philipsen, Anschrift wie oben
+
+    ## Verbraucherstreitbeilegung
+
+    Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer
+    Verbraucherschlichtungsstelle teilzunehmen.
+
+    ## Quellcode
+
+    HUBIplan und diese Webseite sind freie Software. Der Quellcode liegt öffentlich bei GitHub.
+    Fehler und Sicherheitslücken bitte dort melden (siehe „Mitmachen“ auf der Startseite).
+
+datenschutz:
+  titel: Datenschutz
+  beschreibung: Datenschutzhinweise der Produktwebseite von HUBIplan
+  inhalt: |
+    ## 1. Verantwortlicher
+
+    Ralf Philipsen, Philipsen EDV-Dienstleistungen, Norfer Straße 48, 41468 Neuss,
+    Telefon 02131 319217, E-Mail [kontakt@philipsen-edv.de](mailto:kontakt@philipsen-edv.de).
+
+    ## 2. Allgemeines
+
+    Diese Webseite besteht nur aus festen Seiten. Sie setzt keine Cookies, nutzt keine Analyse-
+    oder Tracking-Werkzeuge und bindet keine Inhalte fremder Anbieter ein. Schriften, Bilder und
+    Stile kommen vom eigenen Server.
+
+    ## 3. Hosting
+
+    Der Server steht bei der dogado GmbH in Dortmund, in einem Rechenzentrum in Deutschland. Der
+    Hoster verarbeitet die Daten in unserem Auftrag (Art. 28 DSGVO).
+
+    ## 4. Server-Logdateien
+
+    Beim Aufruf speichert der Webserver IP-Adresse, Zeitpunkt, aufgerufene Adresse, Statuscode,
+    übertragene Datenmenge, die zuvor besuchte Seite (Referrer) sowie Browser und Betriebssystem.
+    Das dient dem sicheren Betrieb der Webseite und der Abwehr von Angriffen (berechtigtes
+    Interesse, Art. 6 Abs. 1 lit. f DSGVO). Die Logdateien werden wöchentlich gewechselt und
+    spätestens nach fünf Wochen gelöscht. Auffällige IP-Adressen können automatisch für kurze
+    Zeit gesperrt werden.
+
+    ## 5. Verschlüsselung
+
+    Die Verbindung ist per TLS verschlüsselt, erkennbar an „https“ in der Adresszeile.
+
+    ## 6. Kontakt per E-Mail oder Telefon
+
+    Wenn Sie uns schreiben oder anrufen, verarbeiten wir Ihre Angaben (etwa Name, E-Mail-Adresse,
+    Telefonnummer, Inhalt der Nachricht), um Ihre Anfrage zu bearbeiten (Art. 6 Abs. 1 lit. b bzw.
+    f DSGVO). Wir löschen sie, sobald sie nicht mehr nötig sind und keine gesetzliche
+    Aufbewahrungspflicht besteht.
+
+    ## 7. Links zu GitHub
+
+    Die Seite verlinkt auf die Repositories von HUBIplan bei GitHub. Erst wenn Sie einem solchen
+    Link folgen, rufen Sie Seiten der GitHub, Inc. (USA) auf; dort gelten deren
+    Datenschutzhinweise.
+
+    ## 8. Ihre Rechte
+
+    Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und
+    Datenübertragbarkeit. Einer Verarbeitung auf Grundlage berechtigter Interessen können Sie aus
+    Gründen Ihrer besonderen Situation widersprechen. Eine formlose Nachricht an die oben
+    genannten Kontaktdaten genügt.
+
+    ## 9. Beschwerderecht
+
+    Sie können sich bei einer Datenschutz-Aufsichtsbehörde beschweren. Zuständig ist die
+    Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW),
+    Düsseldorf.
+
+fehlerseite:
+  titel: Seite nicht gefunden
+  text: Diese Seite gibt es nicht (mehr).
+  zurueck: Zur Startseite

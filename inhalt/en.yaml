@@ -1,0 +1,243 @@
+# Texts of the product website in English. Same keys as de.yaml (scripts/pruefen.py).
+sprache_name: English
+sprache_wechsel: Deutsch
+titel_zusatz: Free club management
+
+navigation:
+  menue: Menu
+  funktionen: Features
+  bausteine: Components
+  ausprobieren: Try it
+  mitmachen: Contribute
+  github: GitHub
+  zum_inhalt: Skip to content
+
+start:
+  titel: HUBIplan – free club management
+  beschreibung: >-
+    HUBIplan is free, web-based membership management for clubs and associations of any kind,
+    from 10 to 10,000 members: members, fees and SEPA, cash book, events, newsletters, club
+    website and app.
+  kopf:
+    zeile: Free club management
+    ueberschrift: Your club in one place, in the browser, on the phone and on its own website.
+    text: >-
+      HUBIplan replaces spreadsheets, paper folders and cash boxes with one shared application
+      for the board, departments and members. For clubs from 10 to 10,000 members, free and on
+      your own server.
+    knopf_funktionen: See the features
+    knopf_github: Source code on GitHub
+    bild: Member list of a made-up demo club in HUBIplan
+  versprechen:
+    - titel: Everything in one place
+      text: >-
+        Members, fees, cash book, events, newsletters, documents, club website and app work
+        together. Nothing is maintained twice.
+    - titel: Free and self-hosted
+      text: >-
+        Open source under the AGPL. Your data stays on your server, with no licence fees and no
+        vendor lock-in.
+    - titel: Privacy built in
+      text: >-
+        Confidential data encrypted with one key per club, tenants also separated in the database,
+        permissions per role and department.
+  funktionen:
+    ueberschrift: What HUBIplan does
+    einleitung: >-
+      Every area can be switched on and off on its own. HUBIplan fits a sports club as well as a
+      large club with many sections or an umbrella association.
+    liste:
+      - titel: Members
+        text: >-
+          Membership types, admission with duplicate check, honours and anniversaries, offices and
+          titles with history, membership card with QR code, Excel import and export.
+      - titel: Access and permissions
+        text: >-
+          Sign-in with two-factor authentication, roles with freely chosen permissions per unit,
+          “view as role” and sign-in to the club's Nextcloud.
+      - titel: Fees and finance
+        text: >-
+          Fee runs, invoices with QR code, reminders, SEPA direct debit, GoBD-compliant cash book,
+          bank statement import, digital receipts and donation receipts.
+      - titel: Events
+        text: >-
+          Calendars for association, club and departments, RSVPs with deadlines, email reminders,
+          annual programme as PDF and calendar subscription.
+      - titel: Competitions
+        text: >-
+          Shooting and other competitions with individual and team rankings, offline entry, live
+          tables, certificates and entries for external organisers.
+      - titel: Communication
+        text: >-
+          Newsletters by email, mail merge or app push, mailing lists, letter template and a
+          document library with permissions.
+      - titel: Privacy
+        text: >-
+          Encrypted fields and files, change log, consent for photos and publication, retention
+          periods.
+      - titel: Help and language
+        text: >-
+          Help with screenshots and search, explanations right on the page, glossary, interface in
+          German or English.
+  ebenen:
+    ueberschrift: For single clubs and whole associations
+    text: >-
+      One installation serves many clubs. Each club manages its own members; departments,
+      sections or groups can be nested freely and named the way the club wants. An umbrella
+      association only sees what its clubs share.
+    stufen:
+      - titel: Platform
+        text: the installation; enables modules
+      - titel: Association
+        text: optional, with its own board
+      - titel: Club
+        text: manages its own members
+      - titel: Departments
+        text: nested and named freely
+  bausteine:
+    ueberschrift: Three components, one set of data
+    liste:
+      - titel: Club management
+        text: >-
+          The browser application for the board, treasurer, departments and members. Django,
+          React and PostgreSQL.
+        repo: hubiplan
+        bild: Cash book of a made-up demo club in HUBIplan
+      - titel: Club website
+        text: >-
+          A public website on the club's own domain, fed from HUBIplan: events, board,
+          departments, history. No second content management system.
+        repo: website
+        bild: Home page of a made-up demo club's website
+      - titel: Android app
+        text: >-
+          Events, messages, membership card and club management on the go. A variant without
+          Google services for F-Droid.
+        repo: android
+        bild: Event list in the Android app
+    zum_repo: To the repository
+  ausprobieren:
+    ueberschrift: Try it yourself
+    text: >-
+      With Docker, HUBIplan runs on your own computer in a few minutes, with made-up demo data to
+      look around.
+    befehle_titel: In a terminal
+    link: How to try it
+    betreiben: Run it yourself
+  mitmachen:
+    ueberschrift: Contribute
+    text: >-
+      HUBIplan is free software. Bug reports, ideas and pull requests are welcome, in English
+      too.
+    issues: Report a bug or idea
+    mitwirken: Contribution terms
+    sicherheit: Report a vulnerability privately
+    releases: Releases and changes
+
+bild_folgt: Screenshot coming soon
+
+fuss:
+  widmung: >-
+    HUBIplan is dedicated to the Hubertus-Schützenverein Neuss-Grimlinghausen von 1920, whose
+    way of running the club gave the impetus and the use cases.
+  lizenz: >-
+    HUBIplan is licensed under the [GNU Affero General Public License 3.0 or later](https://github.com/hubiplan/hubiplan/blob/main/LICENSE).
+  copyright: © 2026 Ralf Philipsen (Philipsen EDV)
+  impressum: Legal notice
+  datenschutz: Privacy
+  quelle: Source code of this site
+
+impressum:
+  titel: Legal notice
+  beschreibung: Legal notice of the HUBIplan product website
+  inhalt: |
+    *This is a translation; the [German version](../../impressum/) is binding.*
+
+    ## Information according to § 5 DDG
+
+    Ralf Philipsen<br>
+    Philipsen EDV-Dienstleistungen (sole proprietorship)<br>
+    Norfer Straße 48<br>
+    41468 Neuss<br>
+    Germany
+
+    ## Contact
+
+    Phone: +49 2131 319217<br>
+    Email: [kontakt@philipsen-edv.de](mailto:kontakt@philipsen-edv.de)
+
+    ## Responsible for the content
+
+    Ralf Philipsen, address as above
+
+    ## Consumer dispute resolution
+
+    We are neither willing nor obliged to take part in dispute resolution proceedings before a
+    consumer arbitration board.
+
+    ## Source code
+
+    HUBIplan and this website are free software. The source code is publicly available on
+    GitHub. Please report bugs and vulnerabilities there (see “Contribute” on the home page).
+
+datenschutz:
+  titel: Privacy
+  beschreibung: Privacy notice of the HUBIplan product website
+  inhalt: |
+    *This is a translation; the [German version](../../datenschutz/) is binding.*
+
+    ## 1. Controller
+
+    Ralf Philipsen, Philipsen EDV-Dienstleistungen, Norfer Straße 48, 41468 Neuss, Germany,
+    phone +49 2131 319217, email [kontakt@philipsen-edv.de](mailto:kontakt@philipsen-edv.de).
+
+    ## 2. General
+
+    This website consists of static pages only. It sets no cookies, uses no analytics or tracking
+    tools and embeds no content from third parties. Fonts, images and styles are served from our
+    own server.
+
+    ## 3. Hosting
+
+    The server is operated by dogado GmbH, Dortmund, in a data centre in Germany. The host
+    processes data on our behalf (Art. 28 GDPR).
+
+    ## 4. Server log files
+
+    When you visit, the web server stores your IP address, time, requested address, status code,
+    amount of data transferred, the page visited before (referrer) and your browser and operating
+    system. This serves the secure operation of the website and the defence against attacks
+    (legitimate interest, Art. 6(1)(f) GDPR). Log files are rotated weekly and deleted after five
+    weeks at the latest. Suspicious IP addresses may be blocked automatically for a short time.
+
+    ## 5. Encryption
+
+    The connection is encrypted with TLS, recognisable by “https” in the address bar.
+
+    ## 6. Contact by email or phone
+
+    If you write to us or call us, we process your details (such as name, email address, phone
+    number, content of your message) to handle your request (Art. 6(1)(b) or (f) GDPR). We delete
+    them once they are no longer needed and no statutory retention period applies.
+
+    ## 7. Links to GitHub
+
+    This site links to the HUBIplan repositories on GitHub. Only when you follow such a link do
+    you visit pages of GitHub, Inc. (USA); their privacy notice applies there.
+
+    ## 8. Your rights
+
+    You have the right of access, rectification, erasure, restriction of processing and data
+    portability. You may object to processing based on legitimate interests on grounds relating
+    to your particular situation. An informal message to the contact details above is enough.
+
+    ## 9. Right to lodge a complaint
+
+    You may lodge a complaint with a data protection supervisory authority. The competent
+    authority is the State Commissioner for Data Protection and Freedom of Information of North
+    Rhine-Westphalia (LDI NRW), Düsseldorf.
+
+fehlerseite:
+  titel: Page not found
+  text: This page does not exist (any more).
+  zurueck: To the home page

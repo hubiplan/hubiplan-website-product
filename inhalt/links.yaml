@@ -1,0 +1,13 @@
+# Feste Verweise (nur öffentliche Adressen bei GitHub, keine Serveradressen)
+organisation: https://github.com/hubiplan
+hubiplan: https://github.com/hubiplan/hubiplan
+website: https://github.com/hubiplan/hubiplan-website
+android: https://github.com/hubiplan/hubiplan-android
+produktseite: https://github.com/hubiplan/hubiplan-website-product
+ausprobieren: https://github.com/hubiplan/hubiplan#ausprobieren-mit-docker
+betreiben: https://github.com/hubiplan/hubiplan#selbst-betreiben
+mitwirken: https://github.com/hubiplan/hubiplan/blob/main/CONTRIBUTING.md
+sicherheit: https://github.com/hubiplan/hubiplan/blob/main/SECURITY.md
+issues: https://github.com/hubiplan/hubiplan/issues
+releases: https://github.com/hubiplan/hubiplan/releases
+lizenz: https://github.com/hubiplan/hubiplan/blob/main/LICENSE

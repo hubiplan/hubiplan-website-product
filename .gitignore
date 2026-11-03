@@ -1,0 +1,15 @@
+# Gebaute Seite
+_site/
+*.zip
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+
+# Editoren / System
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

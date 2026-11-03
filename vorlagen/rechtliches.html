@@ -1,0 +1,12 @@
+{% extends "basis.html" %}
+{% set r = t[seite.name] %}
+{% block titel %}{{ r.titel }} · HUBIplan{% endblock %}
+{% block beschreibung %}{{ r.beschreibung }}{% endblock %}
+{% block inhalt %}
+<section class="abschnitt">
+  <div class="breite text">
+    <h1>{{ r.titel }}</h1>
+    {{ r.inhalt | md }}
+  </div>
+</section>
+{% endblock %}

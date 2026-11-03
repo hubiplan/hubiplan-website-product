@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="{{ sprache }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block titel %}{% endblock %}</title>
+<meta name="description" content="{% block beschreibung %}{% endblock %}">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="{{ datei('statisch/bilder/logo.svg') }}" type="image/svg+xml">
+<link rel="stylesheet" href="{{ datei('statisch/stil.css') }}">
+{% if seite is defined %}
+{% for s in sprachen %}
+<link rel="alternate" hreflang="{{ s }}" href="{{ url(seite.name, s) }}">
+{% endfor %}
+{% endif %}
+</head>
+<body>
+<a class="sprung" href="#inhalt">{{ t.navigation.zum_inhalt }}</a>
+<header class="kopf">
+  <div class="breite kopf-zeile">
+    <a class="marke" href="{{ url('start') }}" aria-label="HUBIplan">
+      <img src="{{ datei('statisch/bilder/logo.svg') }}" alt="" width="36" height="36">
+      <span>HUBIplan</span>
+    </a>
+    <nav class="navigation" aria-label="{{ t.navigation.menue }}">
+      <a href="{{ url('start') }}#funktionen">{{ t.navigation.funktionen }}</a>
+      <a href="{{ url('start') }}#bausteine">{{ t.navigation.bausteine }}</a>
+      <a href="{{ url('start') }}#ausprobieren">{{ t.navigation.ausprobieren }}</a>
+      <a href="{{ url('start') }}#mitmachen">{{ t.navigation.mitmachen }}</a>
+      <a href="{{ links.organisation }}">{{ t.navigation.github }}</a>
+      {% if seite is defined %}
+      {% for s in sprachen if s != sprache %}
+      <a class="sprache" href="{{ url(seite.name, s) }}" hreflang="{{ s }}" lang="{{ s }}">{{ t.sprache_wechsel }}</a>
+      {% endfor %}
+      {% endif %}
+    </nav>
+  </div>
+</header>
+<main id="inhalt">
+{% block inhalt %}{% endblock %}
+</main>
+<footer class="fuss">
+  <div class="breite fuss-zeile">
+    <p class="widmung">{{ t.fuss.widmung }}</p>
+    <p>{{ t.fuss.copyright }} · {{ t.fuss.lizenz | md }}</p>
+    <p>
+      <a href="{{ url('impressum') }}">{{ t.fuss.impressum }}</a> ·
+      <a href="{{ url('datenschutz') }}">{{ t.fuss.datenschutz }}</a> ·
+      <a href="{{ links.produktseite }}">{{ t.fuss.quelle }}</a>
+    </p>
+  </div>
+</footer>
+</body>
+</html>

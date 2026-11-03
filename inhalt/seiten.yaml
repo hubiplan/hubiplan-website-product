@@ -1,0 +1,11 @@
+# Seiten der Produktwebseite. pfad = Ordner unter der Wurzel ("" = Startseite).
+# Jede Seite gibt es in jeder Sprache (scripts/bauen.py, SPRACHEN).
+- name: start
+  pfad: ""
+  vorlage: start.html
+- name: impressum
+  pfad: impressum
+  vorlage: rechtliches.html
+- name: datenschutz
+  pfad: datenschutz
+  vorlage: rechtliches.html

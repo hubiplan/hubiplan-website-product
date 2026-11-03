@@ -1,0 +1,12 @@
+{% extends "basis.html" %}
+{% block titel %}{{ t.fehlerseite.titel }} · HUBIplan{% endblock %}
+{% block beschreibung %}{{ t.fehlerseite.text }}{% endblock %}
+{% block inhalt %}
+<section class="abschnitt">
+  <div class="breite text">
+    <h1>{{ t.fehlerseite.titel }}</h1>
+    <p>{{ t.fehlerseite.text }}</p>
+    <p><a href="/">{{ t.fehlerseite.zurueck }}</a></p>
+  </div>
+</section>
+{% endblock %}
