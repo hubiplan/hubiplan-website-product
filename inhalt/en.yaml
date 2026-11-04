@@ -259,27 +259,32 @@ impressum:
 
 datenschutz:
   titel: Privacy
-  beschreibung: Privacy notice of the HUBIplan product website
+  beschreibung: Privacy notice of the HUBIplan product website and Android app
   inhalt: |
     *This is a translation; the [German version](../../datenschutz/) is binding.*
 
-    ## 1. Controller
+    This notice covers the HUBIplan product website (part A) and the Android app “HUBIplan”
+    (part B) published by Philipsen EDV-Dienstleistungen.
+
+    ## 1. Controller and publisher
 
     Ralf Philipsen, Philipsen EDV-Dienstleistungen, Norfer Straße 48, 41468 Neuss, Germany,
     phone +49 2131 319217, email [kontakt@philipsen-edv.de](mailto:kontakt@philipsen-edv.de).
 
-    ## 2. General
+    ## Part A: Product website
+
+    ### 2. General
 
     This website consists of static pages only. It sets no cookies, uses no analytics or tracking
     tools and embeds no content from third parties. Fonts, images and styles are served from our
     own server.
 
-    ## 3. Hosting
+    ### 3. Hosting
 
     The server is operated by dogado GmbH, Dortmund, in a data centre in Germany. The host
     processes data on our behalf (Art. 28 GDPR).
 
-    ## 4. Server log files
+    ### 4. Server log files
 
     When you visit, the web server stores your IP address, time, requested address, status code,
     amount of data transferred, the page visited before (referrer) and your browser and operating
@@ -287,32 +292,131 @@ datenschutz:
     (legitimate interest, Art. 6(1)(f) GDPR). Log files are rotated weekly and deleted after five
     weeks at the latest. Suspicious IP addresses may be blocked automatically for a short time.
 
-    ## 5. Encryption
+    ### 5. Encryption
 
     The connection is encrypted with TLS, recognisable by “https” in the address bar.
 
-    ## 6. Contact by email or phone
+    ### 6. Contact by email or phone
 
     If you write to us or call us, we process your details (such as name, email address, phone
     number, content of your message) to handle your request (Art. 6(1)(b) or (f) GDPR). We delete
     them once they are no longer needed and no statutory retention period applies.
 
-    ## 7. Links to GitHub
+    ### 7. Links to GitHub
 
     This site links to the HUBIplan repositories on GitHub. Only when you follow such a link do
     you visit pages of GitHub, Inc. (USA); their privacy notice applies there.
 
-    ## 8. Your rights
+    ## Part B: HUBIplan app for Android
+
+    ### 8. What the app is for and who is responsible for your data
+
+    The app is for members of clubs that use the club management software HUBIplan. It connects
+    only to your club's HUBIplan instance (the address you enter when connecting or take over by
+    QR code). There it processes the same data as the member area in the browser: events and
+    replies, messages, your own profile and, if you have admin rights, the data you edit there.
+
+    **Your club is responsible for this data.** Its privacy notice (in the app under Account ›
+    Privacy notice) names its contact details, purposes, legal bases and retention periods.
+    Philipsen EDV-Dienstleistungen, as publisher of the app, does not receive this data.
+
+    ### 9. Data that stays on your phone
+
+    - **Sign-in data:** the instance address and a device key, encrypted in the app's storage.
+      The app does not store your password.
+    - **Calendar:** if you switch it on, the app adds events to a calendar of its own on your
+      device. Whether this calendar is synced with a service (such as Google) is up to your
+      device settings.
+    - **Camera:** only to scan the QR code when connecting and, if you wish, for a member photo or
+      a receipt photo. Photos are sent to your club only after you confirm; the app removes
+      location and other metadata first.
+    - **Drafts:** what you enter while offline stays encrypted on the phone until it is sent.
+
+    ### 10. Push notifications
+
+    Push is optional and can be switched off in the app at any time. The app uses **UnifiedPush**
+    only: if you have installed a distributor app such as ntfy, your club's instance sends
+    notifications end-to-end encrypted (Web Push, RFC 8291) via that distributor's server. Only
+    your phone can decrypt them; the distributor only learns time and size. Without a distributor
+    app, the app itself checks with your club about every 15 minutes.
+
+    The app contains no Google push (Firebase) and no other Google libraries. As publisher of the
+    app, Philipsen EDV-Dienstleistungen runs no server that your data or notifications pass
+    through.
+
+    ### 11. What the app does not do
+
+    The app contains no ads, no advertising ID, no analytics or tracking services and no crash
+    reports to third parties. It talks to no server other than your club's instance and, for
+    push, the distributor you chose.
+
+    ### 12. Deleting your account and data
+
+    How to delete your account in the app and your data at the club is described on the page
+    [HUBIplan app: delete account and data](app-loeschen/).
+
+    ### 13. Source code
+
+    The app is free software under the GNU AGPL 3.0 or later. The source code is at
+    [github.com/hubiplan/hubiplan-android](https://github.com/hubiplan/hubiplan-android).
+
+    ## For website and app
+
+    ### 14. Your rights
 
     You have the right of access, rectification, erasure, restriction of processing and data
     portability. You may object to processing based on legitimate interests on grounds relating
-    to your particular situation. An informal message to the contact details above is enough.
+    to your particular situation. You may withdraw consent at any time. For the website, an
+    informal message to the contact details above is enough. Data you use in the app is held by
+    your club; please contact your club for it.
 
-    ## 9. Right to lodge a complaint
+    ### 15. Right to lodge a complaint
 
-    You may lodge a complaint with a data protection supervisory authority. The competent
-    authority is the State Commissioner for Data Protection and Freedom of Information of North
-    Rhine-Westphalia (LDI NRW), Düsseldorf.
+    You may lodge a complaint with a data protection supervisory authority. The authority
+    competent for us is the State Commissioner for Data Protection and Freedom of Information of
+    North Rhine-Westphalia (LDI NRW), Düsseldorf.
+
+app_loeschen:
+  titel: "HUBIplan app: delete account and data"
+  beschreibung: How to delete your account in the HUBIplan app and your data at the club
+  inhalt: |
+    *This is a translation; the [German version](../../../datenschutz/app-loeschen/) is binding.*
+
+    The HUBIplan app gives you access to your club's HUBIplan instance. Your access and your
+    member data are held by your club, not by the publisher of the app. Depending on what you
+    want to delete:
+
+    ## 1. Remove the account from the app
+
+    In the app under **Account › “Sign this account out of the device”**. This immediately
+    deletes:
+
+    - the device key of this phone, also on your club's server,
+    - all data of this account in the app, including the calendar entries and the push
+      registration.
+
+    Without your phone, you can sign the device out in the browser under **My account › App on
+    the phone**. The server signs out devices that have not been used for 180 days by itself. If
+    you uninstall the app, Android deletes all of the app's data on the phone.
+
+    ## 2. Delete your member photo
+
+    In the app under **Profile › “Withdraw consent and delete photo”**. The photo is deleted at
+    your club, including on the membership card.
+
+    ## 3. Delete your access and your member data
+
+    Ask your club to delete them. Whom to contact is stated in its privacy notice and legal
+    notice (in the app under Account › Privacy notice). The club deletes your access and your
+    data unless statutory retention obligations apply (for example to membership fee invoices and
+    cash book entries); such data is blocked until the period ends.
+
+    ## 4. Data held by the publisher
+
+    Philipsen EDV-Dienstleistungen only publishes the app and stores no data about you. Questions
+    about the app: [kontakt@philipsen-edv.de](mailto:kontakt@philipsen-edv.de).
+
+    More information: [Privacy notice, part B](../)
 
 fehlerseite:
   titel: Page not found

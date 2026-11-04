@@ -9,3 +9,6 @@
 - name: datenschutz
   pfad: datenschutz
   vorlage: rechtliches.html
+- name: app_loeschen
+  pfad: datenschutz/app-loeschen
+  vorlage: rechtliches.html

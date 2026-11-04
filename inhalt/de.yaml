@@ -257,25 +257,30 @@ impressum:
 
 datenschutz:
   titel: Datenschutz
-  beschreibung: Datenschutzhinweise der Produktwebseite von HUBIplan
+  beschreibung: Datenschutzhinweise der Produktwebseite und der Android-App von HUBIplan
   inhalt: |
-    ## 1. Verantwortlicher
+    Diese Hinweise gelten für die Produktwebseite von HUBIplan (Teil A) und für die Android-App
+    „HUBIplan“ (Teil B), die Philipsen EDV-Dienstleistungen herausgibt.
+
+    ## 1. Verantwortlicher und Herausgeber
 
     Ralf Philipsen, Philipsen EDV-Dienstleistungen, Norfer Straße 48, 41468 Neuss,
     Telefon 02131 319217, E-Mail [kontakt@philipsen-edv.de](mailto:kontakt@philipsen-edv.de).
 
-    ## 2. Allgemeines
+    ## Teil A: Produktwebseite
+
+    ### 2. Allgemeines
 
     Diese Webseite besteht nur aus festen Seiten. Sie setzt keine Cookies, nutzt keine Analyse-
     oder Tracking-Werkzeuge und bindet keine Inhalte fremder Anbieter ein. Schriften, Bilder und
     Stile kommen vom eigenen Server.
 
-    ## 3. Hosting
+    ### 3. Hosting
 
     Der Server steht bei der dogado GmbH in Dortmund, in einem Rechenzentrum in Deutschland. Der
     Hoster verarbeitet die Daten in unserem Auftrag (Art. 28 DSGVO).
 
-    ## 4. Server-Logdateien
+    ### 4. Server-Logdateien
 
     Beim Aufruf speichert der Webserver IP-Adresse, Zeitpunkt, aufgerufene Adresse, Statuscode,
     übertragene Datenmenge, die zuvor besuchte Seite (Referrer) sowie Browser und Betriebssystem.
@@ -284,35 +289,137 @@ datenschutz:
     spätestens nach fünf Wochen gelöscht. Auffällige IP-Adressen können automatisch für kurze
     Zeit gesperrt werden.
 
-    ## 5. Verschlüsselung
+    ### 5. Verschlüsselung
 
     Die Verbindung ist per TLS verschlüsselt, erkennbar an „https“ in der Adresszeile.
 
-    ## 6. Kontakt per E-Mail oder Telefon
+    ### 6. Kontakt per E-Mail oder Telefon
 
     Wenn Sie uns schreiben oder anrufen, verarbeiten wir Ihre Angaben (etwa Name, E-Mail-Adresse,
     Telefonnummer, Inhalt der Nachricht), um Ihre Anfrage zu bearbeiten (Art. 6 Abs. 1 lit. b bzw.
     f DSGVO). Wir löschen sie, sobald sie nicht mehr nötig sind und keine gesetzliche
     Aufbewahrungspflicht besteht.
 
-    ## 7. Links zu GitHub
+    ### 7. Links zu GitHub
 
     Die Seite verlinkt auf die Repositories von HUBIplan bei GitHub. Erst wenn Sie einem solchen
     Link folgen, rufen Sie Seiten der GitHub, Inc. (USA) auf; dort gelten deren
     Datenschutzhinweise.
 
-    ## 8. Ihre Rechte
+    ## Teil B: HUBIplan-App für Android
+
+    ### 8. Wofür die App da ist und wer für Ihre Daten verantwortlich ist
+
+    Die App ist für Mitglieder von Vereinen, die die Vereinsverwaltung HUBIplan nutzen. Sie
+    verbindet sich ausschließlich mit der HUBIplan-Instanz Ihres Vereins (der Adresse, die Sie
+    beim Verbinden angeben oder per QR-Code übernehmen). Dort verarbeitet die App dieselben Daten
+    wie der Mitgliederbereich im Browser: Termine und Rückmeldungen, Mitteilungen, Ihr eigenes
+    Profil und, wenn Sie Verwaltungsrechte haben, die Daten, die Sie dort bearbeiten.
+
+    **Verantwortlich für diese Daten ist Ihr Verein.** Er nennt Ihnen in seinen
+    Datenschutzhinweisen (in der App unter Konto › Datenschutzhinweise) seine Kontaktdaten,
+    Zwecke, Rechtsgrundlagen und Speicherfristen. Philipsen EDV-Dienstleistungen als Herausgeber
+    der App erhält diese Daten nicht.
+
+    ### 9. Daten, die auf Ihrem Telefon bleiben
+
+    - **Zugangsdaten:** Adresse der Instanz und ein Geräteschlüssel, verschlüsselt im Speicher der
+      App. Ihr Passwort speichert die App nicht.
+    - **Kalender:** Wenn Sie es einschalten, trägt die App Termine in einen eigenen Kalender auf
+      Ihrem Gerät ein. Ob dieser Kalender mit einem Dienst (etwa Google) abgeglichen wird,
+      bestimmen Sie in den Einstellungen Ihres Geräts.
+    - **Kamera:** nur zum Scannen des QR-Codes beim Verbinden und, wenn Sie es möchten, für ein
+      Mitgliederfoto oder ein Belegfoto. Fotos werden erst nach Ihrer Bestätigung an Ihren Verein
+      gesendet; Ortsangaben und andere Metadaten entfernt die App vorher.
+    - **Entwürfe:** Was Sie ohne Netz eingeben, bleibt verschlüsselt auf dem Telefon, bis es
+      gesendet ist.
+
+    ### 10. Push-Mitteilungen
+
+    Push ist freiwillig und lässt sich in der App jederzeit ausschalten. Die App nutzt dafür
+    ausschließlich **UnifiedPush**: Wenn Sie eine Verteiler-App wie ntfy installiert haben,
+    sendet die Instanz Ihres Vereins Mitteilungen Ende-zu-Ende-verschlüsselt (Web-Push nach
+    RFC 8291) über den Server dieses Verteilers. Nur Ihr Telefon kann sie entschlüsseln; der
+    Verteiler erfährt nur Zeitpunkt und Größe. Ohne Verteiler-App fragt die App selbst etwa alle
+    15 Minuten bei Ihrem Verein nach.
+
+    Die App enthält keinen Google-Push (Firebase) und keine anderen Google-Bibliotheken. Als
+    Herausgeber der App betreibt Philipsen EDV-Dienstleistungen keinen Server, über den Ihre
+    Daten oder Mitteilungen laufen.
+
+    ### 11. Was die App nicht tut
+
+    Die App enthält keine Werbung, keine Werbe-ID, keine Analyse- oder Tracking-Dienste und keine
+    Absturzberichte an Dritte. Sie spricht mit keinem anderen Server als der Instanz Ihres Vereins
+    und, bei Push, dem von Ihnen gewählten Verteiler.
+
+    ### 12. Konto und Daten löschen
+
+    Wie Sie Ihr Konto in der App und Ihre Daten beim Verein löschen, steht auf der Seite
+    [HUBIplan-App: Konto und Daten löschen](app-loeschen/).
+
+    ### 13. Quellcode
+
+    Die App ist freie Software unter der GNU AGPL 3.0 oder neuer. Der Quellcode steht unter
+    [github.com/hubiplan/hubiplan-android](https://github.com/hubiplan/hubiplan-android).
+
+    ## Für Webseite und App
+
+    ### 14. Ihre Rechte
 
     Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und
     Datenübertragbarkeit. Einer Verarbeitung auf Grundlage berechtigter Interessen können Sie aus
-    Gründen Ihrer besonderen Situation widersprechen. Eine formlose Nachricht an die oben
-    genannten Kontaktdaten genügt.
+    Gründen Ihrer besonderen Situation widersprechen. Eine Einwilligung können Sie jederzeit
+    widerrufen. Für die Webseite genügt eine formlose Nachricht an die oben genannten
+    Kontaktdaten. Daten, die Sie in der App nutzen, liegen bei Ihrem Verein; dafür wenden Sie sich
+    an Ihren Verein.
 
-    ## 9. Beschwerderecht
+    ### 15. Beschwerderecht
 
-    Sie können sich bei einer Datenschutz-Aufsichtsbehörde beschweren. Zuständig ist die
+    Sie können sich bei einer Datenschutz-Aufsichtsbehörde beschweren. Zuständig für uns ist die
     Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW),
     Düsseldorf.
+
+app_loeschen:
+  titel: "HUBIplan-App: Konto und Daten löschen"
+  beschreibung: So löschen Sie Ihr Konto in der HUBIplan-App und Ihre Daten beim Verein
+  inhalt: |
+    Die HUBIplan-App ist ein Zugang zur HUBIplan-Instanz Ihres Vereins. Ihr Zugang und Ihre
+    Mitgliedsdaten liegen bei Ihrem Verein, nicht beim Herausgeber der App. Je nachdem, was Sie
+    löschen möchten:
+
+    ## 1. Das Konto aus der App entfernen
+
+    In der App unter **Konto › „Dieses Konto vom Gerät abmelden“**. Dabei werden sofort gelöscht:
+
+    - der Geräteschlüssel dieses Telefons, auch auf dem Server Ihres Vereins,
+    - alle Daten dieses Kontos in der App, auch die eingetragenen Kalendertermine und die
+      Anmeldung für Push.
+
+    Ohne Telefon können Sie das Gerät im Browser unter **Mein Konto › App auf dem Telefon**
+    abmelden. Geräte, die 180 Tage nicht genutzt wurden, meldet der Server von selbst ab. Wenn Sie
+    die App deinstallieren, löscht Android alle Daten der App auf dem Telefon.
+
+    ## 2. Ihr Mitgliederfoto löschen
+
+    In der App unter **Profil › „Einwilligung widerrufen und Foto löschen“**. Das Foto wird bei
+    Ihrem Verein gelöscht, auch im Mitgliedsausweis.
+
+    ## 3. Ihren Zugang und Ihre Mitgliedsdaten löschen
+
+    Die Löschung beantragen Sie bei Ihrem Verein. Wen Sie ansprechen, steht in seinen
+    Datenschutzhinweisen und im Impressum (in der App unter Konto › Datenschutzhinweise). Der
+    Verein löscht Ihren Zugang und Ihre Daten, soweit keine gesetzlichen Aufbewahrungspflichten
+    entgegenstehen (etwa für Beitragsrechnungen und Kassenbuchungen); diese Daten werden bis zum
+    Ablauf der Frist gesperrt.
+
+    ## 4. Daten beim Herausgeber
+
+    Philipsen EDV-Dienstleistungen gibt die App nur heraus und speichert zu Ihnen keine Daten.
+    Fragen zur App beantworten wir unter
+    [kontakt@philipsen-edv.de](mailto:kontakt@philipsen-edv.de).
+
+    Weitere Informationen: [Datenschutzhinweise, Teil B](../)
 
 fehlerseite:
   titel: Seite nicht gefunden
