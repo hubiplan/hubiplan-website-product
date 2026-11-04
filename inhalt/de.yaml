@@ -215,6 +215,7 @@ bildansicht:
 bild_folgt: Bildschirmfoto folgt
 
 fuss:
+  nutzungsbedingungen: Nutzungsbedingungen der App
   widmung: >-
     HUBIplan ist dem Hubertus-Schützenverein Neuss-Grimlinghausen von 1920 gewidmet. Seine
     Abläufe waren der Anstoß und lieferten die Anwendungsfälle.
@@ -425,3 +426,94 @@ fehlerseite:
   titel: Seite nicht gefunden
   text: Diese Seite gibt es nicht (mehr).
   zurueck: Zur Startseite
+
+nutzungsbedingungen:
+  titel: Nutzungsbedingungen der HUBIplan-App
+  beschreibung: Anbieter, Nutzung, freie Lizenz und Zuständigkeiten bei der HUBIplan-App für Android
+  inhalt: |
+    **Stand: 4. November 2026**
+
+    Diese Nutzungsbedingungen beschreiben das Angebot der Android-App „HUBIplan“ durch
+    Philipsen EDV-Dienstleistungen und die Aufgaben des Betreibers Ihrer Vereinsinstanz.
+    Die Rechte aus der freien Softwarelizenz bleiben unberührt.
+
+    ## 1. Anbieter und Kontakt
+
+    Herausgeber der App ist Ralf Philipsen, Philipsen EDV-Dienstleistungen,
+    Norfer Straße 48, 41468 Neuss, Deutschland.
+    E-Mail: [kontakt@philipsen-edv.de](mailto:kontakt@philipsen-edv.de),
+    Telefon: 02131 319217. Weitere Angaben stehen im [Impressum](../impressum/).
+
+    ## 2. Angebot und Voraussetzungen
+
+    Die App wird kostenlos bereitgestellt. Sie verbindet Ihr Android-Gerät mit einer
+    HUBIplan-Instanz, die Ihr Verein oder ein von ihm beauftragter Betreiber betreibt.
+    Für den Zugriff auf Vereinsdaten benötigen Sie einen dort eingerichteten Zugang.
+    Welche Funktionen Sie nutzen können, hängt von Ihren Berechtigungen, den freigeschalteten
+    Modulen und der eingesetzten Serverversion ab.
+
+    Dazu gehören beispielsweise Termine und Rückmeldungen, Mitteilungen, Ihr Profil sowie
+    bei entsprechender Berechtigung die Mitglieder-, Aufgaben- und Kassenverwaltung.
+    Für den Datenaustausch ist eine Internetverbindung erforderlich. Kosten Ihres Internet-
+    oder Mobilfunkanbieters sowie gesonderte Vereinbarungen mit Ihrem Verein bleiben davon unberührt.
+
+    ## 3. Freie Software und Nutzungsrechte
+
+    Die App steht unter der **GNU Affero General Public License, Version 3 oder später
+    (AGPL-3.0-or-later)**. Die Lizenz regelt Ihre Rechte, die Software zu verwenden,
+    zu untersuchen, zu verändern und weiterzugeben, sowie die dabei geltenden Bedingungen.
+    Sie finden den [Lizenztext](https://github.com/hubiplan/hubiplan-android/blob/main/LICENSE)
+    und den [Quellcode](https://github.com/hubiplan/hubiplan-android) öffentlich bei GitHub.
+    Hinweise zu enthaltenen Komponenten stehen auch unter „Lizenzen“ in der App.
+
+    Diese Seite schränkt die Rechte aus der freien Lizenz nicht ein und fügt ihr keine
+    zusätzlichen Nutzungsbeschränkungen hinzu. Bei Widersprüchen zu dieser Seite gelten für
+    die Nutzungsrechte an der Software die jeweiligen Lizenzbedingungen.
+
+    ## 4. Vereinsinstanz, Zugang und Inhalte
+
+    Der Betreiber Ihrer HUBIplan-Instanz verwaltet die Vereinsdaten, Zugänge und Berechtigungen
+    und organisiert den Serverbetrieb einschließlich Datensicherung. Die Bereitstellung der
+    App umfasst keinen Hostingvertrag für Ihre Vereinsinstanz.
+
+    Fragen zu Mitgliedschaft, Beiträgen, Rechnungen, Datenkorrekturen oder Zugangsrechten
+    richten Sie an Ihren Verein. Der Herausgeber der App kann diese Daten und Rechte nicht
+    für Ihren Verein verwalten.
+
+    Verwenden Sie nur Zugänge und Berechtigungen, die Ihnen der Betreiber eingeräumt hat.
+    Beachten Sie beim Erfassen oder Weitergeben von Daten die Rechte der betroffenen Personen.
+    Schützen Sie Ihr Gerät und Ihre Zugangsdaten; melden Sie einen verlorenen oder unberechtigt
+    genutzten Zugang Ihrem Verein, damit dieser ihn sperren kann.
+
+    ## 5. Betrieb, Aktualisierungen und Unterstützung
+
+    Die Erreichbarkeit der Vereinsfunktionen hängt auch von Ihrem Gerät, Ihrer Internetverbindung
+    und der Vereinsinstanz ab. Installieren Sie verfügbare Sicherheitsaktualisierungen und
+    stimmen Sie Probleme mit der Serverkompatibilität mit Ihrem Betreiber ab.
+
+    Hinweise auf Fehler und Verbesserungsvorschläge können Sie über
+    [GitHub](https://github.com/hubiplan/hubiplan-android/issues) melden.
+    Veröffentlichen Sie dort keine Zugangsdaten oder personenbezogenen Vereinsdaten.
+    Für vertrauliche Anliegen nutzen Sie die oben genannte Kontaktadresse; für Sicherheitslücken
+    beachten Sie die [Sicherheitshinweise](https://github.com/hubiplan/hubiplan-android/blob/main/SECURITY.md).
+    Feste Support-Reaktionszeiten oder eine bestimmte Serververfügbarkeit werden durch diese
+    Seite nicht vereinbart. Gesonderte Vereinbarungen und gesetzliche Ansprüche bleiben unberührt.
+
+    ## 6. Datenschutz und Beendigung der Nutzung
+
+    Informationen zur Datenverarbeitung finden Sie in den [Datenschutzhinweisen](../datenschutz/)
+    und in den Datenschutzhinweisen Ihres Vereins, die Sie in der App unter „Konto“ erreichen.
+
+    Sie können die Nutzung der App beenden und Ihr Konto vom Gerät abmelden.
+    Das beendet nicht automatisch Ihre Vereinsmitgliedschaft und löscht nicht automatisch
+    Ihren Zugang oder Ihre Daten auf dem Vereinsserver. Die einzelnen Schritte erläutert
+    [Konto und Daten löschen](../datenschutz/app-loeschen/).
+
+    ## 7. Gesetzliche Rechte und Fassungen
+
+    Zwingende gesetzliche Rechte, insbesondere anwendbare Verbraucherrechte, bleiben unberührt.
+    Diese Seite enthält keinen zusätzlichen pauschalen Ausschluss von Haftung oder Gewährleistung.
+
+    Das Datum oben kennzeichnet diese Fassung. Die Veröffentlichung einer neuen Fassung auf
+    dieser Webseite ändert bestehende Vereinbarungen nicht automatisch und schränkt bereits
+    eingeräumte Rechte aus der freien Softwarelizenz nicht ein.
