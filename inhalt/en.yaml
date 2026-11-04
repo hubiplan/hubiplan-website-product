@@ -214,6 +214,7 @@ bildansicht:
 bild_folgt: Screenshot coming soon
 
 fuss:
+  nutzungsbedingungen: App terms of use
   widmung: >-
     HUBIplan is dedicated to the Hubertus-Schützenverein Neuss-Grimlinghausen von 1920, whose
     way of running the club gave the impetus and the use cases.
@@ -422,3 +423,91 @@ fehlerseite:
   titel: Page not found
   text: This page does not exist (any more).
   zurueck: To the home page
+
+nutzungsbedingungen:
+  titel: Terms of use for the HUBIplan app
+  beschreibung: Publisher, use, free software licence and responsibilities for the HUBIplan Android app
+  inhalt: |
+    **Last updated: 4 November 2026**
+
+    These terms describe the Android app “HUBIplan” provided by Philipsen EDV-Dienstleistungen
+    and the responsibilities of the operator of your club's instance.
+    Your rights under the free software licence remain unaffected.
+
+    ## 1. Publisher and contact
+
+    The app is published by Ralf Philipsen, Philipsen EDV-Dienstleistungen,
+    Norfer Straße 48, 41468 Neuss, Germany.
+    Email: [kontakt@philipsen-edv.de](mailto:kontakt@philipsen-edv.de),
+    telephone: +49 2131 319217. Further details are in the [legal notice](../impressum/).
+
+    ## 2. Service and requirements
+
+    The app is provided free of charge. It connects your Android device to a HUBIplan instance
+    operated by your club or a provider acting on its behalf.
+    Access to club data requires an account set up on that instance.
+    The functions available to you depend on your permissions, the enabled modules and the
+    server version in use.
+
+    Examples include events and responses, messages, your profile and, with the appropriate
+    permissions, membership, task and cash book management.
+    An internet connection is required to exchange data. Charges from your internet or mobile
+    provider and separate agreements with your club are unaffected.
+
+    ## 3. Free software and licence rights
+
+    The app is licensed under the **GNU Affero General Public License, version 3 or later
+    (AGPL-3.0-or-later)**. The licence governs your rights to use, study, modify and redistribute
+    the software and the conditions that apply when doing so.
+    The [licence text](https://github.com/hubiplan/hubiplan-android/blob/main/LICENSE)
+    and [source code](https://github.com/hubiplan/hubiplan-android) are publicly available on GitHub.
+    Notices for included components are also available under “Licences” in the app.
+
+    This page does not limit your rights under the free software licence or impose additional
+    restrictions on its use. If this page conflicts with the applicable licence terms, those
+    licence terms govern your rights to the software.
+
+    ## 4. Club instance, access and content
+
+    The operator of your HUBIplan instance manages club data, accounts and permissions and
+    arranges server operation, including backups. Providing the app does not include a hosting
+    agreement for your club's instance.
+
+    Please contact your club about membership, fees, invoices, data corrections or access rights.
+    The app publisher cannot manage that data or those permissions for your club.
+
+    Use only accounts and permissions granted to you by the operator. Respect the rights of
+    the people concerned when entering or sharing data. Protect your device and credentials;
+    report lost or misused access to your club so that it can revoke it.
+
+    ## 5. Operation, updates and support
+
+    Access to club functions also depends on your device, internet connection and club instance.
+    Install available security updates and discuss server compatibility issues with your operator.
+
+    You can report bugs and suggest improvements on
+    [GitHub](https://github.com/hubiplan/hubiplan-android/issues).
+    Do not publish credentials or personal club data there.
+    For confidential matters, use the contact address above; for security vulnerabilities,
+    follow the [security policy](https://github.com/hubiplan/hubiplan-android/blob/main/SECURITY.md).
+    This page does not establish fixed support response times or a particular level of server
+    availability. Separate agreements and statutory rights remain unaffected.
+
+    ## 6. Privacy and ending use
+
+    Details of data processing are provided in the [privacy notice](../datenschutz/)
+    and your club's privacy notice, available under “Account” in the app.
+
+    You can stop using the app and sign your account out of the device.
+    This does not automatically end your club membership or delete your account or data on the
+    club's server. The individual steps are explained under
+    [Delete account and data](../datenschutz/app-loeschen/).
+
+    ## 7. Statutory rights and versions
+
+    Mandatory statutory rights, including applicable consumer rights, remain unaffected.
+    This page does not add a blanket exclusion of liability or warranty.
+
+    The date above identifies this version. Publishing a new version on this website does not
+    automatically change existing agreements or restrict rights already granted under the
+    free software licence.

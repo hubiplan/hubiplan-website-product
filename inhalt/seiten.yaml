@@ -12,3 +12,6 @@
 - name: app_loeschen
   pfad: datenschutz/app-loeschen
   vorlage: rechtliches.html
+- name: nutzungsbedingungen
+  pfad: nutzungsbedingungen
+  vorlage: rechtliches.html
