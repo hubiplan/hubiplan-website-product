@@ -86,24 +86,12 @@ start:
           Mitgliedsarten, Aufnahme mit Dublettenprüfung, Ehrungen und Jubiläen, Ämter und Würden mit
           Chronik, Mitgliedsausweis mit QR-Code (auch für Google und Apple Wallet), Import und
           Export als Excel.
-      - titel: Termine
-        text: >-
-          Kalender für Verband, Verein und Abteilungen, Zu- und Absagen mit Anmeldeschluss,
-          Erinnerungen per E-Mail, Jahresprogramm als PDF und Kalender-Abo.
-      - titel: Kommunikation
-        text: >-
-          Rundschreiben als E-Mail, Serienbrief oder Push in die App, Mailverteiler, Briefvorlage
-          und Dokumentenablage mit Ordnern, Kacheln und Rechten.
       - titel: Beiträge und Finanzen
         text: >-
           Beitragslauf, Rechnungen mit QR-Code, Mahnstufen, SEPA-Lastschrift, Kasse nach GoBD,
           Kontoauszüge einlesen, digitale Quittungen und Zuwendungsbestätigungen. Dazu
           Geschäftspartner und E-Rechnungen: XRechnung und ZUGFeRD ausstellen und empfangen, mit
           Prüfung, Anzahlungen und Schlussrechnung.
-      - titel: Aufgaben
-        text: >-
-          Eigene Aufgaben mit Frist und Erinnerung per E-Mail oder Push, geteilt mit Personen oder
-          Ämtern, verknüpft mit Terminen, wiederkehrend als Serie, auch in der App.
       - titel: Wettbewerbe
         text: >-
           Schießen und andere Wettbewerbe mit Einzel- und Mannschaftswertung, Erfassen auch ohne
@@ -115,6 +103,23 @@ start:
           Auftritte mit Sollbesetzung, Zu- und Absagen, Ersatz bei Abwesenheit, Gastmusiker per
           Link, Notenbestand, Proben, Instrumente und Uniformen, Angebot und Auftragsbestätigung,
           Veranstalterrechnung, Gagen mit Auszahlung per SEPA.
+      - titel: Termine
+        text: >-
+          Kalender für Verband, Verein und Abteilungen, Zu- und Absagen mit Anmeldeschluss,
+          Erinnerungen per E-Mail, Jahresprogramm als PDF und Kalender-Abo.
+      - titel: Kommunikation
+        text: >-
+          Rundschreiben als E-Mail, Serienbrief oder Push in die App, Mailverteiler, Briefvorlage
+          und Dokumentenablage mit Ordnern, Kacheln und Rechten.
+      - titel: Aufgaben
+        text: >-
+          Eigene Aufgaben mit Frist und Erinnerung per E-Mail oder Push, geteilt mit Personen oder
+          Ämtern, verknüpft mit Terminen, wiederkehrend als Serie, auch in der App.
+      - titel: Webseite und App
+        text: >-
+          Vereinswebseite unter der eigenen Domain und Android-App für die Mitglieder, beide aus
+          denselben Daten. Was der Vorstand in HUBIplan pflegt, steht sofort auf der Webseite und
+          in der App.
       - titel: Material
         text: >-
           Inventar wie Fahnen, Zelte oder Instrumente mit Standort, Zustand und Fotos, verknüpft
@@ -131,11 +136,6 @@ start:
         text: >-
           Hilfe mit Bildschirmfotos und Suche, Erklärungen direkt auf der Seite, Glossar,
           Oberfläche auf Deutsch oder Englisch.
-      - titel: Webseite und App
-        text: >-
-          Vereinswebseite unter der eigenen Domain und Android-App für die Mitglieder, beide aus
-          denselben Daten. Was der Vorstand in HUBIplan pflegt, steht sofort auf der Webseite und
-          in der App.
   ebenen:
     ueberschrift: Für einzelne Vereine und ganze Verbände
     text: >-
