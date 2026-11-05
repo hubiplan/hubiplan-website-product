@@ -127,6 +127,11 @@ start:
         text: >-
           Help with screenshots and search, explanations right on the page, glossary, interface in
           German or English.
+      - titel: Website and app
+        text: >-
+          A club website on the club's own domain and an Android app for members, both from the
+          same data. Whatever the board maintains in HUBIplan appears right away on the website
+          and in the app.
   ebenen:
     ueberschrift: For single clubs and whole associations
     text: >-
@@ -155,8 +160,8 @@ start:
       - titel: Club website
         text: >-
           A public website on the club's own domain, fed from HUBIplan: events, board,
-          departments, history, results of the latest shooting. No second content management
-          system.
+          departments, history, photo gallery with albums, results of the latest shooting, and for
+          bands also member lists, repertoire and search. No second content management system.
         repo: website
         bild: Home page of a made-up demo club's website
       - titel: Android app
