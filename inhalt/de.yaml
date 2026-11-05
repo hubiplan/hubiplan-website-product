@@ -17,7 +17,8 @@ start:
   titel: HUBIplan – freie Vereinsverwaltung
   beschreibung: >-
     HUBIplan ist eine freie, webbasierte Vereinsverwaltung für Vereine jeder Art, von 10 bis 10.000
-    Mitgliedern: Mitglieder, Beiträge und SEPA, Kasse, Termine, Rundschreiben, Vereinswebseite und App.
+    Mitgliedern: Mitglieder, Beiträge und SEPA, Kasse und E-Rechnungen, Termine, Aufgaben, Musik und
+    Auftritte, Material, Rundschreiben, Vereinswebseite und App.
   kopf:
     zeile: Freie Vereinsverwaltung
     ueberschrift: Ihr Verein an einem Ort, im Browser, am Handy und auf der eigenen Webseite.
@@ -41,23 +42,28 @@ start:
       - name: szene-termine
         titel: Termine für Verein, Korps und Züge
         bild: Monatskalender mit Schützenfest und Zugabenden eines erfundenen Demovereins
-      - name: szene-korps
-        titel: Korps und Züge frei verschachtelt
-        bild: Korps mit ihren Zügen, Gründungsjahren und Mitgliederzahlen in einem erfundenen Demoverein
-      - name: szene-wettbewerbe
+      - name: szene-musik
+        titel: Auftritte besetzen
+        bild: >-
+          Besetzung eines Auftritts des Tambourkorps mit Sollzahlen je Stimme, Zusagen und Absagen in
+          einem erfundenen Demoverein
+      - name: szene-aufgaben
+        titel: Aufgaben teilen und erledigen
+        bild: Aufgabenliste des Vorstands mit Fristen, Terminen und Zuständigen in einem erfundenen Demoverein
+      - name: szene-material
+        titel: Material im Blick
+        bild: Materialliste mit Fahne, Festzelt und Instrumenten, Standort und Zustand in einem erfundenen Demoverein
+      - name: szene-statistik
         titel: Wettbewerbe auswerten
-        bild: Auswertung eines Korpspokalschießens in einem erfundenen Demoverein
-      - name: szene-rundschreiben
-        titel: Rundschreiben verfassen
-        bild: Rundschreiben „Antreten zum Schützenfest“ im Editor eines erfundenen Demovereins
+        bild: Statistik der Korpspokalschießen mit Durchschnittswerten in einem erfundenen Demoverein
       - name: szene-mein-bereich
         titel: Mein Bereich für jedes Mitglied
         bild: Persönlicher Bereich eines Demo-Mitglieds mit Ausweis, Terminen, Ergebnissen und Rechnungen
   versprechen:
     - titel: Alles an einem Ort
       text: >-
-        Mitglieder, Beiträge, Kasse, Termine, Rundschreiben, Dokumente, Vereinswebseite und App
-        greifen ineinander. Nichts wird doppelt gepflegt.
+        Mitglieder, Beiträge, Kasse, Termine, Aufgaben, Auftritte, Material, Rundschreiben,
+        Dokumente, Vereinswebseite und App greifen ineinander. Nichts wird doppelt gepflegt.
     - titel: Frei und selbst betrieben
       text: >-
         Quelloffen unter der AGPL. Ihre Daten liegen auf Ihrem Server, ohne Lizenzgebühren und
@@ -70,12 +76,13 @@ start:
     ueberschrift: Was HUBIplan kann
     einleitung: >-
       Jeder Bereich lässt sich einzeln ein- und ausschalten. So passt HUBIplan zum Sportverein
-      genauso wie zum Schützenverein mit vielen Zügen oder zum Dachverband.
+      genauso wie zum Musikverein, zum Schützenverein mit vielen Zügen oder zum Dachverband.
     liste:
       - titel: Mitglieder
         text: >-
           Mitgliedsarten, Aufnahme mit Dublettenprüfung, Ehrungen und Jubiläen, Ämter und Würden mit
-          Chronik, Mitgliedsausweis mit QR-Code, Import und Export als Excel.
+          Chronik, Mitgliedsausweis mit QR-Code (auch für Google und Apple Wallet), Import und
+          Export als Excel.
       - titel: Zugänge und Rechte
         text: >-
           Anmeldung mit Zwei-Faktor-Schutz, Rollen mit frei wählbaren Rechten je Einheit, „Ansicht
@@ -83,19 +90,35 @@ start:
       - titel: Beiträge und Finanzen
         text: >-
           Beitragslauf, Rechnungen mit QR-Code, Mahnstufen, SEPA-Lastschrift, Kasse nach GoBD,
-          Kontoauszüge einlesen, digitale Quittungen und Zuwendungsbestätigungen.
+          Kontoauszüge einlesen, digitale Quittungen und Zuwendungsbestätigungen. Dazu
+          Geschäftspartner und E-Rechnungen: XRechnung und ZUGFeRD ausstellen und empfangen, mit
+          Prüfung, Anzahlungen und Schlussrechnung.
       - titel: Termine
         text: >-
           Kalender für Verband, Verein und Abteilungen, Zu- und Absagen mit Anmeldeschluss,
           Erinnerungen per E-Mail, Jahresprogramm als PDF und Kalender-Abo.
+      - titel: Aufgaben
+        text: >-
+          Eigene Aufgaben mit Frist und Erinnerung per E-Mail oder Push, geteilt mit Personen oder
+          Ämtern, verknüpft mit Terminen, wiederkehrend als Serie, auch in der App.
       - titel: Wettbewerbe
         text: >-
           Schießen und andere Wettbewerbe mit Einzel- und Mannschaftswertung, Erfassen auch ohne
-          Netz, Live-Tabellen, Urkunden und Meldungen an fremde Veranstalter.
+          Netz, Live-Tabellen, Urkunden, Statistik mit Durchschnitten und persönlichen Verläufen,
+          Meldungen an fremde Veranstalter.
+      - titel: Musik und Auftritte
+        text: >-
+          Für Musikvereine, Spielmannszüge und Tambourkorps: Musiker mit Instrumenten und Stimmen,
+          Auftritte mit Sollbesetzung, Zu- und Absagen, Ersatz bei Abwesenheit, Gastmusiker per
+          Link, Notenbestand, Proben, Instrumente und Uniformen, Gagen und Veranstalterrechnung.
+      - titel: Material
+        text: >-
+          Inventar wie Fahnen, Zelte oder Instrumente mit Standort, Zustand und Fotos, verknüpft
+          mit Terminen, Aufgaben und Dokumenten.
       - titel: Kommunikation
         text: >-
           Rundschreiben als E-Mail, Serienbrief oder Push in die App, Mailverteiler, Briefvorlage
-          und Dokumentenablage mit Rechten.
+          und Dokumentenablage mit Ordnern, Kacheln und Rechten.
       - titel: Datenschutz
         text: >-
           Verschlüsselte Felder und Dateien, Änderungsprotokoll, Einwilligungen für Fotos und
@@ -109,7 +132,8 @@ start:
     text: >-
       Eine Installation trägt viele Vereine. Jeder Verein verwaltet seine Mitglieder selbst,
       Abteilungen, Züge oder Gruppen lassen sich beliebig verschachteln und heißen so, wie der
-      Verein es will. Ein Dachverband sieht nur, was seine Vereine freigeben.
+      Verein es will. Ein Dachverband sieht nur, was seine Vereine freigeben. Laufen Verband und
+      Verein auf getrennten Installationen, lassen sie sich verschlüsselt koppeln.
     stufen:
       - titel: Plattform
         text: die Installation; schaltet Module frei
@@ -131,13 +155,14 @@ start:
       - titel: Vereinswebseite
         text: >-
           Eine öffentliche Webseite unter der Domain des Vereins, gespeist aus HUBIplan: Termine,
-          Vorstand, Abteilungen, Chronik. Ohne zweites Redaktionssystem.
+          Vorstand, Abteilungen, Chronik, Ergebnisse des letzten Schießens. Ohne zweites
+          Redaktionssystem.
         repo: website
         bild: Startseite der Webseite eines erfundenen Demovereins
       - titel: Android-App
         text: >-
-          Termine, Mitteilungen, Mitgliedsausweis und Vereinsverwaltung unterwegs. Variante ohne
-          Google-Dienste für F-Droid.
+          Termine, Mitteilungen, Aufgaben, Mitgliedsausweis und Vereinsverwaltung unterwegs.
+          Variante ohne Google-Dienste für F-Droid.
         repo: android
         bild: Terminliste in der Android-App
     zum_repo: Zum Repository
@@ -192,7 +217,8 @@ start:
         antwort: >-
           Ja. Die Bilder zeigen einen Schützenverein, weil HUBIplan dort entstanden ist. Abteilungen
           heißen so, wie der Verein es will, und Bereiche wie Wettbewerbe oder Würden lassen sich
-          abschalten.
+          abschalten. Für Musikvereine und Spielmannszüge gibt es den Bereich Musik mit Auftritten,
+          Besetzung, Noten und Proben.
       - frage: Gibt es eine App für Android und iPhone?
         antwort: >-
           Für Android gibt es eine App, auch in einer Fassung ohne Google-Dienste. Eine eigene
