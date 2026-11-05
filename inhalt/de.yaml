@@ -83,20 +83,20 @@ start:
           Mitgliedsarten, Aufnahme mit Dublettenprüfung, Ehrungen und Jubiläen, Ämter und Würden mit
           Chronik, Mitgliedsausweis mit QR-Code (auch für Google und Apple Wallet), Import und
           Export als Excel.
-      - titel: Zugänge und Rechte
+      - titel: Termine
         text: >-
-          Anmeldung mit Zwei-Faktor-Schutz, Rollen mit frei wählbaren Rechten je Einheit, „Ansicht
-          als Rolle“ und Anmeldung an der Vereins-Nextcloud.
+          Kalender für Verband, Verein und Abteilungen, Zu- und Absagen mit Anmeldeschluss,
+          Erinnerungen per E-Mail, Jahresprogramm als PDF und Kalender-Abo.
+      - titel: Kommunikation
+        text: >-
+          Rundschreiben als E-Mail, Serienbrief oder Push in die App, Mailverteiler, Briefvorlage
+          und Dokumentenablage mit Ordnern, Kacheln und Rechten.
       - titel: Beiträge und Finanzen
         text: >-
           Beitragslauf, Rechnungen mit QR-Code, Mahnstufen, SEPA-Lastschrift, Kasse nach GoBD,
           Kontoauszüge einlesen, digitale Quittungen und Zuwendungsbestätigungen. Dazu
           Geschäftspartner und E-Rechnungen: XRechnung und ZUGFeRD ausstellen und empfangen, mit
           Prüfung, Anzahlungen und Schlussrechnung.
-      - titel: Termine
-        text: >-
-          Kalender für Verband, Verein und Abteilungen, Zu- und Absagen mit Anmeldeschluss,
-          Erinnerungen per E-Mail, Jahresprogramm als PDF und Kalender-Abo.
       - titel: Aufgaben
         text: >-
           Eigene Aufgaben mit Frist und Erinnerung per E-Mail oder Push, geteilt mit Personen oder
@@ -116,10 +116,10 @@ start:
         text: >-
           Inventar wie Fahnen, Zelte oder Instrumente mit Standort, Zustand und Fotos, verknüpft
           mit Terminen, Aufgaben und Dokumenten.
-      - titel: Kommunikation
+      - titel: Zugänge und Rechte
         text: >-
-          Rundschreiben als E-Mail, Serienbrief oder Push in die App, Mailverteiler, Briefvorlage
-          und Dokumentenablage mit Ordnern, Kacheln und Rechten.
+          Anmeldung mit Zwei-Faktor-Schutz, Rollen mit frei wählbaren Rechten je Einheit, „Ansicht
+          als Rolle“ und Anmeldung an der Vereins-Nextcloud.
       - titel: Datenschutz
         text: >-
           Verschlüsselte Felder und Dateien, Änderungsprotokoll, Einwilligungen für Fotos und
