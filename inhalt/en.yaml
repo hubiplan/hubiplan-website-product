@@ -82,20 +82,20 @@ start:
           Membership types, admission with duplicate check, honours and anniversaries, offices and
           titles with history, membership card with QR code (also for Google and Apple Wallet),
           Excel import and export.
-      - titel: Access and permissions
+      - titel: Events
         text: >-
-          Sign-in with two-factor authentication, roles with freely chosen permissions per unit,
-          “view as role” and sign-in to the club's Nextcloud.
+          Calendars for association, club and departments, RSVPs with deadlines, email reminders,
+          annual programme as PDF and calendar subscription.
+      - titel: Communication
+        text: >-
+          Newsletters by email, mail merge or app push, mailing lists, letter template and a
+          document library with folders, tiles and permissions.
       - titel: Fees and finance
         text: >-
           Fee runs, invoices with QR code, reminders, SEPA direct debit, GoBD-compliant cash book,
           bank statement import, digital receipts and donation receipts. Plus business partners
           and e-invoices: issue and receive XRechnung and ZUGFeRD, with validation, advance
           payments and final invoices.
-      - titel: Events
-        text: >-
-          Calendars for association, club and departments, RSVPs with deadlines, email reminders,
-          annual programme as PDF and calendar subscription.
       - titel: Tasks
         text: >-
           Your own tasks with due dates and reminders by email or push, shared with people or
@@ -115,10 +115,10 @@ start:
         text: >-
           Inventory such as flags, tents or instruments with location, condition and photos,
           linked to events, tasks and documents.
-      - titel: Communication
+      - titel: Access and permissions
         text: >-
-          Newsletters by email, mail merge or app push, mailing lists, letter template and a
-          document library with folders, tiles and permissions.
+          Sign-in with two-factor authentication, roles with freely chosen permissions per unit,
+          “view as role” and sign-in to the club's Nextcloud.
       - titel: Privacy
         text: >-
           Encrypted fields and files, change log, consent for photos and publication, retention
