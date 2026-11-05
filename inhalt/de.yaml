@@ -42,6 +42,9 @@ start:
       - name: szene-termine
         titel: Termine für Verein, Korps und Züge
         bild: Monatskalender mit Schützenfest und Zugabenden eines erfundenen Demovereins
+      - name: szene-kapelle
+        titel: Die eigene Webseite, auch für Musikvereine
+        bild: Startseite der Vereinswebseite einer erfundenen Demo-Musikkapelle mit Kopfbild und Menü
       - name: szene-musik
         titel: Auftritte besetzen
         bild: >-

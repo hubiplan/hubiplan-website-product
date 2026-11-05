@@ -41,6 +41,9 @@ start:
       - name: szene-termine
         titel: Events for the club, corps and platoons
         bild: Monthly calendar with the shooting festival and platoon evenings of a made-up demo club
+      - name: szene-kapelle
+        titel: Your own website, for bands too
+        bild: Home page of the club website of a made-up demo band with header image and menu
       - name: szene-musik
         titel: Staffing performances
         bild: >-
