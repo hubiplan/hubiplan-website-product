@@ -160,8 +160,9 @@ start:
       - titel: Club website
         text: >-
           A public website on the club's own domain, fed from HUBIplan: events, board,
-          departments, history, photo gallery with albums, results of the latest shooting, and for
-          bands also member lists, repertoire and search. No second content management system.
+          departments, member lists, history, photo gallery with albums, results of the latest
+          shooting, repertoire from the sheet music library and search. No second content
+          management system.
         repo: website
         bild: Home page of a made-up demo club's website
       - titel: Android app
