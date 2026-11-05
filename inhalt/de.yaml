@@ -167,7 +167,8 @@ start:
         bild: Startseite der Webseite eines erfundenen Demovereins
       - titel: Android-App
         text: >-
-          Termine, Mitteilungen, Aufgaben, Mitgliedsausweis und Vereinsverwaltung unterwegs.
+          Termine, Mitteilungen, Aufgaben, Mitgliedsausweis (auch in Google Wallet) und
+          Vereinsverwaltung unterwegs.
           Variante ohne Google-Dienste für F-Droid.
         repo: android
         bild: Terminliste in der Android-App

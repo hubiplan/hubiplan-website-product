@@ -166,7 +166,8 @@ start:
         bild: Home page of a made-up demo club's website
       - titel: Android app
         text: >-
-          Events, messages, tasks, membership card and club management on the go. A variant
+          Events, messages, tasks, membership card (also in Google Wallet) and club management on
+          the go. A variant
           without Google services for F-Droid.
         repo: android
         bild: Event list in the Android app
