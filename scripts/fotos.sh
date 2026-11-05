@@ -4,8 +4,9 @@
 #   scripts/fotos.sh [Bildname …]
 #
 # Startet in Wegwerf-Containern PostgreSQL, Redis, das HUBIplan-Backend mit dem erfundenen
-# Demoverein „Schützenverein Musterstadt“ (seed_demoverein), die Oberfläche und die
-# Vereinswebseite, fotografiert jede Stelle aus fotos.json mit Playwright auf Deutsch und
+# Demoverein „Schützenverein Musterstadt“ (seed_demoverein) und dem zweiten Demoverein
+# „Musikkapelle Musterdorf“ (seed_demokapelle), die Oberfläche und die Vereinswebseiten
+# beider Vereine, fotografiert jede Stelle aus fotos.json mit Playwright auf Deutsch und
 # Englisch und legt die Bilder unter statisch/fotos/<sprache>/ ab. Danach die Bilder ansehen
 # (keine echten Namen, Adressen, Serveradressen) und einchecken.
 #
@@ -34,12 +35,13 @@ REDIS_IMAGE=$(grep -m1 -oE 'image: redis:[0-9][^ ]*' "$HUBIPLAN_REPO/docker-comp
 # Nur für diesen Lauf; die Demozugänge verschwinden mit den Containern
 PASSWORD="Fotos-$(head -c 12 /dev/urandom | od -An -tx1 | tr -d ' \n')"
 DEMO_DOMAIN="sv-musterstadt.test"
+KAPELLE_DOMAIN="mk-musterdorf.test"
 
 ID="hubiplan-fotos-$(date +%s)-$$"
 if [ -d /mnt/e/tmp ]; then mkdir -p /mnt/e/tmp/hubiplan-produktseite; WORK=$(mktemp -d -p /mnt/e/tmp/hubiplan-produktseite)
 else WORK=$(mktemp -d); fi
 cleanup() {
-    for c in pw site web backend redis db; do docker rm -f "$ID-$c" > /dev/null 2>&1 || true; done
+    for c in pw kapelle site web backend redis db; do docker rm -f "$ID-$c" > /dev/null 2>&1 || true; done
     docker network rm "$ID" > /dev/null 2>&1 || true
     docker image rm "$ID-backend:bild" "$ID-site:bild" > /dev/null 2>&1 || true
     rm -rf "$WORK" 2> /dev/null || docker run --rm -v "$WORK:/w" node:24-alpine rm -rf /w/hubiplan
@@ -73,12 +75,15 @@ until docker exec "$ID-backend" python -c "import urllib.request; urllib.request
     sleep 2
 done
 docker exec "$ID-backend" python manage.py seed_demoverein --password "$PASSWORD" > /dev/null
-# Webseite des Demovereins öffentlich (nur in diesem Wegwerf-Stand)
+# Zweiter Demoverein für Musikvereine (Webseite der „Musikkapelle Musterdorf“)
+docker exec "$ID-backend" python manage.py seed_demokapelle --password "$PASSWORD" > /dev/null
+# Webseiten der Demovereine öffentlich (nur in diesem Wegwerf-Stand)
 docker exec -e DATABASE_APP_ROLE= "$ID-backend" python manage.py shell -c "
 from website.models import Website
-Website.objects.filter(organization__name__startswith='Schützenverein Musterstadt').update(state='public')
+for name in ('Schützenverein Musterstadt', 'Musikkapelle Musterdorf'):
+    Website.objects.filter(organization__name__startswith=name).update(state='public')
 " > /dev/null
-echo "Backend mit Demoverein bereit"
+echo "Backend mit Demovereinen bereit"
 
 docker run -d --name "$ID-web" --network "$ID" --network-alias web "$CPUS" \
     -v "$WORK/hubiplan/frontend:/app" -v hubiplan-npm-cache:/root/.npm -w /app \
@@ -88,8 +93,12 @@ docker run -d --name "$ID-site" --network "$ID" --network-alias site "$CPUS" \
     -e DJANGO_SECRET_KEY=nur-fuer-fotos -e HUBIPLAN_API_URL=http://backend:8000 -e HUBIPLAN_PUBLIC_URL=http://backend:8000 \
     -e SITE_HOST_OVERRIDE="www.$DEMO_DOMAIN" -e CACHE_SECONDS=0 \
     "$ID-site:bild" > /dev/null
-until docker run --rm --network "$ID" node:24-alpine sh -c "wget -q -O /dev/null http://web:5173/ && wget -q -O /dev/null http://site:8000/" 2> /dev/null; do
-    for c in web site; do
+docker run -d --name "$ID-kapelle" --network "$ID" --network-alias kapelle "$CPUS" \
+    -e DJANGO_SECRET_KEY=nur-fuer-fotos -e HUBIPLAN_API_URL=http://backend:8000 -e HUBIPLAN_PUBLIC_URL=http://backend:8000 \
+    -e SITE_HOST_OVERRIDE="www.$KAPELLE_DOMAIN" -e CACHE_SECONDS=0 \
+    "$ID-site:bild" > /dev/null
+until docker run --rm --network "$ID" node:24-alpine sh -c "wget -q -O /dev/null http://web:5173/ && wget -q -O /dev/null http://site:8000/ && wget -q -O /dev/null http://kapelle:8000/" 2> /dev/null; do
+    for c in web site kapelle; do
         docker inspect -f '{{.State.Running}}' "$ID-$c" | grep -q true || { docker logs "$ID-$c" | tail -30; exit 1; }
     done
     sleep 3
@@ -100,7 +109,7 @@ mkdir -p "$ROOT/statisch/fotos" "$WORK/pw"
 cp "$ROOT/scripts/fotos.mjs" "$ROOT/fotos.json" "$WORK/pw/"
 docker run --rm --name "$ID-pw" --network "$ID" "$CPUS" --ipc=host \
     -v "$WORK/pw:/pw" -v "$ROOT/statisch/fotos:/out" \
-    -e HUBIPLAN_URL=http://web:5173 -e WEBSITE_URL=http://site:8000 -e DEMO_PASSWORD="$PASSWORD" \
+    -e HUBIPLAN_URL=http://web:5173 -e WEBSITE_URL=http://site:8000 -e KAPELLE_URL=http://kapelle:8000 -e DEMO_PASSWORD="$PASSWORD" \
     -e DEMO_DOMAIN="$DEMO_DOMAIN" -e OUT=/out -e FOTOS_JSON=/pw/fotos.json -w /pw \
     --user "$(id -u):$(id -g)" -e HOME=/tmp -e npm_config_cache=/tmp/.npm \
     "$PW_IMAGE" sh -c "npm i --no-save --no-audit --no-fund --loglevel=error --prefix /pw playwright@$PLAYWRIGHT_VERSION > /dev/null && node fotos.mjs $*"

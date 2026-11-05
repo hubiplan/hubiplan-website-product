@@ -8,6 +8,8 @@ import { chromium } from 'playwright'
 
 const hubiplan = process.env.HUBIPLAN_URL
 const website = process.env.WEBSITE_URL
+// Webseiten je Demoverein (fotos.json: "verein"); ohne Angabe der Schützenverein
+const websites = { schuetzen: website, kapelle: process.env.KAPELLE_URL }
 const password = process.env.DEMO_PASSWORD
 const domain = process.env.DEMO_DOMAIN
 const out = process.env.OUT
@@ -41,7 +43,9 @@ for (const b of images.filter((i) => i.quelle === 'website')) {
   const context = await browser.newContext({ viewport: { width: b.breite, height: b.hoehe }, deviceScaleFactor: 2, reducedMotion: 'reduce' })
   const page = await context.newPage()
   try {
-    await page.goto(`${website}${b.seite}`)
+    const basis = websites[b.verein || 'schuetzen']
+    if (!basis) throw new Error(`keine Webseite für Verein ${b.verein}`)
+    await page.goto(`${basis}${b.seite}`)
     await ruhig(page)
     const file = join(out, 'de', `${b.name}.png`)
     await page.screenshot({ path: file })
