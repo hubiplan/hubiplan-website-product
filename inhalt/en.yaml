@@ -85,24 +85,12 @@ start:
           Membership types, admission with duplicate check, honours and anniversaries, offices and
           titles with history, membership card with QR code (also for Google and Apple Wallet),
           Excel import and export.
-      - titel: Events
-        text: >-
-          Calendars for association, club and departments, RSVPs with deadlines, email reminders,
-          annual programme as PDF and calendar subscription.
-      - titel: Communication
-        text: >-
-          Newsletters by email, mail merge or app push, mailing lists, letter template and a
-          document library with folders, tiles and permissions.
       - titel: Fees and finance
         text: >-
           Fee runs, invoices with QR code, reminders, SEPA direct debit, GoBD-compliant cash book,
           bank statement import, digital receipts and donation receipts. Plus business partners
           and e-invoices: issue and receive XRechnung and ZUGFeRD, with validation, advance
           payments and final invoices.
-      - titel: Tasks
-        text: >-
-          Your own tasks with due dates and reminders by email or push, shared with people or
-          offices, linked to events, recurring as a series, also in the app.
       - titel: Competitions
         text: >-
           Shooting and other competitions with individual and team rankings, offline entry, live
@@ -114,6 +102,23 @@ start:
           performances with required line-up, acceptances and declines, substitutes for absences,
           guest musicians via link, sheet music library, rehearsals, instruments and uniforms,
           offer and order confirmation, invoices to the organiser, fees paid out by SEPA transfer.
+      - titel: Events
+        text: >-
+          Calendars for association, club and departments, RSVPs with deadlines, email reminders,
+          annual programme as PDF and calendar subscription.
+      - titel: Communication
+        text: >-
+          Newsletters by email, mail merge or app push, mailing lists, letter template and a
+          document library with folders, tiles and permissions.
+      - titel: Tasks
+        text: >-
+          Your own tasks with due dates and reminders by email or push, shared with people or
+          offices, linked to events, recurring as a series, also in the app.
+      - titel: Website and app
+        text: >-
+          A club website on the club's own domain and an Android app for members, both from the
+          same data. Whatever the board maintains in HUBIplan appears right away on the website
+          and in the app.
       - titel: Equipment
         text: >-
           Inventory such as flags, tents or instruments with location, condition and photos,
@@ -130,11 +135,6 @@ start:
         text: >-
           Help with screenshots and search, explanations right on the page, glossary, interface in
           German or English.
-      - titel: Website and app
-        text: >-
-          A club website on the club's own domain and an Android app for members, both from the
-          same data. Whatever the board maintains in HUBIplan appears right away on the website
-          and in the app.
   ebenen:
     ueberschrift: For single clubs and whole associations
     text: >-
