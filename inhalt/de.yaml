@@ -161,8 +161,9 @@ start:
       - titel: Vereinswebseite
         text: >-
           Eine öffentliche Webseite unter der Domain des Vereins, gespeist aus HUBIplan: Termine,
-          Vorstand, Abteilungen, Chronik, Galerie mit Alben, Ergebnisse des letzten Schießens, für
-          Kapellen auch Mitgliederlisten, Repertoire und Suche. Ohne zweites Redaktionssystem.
+          Vorstand, Abteilungen, Mitgliederlisten, Chronik, Galerie mit Alben, Ergebnisse des
+          letzten Schießens, Repertoire aus dem Notenarchiv und Suche. Ohne zweites
+          Redaktionssystem.
         repo: website
         bild: Startseite der Webseite eines erfundenen Demovereins
       - titel: Android-App
