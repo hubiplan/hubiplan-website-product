@@ -78,7 +78,7 @@ start:
   funktionen:
     ueberschrift: What HUBIplan does
     einleitung: >-
-      HUBIplan consists of 26 modules that can be switched on and off one by one. A small club
+      HUBIplan consists of more than 25 modules that can be switched on and off one by one. A small club
       only sees what it needs. HUBIplan fits a sports club as well as a music society, a large
       club with many sections or an umbrella association.
     liste:
@@ -105,53 +105,39 @@ start:
           performances with required line-up, acceptances and declines, substitutes for absences,
           guest musicians via link, sheet music library, rehearsals, instruments and uniforms,
           offer and order confirmation, invoices to the organiser, fees paid out by SEPA transfer.
+      - titel: Events and volunteer shifts
+        text: >-
+          Calendars for association, club and departments, RSVPs with deadlines, email reminders,
+          annual programme as PDF and calendar subscription. Rotas with shifts that members sign
+          up for themselves.
       - titel: Competitions
         text: >-
           Shooting and other competitions with individual and team rankings, offline entry, live
           tables, certificates, statistics with averages and personal trends, entries for
           external organisers.
-      - titel: Volunteer shifts
-        text: >-
-          Rotas with shifts for festivals and events. Members sign up themselves and get
-          reminders, departments fill their own quotas. Notice as PDF, report of shifts worked.
       - titel: Equipment and rooms
         text: >-
           Inventory such as flags, tents or instruments and rooms such as the shooting range or
           clubhouse, with location, condition and photos. Booking calendar with request and
           approval, lending with hand-out and return, bookings shown on the website too.
+      - titel: Access and privacy
+        text: >-
+          Sign-in with two-factor authentication, roles with freely chosen permissions per unit,
+          “view as role”, sign-in to the club's Nextcloud. Encrypted fields and files, change log,
+          consent, retention periods.
+      - titel: Tasks
+        text: >-
+          Your own tasks with due dates and reminders by email or push, shared with people or
+          offices, linked to events, recurring as a series, also in the app.
+      - titel: Communication
+        text: >-
+          Newsletters by email, mail merge or app push, mailing lists, letter template and a
+          document library with folders, tiles and permissions.
       - titel: Website and app
         text: >-
           A club website on the club's own domain and an Android app for members, both from the
           same data. Whatever the board maintains in HUBIplan appears right away on the website
           and in the app.
-      - titel: Events
-        text: >-
-          Calendars for association, club and departments, RSVPs with deadlines, email reminders,
-          annual programme as PDF and calendar subscription.
-      - titel: Tasks
-        text: >-
-          Your own tasks with due dates and reminders by email or push, shared with people or
-          offices, linked to events, recurring as a series, also in the app.
-      - titel: Federation
-        text: >-
-          Umbrella association and clubs on separate installations exchange member returns and
-          invoices with encryption. The club explicitly approves what is transferred.
-      - titel: Your own instance
-        text: >-
-          If you run HUBIplan yourself, give the instance its own name, logo and colours, also in
-          emails to members. Each club can have its own address with its own look.
-      - titel: Communication
-        text: >-
-          Newsletters by email, mail merge or app push, mailing lists, letter template and a
-          document library with folders, tiles and permissions.
-      - titel: Access and permissions
-        text: >-
-          Sign-in with two-factor authentication, roles with freely chosen permissions per unit,
-          “view as role” and sign-in to the club's Nextcloud.
-      - titel: Privacy
-        text: >-
-          Encrypted fields and files, change log, consent for photos and publication, retention
-          periods.
       - titel: Help and language
         text: >-
           Help with screenshots and search, explanations right on the page, glossary, interface in
@@ -162,7 +148,8 @@ start:
       One installation serves many clubs. Each club manages its own members; departments,
       sections or groups can be nested freely and named the way the club wants. An umbrella
       association only sees what its clubs share. If association and club run on separate
-      installations, they can be linked with encryption.
+      installations, they can be linked with encryption and exchange member returns and
+      invoices.
     stufen:
       - titel: Platform
         text: the installation; enables modules

@@ -79,7 +79,7 @@ start:
   funktionen:
     ueberschrift: Was HUBIplan kann
     einleitung: >-
-      HUBIplan besteht aus 26 Modulen, die sich einzeln ein- und ausschalten lassen. Ein kleiner
+      HUBIplan besteht aus mehr als 25 Modulen, die sich einzeln ein- und ausschalten lassen. Ein kleiner
       Verein sieht nur, was er braucht. So passt HUBIplan zum Sportverein genauso wie zum
       Musikverein, zum Schützenverein mit vielen Zügen oder zum Dachverband.
     liste:
@@ -106,56 +106,39 @@ start:
           Auftritte mit Sollbesetzung, Zu- und Absagen, Ersatz bei Abwesenheit, Gastmusiker per
           Link, Notenbestand, Proben, Instrumente und Uniformen, Angebot und Auftragsbestätigung,
           Veranstalterrechnung, Gagen mit Auszahlung per SEPA.
+      - titel: Termine und Helferdienste
+        text: >-
+          Kalender für Verband, Verein und Abteilungen, Zu- und Absagen mit Anmeldeschluss,
+          Erinnerungen per E-Mail, Jahresprogramm als PDF und Kalender-Abo. Dienstpläne mit
+          Schichten, in die sich Mitglieder selbst eintragen.
       - titel: Wettbewerbe
         text: >-
           Schießen und andere Wettbewerbe mit Einzel- und Mannschaftswertung, Erfassen auch ohne
           Netz, Live-Tabellen, Urkunden, Statistik mit Durchschnitten und persönlichen Verläufen,
           Meldungen an fremde Veranstalter.
-      - titel: Helferdienste
-        text: >-
-          Dienstpläne mit Schichten für Feste und Termine. Mitglieder tragen sich selbst ein und
-          werden erinnert, Untereinheiten füllen eigene Kontingente. Aushang als PDF, Auswertung
-          der geleisteten Dienste.
       - titel: Material und Räume
         text: >-
           Inventar wie Fahnen, Zelte oder Instrumente und Räume wie Schießstand oder Vereinsheim,
           mit Standort, Zustand und Fotos. Buchungskalender mit Anfrage und Freigabe, Ausleihe mit
           Ausgabe und Rückgabe, Belegung auch auf der Webseite.
+      - titel: Zugänge und Datenschutz
+        text: >-
+          Anmeldung mit Zwei-Faktor-Schutz, Rollen mit frei wählbaren Rechten je Einheit, „Ansicht
+          als Rolle“, Anmeldung an der Vereins-Nextcloud. Verschlüsselte Felder und Dateien,
+          Änderungsprotokoll, Einwilligungen, Löschfristen.
+      - titel: Aufgaben
+        text: >-
+          Eigene Aufgaben mit Frist und Erinnerung per E-Mail oder Push, geteilt mit Personen oder
+          Ämtern, verknüpft mit Terminen, wiederkehrend als Serie, auch in der App.
+      - titel: Kommunikation
+        text: >-
+          Rundschreiben als E-Mail, Serienbrief oder Push in die App, Mailverteiler, Briefvorlage
+          und Dokumentenablage mit Ordnern, Kacheln und Rechten.
       - titel: Webseite und App
         text: >-
           Vereinswebseite unter der eigenen Domain und Android-App für die Mitglieder, beide aus
           denselben Daten. Was der Vorstand in HUBIplan pflegt, steht sofort auf der Webseite und
           in der App.
-      - titel: Termine
-        text: >-
-          Kalender für Verband, Verein und Abteilungen, Zu- und Absagen mit Anmeldeschluss,
-          Erinnerungen per E-Mail, Jahresprogramm als PDF und Kalender-Abo.
-      - titel: Aufgaben
-        text: >-
-          Eigene Aufgaben mit Frist und Erinnerung per E-Mail oder Push, geteilt mit Personen oder
-          Ämtern, verknüpft mit Terminen, wiederkehrend als Serie, auch in der App.
-      - titel: Verbund
-        text: >-
-          Dachverband und Vereine auf getrennten Installationen tauschen verschlüsselt
-          Mitgliedermeldungen und Rechnungen aus. Was übertragen wird, gibt der Verein ausdrücklich
-          frei.
-      - titel: Eigene Instanz
-        text: >-
-          Wer HUBIplan selbst betreibt, gibt der Instanz eigenen Namen, Logo und Farben, auch in
-          E-Mails an Mitglieder. Jeder Verein kann eine eigene Adresse mit eigenem Erscheinungsbild
-          haben.
-      - titel: Kommunikation
-        text: >-
-          Rundschreiben als E-Mail, Serienbrief oder Push in die App, Mailverteiler, Briefvorlage
-          und Dokumentenablage mit Ordnern, Kacheln und Rechten.
-      - titel: Zugänge und Rechte
-        text: >-
-          Anmeldung mit Zwei-Faktor-Schutz, Rollen mit frei wählbaren Rechten je Einheit, „Ansicht
-          als Rolle“ und Anmeldung an der Vereins-Nextcloud.
-      - titel: Datenschutz
-        text: >-
-          Verschlüsselte Felder und Dateien, Änderungsprotokoll, Einwilligungen für Fotos und
-          Veröffentlichung, Löschfristen.
       - titel: Hilfe und Sprache
         text: >-
           Hilfe mit Bildschirmfotos und Suche, Erklärungen direkt auf der Seite, Glossar,
@@ -166,7 +149,8 @@ start:
       Eine Installation trägt viele Vereine. Jeder Verein verwaltet seine Mitglieder selbst,
       Abteilungen, Züge oder Gruppen lassen sich beliebig verschachteln und heißen so, wie der
       Verein es will. Ein Dachverband sieht nur, was seine Vereine freigeben. Laufen Verband und
-      Verein auf getrennten Installationen, lassen sie sich verschlüsselt koppeln.
+      Verein auf getrennten Installationen, lassen sie sich verschlüsselt koppeln und tauschen
+      Mitgliedermeldungen und Rechnungen aus.
     stufen:
       - titel: Plattform
         text: die Installation; schaltet Module frei
