@@ -17,8 +17,9 @@ start:
   titel: HUBIplan – freie Vereinsverwaltung
   beschreibung: >-
     HUBIplan ist eine freie, webbasierte Vereinsverwaltung für Vereine jeder Art, von 10 bis 10.000
-    Mitgliedern: Mitglieder, Beiträge und SEPA, Kasse und E-Rechnungen, Termine, Aufgaben, Musik und
-    Auftritte, Material, Rundschreiben, Vereinswebseite und App.
+    Mitgliedern: Mitglieder, Beiträge und SEPA, Kasse und E-Rechnungen, Termine, Versammlungen,
+    Helferdienste, Aufgaben, Musik und Auftritte, Material und Räume, Rundschreiben, Vereinswebseite
+    und App.
   kopf:
     zeile: Freie Vereinsverwaltung
     ueberschrift: Ihr Verein an einem Ort, im Browser, am Handy und auf der eigenen Webseite.
@@ -70,7 +71,7 @@ start:
     - titel: Frei und selbst betrieben
       text: >-
         Quelloffen unter der AGPL. Ihre Daten liegen auf Ihrem Server, ohne Lizenzgebühren und
-        ohne Bindung an einen Anbieter.
+        ohne Bindung an einen Anbieter, auf Wunsch unter eigenem Namen und Logo.
     - titel: Datenschutz eingebaut
       text: >-
         Vertrauliche Daten verschlüsselt mit einem Schlüssel je Verein, Mandanten zusätzlich in der
@@ -78,52 +79,75 @@ start:
   funktionen:
     ueberschrift: Was HUBIplan kann
     einleitung: >-
-      Jeder Bereich lässt sich einzeln ein- und ausschalten. So passt HUBIplan zum Sportverein
-      genauso wie zum Musikverein, zum Schützenverein mit vielen Zügen oder zum Dachverband.
+      HUBIplan besteht aus 26 Modulen, die sich einzeln ein- und ausschalten lassen. Ein kleiner
+      Verein sieht nur, was er braucht. So passt HUBIplan zum Sportverein genauso wie zum
+      Musikverein, zum Schützenverein mit vielen Zügen oder zum Dachverband.
     liste:
       - titel: Mitglieder
         text: >-
           Mitgliedsarten, Aufnahme mit Dublettenprüfung, Ehrungen und Jubiläen, Ämter und Würden mit
           Chronik, Mitgliedsausweis mit QR-Code (auch für Google und Apple Wallet), Import und
-          Export als Excel.
+          Export als Excel. Auch Firmen, Vereine oder Behörden als Mitglieder, mit Ansprechpartnern
+          und eigener Rechnungsanschrift.
       - titel: Beiträge und Finanzen
         text: >-
           Beitragslauf, Rechnungen mit QR-Code, Mahnstufen, SEPA-Lastschrift, Kasse nach GoBD,
-          Kontoauszüge einlesen, digitale Quittungen und Zuwendungsbestätigungen. Dazu
-          Geschäftspartner und E-Rechnungen: XRechnung und ZUGFeRD ausstellen und empfangen, mit
-          Prüfung, Anzahlungen und Schlussrechnung.
-      - titel: Wettbewerbe
+          Kontoauszüge einlesen, digitale Quittungen und Zuwendungsbestätigungen, Kassenbericht und
+          Steuerübersicht nach steuerlichen Bereichen, Rücklagen. Dazu E-Rechnungen: XRechnung und
+          ZUGFeRD ausstellen und empfangen.
+      - titel: Versammlungen
         text: >-
-          Schießen und andere Wettbewerbe mit Einzel- und Mannschaftswertung, Erfassen auch ohne
-          Netz, Live-Tabellen, Urkunden, Statistik mit Durchschnitten und persönlichen Verläufen,
-          Meldungen an fremde Veranstalter.
+          Mitgliederversammlungen und Vorstandssitzungen mit Tagesordnung und Einladungsfrist,
+          Einladung als Rundschreiben, Anwesenheit und Beschlussfähigkeit, Protokoll mit Freigabe,
+          Beschlussbuch mit Wahlen, die direkt ins Amt übernommen werden, Anträge der Mitglieder.
       - titel: Musik und Auftritte
         text: >-
           Für Musikvereine, Spielmannszüge und Tambourkorps: Musiker mit Instrumenten und Stimmen,
           Auftritte mit Sollbesetzung, Zu- und Absagen, Ersatz bei Abwesenheit, Gastmusiker per
           Link, Notenbestand, Proben, Instrumente und Uniformen, Angebot und Auftragsbestätigung,
           Veranstalterrechnung, Gagen mit Auszahlung per SEPA.
-      - titel: Termine
+      - titel: Wettbewerbe
         text: >-
-          Kalender für Verband, Verein und Abteilungen, Zu- und Absagen mit Anmeldeschluss,
-          Erinnerungen per E-Mail, Jahresprogramm als PDF und Kalender-Abo.
-      - titel: Kommunikation
+          Schießen und andere Wettbewerbe mit Einzel- und Mannschaftswertung, Erfassen auch ohne
+          Netz, Live-Tabellen, Urkunden, Statistik mit Durchschnitten und persönlichen Verläufen,
+          Meldungen an fremde Veranstalter.
+      - titel: Helferdienste
         text: >-
-          Rundschreiben als E-Mail, Serienbrief oder Push in die App, Mailverteiler, Briefvorlage
-          und Dokumentenablage mit Ordnern, Kacheln und Rechten.
-      - titel: Aufgaben
+          Dienstpläne mit Schichten für Feste und Termine. Mitglieder tragen sich selbst ein und
+          werden erinnert, Untereinheiten füllen eigene Kontingente. Aushang als PDF, Auswertung
+          der geleisteten Dienste.
+      - titel: Material und Räume
         text: >-
-          Eigene Aufgaben mit Frist und Erinnerung per E-Mail oder Push, geteilt mit Personen oder
-          Ämtern, verknüpft mit Terminen, wiederkehrend als Serie, auch in der App.
+          Inventar wie Fahnen, Zelte oder Instrumente und Räume wie Schießstand oder Vereinsheim,
+          mit Standort, Zustand und Fotos. Buchungskalender mit Anfrage und Freigabe, Ausleihe mit
+          Ausgabe und Rückgabe, Belegung auch auf der Webseite.
       - titel: Webseite und App
         text: >-
           Vereinswebseite unter der eigenen Domain und Android-App für die Mitglieder, beide aus
           denselben Daten. Was der Vorstand in HUBIplan pflegt, steht sofort auf der Webseite und
           in der App.
-      - titel: Material
+      - titel: Termine
         text: >-
-          Inventar wie Fahnen, Zelte oder Instrumente mit Standort, Zustand und Fotos, verknüpft
-          mit Terminen, Aufgaben und Dokumenten.
+          Kalender für Verband, Verein und Abteilungen, Zu- und Absagen mit Anmeldeschluss,
+          Erinnerungen per E-Mail, Jahresprogramm als PDF und Kalender-Abo.
+      - titel: Aufgaben
+        text: >-
+          Eigene Aufgaben mit Frist und Erinnerung per E-Mail oder Push, geteilt mit Personen oder
+          Ämtern, verknüpft mit Terminen, wiederkehrend als Serie, auch in der App.
+      - titel: Verbund
+        text: >-
+          Dachverband und Vereine auf getrennten Installationen tauschen verschlüsselt
+          Mitgliedermeldungen und Rechnungen aus. Was übertragen wird, gibt der Verein ausdrücklich
+          frei.
+      - titel: Eigene Instanz
+        text: >-
+          Wer HUBIplan selbst betreibt, gibt der Instanz eigenen Namen, Logo und Farben, auch in
+          E-Mails an Mitglieder. Jeder Verein kann eine eigene Adresse mit eigenem Erscheinungsbild
+          haben.
+      - titel: Kommunikation
+        text: >-
+          Rundschreiben als E-Mail, Serienbrief oder Push in die App, Mailverteiler, Briefvorlage
+          und Dokumentenablage mit Ordnern, Kacheln und Rechten.
       - titel: Zugänge und Rechte
         text: >-
           Anmeldung mit Zwei-Faktor-Schutz, Rollen mit frei wählbaren Rechten je Einheit, „Ansicht
@@ -171,7 +195,7 @@ start:
         bild: Startseite der Webseite eines erfundenen Demovereins
       - titel: Android-App
         text: >-
-          Termine, Mitteilungen, Aufgaben, Mitgliedsausweis (auch in Google Wallet) und
+          Termine, Mitteilungen, Aufgaben, Helferdienste, Mitgliedsausweis (auch in Google Wallet) und
           Vereinsverwaltung unterwegs.
           Variante ohne Google-Dienste für F-Droid.
         repo: android
