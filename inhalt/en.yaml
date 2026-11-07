@@ -16,8 +16,9 @@ start:
   titel: HUBIplan – free club management
   beschreibung: >-
     HUBIplan is free, web-based membership management for clubs and associations of any kind,
-    from 10 to 10,000 members: members, fees and SEPA, cash book and e-invoices, events, tasks,
-    music and performances, equipment, newsletters, club website and app.
+    from 10 to 10,000 members: members, fees and SEPA, cash book and e-invoices, events, meetings,
+    volunteer shifts, tasks, music and performances, equipment and rooms, newsletters, club
+    website and app.
   kopf:
     zeile: Free club management
     ueberschrift: Your club in one place, in the browser, on the phone and on its own website.
@@ -69,7 +70,7 @@ start:
     - titel: Free and self-hosted
       text: >-
         Open source under the AGPL. Your data stays on your server, with no licence fees and no
-        vendor lock-in.
+        vendor lock-in, under your own name and logo if you like.
     - titel: Privacy built in
       text: >-
         Confidential data encrypted with one key per club, tenants also separated in the database,
@@ -77,52 +78,72 @@ start:
   funktionen:
     ueberschrift: What HUBIplan does
     einleitung: >-
-      Every area can be switched on and off on its own. HUBIplan fits a sports club as well as a
-      music society, a large club with many sections or an umbrella association.
+      HUBIplan consists of 26 modules that can be switched on and off one by one. A small club
+      only sees what it needs. HUBIplan fits a sports club as well as a music society, a large
+      club with many sections or an umbrella association.
     liste:
       - titel: Members
         text: >-
           Membership types, admission with duplicate check, honours and anniversaries, offices and
           titles with history, membership card with QR code (also for Google and Apple Wallet),
-          Excel import and export.
+          Excel import and export. Companies, clubs or public bodies as members too, with contact
+          persons and their own billing address.
       - titel: Fees and finance
         text: >-
           Fee runs, invoices with QR code, reminders, SEPA direct debit, GoBD-compliant cash book,
-          bank statement import, digital receipts and donation receipts. Plus business partners
-          and e-invoices: issue and receive XRechnung and ZUGFeRD, with validation, advance
-          payments and final invoices.
-      - titel: Competitions
+          bank statement import, digital receipts and donation receipts, cash report and tax
+          overview by tax area, reserves. Plus e-invoices: issue and receive XRechnung and
+          ZUGFeRD.
+      - titel: Meetings
         text: >-
-          Shooting and other competitions with individual and team rankings, offline entry, live
-          tables, certificates, statistics with averages and personal trends, entries for
-          external organisers.
+          General meetings and board meetings with agenda and notice period, invitation as a
+          newsletter, attendance and quorum, minutes with approval, a resolution book with
+          elections that go straight into office, motions from members.
       - titel: Music and performances
         text: >-
           For music societies, marching bands and drum corps: musicians with instruments and parts,
           performances with required line-up, acceptances and declines, substitutes for absences,
           guest musicians via link, sheet music library, rehearsals, instruments and uniforms,
           offer and order confirmation, invoices to the organiser, fees paid out by SEPA transfer.
-      - titel: Events
+      - titel: Competitions
         text: >-
-          Calendars for association, club and departments, RSVPs with deadlines, email reminders,
-          annual programme as PDF and calendar subscription.
-      - titel: Communication
+          Shooting and other competitions with individual and team rankings, offline entry, live
+          tables, certificates, statistics with averages and personal trends, entries for
+          external organisers.
+      - titel: Volunteer shifts
         text: >-
-          Newsletters by email, mail merge or app push, mailing lists, letter template and a
-          document library with folders, tiles and permissions.
-      - titel: Tasks
+          Rotas with shifts for festivals and events. Members sign up themselves and get
+          reminders, departments fill their own quotas. Notice as PDF, report of shifts worked.
+      - titel: Equipment and rooms
         text: >-
-          Your own tasks with due dates and reminders by email or push, shared with people or
-          offices, linked to events, recurring as a series, also in the app.
+          Inventory such as flags, tents or instruments and rooms such as the shooting range or
+          clubhouse, with location, condition and photos. Booking calendar with request and
+          approval, lending with hand-out and return, bookings shown on the website too.
       - titel: Website and app
         text: >-
           A club website on the club's own domain and an Android app for members, both from the
           same data. Whatever the board maintains in HUBIplan appears right away on the website
           and in the app.
-      - titel: Equipment
+      - titel: Events
         text: >-
-          Inventory such as flags, tents or instruments with location, condition and photos,
-          linked to events, tasks and documents.
+          Calendars for association, club and departments, RSVPs with deadlines, email reminders,
+          annual programme as PDF and calendar subscription.
+      - titel: Tasks
+        text: >-
+          Your own tasks with due dates and reminders by email or push, shared with people or
+          offices, linked to events, recurring as a series, also in the app.
+      - titel: Federation
+        text: >-
+          Umbrella association and clubs on separate installations exchange member returns and
+          invoices with encryption. The club explicitly approves what is transferred.
+      - titel: Your own instance
+        text: >-
+          If you run HUBIplan yourself, give the instance its own name, logo and colours, also in
+          emails to members. Each club can have its own address with its own look.
+      - titel: Communication
+        text: >-
+          Newsletters by email, mail merge or app push, mailing lists, letter template and a
+          document library with folders, tiles and permissions.
       - titel: Access and permissions
         text: >-
           Sign-in with two-factor authentication, roles with freely chosen permissions per unit,
@@ -170,7 +191,8 @@ start:
         bild: Home page of a made-up demo club's website
       - titel: Android app
         text: >-
-          Events, messages, tasks, membership card (also in Google Wallet) and club management on
+          Events, messages, tasks, volunteer shifts, membership card (also in Google Wallet) and club
+          management on
           the go. A variant
           without Google services for F-Droid.
         repo: android
