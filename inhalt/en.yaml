@@ -192,9 +192,7 @@ start:
       - titel: Android app
         text: >-
           Events, messages, tasks, volunteer shifts, membership card (also in Google Wallet) and club
-          management on
-          the go. A variant
-          without Google services for F-Droid.
+          management on the go. A variant without Google services for F-Droid.
         repo: android
         bild: Event list in the Android app
     zum_repo: To the repository
