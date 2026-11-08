@@ -188,6 +188,8 @@ start:
         repo: android
         bild: Terminliste in der Android-App
     zum_repo: Zum Repository
+    play_alt: Jetzt bei Google Play
+    play_marke: Google Play und das Google Play-Logo sind Marken von Google LLC.
   ausprobieren:
     ueberschrift: Selbst ausprobieren
     text: >-

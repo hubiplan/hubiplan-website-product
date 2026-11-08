@@ -115,6 +115,9 @@ a:focus-visible, .knopf:focus-visible { outline: 3px solid var(--gold); outline-
 .bausteine .rahmen { margin-bottom: 1.25rem; }
 .bausteine p { color: var(--text-leise); }
 .bausteine p:last-child { color: inherit; }
+.bausteine .store { margin: .25rem 0 .5rem; }
+.bausteine .store img { display: block; width: 11.5rem; height: auto; }
+.bausteine .store-marke { font-size: .8rem; }
 
 .held-raster > *, .zwei-spalten > *, .bausteine > * { min-width: 0; }
 /* Bildansicht: Bild größer in einem schließbaren Fenster statt als ganze Seite */
