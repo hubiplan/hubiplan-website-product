@@ -8,9 +8,8 @@
 # Nach Erfolg wird der Stand (Git-Tree) als getestet vermerkt; scripts/ausrollen.sh rollt
 # nur solche Stände aus.
 #
-# Regeln wie in hubiplan: Tests laufen nie auf einem Server. Höchstens drei Testläufe
-# gleichzeitig (alle Projekte), jeder höchstens 6 Kerne: das Skript holt sich einen Platz
-# mit testplatz (aus hubiplan/scripts/testplatz.sh, in WSL nach ~/.local/bin installiert).
+# Regeln wie in hubiplan: Tests laufen nie auf einem Server. Das Skript holt sich einen
+# Testplatz mit testplatz (aus hubiplan/scripts/testplatz.sh, in WSL nach ~/.local/bin installiert).
 set -euo pipefail
 
 STATE="${HUBIPLAN_PRODUKTSEITE_TESTED_FILE:-$HOME/.local/state/hubiplan-website-product/tested-trees}"
