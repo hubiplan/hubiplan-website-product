@@ -9,7 +9,7 @@
 # nur solche Stände aus.
 #
 # Regeln wie in hubiplan: Tests laufen nie auf einem Server. Höchstens drei Testläufe
-# gleichzeitig (alle Projekte), jeder höchstens 8 Kerne: das Skript holt sich einen Platz
+# gleichzeitig (alle Projekte), jeder höchstens 6 Kerne: das Skript holt sich einen Platz
 # mit testplatz (aus hubiplan/scripts/testplatz.sh, in WSL nach ~/.local/bin installiert).
 set -euo pipefail
 
