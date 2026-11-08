@@ -10,6 +10,7 @@ Das Ergebnis läuft auf jedem Webserver und jedem Webspace, ohne Programme auf d
 
 from __future__ import annotations
 
+import hashlib
 import posixpath
 import shutil
 import sys
@@ -86,7 +87,11 @@ def baue(ziel: Path) -> list[Path]:
                 return relativ(_ordner, seiten_pfad(sprache_ziel or _sprache, eintrag["pfad"]))
 
             def datei(pfad: str, _ordner=ordner) -> str:
-                return relativ(_ordner, pfad)
+                link = relativ(_ordner, pfad)
+                if pfad.endswith((".css", ".js")):
+                    # Fassung im Link, damit Browser nach dem Ausrollen nicht die alte Datei behalten
+                    link += "?v=" + hashlib.sha256((WURZEL / pfad).read_bytes()).hexdigest()[:10]
+                return link
 
             def foto(name: str, _ordner=ordner, _sprache=sprache) -> str | None:
                 """Bildschirmfoto statisch/fotos/<sprache>/<name>.png, sonst None (Platzhalter)."""
