@@ -11,6 +11,22 @@ Nicht zu verwechseln mit [hubiplan-website](https://github.com/hubiplan/hubiplan
 baut die Webseiten der Vereine aus deren HUBIplan-Daten. Diese Seite hier ist fest und liest
 keine Daten aus HUBIplan.
 
+Zu HUBIplan gehören vier Repositories:
+
+| Repository | Inhalt |
+| --- | --- |
+| [hubiplan](https://github.com/hubiplan/hubiplan) | die Vereinsverwaltung: Backend, Oberfläche, Betrieb |
+| [hubiplan-website](https://github.com/hubiplan/hubiplan-website) | öffentliche Vereinswebseiten aus den Daten von HUBIplan |
+| [hubiplan-android](https://github.com/hubiplan/hubiplan-android) | Android-App für Mitglieder, Vorstand und Kasse |
+| **hubiplan-website-product** (dieses) | Produktwebseite, die HUBIplan vorstellt |
+
+## Seiten
+
+Die Startseite stellt HUBIplan in Kacheln vor (Funktionen mit Bildschirmfotos, App, eigene
+Instanz, Verweise auf die Repositories). Dazu kommen Impressum, Datenschutzhinweise, die
+Anleitung zum Löschen des App-Kontos und die Nutzungsbedingungen der App. Alle
+Seiten gibt es auf Deutsch und Englisch; die Liste steht in `inhalt/seiten.yaml`.
+
 ## Aufbau
 
 | Ordner | Inhalt |
@@ -85,14 +101,31 @@ scripts/ausrollen.sh --zip [commit]    # ZIP zum Hochladen per FTP
 
 Ausgerollt werden nur lokal getestete Stände ohne Platzhalter, nie ein Rückschritt.
 
-## Mitwirken und Sicherheit
+## Mitwirken
 
-Siehe [CONTRIBUTING.md](CONTRIBUTING.md) und [SECURITY.md](SECURITY.md).
+Fehlermeldungen, Ideen und Pull Requests sind willkommen: [CONTRIBUTING.md](CONTRIBUTING.md).
+Neue Texte immer in beiden Sprachen, Bildschirmfotos nur mit dem erfundenen Demoverein, keine
+Inhalte von fremden Servern, keine Cookies.
+
+## Sicherheit
+
+Sicherheitslücken bitte **nicht** als öffentliches Issue melden, sondern vertraulich über
+[GitHub](https://github.com/hubiplan/hubiplan-website-product/security/advisories/new).
+Einzelheiten: [SECURITY.md](SECURITY.md).
 
 ## Lizenz
 
 Copyright © 2026 Ralf Philipsen (Philipsen EDV)
 
-Dieses Programm ist freie Software unter der GNU Affero General Public License, Version 3
-oder (nach Wahl) jeder späteren Version ([LICENSE](LICENSE)). Die Schrift Outfit steht unter
-der SIL Open Font License 1.1 ([statisch/schrift/OFL.txt](statisch/schrift/OFL.txt)).
+Die Produktwebseite ist freie Software: Sie dürfen sie unter den Bedingungen der **GNU Affero
+General Public License**, wie von der Free Software Foundation veröffentlicht, weitergeben
+und/oder ändern, entweder gemäß Version 3 der Lizenz oder (nach Ihrer Wahl) jeder späteren
+Version (`AGPL-3.0-or-later`), wie HUBIplan selbst.
+
+Sie wird in der Hoffnung verbreitet, dass sie nützlich ist, aber **ohne jede Gewährleistung**,
+sogar ohne die implizite Gewährleistung der Marktreife oder der Eignung für einen bestimmten
+Zweck. Den vollständigen Lizenztext (englisch, maßgeblich) enthält die Datei
+[LICENSE](LICENSE).
+
+Die Schrift Outfit steht unter der SIL Open Font License 1.1
+([statisch/schrift/OFL.txt](statisch/schrift/OFL.txt)).
