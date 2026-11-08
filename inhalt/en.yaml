@@ -186,6 +186,8 @@ start:
         repo: android
         bild: Event list in the Android app
     zum_repo: To the repository
+    play_alt: Get it on Google Play
+    play_marke: Google Play and the Google Play logo are trademarks of Google LLC.
   ausprobieren:
     ueberschrift: Try it yourself
     text: >-

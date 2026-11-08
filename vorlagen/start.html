@@ -82,6 +82,10 @@
         {{ foto_rahmen("baustein-" ~ b.repo, b.bild, "handy" if b.repo == "android" else "browser") }}
         <h3>{{ b.titel }}</h3>
         <p>{{ b.text }}</p>
+        {% if b.repo == "android" %}
+        <p class="store"><a href="{{ links.play }}"><img src="{{ datei('statisch/bilder/google-play-' ~ sprache ~ '.png') }}" alt="{{ s.bausteine.play_alt }}" width="646" height="250"></a></p>
+        <p class="store-marke">{{ s.bausteine.play_marke }}</p>
+        {% endif %}
         <p><a href="{{ links[b.repo] }}">{{ s.bausteine.zum_repo }} →</a></p>
       </article>
       {% endfor %}
