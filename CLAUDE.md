@@ -4,7 +4,7 @@ Projektregeln (gelten wie im Hauptprojekt `hubiplan`):
 
 - **Nie Tests auf einem Server ausführen.** Getestet wird auf dem lokalen Entwicklungsrechner
   mit `scripts/test.sh`, danach wird ausgerollt. `scripts/ausrollen.sh` rollt nur lokal getestete Stände aus.
-- **Höchstens zwei Testläufe gleichzeitig, jeder höchstens 8 Kerne**, projektübergreifend:
+- **Höchstens drei Testläufe gleichzeitig, jeder höchstens 8 Kerne**, projektübergreifend:
   `scripts/test.sh` holt sich einen Platz mit `testplatz`
   (aus `hubiplan/scripts/testplatz.sh`, siehe `hubiplan/docs/testserver.md`).
 - Temporäre Dateien gehören in das lokal konfigurierte Arbeits- oder Tempverzeichnis.
