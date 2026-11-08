@@ -79,9 +79,11 @@ start:
   funktionen:
     ueberschrift: Was HUBIplan kann
     einleitung: >-
-      HUBIplan besteht aus mehr als 25 Modulen, die sich einzeln ein- und ausschalten lassen. Ein kleiner
-      Verein sieht nur, was er braucht. So passt HUBIplan zum Sportverein genauso wie zum
-      Musikverein, zum Schützenverein mit vielen Zügen oder zum Dachverband.
+      HUBIplan besteht aus mehr als 25 Modulen. Die Plattform gibt sie frei, der Verein schaltet
+      selbst ein, was er braucht, und eine Vorlage schlägt beim Anlegen passende Module vor. So passt
+      HUBIplan zum Sportverein genauso wie zum Musikverein, zum Schützenverein mit vielen Zügen
+      oder zum Dachverband. Zu jeder Seite gibt es Hilfe mit Bildschirmfotos und Lernhilfen, die
+      Oberfläche auf Deutsch oder Englisch.
     liste:
       - titel: Mitglieder
         text: >-
@@ -89,12 +91,12 @@ start:
           Chronik, Mitgliedsausweis mit QR-Code (auch für Google und Apple Wallet), Import und
           Export als Excel. Auch Firmen, Vereine oder Behörden als Mitglieder, mit Ansprechpartnern
           und eigener Rechnungsanschrift.
-      - titel: Beiträge und Finanzen
+      - titel: Kasse und Steuern
         text: >-
-          Beitragslauf, Rechnungen mit QR-Code, Mahnstufen, SEPA-Lastschrift, Kasse nach GoBD,
-          Kontoauszüge einlesen, digitale Quittungen und Zuwendungsbestätigungen, Kassenbericht und
-          Steuerübersicht nach steuerlichen Bereichen, Rücklagen. Dazu E-Rechnungen: XRechnung und
-          ZUGFeRD ausstellen und empfangen.
+          Kasse nach GoBD mit Kontoauszügen und Splitbuchung, Anlagen mit Abschreibung,
+          Kassenprüfung mit Stichproben und Prüfbericht, Vermögensübersicht, Rücklagen,
+          zweckgebundene Spenden und Mittelverwendung. Zuwendungsbestätigungen, steuerliche
+          Auswertung mit Freigrenzen-Ampel, Übungsleiter- und Ehrenamtspauschale.
       - titel: Versammlungen
         text: >-
           Mitgliederversammlungen und Vorstandssitzungen mit Tagesordnung und Einladungsfrist,
@@ -106,16 +108,16 @@ start:
           Auftritte mit Sollbesetzung, Zu- und Absagen, Ersatz bei Abwesenheit, Gastmusiker per
           Link, Notenbestand, Proben, Instrumente und Uniformen, Angebot und Auftragsbestätigung,
           Veranstalterrechnung, Gagen mit Auszahlung per SEPA.
+      - titel: Beiträge und Rechnungen
+        text: >-
+          Beitragslauf, auch nach Größe für Organisationen, Rechnungen mit QR-Code, Mahnstufen,
+          SEPA-Lastschrift auch als Firmenlastschrift. E-Rechnungen als XRechnung und ZUGFeRD
+          ausstellen und empfangen, an Behörden mit Leitweg-ID.
       - titel: Termine und Helferdienste
         text: >-
           Kalender für Verband, Verein und Abteilungen, Zu- und Absagen mit Anmeldeschluss,
           Erinnerungen per E-Mail, Jahresprogramm als PDF und Kalender-Abo. Dienstpläne mit
           Schichten, in die sich Mitglieder selbst eintragen.
-      - titel: Wettbewerbe
-        text: >-
-          Schießen und andere Wettbewerbe mit Einzel- und Mannschaftswertung, Erfassen auch ohne
-          Netz, Live-Tabellen, Urkunden, Statistik mit Durchschnitten und persönlichen Verläufen,
-          Meldungen an fremde Veranstalter.
       - titel: Material und Räume
         text: >-
           Inventar wie Fahnen, Zelte oder Instrumente und Räume wie Schießstand oder Vereinsheim,
@@ -126,6 +128,11 @@ start:
           Anmeldung mit Zwei-Faktor-Schutz, Rollen mit frei wählbaren Rechten je Einheit, „Ansicht
           als Rolle“, Anmeldung an der Vereins-Nextcloud. Verschlüsselte Felder und Dateien,
           Änderungsprotokoll, Einwilligungen, Löschfristen.
+      - titel: Wettbewerbe
+        text: >-
+          Schießen und andere Wettbewerbe mit Einzel- und Mannschaftswertung, Erfassen auch ohne
+          Netz, Live-Tabellen, Urkunden, Statistik mit Durchschnitten und persönlichen Verläufen,
+          Meldungen an fremde Veranstalter.
       - titel: Aufgaben
         text: >-
           Eigene Aufgaben mit Frist und Erinnerung per E-Mail oder Push, geteilt mit Personen oder
@@ -139,10 +146,6 @@ start:
           Vereinswebseite unter der eigenen Domain und Android-App für die Mitglieder, beide aus
           denselben Daten. Was der Vorstand in HUBIplan pflegt, steht sofort auf der Webseite und
           in der App.
-      - titel: Hilfe und Sprache
-        text: >-
-          Hilfe mit Bildschirmfotos und Suche, Erklärungen direkt auf der Seite, Glossar,
-          Oberfläche auf Deutsch oder Englisch.
   ebenen:
     ueberschrift: Für einzelne Vereine und ganze Verbände
     text: >-

@@ -78,9 +78,11 @@ start:
   funktionen:
     ueberschrift: What HUBIplan does
     einleitung: >-
-      HUBIplan consists of more than 25 modules that can be switched on and off one by one. A small club
-      only sees what it needs. HUBIplan fits a sports club as well as a music society, a large
-      club with many sections or an umbrella association.
+      HUBIplan consists of more than 25 modules. The platform releases them, the club switches on
+      what it needs, and a template suggests suitable modules when a club is set up.
+      HUBIplan fits a sports club as well as a music society, a large club with many sections or
+      an umbrella association. Every page has help with screenshots and learning hints, and the
+      interface comes in German or English.
     liste:
       - titel: Members
         text: >-
@@ -88,12 +90,12 @@ start:
           titles with history, membership card with QR code (also for Google and Apple Wallet),
           Excel import and export. Companies, clubs or public bodies as members too, with contact
           persons and their own billing address.
-      - titel: Fees and finance
+      - titel: Cash book and tax
         text: >-
-          Fee runs, invoices with QR code, reminders, SEPA direct debit, GoBD-compliant cash book,
-          bank statement import, digital receipts and donation receipts, cash report and tax
-          overview by tax area, reserves. Plus e-invoices: issue and receive XRechnung and
-          ZUGFeRD.
+          GoBD-compliant cash book with bank statements and split bookings, fixed assets with
+          depreciation, audit with samples and audit report, statement of assets, reserves,
+          earmarked donations and use of funds. Donation receipts, tax evaluation with
+          threshold traffic light, allowances for coaches and volunteers.
       - titel: Meetings
         text: >-
           General meetings and board meetings with agenda and notice period, invitation as a
@@ -105,16 +107,16 @@ start:
           performances with required line-up, acceptances and declines, substitutes for absences,
           guest musicians via link, sheet music library, rehearsals, instruments and uniforms,
           offer and order confirmation, invoices to the organiser, fees paid out by SEPA transfer.
+      - titel: Fees and invoices
+        text: >-
+          Fee runs, also by size for organisations, invoices with QR code, reminders, SEPA direct
+          debit including business-to-business. Issue and receive e-invoices as XRechnung and
+          ZUGFeRD, to public bodies with a routing ID.
       - titel: Events and volunteer shifts
         text: >-
           Calendars for association, club and departments, RSVPs with deadlines, email reminders,
           annual programme as PDF and calendar subscription. Rotas with shifts that members sign
           up for themselves.
-      - titel: Competitions
-        text: >-
-          Shooting and other competitions with individual and team rankings, offline entry, live
-          tables, certificates, statistics with averages and personal trends, entries for
-          external organisers.
       - titel: Equipment and rooms
         text: >-
           Inventory such as flags, tents or instruments and rooms such as the shooting range or
@@ -125,6 +127,11 @@ start:
           Sign-in with two-factor authentication, roles with freely chosen permissions per unit,
           “view as role”, sign-in to the club's Nextcloud. Encrypted fields and files, change log,
           consent, retention periods.
+      - titel: Competitions
+        text: >-
+          Shooting and other competitions with individual and team rankings, offline entry, live
+          tables, certificates, statistics with averages and personal trends, entries for
+          external organisers.
       - titel: Tasks
         text: >-
           Your own tasks with due dates and reminders by email or push, shared with people or
@@ -138,10 +145,6 @@ start:
           A club website on the club's own domain and an Android app for members, both from the
           same data. Whatever the board maintains in HUBIplan appears right away on the website
           and in the app.
-      - titel: Help and language
-        text: >-
-          Help with screenshots and search, explanations right on the page, glossary, interface in
-          German or English.
   ebenen:
     ueberschrift: For single clubs and whole associations
     text: >-
