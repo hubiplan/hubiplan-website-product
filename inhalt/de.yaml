@@ -245,8 +245,9 @@ start:
           Besetzung, Noten und Proben.
       - frage: Gibt es eine App für Android und iPhone?
         antwort: >-
-          Für Android gibt es eine App, auch in einer Fassung ohne Google-Dienste. Eine eigene
-          iPhone-App gibt es noch nicht; HUBIplan läuft aber im Browser auf jedem Handy.
+          Für Android gibt es die App [bei Google Play](https://play.google.com/store/apps/details?id=de.hubiplan.app),
+          ganz ohne Google-Dienste. Eine eigene iPhone-App gibt es noch nicht; HUBIplan läuft aber
+          im Browser auf jedem Handy.
       - frage: Wer hilft, wenn etwas nicht klappt?
         antwort: >-
           In der Anwendung gibt es Hilfe mit Bildschirmfotos und Erklärungen direkt auf den Seiten.

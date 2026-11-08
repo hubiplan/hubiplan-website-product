@@ -242,8 +242,9 @@ start:
           performances, line-ups, sheet music and rehearsals.
       - frage: Is there an app for Android and iPhone?
         antwort: >-
-          There is an Android app, also in a version without Google services. There is no iPhone
-          app yet, but HUBIplan runs in the browser on any phone.
+          The Android app is [on Google Play](https://play.google.com/store/apps/details?id=de.hubiplan.app),
+          entirely without Google services. There is no iPhone app yet, but HUBIplan runs in the
+          browser on any phone.
       - frage: Who helps when something does not work?
         antwort: >-
           The application has help with screenshots and explanations right on the pages. Bugs and
