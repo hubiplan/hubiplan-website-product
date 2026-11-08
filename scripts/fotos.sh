@@ -15,7 +15,7 @@
 #   WEBSITE_REPO   (Standard ~/hubiplan-website)
 #
 # Braucht Docker. Läuft nur auf dem lokalen Entwicklungsrechner (nie auf einem Server) und belegt einen
-# Testplatz (höchstens zwei gleichzeitig, je höchstens 8 Kerne; testplatz).
+# Testplatz (höchstens drei gleichzeitig, je höchstens 6 Kerne; testplatz).
 # Docker braucht nur dieses Skript; die fertige Seite läuft ohne.
 set -euo pipefail
 
