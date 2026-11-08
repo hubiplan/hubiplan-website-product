@@ -184,7 +184,7 @@ start:
         text: >-
           Termine, Mitteilungen, Aufgaben, Helferdienste, Mitgliedsausweis (auch in Google Wallet) und
           Vereinsverwaltung unterwegs.
-          Variante ohne Google-Dienste für F-Droid.
+          Ohne Google-Bibliotheken und ohne Werbung.
         repo: android
         bild: Terminliste in der Android-App
     zum_repo: Zum Repository
