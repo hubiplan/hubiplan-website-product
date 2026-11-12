@@ -22,8 +22,9 @@ Zu HUBIplan gehören vier Repositories:
 
 ## Seiten
 
-Die Startseite stellt HUBIplan in Kacheln vor (Funktionen mit Bildschirmfotos, App, eigene
-Instanz, Verweise auf die Repositories). Dazu kommen Impressum, Datenschutzhinweise, die
+Die Startseite stellt HUBIplan in Kacheln vor (Funktionen mit Bildschirmfotos, Android-App mit
+Link zum Eintrag bei Google Play, eigene Instanz, häufige Fragen, Verweise auf die
+Repositories). Dazu kommen Impressum, Datenschutzhinweise, die
 Anleitung zum Löschen des App-Kontos und die Nutzungsbedingungen der App. Alle
 Seiten gibt es auf Deutsch und Englisch; die Liste steht in `inhalt/seiten.yaml`.
 
