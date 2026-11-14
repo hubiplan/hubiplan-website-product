@@ -91,11 +91,11 @@ docker run -d --name "$ID-web" --network "$ID" --network-alias web "$CPUS" \
     node:24-alpine sh -c "npm ci --no-audit --no-fund --loglevel=error > /dev/null && npx vite --host 0.0.0.0 --port 5173" > /dev/null
 docker run -d --name "$ID-site" --network "$ID" --network-alias site "$CPUS" \
     -e DJANGO_SECRET_KEY=nur-fuer-fotos -e HUBIPLAN_API_URL=http://backend:8000 -e HUBIPLAN_PUBLIC_URL=http://backend:8000 \
-    -e SITE_HOST_OVERRIDE="www.$DEMO_DOMAIN" -e CACHE_SECONDS=0 \
+    -e SITE_HOST_OVERRIDE="www.$DEMO_DOMAIN" -e ALLOWED_HOSTS=site -e CACHE_SECONDS=0 \
     "$ID-site:bild" > /dev/null
 docker run -d --name "$ID-kapelle" --network "$ID" --network-alias kapelle "$CPUS" \
     -e DJANGO_SECRET_KEY=nur-fuer-fotos -e HUBIPLAN_API_URL=http://backend:8000 -e HUBIPLAN_PUBLIC_URL=http://backend:8000 \
-    -e SITE_HOST_OVERRIDE="www.$KAPELLE_DOMAIN" -e CACHE_SECONDS=0 \
+    -e SITE_HOST_OVERRIDE="www.$KAPELLE_DOMAIN" -e ALLOWED_HOSTS=kapelle -e CACHE_SECONDS=0 \
     "$ID-site:bild" > /dev/null
 until docker run --rm --network "$ID" node:24-alpine sh -c "wget -q -O /dev/null http://web:5173/ && wget -q -O /dev/null http://site:8000/ && wget -q -O /dev/null http://kapelle:8000/" 2> /dev/null; do
     for c in web site kapelle; do
