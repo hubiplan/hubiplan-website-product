@@ -17,8 +17,8 @@ start:
   beschreibung: >-
     HUBIplan is free, web-based membership management for clubs and associations of any kind,
     from 10 to 10,000 members: members, fees and SEPA, cash book and e-invoices, events, meetings,
-    volunteer shifts, tasks, music and performances, equipment and rooms, newsletters, club
-    website and app.
+    volunteer shifts, tasks, polls, music and performances, equipment and rooms, newsletters,
+    club website and app.
   kopf:
     zeile: Free club management
     ueberschrift: Your club in one place, in the browser, on the phone and on its own website.
@@ -78,7 +78,7 @@ start:
   funktionen:
     ueberschrift: What HUBIplan does
     einleitung: >-
-      HUBIplan consists of more than 25 modules. The platform releases them, the club switches on
+      HUBIplan consists of more than 30 modules. The platform releases them, the club switches on
       what it needs, and a template suggests suitable modules when a club is set up.
       HUBIplan fits a sports club as well as a music society, a large club with many sections or
       an umbrella association. Every page has help with screenshots and learning hints, and the
@@ -86,65 +86,72 @@ start:
     liste:
       - titel: Members
         text: >-
-          Membership types, admission with duplicate check, honours and anniversaries, offices and
-          titles with history, membership card with QR code (also for Google and Apple Wallet),
-          Excel import and export. Companies, clubs or public bodies as members too, with contact
-          persons and their own billing address.
+          Online membership applications via the club website, admission with duplicate
+          check, resignation in the members' area, families and households with one letter
+          and one payer, awards, anniversaries, offices and titles, card with QR code
+          (also in Google and Apple Wallet), Excel import and export. Companies or clubs
+          as members, too.
       - titel: Cash book and tax
         text: >-
-          GoBD-compliant cash book with bank statements and split bookings, fixed assets with
-          depreciation, audit with samples and audit report, statement of assets, reserves,
-          earmarked donations and use of funds. Donation receipts, tax evaluation with
-          threshold traffic light, allowances for coaches and volunteers.
+          GoBD-compliant cash book with bank statements and split entries, budget with
+          plan, actuals and forecast, assets with depreciation, audits with samples,
+          reserves, earmarked donations, donation receipts, tax evaluation with a
+          threshold traffic light, coach and volunteer allowances.
       - titel: Meetings
         text: >-
-          General meetings and board meetings with agenda and notice period, invitation as a
-          newsletter, attendance and quorum, minutes with approval, a resolution book with
-          elections that go straight into office, motions from members.
+          General meetings and board meetings with an agenda including sub-items and
+          notice period, check-in by QR code in the app, remote attendance with open or
+          secret online voting, minutes with approval, a resolution book with elections
+          carried straight into office.
       - titel: Music and performances
         text: >-
-          For music societies, marching bands and drum corps: musicians with instruments and parts,
-          performances with required line-up, acceptances and declines, substitutes for absences,
-          guest musicians via link, sheet music library, rehearsals, instruments and uniforms,
-          offer and order confirmation, invoices to the organiser, fees paid out by SEPA transfer.
+          For bands, marching bands and drum corps: musicians with instruments and parts,
+          performances with target line-up, acceptances and declines, substitutes for
+          absences, guest musicians via link, sheet music archive with a music stand in
+          the app, rehearsals, instruments and uniforms, quotes, organiser invoices, fees
+          via SEPA.
       - titel: Fees and invoices
         text: >-
-          Fee runs, also by size for organisations, invoices with QR code, reminders, SEPA direct
-          debit including business-to-business. Issue and receive e-invoices as XRechnung and
-          ZUGFeRD, to public bodies with a routing ID.
+          Fee runs, also as family fees or by size for organisations, invoices with QR
+          code, dunning levels, SEPA direct debit including B2B. Issue and receive
+          e-invoices as XRechnung and ZUGFeRD, to public authorities with a routing ID.
       - titel: Events and volunteer shifts
         text: >-
-          Calendars for association, club and departments, RSVPs with deadlines, email reminders,
-          annual programme as PDF and calendar subscription. Rotas with shifts that members sign
-          up for themselves.
+          Calendars for federation, club and departments, replies with a deadline,
+          attachments from the document store, annual programme as PDF and calendar feed.
+          Rotas with shifts members sign up for, optionally only with a valid certificate
+          such as first aid.
       - titel: Equipment and rooms
         text: >-
-          Inventory such as flags, tents or instruments and rooms such as the shooting range or
-          clubhouse, with location, condition and photos. Booking calendar with request and
-          approval, lending with hand-out and return, bookings shown on the website too.
+          Inventory such as flags, tents or instruments and places with their rooms such
+          as the clubhouse or shooting range, with condition and photos. Booking calendar
+          with request and approval, lending with issue and return, occupancy on the
+          website too.
       - titel: Access and privacy
         text: >-
-          Sign-in with two-factor authentication, roles with freely chosen permissions per unit,
-          “view as role”, sign-in to the club's Nextcloud. Encrypted fields and files, change log,
-          consent, retention periods.
+          Login with two-factor protection, required for everyone with admin rights, roles
+          with freely chosen permissions per unit, “view as role”, login to the club
+          Nextcloud. Encrypted fields and files, change log, consents, retention periods.
       - titel: Competitions
         text: >-
-          Shooting and other competitions with individual and team rankings, offline entry, live
-          tables, certificates, statistics with averages and personal trends, entries for
-          external organisers.
+          Shooting and other competitions with individual and team scoring, entry at the
+          range even offline and in the app, live rankings, certificates, statistics with
+          averages and trends, entries for outside organisers.
       - titel: Tasks
         text: >-
-          Your own tasks with due dates and reminders by email or push, shared with people or
-          offices, linked to events, recurring as a series, also in the app.
+          Tasks with due date and reminder, shared with people or offices, also as a
+          series. A deadline calendar for club duties such as tax returns or filings with
+          the register court, with reminders to the office in charge.
       - titel: Communication
         text: >-
-          Newsletters by email, mail merge or app push, mailing lists, letter template and a
-          document library with folders, tiles and permissions.
+          Circulars by email, mail merge or push to the app, mailing lists, polls and
+          surveys (find a date, meal choice, anonymous if wanted), document store with
+          folders and permissions.
       - titel: Website and app
         text: >-
-          A club website on the club's own domain and an Android app for members, both from the
-          same data. Whatever the board maintains in HUBIplan appears right away on the website
-          and in the app.
+          Club website on your own domain and an app for members, both from the same data.
+          If wanted, an AI assistant helps with texts, images and the design of the
+          website through a dedicated interface.
   ebenen:
     ueberschrift: For single clubs and whole associations
     text: >-
@@ -174,15 +181,18 @@ start:
       - titel: Club website
         text: >-
           A public website on the club's own domain, fed from HUBIplan: events, board,
-          departments, member lists, history, photo gallery with albums, results of the latest
-          shooting, repertoire from the sheet music library and search. No second content
-          management system.
+          departments, member lists, history, photo gallery with albums, results,
+          repertoire, membership application and search. More than 20 section types up to
+          a countdown, free choice of fonts and colours. No second content management
+          system.
         repo: website
         bild: Home page of a made-up demo club's website
       - titel: Android app
         text: >-
-          Events, messages, tasks, volunteer shifts, membership card (also in Google Wallet) and club
-          management on the go. No Google libraries and no ads.
+          Events, messages, tasks, volunteer shifts, polls, meetings with online voting,
+          music stand, range mode for competitions, membership card (also in Google
+          Wallet) and club management on the go. No Google libraries and no ads. An iPhone
+          app is in the works.
         repo: android
         bild: Event list in the Android app
     zum_repo: To the repository
@@ -243,8 +253,9 @@ start:
       - frage: Is there an app for Android and iPhone?
         antwort: >-
           The Android app is [on Google Play](https://play.google.com/store/apps/details?id=de.hubiplan.app),
-          entirely without Google services. There is no iPhone app yet, but HUBIplan runs in the
-          browser on any phone.
+          entirely without Google services. An iPhone app is in the works, and its
+          [source code](https://github.com/hubiplan/hubiplan-ios) is already public. Until then,
+          HUBIplan runs in the browser on any phone.
       - frage: Who helps when something does not work?
         antwort: >-
           The application has help with screenshots and explanations right on the pages. Bugs and
@@ -377,8 +388,9 @@ datenschutz:
     - **Calendar:** if you switch it on, the app adds events to a calendar of its own on your
       device. Whether this calendar is synced with a service (such as Google) is up to your
       device settings.
-    - **Camera:** only to scan the QR code when connecting and, if you wish, for a member photo or
-      a receipt photo. Photos are sent to your club only after you confirm; the app removes
+    - **Camera:** only to scan QR codes (when connecting, when checking in to a meeting, at the
+      shooting range) and, if you wish, for a member photo, a receipt photo or, in range mode, for
+      photos of the targets. Photos are sent to your club only after you confirm; the app removes
       location and other metadata first.
     - **Drafts:** what you enter while offline stays encrypted on the phone until it is sent.
 
