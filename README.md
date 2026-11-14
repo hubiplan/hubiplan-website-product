@@ -11,13 +11,14 @@ Nicht zu verwechseln mit [hubiplan-website](https://github.com/hubiplan/hubiplan
 baut die Webseiten der Vereine aus deren HUBIplan-Daten. Diese Seite hier ist fest und liest
 keine Daten aus HUBIplan.
 
-Zu HUBIplan gehören vier Repositories:
+Zu HUBIplan gehören fünf Repositories:
 
 | Repository | Inhalt |
 | --- | --- |
 | [hubiplan](https://github.com/hubiplan/hubiplan) | die Vereinsverwaltung: Backend, Oberfläche, Betrieb |
 | [hubiplan-website](https://github.com/hubiplan/hubiplan-website) | öffentliche Vereinswebseiten aus den Daten von HUBIplan |
 | [hubiplan-android](https://github.com/hubiplan/hubiplan-android) | Android-App für Mitglieder, Vorstand und Kasse |
+| [hubiplan-ios](https://github.com/hubiplan/hubiplan-ios) | App für iPhone und iPad (im Aufbau) |
 | **hubiplan-website-product** (dieses) | Produktwebseite, die HUBIplan vorstellt |
 
 ## Seiten
