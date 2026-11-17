@@ -1,10 +1,11 @@
-{# Bildschirmfoto im Rahmen; ohne Datei ein Platzhalter. art: "browser" oder "handy" #}
-{% macro foto_rahmen(name, alt, art="browser", unterschrift="", attrs="") %}
-{% set pfad = foto(name) %}
-<figure class="rahmen rahmen-{{ art }}"{{ attrs }}>
+{# Bildschirmfoto im Rahmen; ohne Datei ein Platzhalter. art: "browser" oder "handy".
+   Die Seite zeigt einen lesbaren Ausschnitt (WebP, srcset), der Link öffnet das ganze Bild. #}
+{% macro foto_rahmen(name, alt, art="browser", unterschrift="", sofort=false, sizes="(max-width: 860px) calc(100vw - 2rem), 560px") %}
+{% set f = foto(name) %}
+<figure class="rahmen rahmen-{{ art }}">
   {% if art == "browser" %}<div class="rahmen-leiste" aria-hidden="true"><span></span><span></span><span></span></div>{% endif %}
-  {% if pfad %}
-  <a href="{{ pfad }}"><img src="{{ pfad }}" alt="{{ alt }}" loading="lazy"></a>
+  {% if f %}
+  <a href="{{ f.ganz }}"><img src="{{ f.src }}" srcset="{{ f.srcset }}" sizes="{{ sizes }}" width="{{ f.breite }}" height="{{ f.hoehe }}" alt="{{ alt }}"{% if sofort %} fetchpriority="high"{% else %} loading="lazy"{% endif %}></a>
   {% else %}
   <div class="platzhalter" role="img" aria-label="{{ alt }}"><span>{{ t.bild_folgt }}</span><small>{{ alt }}</small></div>
   {% endif %}

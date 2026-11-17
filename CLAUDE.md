@@ -15,10 +15,14 @@ Projektregeln (gelten wie im Hauptprojekt `hubiplan`):
   Gesprächsverläufe, Hostnamen, SSH-Zuordnungen, persönlichen Rechnerpfade oder
   kundenspezifischen Betriebs- und Freigabevermerke. Beispiele verwenden reservierte
   Beispieldomains und Demodaten.
-- **Bildschirmfotos nur mit erfundenen Daten** (Demoverein „Schützenverein Musterstadt“ aus
-  `seed_demoverein`), nie echte Vereine oder Personen; Pilotvereine nicht namentlich nennen.
+- **Bildschirmfotos nur mit erfundenen Daten** (Demovereine aus HUBIplan: „Schützenverein
+  Musterstadt“ aus `seed_demoverein`, „Musikkapelle Musterdorf“ aus `seed_demokapelle` und weitere
+  erfundene Demovereine anderer Art, z. B. ein Sportverein), nie echte Vereine oder Personen;
+  Pilotvereine nicht namentlich nennen.
   Einzige Ausnahme: die ausdrücklich freigegebene Widmung an den Hubertus-Schützenverein im Fuß
   (`WIDMUNG` in `scripts/pruefen.py`). Das veröffentlichte Betreiberimpressum bleibt erhalten.
+- **Zielgruppe zuerst Vorstände:** Die Startseite kommt ohne Technikwissen aus („So fangen Sie an“
+  ohne Docker, GitHub, Terminal; `scripts/pruefen.py` prüft das). Technik steht auf der Seite `technik/`.
 - Keine Cookies, kein Tracking, keine Inhalte von fremden Servern (auch keine Google Fonts).
 - **Jeder neue Text gleich auch auf Englisch** (`inhalt/de.yaml` und `inhalt/en.yaml`);
   `scripts/pruefen.py` schlägt sonst fehl.

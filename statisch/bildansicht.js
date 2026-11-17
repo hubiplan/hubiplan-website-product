@@ -1,6 +1,8 @@
 // Bildschirmfotos öffnen beim Anklicken größer in einem schließbaren Fenster.
-// Ohne Skript (oder ohne <dialog>) bleibt es beim Link auf die Bilddatei.
+// Ohne Skript (oder ohne <dialog>) bleibt es beim Link auf die Bilddatei. Auf schmalen
+// Bildschirmen öffnet der Link das ganze Bild direkt, dort lässt es sich mit zwei Fingern vergrößern.
 (() => {
+  const SCHMAL = window.matchMedia('(max-width: 700px)')
   const fenster = document.querySelector('dialog.bildansicht')
   if (!fenster || typeof fenster.showModal !== 'function') return
   const bild = fenster.querySelector('img')
@@ -9,7 +11,7 @@
 
   document.addEventListener('click', (e) => {
     const link = e.target.closest('.rahmen a[href]')
-    if (!link || e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return
+    if (!link || SCHMAL.matches || e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return
     const klein = link.querySelector('img')
     if (!klein) return
     e.preventDefault()

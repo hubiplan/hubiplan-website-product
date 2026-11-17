@@ -1,11 +1,12 @@
 // Bilderkarussell oben auf der Startseite. Ohne Skript lässt sich die Bildreihe seitlich
 // wischen; mit Skript kommen Knöpfe, Punkte und ein ruhiger Bildwechsel dazu.
+// Nicht sichtbare Bilder sind inert, damit die Tabulatortaste nur das sichtbare Bild erreicht.
 (() => {
   const TAKT = 6000
   for (const k of document.querySelectorAll('.karussell')) {
     const spur = k.querySelector('.karussell-spur')
     const bilder = [...spur.children]
-    const punkte = [...k.querySelectorAll('.karussell-punkte a')]
+    const punkte = [...k.querySelectorAll('.karussell-punkte button')]
     const pause = k.querySelector('.karussell-pause')
     const ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     let laeuft = !ruhig
@@ -19,7 +20,11 @@
     }
     const markiere = () => {
       const i = aktuell()
-      punkte.forEach((p, j) => p.toggleAttribute('aria-current', i === j))
+      punkte.forEach((p, j) => {
+        if (i === j) p.setAttribute('aria-current', 'true')
+        else p.removeAttribute('aria-current')
+      })
+      bilder.forEach((b, j) => { b.inert = i !== j })
     }
     const plane = () => {
       clearInterval(uhr)
@@ -36,7 +41,7 @@
     for (const b of k.querySelectorAll('[data-schritt]')) {
       b.addEventListener('click', () => { setzeLauf(false); zeige(aktuell() + Number(b.dataset.schritt)) })
     }
-    punkte.forEach((p, j) => p.addEventListener('click', (e) => { e.preventDefault(); setzeLauf(false); zeige(j) }))
+    punkte.forEach((p, j) => p.addEventListener('click', () => { setzeLauf(false); zeige(j) }))
     pause.addEventListener('click', () => setzeLauf(!laeuft))
     spur.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {

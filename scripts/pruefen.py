@@ -8,7 +8,8 @@ Prüft:
 - jede Sprache hat dieselben Texte (gleiche Schlüssel und Listenlängen wie de.yaml),
 - alle relativen Links und Bilder zeigen auf vorhandene Dateien, Sprungmarken gibt es,
 - keine Dateien von fremden Servern (Stile, Skripte, Bilder, Schriften nur relativ),
-- jedes Bild hat einen Alternativtext, jede Seite eine Sprache und einen Titel,
+- jedes Bild hat einen Alternativtext sowie Breite und Höhe, jede Seite eine Sprache und einen Titel,
+- „So fangen Sie an“ kommt ohne Technikwörter aus (für Vorstände, nicht für Betreibende),
 - keine Serveradressen, IP-Adressen, Mailadressen oder Namen echter Vereine.
 Mit --veroeffentlichen zusätzlich: keine Platzhalter „[Angaben folgen]“ mehr.
 """
@@ -45,6 +46,8 @@ MAIL_ERLAUBT = re.compile(r"(?:@(?:[\w-]+\.)*example\.(?:org|com|net)|^kontakt@p
 PLATZHALTER = "[Angaben folgen]"
 # Einzige erlaubte Nennung eines echten Vereins: die ausdrücklich freigegebene Widmung, nur wörtlich so
 WIDMUNG = "Hubertus-Schützenverein Neuss-Grimlinghausen von 1920"
+# Der Abschnitt „So fangen Sie an“ richtet sich an Vorstände ohne Technikkenntnis
+TECHNIKWOERTER = ["docker", "repository", "repositories", "pull request", "terminal", "github", "git "]
 
 
 def struktur(wert, pfad="") -> set[str]:
@@ -68,6 +71,7 @@ class Leser(HTMLParser):
         self.verweise: list[tuple[str, str, str]] = []  # (Tag, Attribut, Wert)
         self.ids: set[str] = set()
         self.bilder_ohne_alt = 0
+        self.bilder_ohne_masse = 0
         self.lang = None
         self.titel = ""
         self._im_titel = False
@@ -82,6 +86,11 @@ class Leser(HTMLParser):
             self._im_titel = True
         if tag == "img" and a.get("alt") is None:
             self.bilder_ohne_alt += 1
+        if tag == "img" and a.get("src") and not (a.get("width") and a.get("height")):
+            self.bilder_ohne_masse += 1
+        for teil in (a.get("srcset") or "").split(","):
+            if teil.strip():
+                self.verweise.append((tag, "srcset", teil.split()[0]))
         for attr in ("href", "src"):
             if a.get(attr):
                 self.verweise.append((tag, attr, a[attr]))
@@ -111,6 +120,15 @@ def pruefe_texte(fehler: list[str]) -> None:
             fehler.append(f"inhalt/{sprache}.yaml: zu viel {k} (nicht in {SPRACHEN[0]}.yaml)")
 
 
+def pruefe_loslegen(fehler: list[str]) -> None:
+    for sprache in SPRACHEN:
+        texte = yaml.safe_load((WURZEL / "inhalt" / f"{sprache}.yaml").read_text(encoding="utf-8"))
+        klein = yaml.safe_dump(texte["start"]["loslegen"], allow_unicode=True).lower()
+        for wort in TECHNIKWOERTER:
+            if wort in klein:
+                fehler.append(f"inhalt/{sprache}.yaml: start.loslegen enthält das Technikwort „{wort.strip()}“")
+
+
 def pruefe_verbotenes(datei: Path, text: str, fehler: list[str], name: str) -> None:
     klein = text.replace(WIDMUNG, "").lower()
     for wort in VERBOTEN:
@@ -134,6 +152,8 @@ def pruefe_seiten(ordner: Path, fehler: list[str], veroeffentlichen: bool) -> in
             fehler.append(f"{name}: ohne Titel")
         if leser.bilder_ohne_alt:
             fehler.append(f"{name}: {leser.bilder_ohne_alt} Bild(er) ohne alt")
+        if leser.bilder_ohne_masse:
+            fehler.append(f"{name}: {leser.bilder_ohne_masse} Bild(er) ohne width/height")
         text = datei.read_text(encoding="utf-8")
         if veroeffentlichen and PLATZHALTER in text:
             fehler.append(f"{name}: enthält noch „{PLATZHALTER}“")
@@ -171,6 +191,7 @@ def main() -> int:
         baue(ordner)
     fehler: list[str] = []
     pruefe_texte(fehler)
+    pruefe_loslegen(fehler)
     for teil in ("inhalt", "vorlagen", "statisch"):
         for datei in sorted((WURZEL / teil).rglob("*")):
             if datei.is_file() and datei.suffix in (".yaml", ".html", ".css", ".svg", ".js", ".txt", ".md"):

@@ -12,32 +12,37 @@
       <p class="gross">{{ s.kopf.text }}</p>
       <p class="knoepfe">
         <a class="knopf" href="#funktionen">{{ s.kopf.knopf_funktionen }}</a>
-        <a class="knopf knopf-zweit" href="{{ links.hubiplan }}">{{ s.kopf.knopf_github }}</a>
+        <a class="knopf knopf-zweit" href="#loslegen">{{ s.kopf.knopf_loslegen }}</a>
       </p>
     </div>
     {% set k = s.kopf.karussell %}
     {% set anzahl = s.kopf.bilder | length %}
-    <div class="karussell" role="region" aria-roledescription="carousel" aria-label="{{ k.name }}"
-         data-anhalten="{{ k.anhalten }}" data-abspielen="{{ k.abspielen }}">
-      <div class="karussell-spur" tabindex="0">
-        {% for b in s.kopf.bilder %}
-        {{ foto_rahmen(b.name, b.bild, "browser", b.titel,
-             (' id="szene-%d" role="group" aria-roledescription="slide" aria-label="%s"' % (loop.index, k.bild_nr | replace("{n}", loop.index | string) | replace("{m}", anzahl | string))) | safe) }}
-        {% endfor %}
+    <div>
+      <div class="karussell" role="region" aria-roledescription="carousel" aria-label="{{ k.name }}"
+           data-anhalten="{{ k.anhalten }}" data-abspielen="{{ k.abspielen }}">
+        <div class="karussell-spur" tabindex="0" aria-label="{{ k.spur }}">
+          {% for b in s.kopf.bilder %}
+          <div class="folie" id="szene-{{ loop.index }}" role="group" aria-roledescription="slide"
+               aria-label="{{ k.bild_nr | replace('{n}', loop.index | string) | replace('{m}', anzahl | string) }}">
+            {{ foto_rahmen(b.name, b.bild, "browser", b.titel, sofort=loop.first) }}
+          </div>
+          {% endfor %}
+        </div>
+        <div class="karussell-steuerung">
+          <button type="button" class="karussell-knopf karussell-pause" aria-label="{{ k.anhalten }}">❚❚</button>
+          <button type="button" class="karussell-knopf" data-schritt="-1" aria-label="{{ k.zurueck }}">‹</button>
+          <span class="karussell-punkte">
+            {% for b in s.kopf.bilder %}<button type="button" tabindex="-1" data-ziel="{{ loop.index0 }}" aria-label="{{ b.titel }}"></button>{% endfor %}
+          </span>
+          <button type="button" class="karussell-knopf" data-schritt="1" aria-label="{{ k.weiter }}">›</button>
+        </div>
       </div>
-      <div class="karussell-steuerung">
-        <button type="button" class="karussell-knopf" data-schritt="-1" aria-label="{{ k.zurueck }}">‹</button>
-        <span class="karussell-punkte">
-          {% for b in s.kopf.bilder %}<a href="#szene-{{ loop.index }}" aria-label="{{ b.titel }}"></a>{% endfor %}
-        </span>
-        <button type="button" class="karussell-knopf" data-schritt="1" aria-label="{{ k.weiter }}">›</button>
-        <button type="button" class="karussell-knopf karussell-pause" aria-label="{{ k.anhalten }}">❚❚</button>
-      </div>
+      <p class="karussell-hinweis">{{ s.kopf.hinweis_bilder }}</p>
     </div>
   </div>
 </section>
 
-<section class="breite versprechen" aria-label="HUBIplan">
+<section class="breite versprechen" aria-label="{{ s.versprechen_name }}">
   {% for v in s.versprechen %}
   <div>
     <h2>{{ v.titel }}</h2>
@@ -50,18 +55,29 @@
   <div class="breite">
     <h2>{{ s.funktionen.ueberschrift }}</h2>
     <p class="einleitung">{{ s.funktionen.einleitung }}</p>
-    <ul class="kacheln">
-      {% for f in s.funktionen.liste %}
-      <li>
-        <h3>{{ f.titel }}</h3>
-        <p>{{ f.text }}</p>
-      </li>
-      {% endfor %}
-    </ul>
+    {% for g in s.funktionen.gruppen %}
+    <div class="gruppe">
+      <h3>{{ g.titel }}</h3>
+      <ul class="kacheln">
+        {% for f in g.liste %}
+        <li>
+          <h4>{{ f.titel }}</h4>
+          {# Nutzensatz am Handy erst im aufgeklappten Teil, damit die Seite kurz bleibt; nie doppelt sichtbar #}
+          <p class="nutzen-breit">{{ f.nutzen }}</p>
+          <details>
+            <summary>{{ s.funktionen.mehr }}<span class="unsichtbar">: {{ f.titel }}</span></summary>
+            <p class="nutzen-schmal">{{ f.nutzen }}</p>
+            <p>{{ f.mehr }}</p>
+          </details>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
   </div>
 </section>
 
-<section class="abschnitt abschnitt-flaeche">
+<section id="verbaende" class="abschnitt abschnitt-flaeche">
   <div class="breite">
     <h2>{{ s.ebenen.ueberschrift }}</h2>
     <p class="einleitung">{{ s.ebenen.text }}</p>
@@ -73,58 +89,46 @@
   </div>
 </section>
 
-<section id="bausteine" class="abschnitt">
+<section id="webseite-app" class="abschnitt">
   <div class="breite">
     <h2>{{ s.bausteine.ueberschrift }}</h2>
     <div class="bausteine">
       {% for b in s.bausteine.liste %}
       <article>
-        {{ foto_rahmen("baustein-" ~ b.repo, b.bild, "handy" if b.repo == "android" else "browser") }}
+        {% if b.repo == "android" %}
+        {{ foto_rahmen("baustein-android", b.bild, "handy", sizes="210px") }}
+        {% else %}
+        {{ foto_rahmen("baustein-" ~ b.repo, b.bild, "browser", sizes="(max-width: 860px) calc(100vw - 2rem), 340px") }}
+        {% endif %}
         <h3>{{ b.titel }}</h3>
         <p>{{ b.text }}</p>
         {% if b.repo == "android" %}
         <p class="store"><a href="{{ links.play }}&amp;hl={{ sprache }}"><img src="{{ datei('statisch/bilder/google-play-' ~ sprache ~ '.png') }}" alt="{{ s.bausteine.play_alt }}" width="646" height="250"></a></p>
         <p class="store-marke">{{ s.bausteine.play_marke }}</p>
         {% endif %}
-        <p><a href="{{ links[b.repo] }}">{{ s.bausteine.zum_repo }} →</a></p>
       </article>
       {% endfor %}
     </div>
   </div>
 </section>
 
-<section id="ausprobieren" class="abschnitt abschnitt-flaeche">
-  <div class="breite zwei-spalten">
-    <div>
-      <h2>{{ s.ausprobieren.ueberschrift }}</h2>
-      <p>{{ s.ausprobieren.text }}</p>
-      <p>
-        <a href="{{ links.ausprobieren }}">{{ s.ausprobieren.link }} →</a><br>
-        <a href="{{ links.betreiben }}">{{ s.ausprobieren.betreiben }} →</a>
-      </p>
-    </div>
-    <div>
-      <p class="klein">{{ s.ausprobieren.befehle_titel }}</p>
-<pre><code>git clone https://github.com/hubiplan/hubiplan.git
-cd hubiplan
-docker compose up --build</code></pre>
-    </div>
+<section id="loslegen" class="abschnitt abschnitt-flaeche">
+  <div class="breite">
+    <h2>{{ s.loslegen.ueberschrift }}</h2>
+    <p class="einleitung hervor">{{ s.loslegen.text | md }}</p>
+    <ol class="schritte">
+      {% for sch in s.loslegen.schritte %}
+      <li>
+        <h3>{{ sch.titel }}</h3>
+        <p>{{ sch.text }}</p>
+        <p><a href="{% if sch.ziel == 'funktionen' %}#funktionen{% else %}{{ url('technik') }}#{{ sch.ziel }}{% endif %}">{{ sch.link }} →</a></p>
+      </li>
+      {% endfor %}
+    </ol>
   </div>
 </section>
 
-<section id="mitmachen" class="abschnitt">
-  <div class="breite">
-    <h2>{{ s.mitmachen.ueberschrift }}</h2>
-    <p class="einleitung">{{ s.mitmachen.text }}</p>
-    <ul class="linkliste">
-      <li><a href="{{ links.issues }}">{{ s.mitmachen.issues }}</a></li>
-      <li><a href="{{ links.mitwirken }}">{{ s.mitmachen.mitwirken }}</a></li>
-      <li><a href="{{ links.sicherheit }}">{{ s.mitmachen.sicherheit }}</a></li>
-      <li><a href="{{ links.releases }}">{{ s.mitmachen.releases }}</a></li>
-    </ul>
-  </div>
-</section>
-<section id="fragen" class="abschnitt abschnitt-flaeche">
+<section id="fragen" class="abschnitt">
   <div class="breite">
     <h2>{{ s.fragen.ueberschrift }}</h2>
     <div class="fragen">
@@ -135,6 +139,30 @@ docker compose up --build</code></pre>
       </details>
       {% endfor %}
     </div>
+  </div>
+</section>
+
+<section id="wer" class="abschnitt abschnitt-flaeche">
+  <div class="breite"><div class="text">
+    <h2>{{ s.wer.ueberschrift }}</h2>
+    <p>{{ s.wer.text }}</p>
+    <ul class="angaben">
+      <li><strong>{{ s.wer.fassung_titel }}</strong> {{ s.wer.fassung }} · <a href="{{ links.releases }}">{{ s.wer.aenderungen }}</a></li>
+      <li><strong>{{ s.wer.kontakt_titel }}</strong> {{ s.wer.kontakt | md }}</li>
+    </ul>
+  </div></div>
+</section>
+
+<section id="mitmachen" class="abschnitt">
+  <div class="breite">
+    <h2>{{ s.mitmachen.ueberschrift }}</h2>
+    <p class="einleitung">{{ s.mitmachen.text }}</p>
+    <ul class="linkliste">
+      <li><a href="{{ links.issues }}">{{ s.mitmachen.issues }}</a></li>
+      <li><a href="{{ links.mitwirken }}">{{ s.mitmachen.mitwirken }}</a></li>
+      <li><a href="{{ links.sicherheit }}">{{ s.mitmachen.sicherheit }}</a></li>
+      <li><a href="{{ url('technik') }}">{{ s.mitmachen.technik }}</a></li>
+    </ul>
   </div>
 </section>
 {% endblock %}
