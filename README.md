@@ -23,17 +23,22 @@ Zu HUBIplan gehören fünf Repositories:
 
 ## Seiten
 
-Die Startseite stellt HUBIplan in Kacheln vor (Funktionen mit Bildschirmfotos, Android-App mit
-Link zum Eintrag bei Google Play, eigene Instanz, häufige Fragen, Verweise auf die
-Repositories). Dazu kommen Impressum, Datenschutzhinweise, die
-Anleitung zum Löschen des App-Kontos und die Nutzungsbedingungen der App. Alle
-Seiten gibt es auf Deutsch und Englisch; die Liste steht in `inhalt/seiten.yaml`.
+Die Startseite richtet sich zuerst an Vereinsvorstände und folgt ihren Fragen: Nutzen und
+Bilder, Funktionen in vier Gruppen (je Kachel ein Satz, Einzelheiten aufklappbar), Vereine und
+Verbände, Webseite und App, „So fangen Sie an“ (ohne Technikwörter), häufige Fragen, „Wer steckt
+dahinter“ und Mitmachen. Alles für Technikkundige (Ausprobieren mit Docker, Selbst betreiben,
+Repositories) steht auf der Seite `technik/`. Dazu kommen Impressum, Datenschutzhinweise, die
+Anleitung zum Löschen des App-Kontos, die Nutzungsbedingungen der App und eine zweisprachige
+Fehlerseite `404.html`. Alle Seiten gibt es auf Deutsch und Englisch; die Liste steht in
+`inhalt/seiten.yaml`.
+
+Bei jedem Release von HUBIplan die Fassung unter `start.wer.fassung` in beiden Sprachen anpassen.
 
 ## Aufbau
 
 | Ordner | Inhalt |
 | --- | --- |
-| `inhalt/` | Seitenliste (`seiten.yaml`), Texte je Sprache (`de.yaml`, `en.yaml`), feste Links (`links.yaml`) |
+| `inhalt/` | Seitenliste (`seiten.yaml`), Texte je Sprache (`de.yaml`, `en.yaml`), feste Links (`links.yaml`, auch je Sprache) |
 | `vorlagen/` | Jinja2-Vorlagen der Seiten |
 | `statisch/` | Stil, Logo, Schrift Outfit (OFL), Bildschirmfotos unter `fotos/<sprache>/` |
 | `scripts/` | Bauen, Prüfen, Testen, Ausrollen |
@@ -64,8 +69,9 @@ dieselben Schlüssel hat wie `de.yaml`.
 
 ## Bildschirmfotos
 
-Bildschirmfotos zeigen nur den erfundenen Demoverein „Schützenverein Musterstadt“. Welche
-Seiten fotografiert werden, steht in `fotos.json`. Neu erzeugen (Linux/WSL mit Docker, Klone von
+Bildschirmfotos zeigen nur erfundene Demovereine aus HUBIplan („Schützenverein Musterstadt“,
+„Musikkapelle Musterdorf“, künftig weitere Vereinsarten). Welche Seiten fotografiert werden,
+steht in `fotos.json`. Neu erzeugen (Linux/WSL mit Docker, Klone von
 `hubiplan` und `hubiplan-website` daneben, am besten auf dem Release-Stand):
 
 ```bash
@@ -76,6 +82,12 @@ Das Skript startet HUBIplan, Oberfläche und Vereinswebseite in Wegwerf-Containe
 Demoverein an und speichert die Bilder unter `statisch/fotos/<sprache>/<name>.png`. Bilder vor
 dem Einchecken ansehen. Fehlt ein Bild, zeigt die Seite einen Platzhalter. Docker braucht nur
 dieses Skript, nicht die fertige Seite.
+
+Die PNG-Dateien gehen nicht hinaus: `scripts/bauen.py` macht daraus WebP-Dateien (mit Pillow,
+Prüfsumme im Dateinamen). Die Seite zeigt den Ausschnitt `ausschnitt: [x, y, Breite, Höhe]` aus
+`fotos.json` (in Fensterpixeln), damit die Schrift im Bild auch am Handy lesbar bleibt (etwa 480 ×
+360 Fensterpixel), in 480 und 960 Pixel Breite; die Bildansicht öffnet das ganze Bild (1600 Pixel).
+Neue Ausschnitte nach dem Bauen bei 390 Pixel Breite ansehen.
 
 Das Bild der Android-App (`baustein-android.png`, Terminliste, 1080 × 2400) entsteht von Hand
 im Android-Emulator, weil die App nur HTTPS mit System-Zertifikaten zulässt:
@@ -102,6 +114,15 @@ scripts/ausrollen.sh --zip [commit]    # ZIP zum Hochladen per FTP
 ```
 
 Ausgerollt werden nur lokal getestete Stände ohne Platzhalter, nie ein Rückschritt.
+
+Fehlerseite: Der Bau legt `404.html` (Deutsch und Englisch) und für Apache eine `.htaccess` mit
+`ErrorDocument 404 /404.html` in den Webordner. Webspaces mit eigener Fehlerseite neben dem
+Webordner (z. B. HestiaCP mit nginx: `<domain>/document_errors/404.html`) bekommen sie mit
+`fehlerseite=<datei>` in der Zielzeile (siehe Kopf von `scripts/ausrollen.sh`).
+
+Zwischenspeicher: Stil, Skripte und Bildschirmfotos tragen eine Prüfsumme im Namen bzw. in der
+Adresse. Für `statisch/` darf der Webserver deshalb lange Cache-Zeiten setzen (z. B. 30 Tage),
+für die HTML-Seiten nicht.
 
 ## Mitwirken
 

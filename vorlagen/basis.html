@@ -26,10 +26,10 @@
     </a>
     <nav class="navigation" aria-label="{{ t.navigation.menue }}">
       <a href="{{ url('start') }}#funktionen">{{ t.navigation.funktionen }}</a>
-      <a href="{{ url('start') }}#bausteine">{{ t.navigation.bausteine }}</a>
-      <a href="{{ url('start') }}#ausprobieren">{{ t.navigation.ausprobieren }}</a>
-      <a href="{{ url('start') }}#mitmachen">{{ t.navigation.mitmachen }}</a>
-      <a href="{{ links.organisation }}">{{ t.navigation.github }}</a>
+      <a href="{{ url('start') }}#webseite-app">{{ t.navigation.webseite_app }}</a>
+      <a href="{{ url('start') }}#loslegen">{{ t.navigation.loslegen }}</a>
+      <a href="{{ url('start') }}#fragen">{{ t.navigation.fragen }}</a>
+      <a href="{{ url('technik') }}"{% if seite is defined and seite.name == 'technik' %} aria-current="page"{% endif %}>{{ t.navigation.technik }}</a>
       {% if seite is defined %}
       {% for s in sprachen if s != sprache %}
       <a class="sprache" href="{{ url(seite.name, s) }}" hreflang="{{ s }}" lang="{{ s }}">{{ t.sprache_wechsel }}</a>

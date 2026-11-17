@@ -1,14 +1,20 @@
-# Feste Verweise (nur öffentliche Adressen bei GitHub, keine Serveradressen)
+# Feste Verweise (nur öffentliche Adressen bei GitHub, keine Serveradressen).
+# Ein Eintrag gilt für alle Sprachen oder je Sprache (de/en), wenn es eine eigene Fassung gibt.
 organisation: https://github.com/hubiplan
 hubiplan: https://github.com/hubiplan/hubiplan
 website: https://github.com/hubiplan/hubiplan-website
 android: https://github.com/hubiplan/hubiplan-android
+ios: https://github.com/hubiplan/hubiplan-ios
 play: https://play.google.com/store/apps/details?id=de.hubiplan.app
 produktseite: https://github.com/hubiplan/hubiplan-website-product
 ausprobieren: https://github.com/hubiplan/hubiplan#ausprobieren-mit-docker
 betreiben: https://github.com/hubiplan/hubiplan#selbst-betreiben
 mitwirken: https://github.com/hubiplan/hubiplan/blob/main/CONTRIBUTING.md
-sicherheit: https://github.com/hubiplan/hubiplan/blob/main/SECURITY.md
+sicherheit:
+  de: https://github.com/hubiplan/hubiplan/blob/main/SECURITY.md
+  en: https://github.com/hubiplan/hubiplan/blob/main/SECURITY.md#english-summary
 issues: https://github.com/hubiplan/hubiplan/issues
-releases: https://github.com/hubiplan/hubiplan/releases
+releases:
+  de: https://github.com/hubiplan/hubiplan/blob/main/CHANGELOG.md
+  en: https://github.com/hubiplan/hubiplan/blob/main/CHANGELOG.en.md
 lizenz: https://github.com/hubiplan/hubiplan/blob/main/LICENSE

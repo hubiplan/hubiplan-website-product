@@ -2,7 +2,6 @@
    Hubi-Grün #0E7C66, Hubi-Gold #F2B33D (nie Schrift auf Weiß), Tinte #10241F,
    Fläche #F3F7F5, Mint #5FD3B3 im Dunkelmodus. Links nie unterstrichen. */
 
-@font-face { font-family: "Outfit"; font-weight: 300; font-display: swap; src: url("schrift/outfit-latin-300-normal.woff2") format("woff2"); }
 @font-face { font-family: "Outfit"; font-weight: 800; font-display: swap; src: url("schrift/outfit-latin-800-normal.woff2") format("woff2"); }
 
 :root {
@@ -20,6 +19,8 @@
   --code: #10241f;
   --code-text: #e8f3ef;
   --schatten: 0 1px 2px rgb(16 36 31 / 6%), 0 8px 24px rgb(16 36 31 / 8%);
+  /* Fokusrahmen: hell im Grün der Links (6,45 : 1 auf Weiß), dunkel in Gold (9,59 : 1) */
+  --fokus: #0a6b58;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -32,11 +33,12 @@
     --karte: #162a25;
     --code: #07110f;
     --schatten: 0 1px 2px rgb(0 0 0 / 30%), 0 8px 24px rgb(0 0 0 / 30%);
+    --fokus: #f2b33d;
   }
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0;
@@ -50,18 +52,25 @@ h1, h2, h3, .marke { font-family: "Outfit", system-ui, sans-serif; font-weight: 
 h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin: 0 0 1rem; }
 h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin: 0 0 .75rem; }
 h3 { font-size: 1.2rem; margin: 0 0 .4rem; }
+h4 { font-size: 1.08rem; margin: 0 0 .35rem; }
+/* Lange Wörter („Nutzungsbedingungen“) brechen am schmalen Bildschirm um statt überzulaufen */
+h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; }
 p { margin: 0 0 1rem; }
 a { color: var(--link); font-weight: 600; text-decoration: none; }
 a:hover, a:focus-visible { color: var(--gruen-dunkel); }
 @media (prefers-color-scheme: dark) { a:hover, a:focus-visible { color: #8fe6cd; } }
-a:focus-visible, .knopf:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 4px; }
+/* Ein Fokusbild für alles Bedienbare */
+:where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid var(--fokus); outline-offset: 2px; }
+a:focus-visible { border-radius: 4px; }
+.unsichtbar { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 .breite { width: min(1120px, 100% - 2rem); margin-inline: auto; }
 .sprung { position: absolute; left: -999px; top: .5rem; background: var(--grund); padding: .5rem 1rem; z-index: 10; }
 .sprung:focus { left: 1rem; }
 
-/* Kopf */
-.kopf { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--grund) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--linie); }
+/* Kopf: haftet nur auf großen Bildschirmen; am Handy und bei starker Vergrößerung scrollt er weg,
+   damit er weder Platz frisst noch Sprungziele und Fokus verdeckt */
+.kopf { position: relative; z-index: 5; background: color-mix(in srgb, var(--grund) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--linie); }
 .kopf-zeile { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: .6rem 0; }
 .marke { display: flex; align-items: center; gap: .55rem; color: var(--text); font-size: 1.35rem; }
 .marke:hover { color: var(--text); }
@@ -69,6 +78,15 @@ a:focus-visible, .knopf:focus-visible { outline: 3px solid var(--gold); outline-
 .navigation a { color: var(--text); font-weight: 600; }
 .navigation a:hover { color: var(--link); }
 .navigation .sprache { color: var(--link); }
+.navigation a[aria-current] { color: var(--link); }
+@media (min-width: 861px) and (min-height: 501px) {
+  html { scroll-padding-top: 5rem; }
+  .kopf { position: sticky; top: 0; }
+}
+@media (max-width: 600px) {
+  .kopf-zeile { gap: .35rem 1rem; padding: .5rem 0; }
+  .navigation { gap: .15rem .9rem; font-size: .95rem; }
+}
 
 /* Kopfbereich der Startseite */
 .held { background: linear-gradient(180deg, var(--flaeche), var(--grund)); padding: clamp(2.5rem, 6vw, 5rem) 0; }
@@ -78,6 +96,7 @@ a:focus-visible, .knopf:focus-visible { outline: 3px solid var(--gold); outline-
 .knoepfe { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
 .knopf { display: inline-block; padding: .75rem 1.25rem; border-radius: 10px; background: var(--gruen); color: #fff; font-weight: 700; }
 .knopf:hover, .knopf:focus-visible { background: var(--gruen-dunkel); color: #fff; }
+@media (prefers-color-scheme: dark) { .knopf:hover, .knopf:focus-visible { color: #fff; } }
 .knopf-zweit { background: transparent; color: var(--link); box-shadow: inset 0 0 0 2px currentColor; }
 .knopf-zweit:hover, .knopf-zweit:focus-visible { background: transparent; color: var(--link); box-shadow: inset 0 0 0 3px currentColor; }
 
@@ -97,6 +116,7 @@ a:focus-visible, .knopf:focus-visible { outline: 3px solid var(--gold); outline-
 .abschnitt { padding: clamp(2.5rem, 6vw, 4.5rem) 0; }
 .abschnitt-flaeche { background: var(--flaeche); }
 .einleitung { max-width: 46rem; color: var(--text-leise); font-size: 1.1rem; margin-bottom: 2rem; }
+.einleitung.hervor { color: var(--text); }
 .versprechen { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; padding: 2.5rem 0 1rem; }
 .versprechen h2 { font-size: 1.25rem; }
 .versprechen div { border-top: 4px solid var(--gold); padding-top: 1rem; }
@@ -104,8 +124,24 @@ a:focus-visible, .knopf:focus-visible { outline: 3px solid var(--gold); outline-
 
 .kacheln { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
 .kacheln li { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: 1.25rem; }
-.kacheln h3 { color: var(--link); }
+.kacheln h3, .kacheln h4 { color: var(--link); }
 .kacheln p { margin: 0; font-size: .97rem; color: var(--text-leise); }
+.kacheln p + p { margin-top: .6rem; }
+.kacheln details { margin-top: .6rem; }
+.kacheln summary { cursor: pointer; font-weight: 600; font-size: .92rem; color: var(--link); width: fit-content; }
+.kacheln details p { margin-top: .4rem; font-size: .92rem; }
+.kacheln .nutzen-schmal { display: none; }
+.gruppe + .gruppe { margin-top: 2.25rem; }
+.gruppe > h3 { font-size: 1.3rem; margin-bottom: .9rem; }
+.technik-zeile { font-size: .9rem; }
+
+.schritte { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.schritte li { background: var(--karte); border: 1px solid var(--linie); border-top: 4px solid var(--gruen); border-radius: 12px; padding: 1.25rem; }
+.schritte p { color: var(--text-leise); margin-bottom: .6rem; }
+.schritte p:last-child { margin: 0; }
+.angaben { list-style: none; padding: 0; margin: 0; display: grid; gap: .35rem; }
+.punkte { padding-left: 1.2rem; margin: 0 0 1rem; display: grid; gap: .4rem; }
+.fehler > div + div { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--linie); }
 
 .ebenen { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; max-width: 40rem; }
 .ebenen li { margin-left: calc(var(--stufe) * 1.75rem); background: var(--karte); border: 1px solid var(--linie); border-left: 5px solid var(--gruen); border-radius: 10px; padding: .7rem 1rem; }
@@ -135,26 +171,30 @@ a:focus-visible, .knopf:focus-visible { outline: 3px solid var(--gold); outline-
 .fragen details { background: var(--karte); border: 1px solid var(--linie); border-radius: 12px; padding: .9rem 1.2rem; }
 .fragen summary { cursor: pointer; font-weight: 700; }
 .fragen summary:hover, .fragen details[open] summary { color: var(--link); }
-.fragen details p { margin: .7rem 0 0; color: var(--text-leise); }
+.fragen details p { margin: .7rem 0 0; color: var(--text-leise); max-width: 65ch; }
 /* Bilderkarussell oben: ohne Skript seitlich wischbar, mit Skript Knöpfe und Punkte */
 .karussell-spur { display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 4px 14px; margin: -4px; }
 .karussell-spur::-webkit-scrollbar { display: none; }
-.karussell-spur:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; border-radius: 12px; }
-.karussell-spur > .rahmen { flex: 0 0 100%; scroll-snap-align: start; }
+.karussell-spur:focus-visible { border-radius: 12px; }
+.karussell-spur > .folie { flex: 0 0 100%; scroll-snap-align: start; }
 .karussell figcaption { padding: .6rem 1rem; font-weight: 600; border-top: 1px solid var(--linie); background: var(--karte); }
 .karussell-steuerung { display: none; align-items: center; justify-content: center; gap: .5rem; margin-top: .5rem; }
 .karussell.mit-skript .karussell-steuerung { display: flex; }
-.karussell-knopf { font: inherit; font-size: 1.1rem; line-height: 1; width: 2.25rem; height: 2.25rem; border-radius: 50%; border: 1px solid var(--linie);
+.karussell-knopf { font: inherit; font-size: 1.1rem; line-height: 1; width: 2.25rem; height: 2.25rem; border-radius: 50%; border: 1px solid var(--text-leise);
   background: var(--karte); color: var(--text); cursor: pointer; }
 .karussell-knopf:hover, .karussell-knopf:focus-visible { border-color: var(--link); color: var(--link); }
-.karussell-pause { font-size: .75rem; margin-left: .5rem; }
-.karussell-punkte { display: flex; gap: .4rem; }
-.karussell-punkte a { width: .65rem; height: .65rem; border-radius: 50%; background: var(--linie); }
-.karussell-punkte a[aria-current] { background: var(--link); }
+.karussell-pause { font-size: .75rem; margin-right: .5rem; }
+/* Punkte: 24 × 24 px Trefferfläche, sichtbarer Punkt innen; der aktuelle ist breiter, nicht nur andersfarbig */
+.karussell-punkte { display: flex; }
+.karussell-punkte button { width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center; border-radius: 6px; }
+.karussell-punkte button::before { content: ""; width: 10px; height: 10px; border-radius: 5px; background: var(--text-leise); }
+.karussell-punkte button[aria-current]::before { width: 18px; background: var(--link); }
+.karussell-hinweis { font-size: .9rem; color: var(--text-leise); margin: .6rem 0 0; text-align: center; }
 
 .zwei-spalten { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
 .klein { font-size: .9rem; color: var(--text-leise); margin-bottom: .4rem; }
-pre { margin: 0; background: var(--code); color: var(--code-text); border-radius: 10px; padding: 1rem 1.25rem; overflow-x: auto; font-size: .92rem; line-height: 1.55; }
+pre { margin: 0; background: var(--code); color: var(--code-text); border-radius: 10px; padding: 1rem 1.25rem; font-size: .92rem; line-height: 1.55;
+  white-space: pre-wrap; overflow-wrap: anywhere; }
 code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
 
 .linkliste { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .75rem 2rem; }
@@ -167,6 +207,41 @@ code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
 
 @media (max-width: 860px) {
   .held-raster, .zwei-spalten { grid-template-columns: 1fr; }
-  .versprechen, .bausteine { grid-template-columns: 1fr; }
+  .versprechen, .bausteine, .schritte { grid-template-columns: 1fr; }
   .ebenen li { margin-left: calc(var(--stufe) * 1rem); }
+}
+/* Handy: dichter setzen, damit die Startseite kurz bleibt; Bilder der Bausteine als kleine Vorschau
+   neben dem Text (Antippen öffnet das ganze Bild) */
+@media (max-width: 600px) {
+  h1 { font-size: 1.85rem; }
+  .gross { font-size: 1.05rem; }
+  .held { padding: 1.75rem 0 2rem; }
+  .abschnitt { padding: 2.25rem 0; }
+  .einleitung { font-size: 1rem; margin-bottom: 1.25rem; }
+  .versprechen { gap: 1rem; padding: 1.75rem 0 .5rem; }
+  .versprechen h2 { font-size: 1.1rem; margin-bottom: .3rem; }
+  .versprechen div { padding-top: .6rem; }
+  .versprechen p { margin: 0; font-size: .97rem; }
+  #funktionen .kacheln { gap: .5rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #funktionen .kacheln li { padding: .7rem .8rem; }
+  .kacheln h4 { font-size: 1rem; }
+  .kacheln .nutzen-breit { display: none; }
+  .kacheln .nutzen-schmal { display: block; color: var(--text); }
+  .kacheln details { margin-top: .3rem; }
+  .kacheln li:has(details[open]) { grid-column: 1 / -1; }
+  .gruppe + .gruppe { margin-top: 1.5rem; }
+  .gruppe > h3 { font-size: 1.15rem; margin-bottom: .6rem; }
+  .ebenen { gap: .4rem; }
+  .ebenen li { padding: .45rem .8rem; }
+  .bausteine { gap: 1.5rem; }
+  .bausteine article { display: grid; grid-template-columns: 7rem 1fr; gap: 0 1rem; align-items: start; }
+  .bausteine article > :not(.rahmen) { grid-column: 2; }
+  .bausteine article > .rahmen { grid-row: 1 / span 6; margin: 0; }
+  .bausteine .rahmen-handy { border-width: 4px; border-radius: 14px; }
+  .bausteine .rahmen-leiste { display: none; }
+  .bausteine p { font-size: .97rem; }
+  .bausteine .store img { width: 9rem; }
+  .schritte { gap: .6rem; }
+  .schritte li { padding: .9rem 1rem; }
+  .fragen details { padding: .7rem 1rem; }
 }

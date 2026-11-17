@@ -1,15 +1,15 @@
 {
-  "_hinweis": "Bildschirmfotos der Produktwebseite, erzeugt mit scripts/fotos.sh aus den erfundenen Demovereinen (seed_demoverein, seed_demokapelle). quelle: hubiplan (Oberfläche, mit zugang) oder website (Vereinswebseite; verein: schuetzen (Standard) oder kapelle); seite: Pfad; breite/hoehe: Fenstergröße in Pixeln. Name = Datei statisch/fotos/<sprache>/<name>.png.",
+  "_hinweis": "Bildschirmfotos der Produktwebseite, erzeugt mit scripts/fotos.sh aus den erfundenen Demovereinen (seed_demoverein, seed_demokapelle). quelle: hubiplan (Oberfläche, mit zugang) oder website (Vereinswebseite; verein: schuetzen (Standard) oder kapelle); seite: Pfad; breite/hoehe: Fenstergröße in Pixeln. Name = Datei statisch/fotos/<sprache>/<name>.png. ausschnitt: [x, y, Breite, Höhe] in Fensterpixeln; diesen Teil zeigt die Seite (lesbar auch am Handy), die Bildansicht das ganze Bild.",
   "bilder": [
-    {"name": "mitglieder", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/mitglieder", "breite": 1440, "hoehe": 900},
-    {"name": "baustein-hubiplan", "quelle": "hubiplan", "zugang": "kasse", "seite": "/finanzen/kassenbuch", "breite": 1280, "hoehe": 800},
-    {"name": "baustein-website", "quelle": "website", "seite": "/", "breite": 1280, "hoehe": 800},
-    {"name": "szene-termine", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/termine?datum=2027-07-10", "breite": 1440, "hoehe": 900},
-    {"name": "szene-kapelle", "quelle": "website", "verein": "kapelle", "seite": "/", "breite": 1440, "hoehe": 900},
-    {"name": "szene-musik", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/musik?besetzung=1", "breite": 1440, "hoehe": 900},
-    {"name": "szene-aufgaben", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/aufgaben", "breite": 1440, "hoehe": 900},
-    {"name": "szene-material", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/material", "breite": 1440, "hoehe": 900},
-    {"name": "szene-statistik", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/wettbewerbe/statistik", "breite": 1440, "hoehe": 900},
-    {"name": "szene-mein-bereich", "quelle": "hubiplan", "zugang": "mitglied", "seite": "/mein-bereich", "breite": 1440, "hoehe": 900}
+    {"name": "mitglieder", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/mitglieder", "breite": 1440, "hoehe": 900, "ausschnitt": [270, 370, 480, 360]},
+    {"name": "baustein-hubiplan", "quelle": "hubiplan", "zugang": "kasse", "seite": "/finanzen/kassenbuch", "breite": 1280, "hoehe": 800, "ausschnitt": [275, 425, 480, 360]},
+    {"name": "baustein-website", "quelle": "website", "seite": "/", "breite": 1280, "hoehe": 800, "ausschnitt": [140, 130, 480, 360]},
+    {"name": "szene-termine", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/termine?datum=2027-07-10", "breite": 1440, "hoehe": 900, "ausschnitt": [757, 240, 480, 360]},
+    {"name": "szene-kapelle", "quelle": "website", "verein": "kapelle", "seite": "/", "breite": 1440, "hoehe": 900, "ausschnitt": [210, 250, 480, 360]},
+    {"name": "szene-musik", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/musik?besetzung=1", "breite": 1440, "hoehe": 900, "ausschnitt": [264, 535, 480, 360]},
+    {"name": "szene-aufgaben", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/aufgaben", "breite": 1440, "hoehe": 900, "ausschnitt": [264, 215, 480, 360]},
+    {"name": "szene-material", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/material", "breite": 1440, "hoehe": 900, "ausschnitt": [285, 300, 480, 360]},
+    {"name": "szene-statistik", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/wettbewerbe/statistik", "breite": 1440, "hoehe": 900, "ausschnitt": [264, 540, 480, 360]},
+    {"name": "szene-mein-bereich", "quelle": "hubiplan", "zugang": "mitglied", "seite": "/mein-bereich", "breite": 1440, "hoehe": 900, "ausschnitt": [255, 70, 480, 360]}
   ]
 }

@@ -1,0 +1,68 @@
+{% extends "basis.html" %}
+{% set r = t.technik %}
+{% block titel %}{{ r.titel }} · HUBIplan{% endblock %}
+{% block beschreibung %}{{ r.beschreibung }}{% endblock %}
+{% block inhalt %}
+<section class="abschnitt">
+  <div class="breite"><div class="text">
+    <h1>{{ r.titel }}</h1>
+    <p class="einleitung">{{ r.einleitung }}</p>
+  </div></div>
+</section>
+
+<section id="ausprobieren" class="abschnitt abschnitt-flaeche">
+  <div class="breite zwei-spalten">
+    <div>
+      <h2>{{ r.ausprobieren.ueberschrift }}</h2>
+      <p>{{ r.ausprobieren.text }}</p>
+      <p><a href="{{ links.ausprobieren }}">{{ r.ausprobieren.link }} →</a></p>
+    </div>
+    <div>
+      <p class="klein">{{ r.ausprobieren.befehle_titel }}</p>
+<pre><code>git clone https://github.com/hubiplan/hubiplan.git
+cd hubiplan
+docker compose up --build</code></pre>
+    </div>
+  </div>
+</section>
+
+<section id="betreiben" class="abschnitt">
+  <div class="breite"><div class="text">
+    <h2>{{ r.betreiben.ueberschrift }}</h2>
+    <ul class="punkte">
+      {% for p in r.betreiben.punkte %}<li>{{ p | md }}</li>{% endfor %}
+    </ul>
+    <p><a href="{{ links.betreiben }}">{{ r.betreiben.link }} →</a></p>
+  </div></div>
+</section>
+
+<section id="quellcode" class="abschnitt abschnitt-flaeche">
+  <div class="breite">
+    <h2>{{ r.quellcode.ueberschrift }}</h2>
+    <p class="einleitung">{{ r.quellcode.text }}</p>
+    <ul class="kacheln">
+      {% for q in r.quellcode.liste %}
+      <li>
+        <h3>{{ q.titel }}</h3>
+        <p>{{ q.text }}</p>
+        <p class="technik-zeile">{{ r.quellcode.technik }} {{ q.technik }}</p>
+        <p><a href="{{ links[q.repo] }}">{{ r.quellcode.link }} →</a></p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section id="mitmachen" class="abschnitt">
+  <div class="breite">
+    <h2>{{ r.mitmachen.ueberschrift }}</h2>
+    <p class="einleitung">{{ r.mitmachen.text }}</p>
+    <ul class="linkliste">
+      <li><a href="{{ links.issues }}">{{ r.mitmachen.issues }}</a></li>
+      <li><a href="{{ links.mitwirken }}">{{ r.mitmachen.mitwirken }}</a></li>
+      <li><a href="{{ links.sicherheit }}">{{ r.mitmachen.sicherheit }}</a></li>
+      <li><a href="{{ links.releases }}">{{ r.mitmachen.releases }}</a></li>
+    </ul>
+  </div>
+</section>
+{% endblock %}

@@ -6,9 +6,13 @@
 #
 # Ziele stehen nur auf dem eigenen Rechner, nie im Repository, in
 #   ~/.config/hubiplan/produktseite-ziele
-# eine Zeile je Ziel: <name> <benutzer@host>:<ordner> [<eigner-dateien> <eigner-ordner>]
+# eine Zeile je Ziel: <name> <benutzer@host>:<ordner> [<eigner-dateien> <eigner-ordner>] [fehlerseite=<datei>]
 #   live benutzer@host:/pfad/zum/webordner
 #   live admin@host:/home/web/public_html web:web web:www-data
+#   live admin@host:/home/web/example.org/public_html web:web web:www-data fehlerseite=/home/web/example.org/document_errors/404.html
+# fehlerseite=…: Viele Webspaces (z. B. HestiaCP mit nginx) zeigen bei unbekannten Adressen eine eigene
+# Standardseite aus einem Ordner neben dem Webordner. Mit dieser Angabe ersetzt das Skript sie durch
+# die 404.html der Produktwebseite (Menü, Rückweg, Deutsch und Englisch).
 # Mit Eignern meldet sich das Skript als Verwaltungsbenutzer an und schreibt per sudo
 # (wie DEPLOY_SUDO=1 der anderen Skripte): Dateien gehören dann <eigner-dateien>, Ordner
 # <eigner-ordner>. Ohne Eigner schreibt der angemeldete Benutzer selbst.
@@ -55,8 +59,16 @@ if [ "$ZIEL_NAME" = "--zip" ]; then
     exit 0
 fi
 
-ZEILE=$(awk -v n="$ZIEL_NAME" '$1 == n { print $2, $3, $4 }' "$ZIELE" 2> /dev/null || true)
-read -r ZIEL EIGNER_DATEIEN EIGNER_ORDNER <<< "$ZEILE"
+ZEILE=$(awk -v n="$ZIEL_NAME" '$1 == n { $1 = ""; print }' "$ZIELE" 2> /dev/null || true)
+FEHLERSEITE=""
+FELDER=()
+for f in $ZEILE; do
+    case "$f" in fehlerseite=*) FEHLERSEITE="${f#fehlerseite=}" ;; *) FELDER+=("$f") ;; esac
+done
+ZIEL="${FELDER[0]:-}"
+EIGNER_DATEIEN="${FELDER[1]:-}"
+EIGNER_ORDNER="${FELDER[2]:-}"
+case "$FEHLERSEITE" in "" | /*/*.html) ;; *) echo "Abbruch: fehlerseite=$FEHLERSEITE ist kein absoluter Pfad auf eine .html-Datei." >&2; exit 2 ;; esac
 [ -n "${ZIEL:-}" ] || { echo "Abbruch: Ziel „$ZIEL_NAME“ fehlt in $ZIELE." >&2; exit 2; }
 HOST="${ZIEL%%:*}"
 ORDNER="${ZIEL#*:}"
@@ -113,5 +125,14 @@ else
     cp -a "\$NEU"/. "\$ZIEL"/
 fi
 echo "Webordner aktualisiert."
+F='$FEHLERSEITE'
+if [ -n "\$F" ]; then
+    test -d "\$(dirname "\$F")"
+    cp "\$NEU/404.html" "\$F.neu"
+    chmod 644 "\$F.neu"
+    chown --reference="\$(dirname "\$F")" "\$F.neu"
+    mv "\$F.neu" "\$F"
+    echo "Fehlerseite des Webspace ersetzt."
+fi
 SKRIPT
 echo "Fertig: $ZIEL_NAME zeigt $SHA."
