@@ -65,7 +65,8 @@
           {# Nutzensatz am Handy erst im aufgeklappten Teil, damit die Seite kurz bleibt; nie doppelt sichtbar #}
           <p class="nutzen-breit">{{ f.nutzen }}</p>
           <details>
-            <summary>{{ s.funktionen.mehr }}<span class="unsichtbar">: {{ f.titel }}</span></summary>
+            {# Am Handy ist die Überschrift selbst der Aufklapper (PW-07: kürzere Seite), breit „Mehr dazu“ #}
+            <summary><span class="titel-schmal">{{ f.titel }}</span><span class="mehr-breit">{{ s.funktionen.mehr }}<span class="unsichtbar">: {{ f.titel }}</span></span></summary>
             <p class="nutzen-schmal">{{ f.nutzen }}</p>
             {% for absatz in f.mehr.split("\n") %}<p>{{ absatz }}</p>{% endfor %}
           </details>

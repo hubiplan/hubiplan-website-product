@@ -92,9 +92,8 @@ start:
   funktionen:
     ueberschrift: Was HUBIplan kann
     einleitung: >-
-      Jeder Verein schaltet nur ein, was er braucht; beim Anlegen schlägt eine Vorlage passende
-      Bereiche vor. Zu jeder Seite gibt es Hilfe mit Bildern, die Oberfläche auf Deutsch oder
-      Englisch.
+      Jeder Verein schaltet nur ein, was er braucht. Zu jeder Seite gibt es Hilfe mit Bildern,
+      auf Deutsch oder Englisch.
     mehr: Mehr dazu
     gruppen:
       - titel: Mitglieder und Beiträge
@@ -262,11 +261,9 @@ start:
   ebenen:
     ueberschrift: Für einzelne Vereine und ganze Verbände
     text: >-
-      Eine Installation trägt viele Vereine. Jeder Verein verwaltet seine Mitglieder selbst,
-      Abteilungen, Züge oder Gruppen lassen sich beliebig verschachteln und heißen so, wie der
-      Verein es will. Ein Dachverband sieht nur, was seine Vereine freigeben. Laufen Verband und
-      Verein auf getrennten Installationen, lassen sie sich verschlüsselt koppeln und tauschen
-      Mitgliedermeldungen und Rechnungen aus.
+      Eine Installation trägt viele Vereine. Jeder Verein verwaltet seine Mitglieder selbst, mit
+      Abteilungen und Gruppen nach eigenem Namen; ein Dachverband sieht nur, was seine Vereine
+      freigeben. Getrennte Installationen lassen sich verschlüsselt koppeln.
     stufen:
       - titel: Plattform
         text: die Installation; stellt die Bereiche bereit
@@ -287,10 +284,9 @@ start:
         bild: Ausschnitt aus dem Kassenbuch eines erfundenen Demovereins in HUBIplan
       - titel: Vereinswebseite
         text: >-
-          Eine öffentliche Webseite unter der Domain des Vereins, gespeist aus HUBIplan:
-          Termine, Vorstand, Abteilungen, Chronik, Galerie mit Alben, Ergebnisse, Repertoire,
-          Mitgliedsantrag und Suche. Mehr als 20 Abschnittsarten, Schriften und Farben frei
-          wählbar. Ohne zweites Redaktionssystem.
+          Eine öffentliche Webseite unter der Domain des Vereins, gespeist aus HUBIplan: Termine,
+          Vorstand, Abteilungen, Galerie, Mitgliedsantrag und mehr, in eigenen Farben und Schriften.
+          Ohne zweites Redaktionssystem.
         repo: website
         bild: Ausschnitt der Startseite der Webseite eines erfundenen Demovereins
       - titel: Android-App
@@ -477,7 +473,44 @@ fuss:
   impressum: Impressum
   datenschutz: Datenschutz
   quelle: Quellcode dieser Seite
+  barrierefreiheit: Barrierefreiheit
   neuer_tab: (öffnet in neuem Tab)
+
+barrierefreiheit:
+  titel: Barrierefreiheit
+  beschreibung: Wie barrierefrei die Produktwebseite von HUBIplan ist und wie Sie Barrieren melden
+  inhalt: |
+    Diese Seite beschreibt freiwillig, wie gut sich die Produktwebseite von HUBIplan ohne
+    Barrieren nutzen lässt. Für die Vereinsverwaltung, die Vereinswebseiten und die Apps gelten
+    eigene Angaben; jede Vereinswebseite hat dafür eine eigene Seite.
+
+    ## Stand
+
+    Maßstab sind die Web Content Accessibility Guidelines (WCAG) 2.2, Stufe AA. Zuletzt geprüft
+    am 18. November 2026: automatisch mit axe für alle Seiten in beiden Sprachen bei 1440, 390
+    und 320 Pixel Breite, hell und dunkel, dazu von Hand mit der Tastatur.
+
+    Die Seite lässt sich vollständig mit der Tastatur bedienen und zeigt den Fokus deutlich. Sie
+    passt sich an schmale Bildschirme, Vergrößerung und große Schrift an, folgt dem hellen oder
+    dunklen Farbschema des Geräts, setzt keine Cookies und lädt nichts von fremden Servern.
+
+    ## Bekannte Einschränkungen
+
+    - Die Bilder sind Bildschirmfotos der Anwendung mit erfundenen Daten. Sie haben eine kurze
+      Beschreibung; Tabellen und Texte darin sind nicht als Text lesbar. Was sie zeigen, steht
+      auch im Text der Seite.
+    - Das Bilderkarussell oben wechselt alle paar Sekunden. Es hält an, solange der Mauszeiger
+      oder der Fokus darauf liegt, mit dem Knopf „Bildwechsel anhalten“ und wenn das Gerät auf weniger
+      Bewegung eingestellt ist.
+    - Links sind an Farbe und Schriftstärke erkennbar, nicht an einer Unterstreichung. Links zu
+      anderen Seiten tragen zusätzlich einen Pfeil.
+
+    ## Barriere melden
+
+    Wenn Ihnen etwas den Zugang erschwert, schreiben Sie bitte an
+    [kontakt@philipsen-edv.de](mailto:kontakt@philipsen-edv.de) oder melden Sie es als
+    [Fehler bei GitHub](https://github.com/hubiplan/hubiplan/issues). Nennen Sie, wenn möglich,
+    die Seite und Ihr Gerät oder Hilfsmittel.
 
 impressum:
   titel: Impressum

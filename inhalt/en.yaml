@@ -85,8 +85,7 @@ start:
   funktionen:
     ueberschrift: What HUBIplan does
     einleitung: >-
-      Each club switches on only what it needs; when a club is set up, a template suggests
-      suitable areas. Every page has help with pictures, and the interface comes in German or
+      Each club switches on only what it needs. Every page has help with pictures, in German or
       English.
     mehr: More
     gruppen:
@@ -249,11 +248,9 @@ start:
   ebenen:
     ueberschrift: For single clubs and whole associations
     text: >-
-      One installation serves many clubs. Each club manages its own members; departments,
-      sections or groups can be nested freely and named the way the club wants. An umbrella
-      association only sees what its clubs share. If association and club run on separate
-      installations, they can be linked with encryption and exchange member returns and
-      invoices.
+      One installation serves many clubs. Each club manages its own members, with departments and
+      groups named its own way; an umbrella association only sees what its clubs share. Separate
+      installations can be linked with encryption.
     stufen:
       - titel: Platform
         text: the installation; provides the areas
@@ -274,9 +271,8 @@ start:
         bild: Detail of the cash book of a made-up demo club in HUBIplan
       - titel: Club website
         text: >-
-          A public website on the club's own domain, fed from HUBIplan: events, board,
-          departments, history, photo gallery with albums, results, repertoire, membership
-          application and search. More than 20 section types, free choice of fonts and colours.
+          A public website under the club's own domain, fed from HUBIplan: events, board,
+          departments, gallery, membership application and more, in your own colours and fonts.
           No second content management system.
         repo: website
         bild: Detail of the home page of a made-up demo club's website
@@ -459,7 +455,44 @@ fuss:
   impressum: Legal notice
   datenschutz: Privacy
   quelle: Source code of this site
+  barrierefreiheit: Accessibility
   neuer_tab: (opens in a new tab)
+
+barrierefreiheit:
+  titel: Accessibility
+  beschreibung: How accessible the HUBIplan product website is and how to report barriers
+  inhalt: |
+    This page describes, voluntarily, how well the HUBIplan product website can be used without
+    barriers. The club management, the club websites and the apps have their own statements;
+    every club website has its own page for this.
+
+    ## Status
+
+    The standard is the Web Content Accessibility Guidelines (WCAG) 2.2, level AA. Last checked
+    on 18 November 2026: automatically with axe for all pages in both languages at 1440, 390 and
+    320 pixels wide, light and dark, plus by hand with the keyboard.
+
+    The site can be used entirely with the keyboard and shows the focus clearly. It adapts to
+    narrow screens, zoom and large text, follows the device's light or dark colour scheme, sets
+    no cookies and loads nothing from other servers.
+
+    ## Known limitations
+
+    - The pictures are screenshots of the application with made-up data. They have a short
+      description; tables and text inside them cannot be read as text. What they show is also
+      described in the text of the page.
+    - The picture carousel at the top changes every few seconds. It stops while the mouse
+      pointer or the focus is on it, with the “Pause slideshow” button, and when the device is set to
+      reduce motion.
+    - Links are recognisable by colour and font weight, not by underlining. Links to other
+      sites also carry an arrow.
+
+    ## Report a barrier
+
+    If something makes access difficult for you, please write to
+    [kontakt@philipsen-edv.de](mailto:kontakt@philipsen-edv.de) or report it as an
+    [issue on GitHub](https://github.com/hubiplan/hubiplan/issues). If possible, name the page
+    and your device or assistive technology.
 
 impressum:
   titel: Legal notice
