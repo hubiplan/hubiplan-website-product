@@ -106,6 +106,8 @@ a:focus-visible { border-radius: 4px; }
 .rahmen-leiste { display: flex; gap: 6px; padding: 9px 12px; background: var(--flaeche); border-bottom: 1px solid var(--linie); }
 .rahmen-leiste span { width: 10px; height: 10px; border-radius: 50%; background: var(--linie); }
 .rahmen-handy { max-width: 210px; margin-inline: auto; border-radius: 28px; border-width: 8px; border-color: var(--tinte); }
+/* Im Dunkeln hebt sich der Handyrahmen vom Grund ab (PW-12 h) */
+@media (prefers-color-scheme: dark) { .rahmen-handy { border-color: #3d5f57; } }
 .platzhalter { display: grid; place-content: center; text-align: center; gap: .35rem; aspect-ratio: 16 / 10; padding: 1.5rem; color: var(--text-leise);
   background: repeating-linear-gradient(135deg, var(--flaeche) 0 14px, var(--grund) 14px 28px); }
 .rahmen-handy .platzhalter { aspect-ratio: 9 / 18; }
@@ -130,7 +132,7 @@ a:focus-visible { border-radius: 4px; }
 .kacheln details { margin-top: .6rem; }
 .kacheln summary { cursor: pointer; font-weight: 600; font-size: .92rem; color: var(--link); width: fit-content; }
 .kacheln details p { margin-top: .4rem; font-size: .92rem; }
-.kacheln .nutzen-schmal { display: none; }
+.kacheln .nutzen-schmal, .kacheln .titel-schmal { display: none; }
 .gruppe + .gruppe { margin-top: 2.25rem; }
 .gruppe > h3 { font-size: 1.3rem; margin-bottom: .9rem; }
 .technik-zeile { font-size: .9rem; }
@@ -204,6 +206,14 @@ code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
 .fuss { border-top: 1px solid var(--linie); padding: 1.75rem 0; font-size: .92rem; color: var(--text-leise); }
 .fuss p { margin: .25rem 0; }
 .fuss .widmung { font-style: italic; margin-bottom: .6rem; }
+/* Fußlinks: je Link mindestens 24 px hoch (PW-12 f), aktuelle Seite in Textfarbe */
+.fuss-links { list-style: none; margin: .35rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 1.25rem; }
+.fuss-links a { display: inline-block; padding-block: .25rem; }
+.fuss-links a[aria-current] { color: var(--text); }
+
+/* Links zu anderen Seiten mit Pfeil, damit sie sich nicht nur durch die Farbe abheben (PW-12 e) */
+main a[href^="http"]:not(.knopf)::after, .fuss p a[href^="http"]::after { content: "\00a0↗"; font-weight: 400; }
+main .store a::after, main .rahmen a::after { content: none; }
 
 @media (max-width: 860px) {
   .held-raster, .zwei-spalten { grid-template-columns: 1fr; }
@@ -224,10 +234,13 @@ code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
   .versprechen p { margin: 0; font-size: .97rem; }
   #funktionen .kacheln { gap: .5rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   #funktionen .kacheln li { padding: .7rem .8rem; }
-  .kacheln h4 { font-size: 1rem; }
+  /* Kachel am Handy: nur die Überschrift als Aufklapper, Nutzen und Details darunter */
+  .kacheln h4, .kacheln .mehr-breit { display: none; }
+  .kacheln .titel-schmal { display: inline; font-family: "Outfit", system-ui, sans-serif; font-weight: 800; font-size: 1rem; line-height: 1.25; }
+  .kacheln summary { width: auto; }
+  .kacheln details { margin-top: 0; }
   .kacheln .nutzen-breit { display: none; }
   .kacheln .nutzen-schmal { display: block; color: var(--text); }
-  .kacheln details { margin-top: .3rem; }
   .kacheln li:has(details[open]) { grid-column: 1 / -1; }
   .gruppe + .gruppe { margin-top: 1.5rem; }
   .gruppe > h3 { font-size: 1.15rem; margin-bottom: .6rem; }
@@ -243,5 +256,36 @@ code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
   .bausteine .store img { width: 9rem; }
   .schritte { gap: .6rem; }
   .schritte li { padding: .9rem 1rem; }
-  .fragen details { padding: .7rem 1rem; }
+  .fragen details { padding: .5rem .85rem; }
+  .fragen summary { font-size: .97rem; }
+  /* PW-07: Ziel höchstens 7 Bildschirme am Handy; Kästen dichter, Schritte und Ebenen als Zeilen */
+  .abschnitt { padding: 1.75rem 0; }
+  h2 { font-size: 1.4rem; margin-bottom: .5rem; }
+  .einleitung { font-size: .97rem; margin-bottom: 1rem; }
+  .versprechen { gap: .75rem; padding: 1.25rem 0 0; }
+  .versprechen p { font-size: .93rem; line-height: 1.5; }
+  .ebenen { gap: .3rem; }
+  .ebenen li { padding: .3rem .7rem; font-size: .95rem; line-height: 1.45; }
+  .bausteine { gap: 1.1rem; }
+  .bausteine article { grid-template-columns: 5.5rem 1fr; }
+  .bausteine h3 { font-size: 1.08rem; }
+  .bausteine p { font-size: .93rem; line-height: 1.5; margin-bottom: .5rem; }
+  .schritte { gap: .5rem; }
+  .schritte li { border: 0; border-left: 4px solid var(--gruen); border-radius: 0; padding: .2rem 0 .2rem .85rem; background: none; }
+  .schritte h3 { font-size: 1.08rem; margin-bottom: .2rem; }
+  .schritte p { font-size: .95rem; line-height: 1.5; margin-bottom: .3rem; }
+  .linkliste { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem 1rem; }
+  #wer p, #mitmachen .einleitung { font-size: .95rem; line-height: 1.5; }
+  .karussell-hinweis { font-size: .8rem; line-height: 1.4; margin-top: .25rem; }
+  .karussell .rahmen-leiste { display: none; }
+  .gross { font-size: 1rem; line-height: 1.55; }
+  .knoepfe { gap: .5rem; margin-top: 1rem; }
+  .knopf { padding: .6rem .85rem; font-size: .95rem; }
+  .fuss { padding: 1.25rem 0; }
+  .versprechen h2 { font-size: 1.05rem; margin-bottom: .2rem; }
+  .versprechen div { padding-top: .45rem; border-top-width: 3px; }
+  .fragen { gap: .45rem; }
+  .fragen details { padding: .45rem .8rem; }
+  .fragen summary { line-height: 1.4; }
+  .schritte p { font-size: .93rem; }
 }

@@ -18,3 +18,6 @@
 - name: technik
   pfad: technik
   vorlage: technik.html
+- name: barrierefreiheit
+  pfad: barrierefreiheit
+  vorlage: rechtliches.html

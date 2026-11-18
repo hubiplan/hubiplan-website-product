@@ -6,6 +6,12 @@
 <title>{% block titel %}{% endblock %}</title>
 <meta name="description" content="{% block beschreibung %}{% endblock %}">
 <meta name="color-scheme" content="light dark">
+{# Vorschau beim Teilen (PW-12 g); ohne Bild und canonical, weil die Seite keine feste Adresse kennt #}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HUBIplan">
+<meta property="og:title" content="{{ self.titel() }}">
+<meta property="og:description" content="{{ self.beschreibung() }}">
+<meta property="og:locale" content="{{ 'de_DE' if sprache == 'de' else 'en_GB' }}">
 <link rel="icon" href="{{ datei('statisch/bilder/logo.svg') }}" type="image/svg+xml">
 <link rel="stylesheet" href="{{ datei('statisch/stil.css') }}">
 <script src="{{ datei('statisch/karussell.js') }}" defer></script>
@@ -45,12 +51,13 @@
   <div class="breite fuss-zeile">
     <p class="widmung">{{ t.fuss.widmung }}</p>
     <p>{{ t.fuss.copyright }} · {{ t.fuss.lizenz | md }}</p>
-    <p>
-      <a href="{{ url('impressum') }}">{{ t.fuss.impressum }}</a> ·
-      <a href="{{ url('datenschutz') }}">{{ t.fuss.datenschutz }}</a> ·
-      <a href="{{ url('nutzungsbedingungen') }}">{{ t.fuss.nutzungsbedingungen }}</a> ·
-      <a href="{{ links.produktseite }}" target="_blank" rel="noopener noreferrer">{{ t.fuss.quelle }}<span class="unsichtbar"> {{ t.fuss.neuer_tab }}</span></a>
-    </p>
+    {# Fußlinks als Liste mit Platz zum Antippen (PW-12 f); die aktuelle Seite ist markiert (PW-12 d) #}
+    <ul class="fuss-links">
+      {% for name in ['impressum', 'datenschutz', 'nutzungsbedingungen', 'barrierefreiheit'] %}
+      <li><a href="{{ url(name) }}"{% if seite is defined and seite.name == name %} aria-current="page"{% endif %}>{{ t.fuss[name] }}</a></li>
+      {% endfor %}
+      <li><a href="{{ links.produktseite }}" target="_blank" rel="noopener noreferrer">{{ t.fuss.quelle }}<span class="unsichtbar"> {{ t.fuss.neuer_tab }}</span></a></li>
+    </ul>
   </div>
 </footer>
 <dialog class="bildansicht" aria-label="{{ t.bildansicht.name }}">

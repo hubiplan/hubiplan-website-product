@@ -15,7 +15,7 @@
     <div>
       <h2>{{ r.ausprobieren.ueberschrift }}</h2>
       <p>{{ r.ausprobieren.text }}</p>
-      <p><a href="{{ links.ausprobieren }}">{{ r.ausprobieren.link }} →</a></p>
+      <p><a href="{{ links.ausprobieren }}">{{ r.ausprobieren.link }}</a></p>
     </div>
     <div>
       <p class="klein">{{ r.ausprobieren.befehle_titel }}</p>
@@ -32,7 +32,7 @@ docker compose up --build</code></pre>
     <ul class="punkte">
       {% for p in r.betreiben.punkte %}<li>{{ p | md }}</li>{% endfor %}
     </ul>
-    <p><a href="{{ links.betreiben }}">{{ r.betreiben.link }} →</a></p>
+    <p><a href="{{ links.betreiben }}">{{ r.betreiben.link }}</a></p>
   </div></div>
 </section>
 
@@ -46,7 +46,7 @@ docker compose up --build</code></pre>
         <h3>{{ q.titel }}</h3>
         <p>{{ q.text }}</p>
         <p class="technik-zeile">{{ r.quellcode.technik }} {{ q.technik }}</p>
-        <p><a href="{{ links[q.repo] }}" target="_blank" rel="noopener noreferrer">{{ r.quellcode.link }} →<span class="unsichtbar"> {{ t.fuss.neuer_tab }}</span></a></p>
+        <p><a href="{{ links[q.repo] }}" target="_blank" rel="noopener noreferrer">{{ r.quellcode.link }}<span class="unsichtbar"> {{ t.fuss.neuer_tab }}</span></a></p>
       </li>
       {% endfor %}
     </ul>
