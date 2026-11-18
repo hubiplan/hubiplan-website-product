@@ -67,7 +67,7 @@
           <details>
             <summary>{{ s.funktionen.mehr }}<span class="unsichtbar">: {{ f.titel }}</span></summary>
             <p class="nutzen-schmal">{{ f.nutzen }}</p>
-            <p>{{ f.mehr }}</p>
+            {% for absatz in f.mehr.split("\n") %}<p>{{ absatz }}</p>{% endfor %}
           </details>
         </li>
         {% endfor %}

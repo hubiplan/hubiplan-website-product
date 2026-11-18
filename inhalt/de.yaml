@@ -102,97 +102,163 @@ start:
           - titel: Mitglieder
             nutzen: Alle Mitglieder in einer Liste, vom Antrag über die Webseite bis zur Kündigung.
             mehr: >-
-              Mitgliedsantrag online über die Vereinswebseite, Aufnahme mit Dublettenprüfung,
-              Kündigung im Mitgliederbereich, Familien und Haushalte mit einem Brief und einem
-              Zahler, Ehrungen, Jubiläen und Ämter, Ausweis mit QR-Code (auch in Google und
-              Apple Wallet), Excel-Import und -Export. Auch Firmen oder Vereine als Mitglieder.
+              Neue Mitglieder stellen ihren Antrag online über die Vereinswebseite; Sie
+              prüfen ihn und nehmen sie mit einem Klick auf, eine Dublettenprüfung warnt vor
+              doppelten Einträgen. Bestehende Listen übernehmen Sie per Excel-Import und
+              geben sie jederzeit wieder als Excel aus.
+
+              Familien und Haushalte bekommen einen gemeinsamen Brief und haben einen
+              Zahler, auch Firmen oder andere Vereine können Mitglied sein. Ehrungen,
+              Jubiläen und Ämter sind am Mitglied vermerkt, Qualifikationen wie Erste Hilfe
+              mit Ablaufdatum. Jedes Mitglied hat einen Ausweis mit QR-Code, auch in Google
+              und Apple Wallet, und kann im Mitgliederbereich seine Daten ansehen,
+              Änderungen melden oder selbst kündigen.
           - titel: Beiträge und Rechnungen
             nutzen: Beiträge einziehen und Rechnungen schreiben, mit SEPA-Lastschrift und Mahnung.
             mehr: >-
-              Beitragslauf, auch als Familienbeitrag oder nach Größe für Organisationen,
-              Rechnungen mit QR-Code, Mahnstufen, SEPA-Lastschrift auch als Firmenlastschrift.
-              E-Rechnungen als XRechnung und ZUGFeRD ausstellen und empfangen, an Behörden mit
-              Leitweg-ID.
+              Ein Beitragslauf erstellt die Rechnungen für alle Mitglieder auf einmal, auch
+              als Familienbeitrag, nach Größe für Organisationen oder anteilig bei Eintritt
+              im laufenden Jahr. Wer eine Ermäßigung bekommt, lädt den Nachweis selbst hoch.
+
+              Rechnungen tragen einen QR-Code zum Bezahlen, offene Beträge laufen über
+              Mahnstufen, und Beiträge ziehen Sie per SEPA-Lastschrift ein, auch als
+              Firmenlastschrift. E-Rechnungen als XRechnung und ZUGFeRD stellen Sie aus und
+              empfangen sie, auch an Behörden mit Leitweg-ID; eingehende Rechnungen kommen
+              über ein eigenes Postfach direkt in HUBIplan an.
           - titel: Zugänge und Datenschutz
             nutzen: Jede Person sieht nur, was sie sehen darf. Vertrauliches ist verschlüsselt.
             mehr: >-
-              Anmeldung mit Zwei-Faktor-Schutz, Pflicht für alle mit Verwaltungsrechten,
-              Rollen mit frei wählbaren Rechten je Einheit, „Ansicht als Rolle“, Anmeldung an
-              der Vereins-Nextcloud. Verschlüsselte Felder und Dateien, Änderungsprotokoll,
-              Einwilligungen, Löschfristen.
+              Jede Person meldet sich mit eigenem Zugang an, auf Wunsch mit Passkey statt
+              Passwort. Wer Verwaltungsrechte hat, braucht einen zweiten Faktor. Rollen mit
+              frei wählbaren Rechten legen je Verein oder Abteilung fest, wer was sehen und
+              ändern darf; mit „Ansicht als Rolle“ prüfen Sie das vorab.
+
+              Vertrauliche Felder und Dateien liegen verschlüsselt, jede Änderung steht im
+              Änderungsprotokoll. Einwilligungen und Löschfristen sind eingebaut, damit der
+              Verein die Datenschutzregeln einhalten kann. Auf Wunsch melden sich Mitglieder
+              mit demselben Zugang auch an der Nextcloud des Vereins an.
       - titel: Finanzen
         liste:
           - titel: Kasse
             nutzen: Das Kassenbuch mit Kontoauszügen und Belegen, sauber für Kassenprüfung und Finanzamt.
             mehr: >-
-              Kasse nach GoBD mit Kontoauszügen und Splitbuchung, Anlagen mit Abschreibung,
-              Rücklagen, Auslagen erstatten, Kassenprüfung mit Stichproben.
+              Das Kassenbuch führen Sie nach GoBD, wie es das Finanzamt erwartet:
+              Kontoauszüge und Belege hängen direkt an der Buchung, eine Zahlung lässt sich
+              auf mehrere Kategorien aufteilen.
+
+              Anlagen werden abgeschrieben, Rücklagen geplant, und Mitglieder reichen
+              Auslagen mit Beleg zur Erstattung ein, auch in der App. Für die Kassenprüfung
+              zieht HUBIplan Stichproben, und die Prüfer bekommen eine Rolle, die die Kasse
+              liest, aber nicht führt.
           - titel: Haushaltsplan
             nutzen: Plan und Ist je Bereich im Blick, mit Hochrechnung bis zum Jahresende.
             mehr: >-
-              Haushaltsplan mit Plan, Ist und Hochrechnung je Kategorie und Abteilung, Planwerte
-              an Veranstaltungen, Ausgabe als PDF und Excel.
+              Für jedes Jahr planen Sie Einnahmen und Ausgaben je Kategorie und Abteilung.
+              HUBIplan stellt dem Plan das Ist aus der Kasse gegenüber und rechnet bis zum
+              Jahresende hoch, so sehen Sie früh, wo es eng wird.
+
+              Planwerte lassen sich auch an einzelne Veranstaltungen wie das Sommerfest
+              hängen. Für Vorstandssitzung und Mitgliederversammlung geben Sie den Plan als
+              PDF oder Excel aus.
           - titel: Steuern und Spenden
             nutzen: Spenden bescheinigen und die steuerlichen Freigrenzen im Blick behalten.
             mehr: >-
-              Zweckgebundene Spenden, Zuwendungsbestätigungen, steuerliche Auswertung mit
-              Freigrenzen-Ampel, Übungsleiter- und Ehrenamtspauschale.
+              Spenden erfassen Sie mit Zweck und stellen die Zuwendungsbestätigung direkt
+              aus HUBIplan aus. Zweckgebundene Spenden bleiben bis zur Verwendung sichtbar.
+
+              Die steuerliche Auswertung teilt die Einnahmen nach den Bereichen des Vereins
+              auf und zeigt mit einer Ampel, wie nah Sie an den Freigrenzen sind.
+              Übungsleiter- und Ehrenamtspauschalen behalten Sie je Person im Blick.
       - titel: Vereinsleben
         liste:
           - titel: Termine und Helferdienste
             nutzen: Ein Kalender für alle, mit Zusagen und Dienstplänen zum Selbsteintragen.
             mehr: >-
-              Kalender für Verband, Verein und Abteilungen, Zusagen mit Anmeldeschluss,
-              Anhänge aus der Ablage, Jahresprogramm als PDF und Kalender-Abo. Dienstpläne mit
-              Schichten zum Selbsteintragen, auf Wunsch nur mit gültigem Nachweis wie Erste
-              Hilfe.
+              Ein Kalender zeigt Termine des Verbands, des Vereins und der Abteilungen;
+              jedes Mitglied sieht, was es betrifft. Mitglieder sagen zu oder ab, auf Wunsch
+              mit Anmeldeschluss, und Anhänge wie Anfahrt oder Ablaufplan kommen direkt aus
+              der Ablage.
+
+              Das Jahresprogramm geben Sie als PDF aus oder lassen es als Kalender-Abo in
+              Handy oder Outlook laufen. Für Feste und Veranstaltungen legen Sie Dienstpläne
+              mit Schichten an, in die sich Helfer selbst eintragen, auf Wunsch nur mit
+              gültigem Nachweis wie Erste Hilfe.
           - titel: Versammlungen
             nutzen: Einladen, abstimmen und Protokoll führen, auch mit Teilnahme aus der Ferne.
             mehr: >-
-              Mitgliederversammlungen und Vorstandssitzungen mit Tagesordnung samt
-              Unterpunkten und Einladungsfrist, Anmelden per QR-Code in der App, Teilnahme aus
-              der Ferne mit offener oder geheimer Online-Abstimmung, Protokoll mit Freigabe,
-              Beschlussbuch mit Wahlen, die direkt ins Amt übernommen werden.
+              Mitgliederversammlungen und Vorstandssitzungen bereiten Sie mit Tagesordnung
+              samt Unterpunkten vor; HUBIplan achtet auf die Einladungsfrist und verschickt
+              die Einladung. Vor Ort melden sich Mitglieder per QR-Code in der App an.
+
+              Wer nicht kommen kann, nimmt aus der Ferne teil und stimmt online ab, offen
+              oder geheim. Abstimmungsergebnisse übernehmen Sie direkt ins Protokoll, das
+              danach freigegeben wird; Beschlüsse landen im Beschlussbuch, und gewählte
+              Personen übernimmt HUBIplan direkt ins Amt.
           - titel: Aufgaben und Fristen
             nutzen: Nichts vergessen, mit Aufgaben samt Erinnerung und einem Kalender für Vereinspflichten.
             mehr: >-
-              Aufgaben mit Frist und Erinnerung, geteilt mit Personen oder Ämtern, auch als
-              Serie. Fristenkalender für Vereinspflichten wie Steuererklärung oder Meldung ans
-              Registergericht, mit Erinnerung an das zuständige Amt.
+              Aufgaben bekommen eine Frist und eine Erinnerung und lassen sich an Personen
+              oder an ein Amt geben, damit sie beim Wechsel im Vorstand nicht verloren
+              gehen. Wiederkehrendes legen Sie einmal als Serie an.
+
+              Der Fristenkalender kennt typische Vereinspflichten wie Steuererklärung,
+              Freistellungsbescheid oder Meldungen ans Registergericht und erinnert
+              rechtzeitig das zuständige Amt.
           - titel: Kommunikation
             nutzen: Rundschreiben per E-Mail, Brief oder App, dazu Umfragen und Dokumente.
             mehr: >-
-              Rundschreiben als E-Mail, Serienbrief oder Push in die App, Mailverteiler,
-              Umfragen und Meinungsbilder (Termin finden, Essenswahl, auf Wunsch anonym),
-              Dokumentenablage mit Ordnern und Rechten.
+              Rundschreiben verschicken Sie als E-Mail, als Serienbrief auf dem Briefbogen
+              des Vereins oder als Nachricht in die App, an alle oder an ausgewählte
+              Gruppen. Über einen Mailverteiler wird eine Mail an eine Vereinsadresse zum
+              Rundschreiben.
+
+              Mit Umfragen und Meinungsbildern finden Sie einen Termin, fragen die
+              Essenswahl ab oder holen Stimmungen ein, auf Wunsch anonym. In der
+              Dokumentenablage liegen Satzung, Protokolle und Formulare in Ordnern mit
+              eigenen Rechten.
           - titel: Material und Räume
             nutzen: Inventar und Räume verwalten, verleihen und buchen.
             mehr: >-
-              Inventar wie Zelte, Technik oder Instrumente und Orte mit ihren Räumen wie
-              Vereinsheim oder Sportplatz, mit Zustand und Fotos. Buchungskalender mit
-              Anfrage und Freigabe, Ausleihe mit Ausgabe und Rückgabe, Belegung auch auf der
-              Webseite.
+              Im Inventar verwalten Sie Zelte, Technik, Instrumente oder Fahnen mit Zustand,
+              Fotos und Standort, dazu Orte mit ihren Räumen wie Vereinsheim oder
+              Sportplatz.
+
+              Räume und Material werden über einen Buchungskalender mit Anfrage und Freigabe
+              gebucht. Bei der Ausleihe vermerken Sie Ausgabe und Rückgabe, und auf Wunsch
+              zeigt die Vereinswebseite die Belegung.
       - titel: Mehr für Ihren Verein
         liste:
           - titel: Musik und Auftritte
             nutzen: Für Musikvereine und Spielleute, mit Besetzung, Noten und Proben.
             mehr: >-
-              Musiker mit Instrumenten und Stimmen, Auftritte mit Sollbesetzung, Zu- und
-              Absagen, Ersatz bei Abwesenheit, Gastmusiker per Link, Notenarchiv mit Notenpult
-              in der App, Proben, Instrumente und Uniformen, Angebot, Veranstalterrechnung,
-              Gagen per SEPA.
+              Musiker sind mit Instrumenten und Stimmen erfasst. Für jeden Auftritt legen
+              Sie die Sollbesetzung fest, sehen Zu- und Absagen und finden Ersatz bei
+              Abwesenheit; Gastmusiker sagen über einen Link zu.
+
+              Das Notenarchiv zeigt die Stücke am Notenpult in der App. Proben, Instrumente
+              und Uniformen sind ebenso verwaltet wie das Geschäft mit Veranstaltern:
+              Angebot, Rechnung und Gagen per SEPA.
           - titel: Wettbewerbe
             nutzen: Wettkämpfe erfassen, Ranglisten zeigen und Urkunden drucken.
             mehr: >-
-              Wettbewerbe aller Art, auch Schießwettbewerbe, mit Einzel- und Mannschaftswertung,
-              Erfassen vor Ort auch ohne Netz und in der App, Live-Ranglisten, Urkunden,
-              Statistik mit Durchschnitten und Verläufen, Meldungen an fremde Veranstalter.
+              Wettbewerbe aller Art, auch Schießwettbewerbe, erfassen Sie mit Einzel- und
+              Mannschaftswertung. Ergebnisse tragen Sie vor Ort ein, auch ohne Netz und in
+              der App, die Ranglisten laufen live mit.
+
+              Urkunden drucken Sie aus Vorlagen. Die Statistik zeigt Durchschnitte und
+              Verläufe je Mitglied, und Meldungen zu Wettbewerben fremder Veranstalter
+              behalten Sie ebenfalls im Blick.
           - titel: Webseite und App
             nutzen: Vereinswebseite und Mitglieder-App aus denselben Daten, ohne doppelte Pflege.
             mehr: >-
-              Vereinswebseite unter der eigenen Domain und App für die Mitglieder, beide aus
-              denselben Daten. Auf Wunsch hilft ein KI-Assistent über eine eigene
-              Schnittstelle bei Texten, Bildern und Gestaltung der Webseite.
+              Die Vereinswebseite läuft unter der eigenen Domain und zieht Termine,
+              Vorstand, Chronik und Ergebnisse direkt aus der Verwaltung; Sie pflegen nichts
+              doppelt. Gestaltung, Farben und Schriften stellen Sie ohne Technikwissen ein.
+
+              Die App für Android und iPhone zeigt Mitgliedern Termine, Ausweis,
+              Rundschreiben und mehr aus denselben Daten. Auf Wunsch hilft ein KI-Assistent
+              über eine eigene Schnittstelle bei Texten, Bildern und der Gestaltung der
+              Webseite.
   ebenen:
     ueberschrift: Für einzelne Vereine und ganze Verbände
     text: >-
