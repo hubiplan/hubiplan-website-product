@@ -36,7 +36,7 @@ STATISCH = WURZEL / "statisch"
 SPRACHEN = ["de", "en"]
 
 # Breiten der WebP-Dateien in Pixeln: Ausschnitt in der Seite, ganzes Bild in der Bildansicht
-BREITEN_AUSSCHNITT = (480, 960)
+BREITEN_AUSSCHNITT = (560, 1120)
 BREITEN_GANZ = (1600,)
 BREITEN_HANDY = (420, 1080)
 WEBP_QUALITAET = 80
