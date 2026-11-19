@@ -28,8 +28,10 @@ Bilder, Funktionen in vier Gruppen (je Kachel ein Satz, Einzelheiten aufklappbar
 Verbände, Webseite und App, „So fangen Sie an“ (ohne Technikwörter), häufige Fragen, „Wer steckt
 dahinter“ und Mitmachen. Alles für Technikkundige (Ausprobieren mit Docker, Selbst betreiben,
 Repositories) steht auf der Seite `technik/`. Dazu kommen Impressum, Datenschutzhinweise, die
-Anleitung zum Löschen des App-Kontos, die Nutzungsbedingungen der App und eine zweisprachige
-Fehlerseite `404.html`. Alle Seiten gibt es auf Deutsch und Englisch; die Liste steht in
+Anleitung zum Löschen des App-Kontos, die Nutzungsbedingungen der App, die Erklärung zur
+Barrierefreiheit und eine zweisprachige Fehlerseite `404.html`. Am Handy bleibt die Startseite
+kurz (Kacheln klappen über ihre Überschrift auf); beim Teilen zeigt sie eine Vorschau (Open
+Graph, ohne Bild). Alle Seiten gibt es auf Deutsch und Englisch; die Liste steht in
 `inhalt/seiten.yaml`.
 
 Bei jedem Release von HUBIplan die Fassung unter `start.wer.fassung` in beiden Sprachen anpassen.
@@ -85,9 +87,9 @@ dieses Skript, nicht die fertige Seite.
 
 Die PNG-Dateien gehen nicht hinaus: `scripts/bauen.py` macht daraus WebP-Dateien (mit Pillow,
 Prüfsumme im Dateinamen). Die Seite zeigt den Ausschnitt `ausschnitt: [x, y, Breite, Höhe]` aus
-`fotos.json` (in Fensterpixeln), damit die Schrift im Bild auch am Handy lesbar bleibt (etwa 480 ×
-360 Fensterpixel), in 480 und 960 Pixel Breite; die Bildansicht öffnet das ganze Bild (1600 Pixel).
-Neue Ausschnitte nach dem Bauen bei 390 Pixel Breite ansehen.
+`fotos.json` (in Fensterpixeln), in der Regel den ganzen Inhaltsbereich ohne Seitenleiste
+(Seitenverhältnis 10:7), in 560 und 1120 Pixel Breite; die Bildansicht öffnet das ganze Bild
+(1600 Pixel). Neue Ausschnitte nach dem Bauen bei 390 Pixel Breite ansehen.
 
 Das Bild der Android-App (`baustein-android.png`, Terminliste, 1080 × 2400) entsteht von Hand
 im Android-Emulator, weil die App nur HTTPS mit System-Zertifikaten zulässt:
