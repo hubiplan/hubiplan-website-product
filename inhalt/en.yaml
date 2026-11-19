@@ -16,9 +16,9 @@ start:
   titel: HUBIplan – free and open-source club management
   beschreibung: >-
     HUBIplan is free, web-based club management for clubs and associations of any kind, from 10
-    to 10,000 members: members, fees and SEPA, cash book and e-invoices, events, meetings,
-    volunteer shifts, tasks, polls, music and performances, equipment and rooms, newsletters,
-    club website and app.
+    to 10,000 members: members, fees and SEPA, cash book and e-invoices, events, paid event
+    registration, meetings, volunteer shifts, tasks, polls, music and performances, equipment and
+    rooms, newsletters, club website and app.
   kopf:
     zeile: Free and open-source club management
     ueberschrift: Your club in one place, in the browser, on the phone and on its own website.
@@ -85,8 +85,8 @@ start:
   funktionen:
     ueberschrift: What HUBIplan does
     einleitung: >-
-      Each club switches on only what it needs. Every page has help with pictures, in German or
-      English.
+      Each club switches on only what it needs. Every page has help with pictures and
+      step-by-step guides, in German or English.
     mehr: More
     gruppen:
       - titel: Members and fees
@@ -109,7 +109,9 @@ start:
             mehr: >-
               A fee run creates the invoices for all members at once, also as family fees,
               by size for organisations or pro rata for members joining during the year.
-              Members entitled to a reduction upload the proof themselves.
+              For reductions, for students for example, HUBIplan reminds members of the
+              proof in good time; they upload it in the members' area, in the app or via a
+              link in the reminder email.
 
               Invoices carry a QR code for payment, open amounts go through dunning levels,
               and fees are collected by SEPA direct debit, including B2B. You issue and
@@ -137,8 +139,10 @@ start:
               expects: bank statements and receipts hang directly on the entry, and a
               payment can be split across several categories.
 
-              Assets are depreciated, reserves planned, and members submit expenses with a
-              receipt for refund, in the app too. For the audit, HUBIplan draws samples, and
+              Assets are depreciated and reserves planned. Members report expenses and
+              travel costs with a photo of the receipt, in the app too; the treasurer
+              approves, a second person reviews, and HUBIplan books the refund with the
+              receipt, individually or as a bulk transfer. For the audit, HUBIplan draws samples, and
               the auditors get a role that can read the cash book but not keep it.
           - titel: Budget
             nutzen: Plan and actuals per area at a glance, with a forecast to the end of the year.
@@ -158,6 +162,16 @@ start:
               The tax evaluation splits income by the club's tax areas and shows with a
               traffic light how close you are to the thresholds. Coach and volunteer
               allowances are tracked per person.
+          - titel: Business partners and sponsors
+            nutzen: Suppliers, sponsors and authorities in one place, with contacts and contracts.
+            mehr: >-
+              Companies, authorities and other clubs outside the member list are kept with
+              contacts, notes and bank details. In the cash book and for incoming invoices,
+              HUBIplan suggests the matching partner and warns if the bank details have
+              changed.
+
+              Sponsorship agreements and contracts have a term and remind you in good time
+              to renew or cancel. Sponsors can appear with their logo on the club website.
       - titel: Club life
         liste:
           - titel: Events and volunteer shifts
@@ -169,9 +183,22 @@ start:
               straight from the document store.
 
               You export the annual programme as PDF or subscribe to it as a calendar feed
-              on phone or Outlook. For fêtes and events you set up rotas with shifts that
-              helpers sign up for themselves, optionally only with a valid certificate such
-              as first aid.
+              on phone or Outlook; the board gets its own feed with its internal events. For
+              fêtes and events you set up rotas with shifts that helpers sign up for
+              themselves, optionally only with a valid certificate such as first aid.
+          - titel: Paid event registration
+            nutzen: Binding registration for fêtes, trips and courses, with invoice, ticket and admission.
+            mehr: >-
+              Instead of yes and no replies, an event gets binding registration with prices
+              for members, guests and age groups, early-bird prices, a place limit and a
+              waiting list. Members register themselves and their family, guests also via
+              the club website; the invoice comes with the confirmation, and HUBIplan handles
+              cancellations and cancellation fees according to your deadlines.
+
+              On the day there are tickets with a QR code, name badges and an admission list
+              that updates live. Helpers at the entrance and the box office get their own
+              link to scan and take payments, without any HUBIplan account, on the iPhone
+              too.
           - titel: Meetings
             nutzen: Invite, vote and keep the minutes, with remote attendance too.
             mehr: >-
@@ -211,8 +238,10 @@ start:
               sports ground.
 
               Rooms and equipment are booked through a booking calendar with request and
-              approval. When lending, you record issue and return, and the club website can
-              show occupancy if you like.
+              approval, with the week, month or whole year at a glance. When a member books,
+              the booking appears in their record; if a rent is set, “Create invoice” creates
+              the invoice straight away. When lending, you record issue and return, and the
+              club website can show occupancy if you like.
       - titel: More for your club
         liste:
           - titel: Music and performances
@@ -278,8 +307,8 @@ start:
         bild: Detail of the home page of a made-up demo club's website
       - titel: Android app
         text: >-
-          Events, messages, tasks, volunteer shifts, polls, meetings with online voting, music
-          stand, membership card (also in Google Wallet) and club management on the go. No ads.
+          Events, messages, tasks, volunteer shifts, polls, meetings with online voting,
+          expenses and proofs by photo, admission by QR code, music stand, membership card (also in Google Wallet) and club management on the go. No ads.
           An iPhone app is in the works.
         repo: android
         bild: Event list in the Android app
@@ -349,7 +378,9 @@ start:
           runs in the browser on any phone.
       - frage: Who helps when something does not work?
         antwort: >-
-          The application has help with screenshots and explanations right on the pages. Bugs and
+          The application has help with screenshots and explanations right on the pages, plus
+          guides for occasions such as a change of board, the turn of the year or a returned direct
+          debit. Below each guide you can say whether it helped and what was missing. Bugs and
           questions go to the [issues on GitHub](https://github.com/hubiplan/hubiplan/issues). There is
           no paid support or hosting; HUBIplan is meant to be run by the club itself.
       - frage: Can we leave again, and what happens if the project ends?

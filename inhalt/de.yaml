@@ -17,9 +17,9 @@ start:
   titel: HUBIplan – freie Vereinsverwaltung
   beschreibung: >-
     HUBIplan ist eine freie, webbasierte Vereinsverwaltung für Vereine jeder Art, von 10 bis 10.000
-    Mitgliedern: Mitglieder, Beiträge und SEPA, Kasse und E-Rechnungen, Termine, Versammlungen,
-    Helferdienste, Aufgaben, Umfragen, Musik und Auftritte, Material und Räume, Rundschreiben,
-    Vereinswebseite und App.
+    Mitgliedern: Mitglieder, Beiträge und SEPA, Kasse und E-Rechnungen, Termine, Anmeldungen mit
+    Teilnahmegebühr, Versammlungen, Helferdienste, Aufgaben, Umfragen, Musik und Auftritte,
+    Material und Räume, Rundschreiben, Vereinswebseite und App.
   kopf:
     zeile: Freie Vereinsverwaltung
     ueberschrift: Ihr Verein an einem Ort, im Browser, am Handy und auf der eigenen Webseite.
@@ -92,8 +92,8 @@ start:
   funktionen:
     ueberschrift: Was HUBIplan kann
     einleitung: >-
-      Jeder Verein schaltet nur ein, was er braucht. Zu jeder Seite gibt es Hilfe mit Bildern,
-      auf Deutsch oder Englisch.
+      Jeder Verein schaltet nur ein, was er braucht. Zu jeder Seite gibt es Hilfe mit Bildern und
+      Anleitungen Schritt für Schritt, auf Deutsch oder Englisch.
     mehr: Mehr dazu
     gruppen:
       - titel: Mitglieder und Beiträge
@@ -117,7 +117,9 @@ start:
             mehr: >-
               Ein Beitragslauf erstellt die Rechnungen für alle Mitglieder auf einmal, auch
               als Familienbeitrag, nach Größe für Organisationen oder anteilig bei Eintritt
-              im laufenden Jahr. Wer eine Ermäßigung bekommt, lädt den Nachweis selbst hoch.
+              im laufenden Jahr. Für Ermäßigungen etwa von Studierenden erinnert HUBIplan
+              rechtzeitig an den Nachweis; Mitglieder laden ihn im Mitgliederbereich, in der
+              App oder über einen Link aus der Erinnerungsmail hoch.
 
               Rechnungen tragen einen QR-Code zum Bezahlen, offene Beträge laufen über
               Mahnstufen, und Beiträge ziehen Sie per SEPA-Lastschrift ein, auch als
@@ -145,8 +147,10 @@ start:
               Kontoauszüge und Belege hängen direkt an der Buchung, eine Zahlung lässt sich
               auf mehrere Kategorien aufteilen.
 
-              Anlagen werden abgeschrieben, Rücklagen geplant, und Mitglieder reichen
-              Auslagen mit Beleg zur Erstattung ein, auch in der App. Für die Kassenprüfung
+              Anlagen werden abgeschrieben und Rücklagen geplant. Mitglieder melden Auslagen
+              und Fahrtkosten mit Foto des Belegs, auch in der App; die Kasse gibt frei, eine
+              zweite Person sieht mit drauf, und HUBIplan bucht die Erstattung samt Beleg,
+              einzeln oder als Sammelüberweisung. Für die Kassenprüfung
               zieht HUBIplan Stichproben, und die Prüfer bekommen eine Rolle, die die Kasse
               liest, aber nicht führt.
           - titel: Haushaltsplan
@@ -168,6 +172,17 @@ start:
               Die steuerliche Auswertung teilt die Einnahmen nach den Bereichen des Vereins
               auf und zeigt mit einer Ampel, wie nah Sie an den Freigrenzen sind.
               Übungsleiter- und Ehrenamtspauschalen behalten Sie je Person im Blick.
+          - titel: Geschäftspartner und Sponsoren
+            nutzen: Lieferanten, Sponsoren und Behörden an einer Stelle, mit Ansprechpartnern und Verträgen.
+            mehr: >-
+              Firmen, Behörden und andere Vereine außerhalb der Mitgliederliste führen Sie
+              mit Ansprechpartnern, Notizen und Bankverbindung. Im Kassenbuch und beim
+              Rechnungseingang schlägt HUBIplan den passenden Partner vor und warnt, wenn
+              sich die Bankverbindung geändert hat.
+
+              Sponsoring-Vereinbarungen und Verträge haben eine Laufzeit und erinnern
+              rechtzeitig an Verlängerung oder Kündigung. Sponsoren erscheinen auf Wunsch
+              mit Logo auf der Vereinswebseite.
       - titel: Vereinsleben
         liste:
           - titel: Termine und Helferdienste
@@ -179,9 +194,23 @@ start:
               der Ablage.
 
               Das Jahresprogramm geben Sie als PDF aus oder lassen es als Kalender-Abo in
-              Handy oder Outlook laufen. Für Feste und Veranstaltungen legen Sie Dienstpläne
+              Handy oder Outlook laufen; der Vorstand bekommt dazu ein eigenes Abo mit
+              seinen internen Terminen. Für Feste und Veranstaltungen legen Sie Dienstpläne
               mit Schichten an, in die sich Helfer selbst eintragen, auf Wunsch nur mit
               gültigem Nachweis wie Erste Hilfe.
+          - titel: Anmeldungen mit Teilnahmegebühr
+            nutzen: Verbindliche Anmeldung zu Festen, Fahrten und Kursen, mit Rechnung, Eintrittskarte und Einlass.
+            mehr: >-
+              Statt Zu- und Absagen bekommt ein Termin eine verbindliche Anmeldung mit Preisen
+              für Mitglieder, Gäste und Altersstufen, Frühbucherpreis, Platzgrenze und
+              Warteliste. Mitglieder melden sich und ihre Familie an, Gäste auch über die
+              Vereinswebseite; die Rechnung kommt mit der Bestätigung, Abmeldungen und
+              Stornogebühren regelt HUBIplan nach Ihren Fristen.
+
+              Am Tag selbst gibt es Eintrittskarten mit QR-Code, Namensschilder und eine
+              Einlassliste, die live mitläuft. Helfer am Einlass und an der Abendkasse
+              bekommen einen eigenen Link zum Scannen und Kassieren, ganz ohne Zugang zu
+              HUBIplan, auch am iPhone.
           - titel: Versammlungen
             nutzen: Einladen, abstimmen und Protokoll führen, auch mit Teilnahme aus der Ferne.
             mehr: >-
@@ -223,8 +252,10 @@ start:
               Sportplatz.
 
               Räume und Material werden über einen Buchungskalender mit Anfrage und Freigabe
-              gebucht. Bei der Ausleihe vermerken Sie Ausgabe und Rückgabe, und auf Wunsch
-              zeigt die Vereinswebseite die Belegung.
+              gebucht, mit Woche, Monat oder ganzem Jahr im Blick. Bucht ein Mitglied, steht
+              die Buchung in seiner Akte; ist ein Mietpreis hinterlegt, legt „Rechnung anlegen“
+              die Rechnung gleich an. Bei der Ausleihe vermerken Sie Ausgabe und Rückgabe, und
+              auf Wunsch zeigt die Vereinswebseite die Belegung.
       - titel: Mehr für Ihren Verein
         liste:
           - titel: Musik und Auftritte
@@ -292,8 +323,8 @@ start:
       - titel: Android-App
         text: >-
           Termine, Mitteilungen, Aufgaben, Helferdienste, Umfragen, Versammlungen mit
-          Online-Abstimmung, Notenpult, Mitgliedsausweis (auch in Google Wallet) und
-          Vereinsverwaltung unterwegs. Ohne Werbung. Eine App fürs iPhone ist im Aufbau.
+          Online-Abstimmung, Auslagen und Nachweise mit Foto, Einlass per QR-Code, Notenpult,
+          Mitgliedsausweis (auch in Google Wallet) und Vereinsverwaltung unterwegs. Ohne Werbung. Eine App fürs iPhone ist im Aufbau.
         repo: android
         bild: Terminliste in der Android-App
     play_alt: Jetzt bei Google Play
@@ -365,7 +396,9 @@ start:
           im Browser auf jedem Handy.
       - frage: Wer hilft, wenn etwas nicht klappt?
         antwort: >-
-          In der Anwendung gibt es Hilfe mit Bildschirmfotos und Erklärungen direkt auf den Seiten.
+          In der Anwendung gibt es Hilfe mit Bildschirmfotos und Erklärungen direkt auf den Seiten,
+          dazu Anleitungen für Anlässe wie Vorstandswechsel, Jahreswechsel oder Rücklastschrift.
+          Unter jeder Anleitung lässt sich sagen, ob sie geholfen hat und was gefehlt hat.
           Fehler und Fragen gehen an die [Fehlermeldungen bei GitHub](https://github.com/hubiplan/hubiplan/issues).
           Bezahlten Support oder Hosting gibt es nicht; HUBIplan ist zum Selbstbetreiben gedacht.
       - frage: Kommen wir wieder heraus, und was passiert, wenn das Projekt endet?
