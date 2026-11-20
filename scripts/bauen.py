@@ -41,6 +41,25 @@ BREITEN_GANZ = (1600,)
 BREITEN_HANDY = (420, 1080)
 WEBP_QUALITAET = 80
 
+# Inhaltsrichtlinie: nur eigene Dateien, nichts Eingebettetes. Steht als <meta> in jeder Seite und
+# für Apache zusätzlich in der .htaccess (frame-ancestors wirkt nur als Kopfzeile).
+RICHTLINIE = (
+    "default-src 'none'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; "
+    "base-uri 'none'; form-action 'none'"
+)
+
+# Kopfzeilen für Apache-Webspaces (mod_headers). nginx, Caddy und andere: siehe README.
+HTACCESS = f"""ErrorDocument 404 /404.html
+<IfModule mod_headers.c>
+Header always set Content-Security-Policy "{RICHTLINIE}; frame-ancestors 'none'"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "DENY"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+Header always set Strict-Transport-Security "max-age=31536000" "expr=%{{HTTPS}} == 'on'"
+</IfModule>
+"""
+
 
 def lade_yaml(pfad: Path):
     with pfad.open(encoding="utf-8") as f:
@@ -134,6 +153,7 @@ def baue(ziel: Path) -> list[Path]:
         lstrip_blocks=True,
     )
     env.filters["md"] = md
+    env.globals["richtlinie"] = RICHTLINIE
 
     if ziel.exists():
         shutil.rmtree(ziel)
@@ -217,8 +237,9 @@ def baue(ziel: Path) -> list[Path]:
     )
     (ziel / "404.html").write_text(html, encoding="utf-8")
     geschrieben.append(ziel / "404.html")
-    # Apache-Webspaces: eigene Fehlerseite statt der des Hosters (nginx und andere: siehe README)
-    (ziel / ".htaccess").write_text("ErrorDocument 404 /404.html\n", encoding="utf-8")
+    # Apache-Webspaces: eigene Fehlerseite statt der des Hosters und Sicherheitskopfzeilen
+    # (nginx und andere: siehe README)
+    (ziel / ".htaccess").write_text(HTACCESS, encoding="utf-8")
     return geschrieben
 
 

@@ -6,6 +6,10 @@
 <title>{% block titel %}{% endblock %}</title>
 <meta name="description" content="{% block beschreibung %}{% endblock %}">
 <meta name="color-scheme" content="light dark">
+{# Inhaltsrichtlinie schon in der Seite, damit sie auf jedem Webspace gilt (auch ohne Zugriff auf
+   die Kopfzeilen des Servers): nur eigene Dateien, keine eingebetteten Skripte oder Stile, keine Formulare #}
+<meta http-equiv="Content-Security-Policy" content="{{ richtlinie }}">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 {# Vorschau beim Teilen (PW-12 g); ohne Bild und canonical, weil die Seite keine feste Adresse kennt #}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HUBIplan">
