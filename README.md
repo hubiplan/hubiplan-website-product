@@ -122,6 +122,26 @@ Fehlerseite: Der Bau legt `404.html` (Deutsch und Englisch) und für Apache eine
 Webordner (z. B. HestiaCP mit nginx: `<domain>/document_errors/404.html`) bekommen sie mit
 `fehlerseite=<datei>` in der Zielzeile (siehe Kopf von `scripts/ausrollen.sh`).
 
+Sicherheitskopfzeilen: Jede Seite trägt ihre Inhaltsrichtlinie (Content-Security-Policy) selbst als
+`<meta>`: nur eigene Dateien, keine eingebetteten Skripte oder Stile, keine Formulare
+(`scripts/pruefen.py` prüft das). Was nur als Kopfzeile wirkt (Schutz gegen Einbetten in fremde
+Seiten, `nosniff`, HTTPS erzwingen), setzt auf Apache die mitgelieferte `.htaccess` (braucht
+`mod_headers`). Andere Webserver bekommen es in ihrer Konfiguration, für nginx zum Beispiel im
+`server`-Block der Domain (bei HestiaCP in einer Datei `nginx.ssl.conf_<name>` im Konfigurationsordner
+der Domain):
+
+```nginx
+add_header Content-Security-Policy "default-src 'none'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'" always;
+add_header X-Content-Type-Options "nosniff" always;
+add_header X-Frame-Options "DENY" always;
+add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()" always;
+add_header Strict-Transport-Security "max-age=31536000" always;
+```
+
+Achtung bei nginx: Setzt ein `location`-Block selbst `add_header` (etwa für Cache-Zeiten), gelten
+dort die Kopfzeilen des `server`-Blocks nicht mehr; sie müssen dann auch in diesen Block.
+
 Zwischenspeicher: Stil, Skripte und Bildschirmfotos tragen eine Prüfsumme im Namen bzw. in der
 Adresse. Für `statisch/` darf der Webserver deshalb lange Cache-Zeiten setzen (z. B. 30 Tage),
 für die HTML-Seiten nicht.

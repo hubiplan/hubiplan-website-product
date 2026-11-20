@@ -27,7 +27,7 @@ import yaml
 
 WURZEL = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(WURZEL / "scripts"))
-from bauen import SPRACHEN, baue  # noqa: E402
+from bauen import RICHTLINIE, SPRACHEN, baue  # noqa: E402
 
 # Kleingeschrieben; Treffer in Texten, Vorlagen, Stilen und gebauten Seiten sind Fehler.
 # Namen echter Server und Vereine stehen nicht im Repo, sondern lokal, eine Zeile je Wort
@@ -75,9 +75,16 @@ class Leser(HTMLParser):
         self.lang = None
         self.titel = ""
         self._im_titel = False
+        self.richtlinie = None
+        self.eingebettet: list[str] = []  # was die Inhaltsrichtlinie der Seite sperren würde
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
+        if tag == "meta" and (a.get("http-equiv") or "").lower() == "content-security-policy":
+            self.richtlinie = a.get("content")
+        if tag == "style" or (tag == "script" and not a.get("src")):
+            self.eingebettet.append(f"<{tag}>")
+        self.eingebettet += [f"{k} an <{tag}>" for k in a if k == "style" or k.startswith("on")]
         if "id" in a:
             self.ids.add(a["id"])
         if tag == "html":
@@ -150,6 +157,10 @@ def pruefe_seiten(ordner: Path, fehler: list[str], veroeffentlichen: bool) -> in
             fehler.append(f"{name}: <html> ohne lang")
         if not leser.titel.strip():
             fehler.append(f"{name}: ohne Titel")
+        if leser.richtlinie != RICHTLINIE:
+            fehler.append(f"{name}: Inhaltsrichtlinie (Content-Security-Policy) fehlt oder weicht ab")
+        for was in leser.eingebettet:
+            fehler.append(f"{name}: {was} eingebettet; die Inhaltsrichtlinie der Seite sperrt das")
         if leser.bilder_ohne_alt:
             fehler.append(f"{name}: {leser.bilder_ohne_alt} Bild(er) ohne alt")
         if leser.bilder_ohne_masse:

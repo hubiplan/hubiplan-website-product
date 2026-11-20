@@ -84,7 +84,7 @@
     <p class="einleitung">{{ s.ebenen.text }}</p>
     <ol class="ebenen">
       {% for e in s.ebenen.stufen %}
-      <li style="--stufe: {{ loop.index0 }}"><strong>{{ e.titel }}</strong> <span>{{ e.text }}</span></li>
+      <li><strong>{{ e.titel }}</strong> <span>{{ e.text }}</span></li>
       {% endfor %}
     </ol>
   </div>

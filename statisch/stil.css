@@ -146,7 +146,13 @@ a:focus-visible { border-radius: 4px; }
 .fehler > div + div { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--linie); }
 
 .ebenen { list-style: none; margin: 0; padding: 0; display: grid; gap: .6rem; max-width: 40rem; }
-.ebenen li { margin-left: calc(var(--stufe) * 1.75rem); background: var(--karte); border: 1px solid var(--linie); border-left: 5px solid var(--gruen); border-radius: 10px; padding: .7rem 1rem; }
+/* Einrückung je Stufe über die Reihenfolge, ohne style-Attribut (Inhaltsrichtlinie der Seite) */
+.ebenen li:nth-child(2) { --stufe: 1; }
+.ebenen li:nth-child(3) { --stufe: 2; }
+.ebenen li:nth-child(4) { --stufe: 3; }
+.ebenen li:nth-child(5) { --stufe: 4; }
+.ebenen li:nth-child(6) { --stufe: 5; }
+.ebenen li { --stufe-jetzt: var(--stufe, 0); margin-left: calc(var(--stufe-jetzt) * 1.75rem); background: var(--karte); border: 1px solid var(--linie); border-left: 5px solid var(--gruen); border-radius: 10px; padding: .7rem 1rem; }
 .ebenen span { color: var(--text-leise); }
 
 .bausteine { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; align-items: start; }
@@ -218,7 +224,7 @@ main .store a::after, main .rahmen a::after { content: none; }
 @media (max-width: 860px) {
   .held-raster, .zwei-spalten { grid-template-columns: 1fr; }
   .versprechen, .bausteine, .schritte { grid-template-columns: 1fr; }
-  .ebenen li { margin-left: calc(var(--stufe) * 1rem); }
+  .ebenen li { margin-left: calc(var(--stufe-jetzt) * 1rem); }
 }
 /* Handy: dichter setzen, damit die Startseite kurz bleibt; Bilder der Bausteine als kleine Vorschau
    neben dem Text (Antippen öffnet das ganze Bild) */
