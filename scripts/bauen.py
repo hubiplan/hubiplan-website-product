@@ -117,6 +117,108 @@ def md(text: str) -> Markup:
     return Markup(html)
 
 
+# Beschreibung der API für andere Programme (Seite technik/api/): Kopie von
+# hubiplan/backend/partnerapi/openapi.json; nachziehen, wenn sich die API ändert (README, „API-Seite“)
+API_METHODEN = ("get", "post", "put", "patch", "delete")
+
+
+def _api_name(ref: str) -> str:
+    return ref.rsplit("/", 1)[-1]
+
+
+def api_typ(schema: dict | None, w: dict) -> Markup:
+    """Typ eines Feldes als kurzer Text, Verweise als Sprungmarke zur Datenform."""
+    if not schema:
+        return Markup("")
+    if "$ref" in schema:
+        name = _api_name(schema["$ref"])
+        text = Markup('<a href="#form-{0}">{0}</a>').format(name)
+    elif len(schema.get("allOf") or []) == 1:
+        text = api_typ(schema["allOf"][0], w)
+    elif schema.get("type") == "array":
+        text = Markup(w["liste_von"]).format(api_typ(schema.get("items"), w))
+    else:
+        text = Markup("{0}").format(schema.get("type", "object"))
+        if schema.get("format"):
+            text += Markup(" ({0})").format(schema["format"])
+    if schema.get("enum"):
+        text += Markup(": ") + Markup(", ").join(Markup("<code>{0}</code>").format(v) for v in schema["enum"])
+    if schema.get("maxLength"):
+        text += Markup(" ") + Markup(w["bis_zeichen"]).format(schema["maxLength"])
+    if schema.get("nullable"):
+        text += Markup(", ") + w["auch_null"]
+    return text
+
+
+def api_aufbereiten(w: dict) -> dict:
+    """Aufrufe und Datenformen der OpenAPI-Beschreibung für die Vorlage api.html."""
+    spec = json.loads((INHALT / "openapi.json").read_text(encoding="utf-8"))
+    aufrufe = []
+    for pfad, eintrag in spec.get("paths", {}).items():
+        for methode in API_METHODEN:
+            op = eintrag.get(methode)
+            if not op:
+                continue
+            text = re.sub(r"\n\nBereich: `[^`]*`\s*$", "", op.get("description", ""))
+            inhalt = ((op.get("requestBody") or {}).get("content") or {}).get("application/json") or {}
+            antworten = []
+            for code, antwort in sorted((op.get("responses") or {}).items()):
+                schema = ((antwort.get("content") or {}).get("application/json") or {}).get("schema")
+                antworten.append({"code": code, "typ": api_typ(schema, w)})
+            aufrufe.append(
+                {
+                    "id": op.get("operationId") or f"{methode}-{pfad}",
+                    "titel": op.get("summary") or pfad,
+                    "methode": methode,
+                    "pfad": pfad,
+                    "bereich": op.get("x-scope"),
+                    "text": text,
+                    "parameter": [
+                        {
+                            "name": p["name"],
+                            "ort": p.get("in", ""),
+                            "pflicht": p.get("required", False),
+                            "typ": api_typ(p.get("schema"), w),
+                            "text": p.get("description", ""),
+                        }
+                        for p in op.get("parameters") or []
+                    ],
+                    "inhalt": api_typ(inhalt.get("schema"), w) if inhalt else None,
+                    "antworten": antworten,
+                }
+            )
+    formen = []
+    for name, schema in sorted(spec.get("components", {}).get("schemas", {}).items()):
+        pflicht = set(schema.get("required") or [])
+        formen.append(
+            {
+                "name": name,
+                "felder": [
+                    {
+                        "name": feld,
+                        "pflicht": feld in pflicht,
+                        "typ": api_typ(eigenschaft, w),
+                        "text": eigenschaft.get("description", ""),
+                    }
+                    for feld, eigenschaft in sorted((schema.get("properties") or {}).items())
+                ],
+                "typ": api_typ(schema, w) if not schema.get("properties") else None,
+            }
+        )
+    info = spec.get("info", {})
+    return {
+        "fassung": info.get("version", ""),
+        "ueberblick": info.get("description", ""),
+        "aufrufe": aufrufe,
+        "formen": formen,
+    }
+
+
+def md_block(text: str) -> Markup:
+    """Längerer Markdown-Text mit Absätzen und Listen."""
+    return Markup(markdown.markdown(text or "", extensions=["smarty"]))
+
+
 _SEITENLINK = re.compile(r"\]\(@([a-z_]+)(#[\w-]+)?\)")
 
 
@@ -186,6 +288,7 @@ def baue(ziel: Path) -> list[Path]:
         lstrip_blocks=True,
     )
     env.filters["md"] = md
+    env.filters["md_block"] = md_block
     env.filters["alphabetisch"] = alphabetisch
     env.filters["seitenlinks"] = seitenlinks
     env.filters["anfangsbuchstabe"] = anfangsbuchstabe
@@ -232,7 +335,9 @@ def baue(ziel: Path) -> list[Path]:
                 }
 
             vorlage = env.get_template(seite["vorlage"])
+            api = api_aufbereiten(texte["api"]["woerter"]) if seite["vorlage"] == "api.html" else None
             html = vorlage.render(
+                api=api,
                 t=texte,
                 seite=seite,
                 seiten=seiten,

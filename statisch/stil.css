@@ -367,3 +367,24 @@ main .store a::after, main .rahmen a::after { content: none; }
   .funktion .nutzen { font-size: 1rem; }
   .az { columns: 1; }
 }
+
+/* Seite technik/api/: Aufrufe und Datenformen der API */
+.api-inhalt { columns: 2 22rem; padding-left: 1.2rem; margin: 0 0 1.5rem; }
+.api-inhalt li { break-inside: avoid; margin-bottom: .3rem; }
+.api-inhalt code, .api-zeile code { overflow-wrap: anywhere; }
+.api-aufruf { background: var(--karte); border: 1px solid var(--linie); border-radius: 10px; padding: 1rem 1.25rem; margin: 0 0 1rem; scroll-margin-top: 5rem; }
+.api-aufruf h3 { margin: 0 0 .4rem; }
+.api-aufruf h4 { margin: 1rem 0 .3rem; font-size: 1rem; }
+.api-zeile { margin: 0 0 .3rem; }
+.api-methode { display: inline-block; min-width: 4.2em; text-align: center; font: 700 .8rem/1.8 ui-monospace, "Cascadia Code", Consolas, monospace; border-radius: 4px; color: #fff; background: var(--gruen-dunkel); }
+.api-post { background: #1f5a9e; }
+.api-patch, .api-put { background: #8a5300; }
+.api-delete { background: #a02828; }
+.api-tabelle { overflow-x: auto; }
+.api-tabelle table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .92rem; }
+.api-tabelle td:first-child { white-space: nowrap; }
+.api-tabelle th, .api-tabelle td { text-align: left; vertical-align: top; border-top: 1px solid var(--linie); padding: .35rem .5rem; }
+.api-tabelle th { background: var(--flaeche); font-weight: 600; }
+.api-pflicht { color: #b3261e; font-weight: 700; }
+.api-antworten { padding-left: 1.2rem; margin: 0; }
+.api-text code, .api-aufruf code { overflow-wrap: anywhere; }

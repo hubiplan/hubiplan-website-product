@@ -1,0 +1,85 @@
+{% extends "basis.html" %}
+{% set r = t.api %}
+{% set w = r.woerter %}
+{% block titel %}{{ r.titel }} · HUBIplan{% endblock %}
+{% block beschreibung %}{{ r.beschreibung }}{% endblock %}
+{% block inhalt %}
+<section class="abschnitt">
+  <div class="breite"><div class="text">
+    <h1>{{ r.titel }}</h1>
+    <p class="einleitung">{{ r.einleitung | md }}</p>
+    {% if r.deutsch_hinweis %}<p class="klein">{{ r.deutsch_hinweis }}</p>{% endif %}
+    <p class="klein">{{ r.fassung }}: {{ api.fassung }}</p>
+    <ul class="linkliste">
+      <li><a href="{{ links.api }}">{{ r.anleitung }}</a></li>
+      <li><a href="{{ links.openapi }}">{{ r.openapi }}</a></li>
+    </ul>
+  </div></div>
+</section>
+
+<section id="ueberblick" class="abschnitt abschnitt-flaeche">
+  <div class="breite"><div class="text api-text" lang="de">
+    <h2 lang="{{ sprache }}">{{ r.ueberblick }}</h2>
+    {{ api.ueberblick | md_block }}
+  </div></div>
+</section>
+
+<section id="aufrufe" class="abschnitt">
+  <div class="breite">
+    <h2>{{ r.aufrufe }}</h2>
+    <ul class="api-inhalt">
+      {% for a in api.aufrufe %}
+      <li><a href="#{{ a.id }}">{{ a.titel }}</a> <code>{{ a.methode | upper }} {{ a.pfad }}</code></li>
+      {% endfor %}
+    </ul>
+    {% for a in api.aufrufe %}
+    <article class="api-aufruf" id="{{ a.id }}">
+      <h3 lang="de">{{ a.titel }}</h3>
+      <p class="api-zeile"><span class="api-methode api-{{ a.methode }}">{{ a.methode | upper }}</span> <code>{{ a.pfad }}</code></p>
+      {% if a.bereich %}<p class="klein">{{ w.bereich }} <code>{{ a.bereich }}</code></p>{% endif %}
+      <div lang="de">{{ a.text | md_block }}</div>
+      {% if a.parameter %}
+      <h4>{{ w.parameter }}</h4>
+      <div class="api-tabelle"><table>
+        <thead><tr><th>{{ w.name }}</th><th>{{ w.ort }}</th><th>{{ w.typ }}</th><th>{{ w.bedeutung }}</th></tr></thead>
+        <tbody>
+        {% for p in a.parameter %}
+        <tr><td><code>{{ p.name }}</code>{% if p.pflicht %} <span class="api-pflicht">*</span>{% endif %}</td><td>{{ p.ort }}</td><td>{{ p.typ }}</td><td lang="de">{{ p.text | md }}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table></div>
+      {% endif %}
+      {% if a.inhalt %}<p><strong>{{ w.inhalt }}</strong> {{ a.inhalt }}</p>{% endif %}
+      <h4>{{ w.antworten }}</h4>
+      <ul class="api-antworten">
+        {% for o in a.antworten %}<li><code>{{ o.code }}</code> {{ o.typ }}</li>{% endfor %}
+      </ul>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="formen" class="abschnitt abschnitt-flaeche">
+  <div class="breite">
+    <h2>{{ r.formen }}</h2>
+    <p class="klein">{{ r.formen_hinweis }}</p>
+    {% for f in api.formen %}
+    <article class="api-aufruf" id="form-{{ f.name }}">
+      <h3>{{ f.name }}</h3>
+      {% if f.felder %}
+      <div class="api-tabelle"><table>
+        <thead><tr><th>{{ w.feld }}</th><th>{{ w.typ }}</th><th>{{ w.bedeutung }}</th></tr></thead>
+        <tbody>
+        {% for p in f.felder %}
+        <tr><td><code>{{ p.name }}</code>{% if p.pflicht %} <span class="api-pflicht">*</span>{% endif %}</td><td>{{ p.typ }}</td><td lang="de">{{ p.text | md }}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table></div>
+      {% else %}
+      <p>{{ f.typ }}</p>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

@@ -10,6 +10,7 @@ produktseite: https://github.com/hubiplan/hubiplan-website-product
 ausprobieren: https://github.com/hubiplan/hubiplan#ausprobieren-mit-docker
 betreiben: https://github.com/hubiplan/hubiplan#selbst-betreiben
 api: https://github.com/hubiplan/hubiplan/blob/main/docs/api.md
+openapi: https://github.com/hubiplan/hubiplan/blob/main/backend/partnerapi/openapi.json
 mitwirken: https://github.com/hubiplan/hubiplan/blob/main/CONTRIBUTING.md
 sicherheit:
   de: https://github.com/hubiplan/hubiplan/blob/main/SECURITY.md

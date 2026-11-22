@@ -43,7 +43,10 @@ docker compose up --build</code></pre>
     <ul class="punkte">
       {% for p in r.schnittstelle.punkte %}<li>{{ p | md }}</li>{% endfor %}
     </ul>
-    <p><a href="{{ links.api }}">{{ r.schnittstelle.link }}</a></p>
+    <ul class="linkliste">
+      <li><a href="{{ url('api') }}">{{ r.schnittstelle.beschreibung }}</a></li>
+      <li><a href="{{ links.api }}">{{ r.schnittstelle.link }}</a></li>
+    </ul>
   </div></div>
 </section>
 

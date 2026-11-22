@@ -44,6 +44,7 @@ Bei jedem Release von HUBIplan die Fassung unter `start.wer.fassung` in beiden S
 | `vorlagen/` | Jinja2-Vorlagen der Seiten |
 | `statisch/` | Stil, Logo, Schrift Outfit (OFL), Bildschirmfotos unter `fotos/<sprache>/` |
 | `scripts/` | Bauen, Prüfen, Testen, Ausrollen |
+| `inhalt/openapi.json` | Kopie der API-Beschreibung aus `hubiplan/backend/partnerapi/openapi.json` für die Seite `technik/api/` |
 
 Deutsch liegt im Wurzelordner, Englisch unter `en/`. Jede Seite wird zu `<pfad>/index.html`,
 alle Links sind relativ. Die Seite setzt keine Cookies und lädt nichts von fremden Servern.
@@ -104,6 +105,18 @@ im Android-Emulator, weil die App nur HTTPS mit System-Zertifikaten zulässt:
    Benachrichtigungen), Sprache mit `adb shell cmd locale set-app-locales de.hubiplan.app
    --locales de-DE` bzw. `en-US`, dann `adb exec-out screencap -p > baustein-android.png`.
 4. Danach Emulator, Container, Zertifikat und Debug-Build wegwerfen.
+
+
+## API-Seite
+
+Die Seite `technik/api/` zeigt die API für andere Programme zur Information, gebaut aus
+`inhalt/openapi.json`. Ändert sich die API in `hubiplan`, die Datei von dort übernehmen:
+
+```bash
+cp ../hubiplan/backend/partnerapi/openapi.json inhalt/openapi.json
+```
+
+Maßgeblich bleibt die Beschreibung jeder Instanz unter `/api/partner/v1/docs/`.
 
 ## Ausrollen
 
