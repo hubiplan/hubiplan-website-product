@@ -210,6 +210,21 @@ technik:
       - Anyone running HUBIplan for others follows the AGPL and offers the source code of the
         running version.
     link: How to run it (in German)
+  schnittstelle:
+    ueberschrift: Interface for other programs
+    text: >-
+      Association software, a website of your own or scoring software can work with HUBIplan
+      through a documented interface (REST, JSON, OpenAPI 3).
+    punkte:
+      - The board of a unit issues the key under Settings › API accesses; it applies to exactly
+        one unit, only to the ticked areas and expires by itself.
+      - Personal data is only released with a named recipient and a confirmed legal basis, and
+        every retrieval is logged.
+      - Writing has to be allowed separately; changes to members only arrive as a proposal,
+        nothing is deleted or sent.
+      - "Every instance describes its interface without sign-in: readable at
+        `/api/partner/v1/docs/`, machine-readable at `/api/partner/v1/openapi.json`."
+    link: Guide for developers (in German)
   quellcode:
     ueberschrift: Technology and source code
     text: HUBIplan consists of five repositories, all free under the AGPL.
