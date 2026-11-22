@@ -35,11 +35,12 @@
       <span>HUBIplan</span>
     </a>
     <nav class="navigation" aria-label="{{ t.navigation.menue }}">
-      <a href="{{ url('start') }}#funktionen">{{ t.navigation.funktionen }}</a>
-      <a href="{{ url('start') }}#webseite-app">{{ t.navigation.webseite_app }}</a>
-      <a href="{{ url('start') }}#loslegen">{{ t.navigation.loslegen }}</a>
-      <a href="{{ url('start') }}#fragen">{{ t.navigation.fragen }}</a>
-      <a href="{{ url('technik') }}"{% if seite is defined and seite.name == 'technik' %} aria-current="page"{% endif %}>{{ t.navigation.technik }}</a>
+      {% set aktiv = seite.name if seite is defined else '' %}
+      {% set in_funktionen = seite is defined and (seite.bereich is defined or aktiv == 'funktionen') %}
+      <a href="{{ url('funktionen') }}"{% if in_funktionen %} aria-current="{{ 'page' if aktiv == 'funktionen' else 'true' }}"{% endif %}>{{ t.navigation.funktionen }}</a>
+      {% for name in ['loslegen', 'fragen', 'neuigkeiten', 'technik'] %}
+      <a href="{{ url(name) }}"{% if aktiv == name %} aria-current="page"{% endif %}>{{ t.navigation[name] }}</a>
+      {% endfor %}
       {% if seite is defined %}
       {% for s in sprachen if s != sprache %}
       <a class="sprache" href="{{ url(seite.name, s) }}" hreflang="{{ s }}" lang="{{ s }}">{{ t.sprache_wechsel }}</a>

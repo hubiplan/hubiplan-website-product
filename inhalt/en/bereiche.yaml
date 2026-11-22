@@ -1,0 +1,479 @@
+# Area pages of the product website in English. Same keys as de/bereiche.yaml.
+mitglieder:
+  titel: Members and fees
+  kurz: All members in one list, from the online application to the fee run with SEPA.
+  stichworte: [Online application, Fees and SEPA, Volunteer hours]
+  beschreibung: >-
+    Membership management with HUBIplan: online application, households and companies, honours,
+    membership card, fee run with SEPA direct debit, discounts with proof, volunteer hours and statistics.
+  einleitung: >-
+    The member list is the heart of HUBIplan. Newsletters, fees, membership cards and statistics all
+    start here, and members can keep their own details up to date if you wish.
+  bild:
+    name: mitglieder
+    alt: >-
+      Part of the member list of a made-up demo club with name, membership type and date of birth
+  funktionen:
+    - id: mitgliederliste
+      titel: Member list and records
+      nutzen: All members in one place, with everything the club needs to know about them.
+      punkte:
+        - Custom fields, filters and columns, export to Excel or mail merge
+        - Families and households with one letter and one payer; companies can be members too
+        - Honours, anniversaries, offices with terms and qualifications such as first aid with expiry date
+        - Parents or guardians of minors, with their own login if wanted
+      gut: Existing lists come in via Excel import; a duplicate check warns about double entries.
+    - id: antrag
+      titel: Online application and cancellation
+      nutzen: New members sign up themselves, with no paper and no retyping.
+      punkte:
+        - Your own application form with address and QR code, per department if you like
+        - Family application for everyone in a household
+        - Review and accept with one click; the SEPA mandate comes with it
+        - Members can cancel themselves if you allow it, with notice period and date from your rules
+      gut: The form is also available on the club website.
+    - id: ausweis
+      titel: Membership card and member area
+      nutzen: Every member sees their own details, invoices and events.
+      punkte:
+        - Membership card with QR code, also in Google Wallet and Apple Wallet
+        - Members report changes instead of the board updating addresses
+        - Invoices, direct debit mandate, meetings and results at a glance
+      gut: The board keeps maintaining members without a login; nobody has to sign in.
+    - id: beitraege
+      titel: Fees, invoices and SEPA
+      nutzen: One fee run creates all invoices at once and collects them by direct debit.
+      punkte:
+        - Fees per membership type, as family fee or by size for organisations
+        - When joining mid-year, full fee or pro rata per month, quarter or half-year
+        - Discounts, for example for students, with proof; HUBIplan reminds in time and members upload it themselves
+        - QR code for payment on every invoice, reminder levels and cancellation invoices
+        - SEPA direct debit, including B2B
+      gut: Fees paid by a household or company go to the payer as one invoice.
+    - id: arbeitsstunden
+      titel: Volunteer hours with substitute fee
+      nutzen: Required hours count themselves; missing hours appear on the next invoice.
+      punkte:
+        - Required hours per year for each membership type, with age limits if you like
+        - Shifts ticked off in volunteer shifts count as hours worked
+        - A substitute fee per missing hour as a separate item in the next fee run
+        - Members see their own balance, the board sees the list beforehand
+    - id: statistik
+      titel: Statistics and reports
+      nutzen: The figures for sports federations, associations and grant applications at the push of a button.
+      punkte:
+        - Statistics on a key date by age group, gender, place of residence and department
+        - Age groups of the sports federation or youth funding, or by year of birth
+        - As PDF, Excel and CSV for submission
+        - Membership development over the years
+  verwandt: [finanzen, sicherheit, kommunikation]
+
+finanzen:
+  titel: Finances
+  kurz: Cash book, bank, e-invoicing, budget and tax, ready for the audit and the tax office.
+  stichworte: [Cash book, Bank transactions, Budget]
+  beschreibung: >-
+    Club finances with HUBIplan: GoBD-compliant cash book, transactions via FinTS, e-invoicing,
+    expenses, budget, tax and donations, cash audit and business partners.
+  einleitung: >-
+    The treasurer keeps the cash book the way the tax office expects, and HUBIplan does the legwork:
+    fetching transactions, matching them, attaching receipts, reporting.
+  bild:
+    name: baustein-hubiplan
+    alt: Part of the cash book of a made-up demo club in HUBIplan
+  funktionen:
+    - id: kassenbuch
+      titel: Cash book
+      nutzen: The cash book under German GoBD rules, with bank statements and receipts on each entry.
+      punkte:
+        - Several accounts and petty cash, also for departments
+        - Split one payment across several categories, such as a caterer's settlement
+        - VAT per entry where the club needs it
+        - Fixed assets with depreciation, reserves with their maximum
+      gut: Category templates for sports, music and shooting clubs are included.
+    - id: bank
+      titel: Transactions from the bank
+      nutzen: HUBIplan fetches account transactions from the bank itself and matches them.
+      punkte:
+        - Retrieval via FinTS with PIN and the bank's approval; the PIN is never stored
+        - Transactions already imported never come in twice
+        - Fees and invoices are recognised, business partners by their IBAN
+        - Importing the file from online banking still works
+      gut: The operator sets up the bank connection once, the club switches it on.
+    - id: rechnungen
+      titel: E-invoicing and expenses
+      nutzen: Invoices in and out electronically, members' expenses with a photo of the receipt.
+      punkte:
+        - Issue and receive XRechnung and ZUGFeRD, also to public bodies with a Leitweg ID
+        - Your own invoice mailbox, incoming e-invoices land straight in HUBIplan
+        - Members report expenses and mileage with a photo, also in the app
+        - Approval by the treasurer, a second person checks too, refunds as a batch transfer
+    - id: haushaltsplan
+      titel: Budget
+      nutzen: Plan and actuals per area, with a forecast to the end of the year.
+      punkte:
+        - Plan income and expenses per category and department
+        - Comparison with the cash book and a forecast, so you see early where money gets tight
+        - Planned figures also for single events such as the summer party
+        - As PDF or Excel for the board meeting and the general meeting
+      bild:
+        name: szene-haushalt
+        alt: Budget of a made-up demo club with plan, actuals and forecast
+    - id: steuern
+      titel: Tax and donations
+      nutzen: Issue donation receipts and keep an eye on the tax thresholds.
+      punkte:
+        - Donation receipts straight from HUBIplan, simplified proof up to 300 €
+        - Earmarked donations stay visible until they are spent
+        - Tax evaluation per area with a traffic light for the threshold, use of funds
+        - Tax-free allowances for coaches and volunteers per person, artists' social security levy
+    - id: kassenpruefung
+      titel: Cash audit and year-end
+      nutzen: The auditors work in HUBIplan without being able to change the books.
+      punkte:
+        - Audit per financial year with samples and balances to tick off
+        - Findings and result as a report
+        - Treasurer's report and statement of assets for the general meeting
+        - A separate role for auditors, who can read but not book
+    - id: partner
+      titel: Business partners and sponsors
+      nutzen: Suppliers, sponsors and authorities in one place, with contacts and contracts.
+      punkte:
+        - Contacts, notes, bank details and custom fields
+        - The matching partner is suggested in the cash book and for incoming invoices
+        - A warning when a partner's bank details change
+        - Sponsorships and contracts with terms and reminders, sponsors on the website if you like
+  verwandt: [mitglieder, vereinsleben, sicherheit]
+
+vereinsleben:
+  titel: Club life
+  kurz: Events, registrations, volunteer shifts, meetings, tasks, rooms and group orders.
+  stichworte: [Events and registrations, Meetings, Group orders]
+  beschreibung: >-
+    Club life with HUBIplan: calendar, events from your mail program, paid registration with entry
+    check, volunteer shifts, meetings with online voting, tasks, deadline calendar, equipment and
+    rooms, group orders.
+  einleitung: >-
+    Everything that happens in the club is in one calendar. Replies, registrations, shift plans, meetings
+    and tasks hang off it, and every member sees what concerns them.
+  bild:
+    name: szene-termine
+    alt: >-
+      Part of the monthly calendar with practice evenings, a meeting and a serenade in a made-up
+      demo club
+  funktionen:
+    - id: termine
+      titel: Events
+      nutzen: One calendar for the federation, the club and its departments, with replies.
+      punkte:
+        - Reply with one click in the email, in the member area or in the app, with a deadline
+        - Attachments such as directions or a schedule, and a route to the venue
+        - Annual programme as PDF and as a calendar subscription for phones or Outlook, with one for the board
+        - Calendars of others, such as the federation, run alongside
+    - id: mailprogramm
+      titel: Events from your mail program
+      nutzen: Invite from Outlook, Thunderbird or your phone and the event appears in HUBIplan.
+      punkte:
+        - Invite a list such as board@…, HUBIplan creates the event after you confirm
+        - Changes and cancellations follow, and so does a video call link
+        - HUBIplan invitations can be accepted in the mail program, which counts as a reply
+    - id: anmeldungen
+      titel: Paid registration
+      nutzen: Binding registration for parties, trips and courses, with invoice, ticket and entry check.
+      punkte:
+        - Prices for members, guests and age groups, early-bird price, place limit and waiting list
+        - Members register themselves and their family, guests via the club website
+        - The invoice comes with the confirmation, cancellations follow your deadlines
+        - Tickets with QR code, name badges and an entry list that updates live
+        - Helpers at the door and the box office scan and take payments via their own link
+    - id: helferdienste
+      titel: Volunteer shifts
+      nutzen: Shift plans for events that volunteers sign up for themselves.
+      punkte:
+        - Duties and shifts in a quick entry such as "14-18, 18-22"
+        - Members and outside helpers sign up themselves, with a warning about overlaps
+        - Only with a valid qualification such as first aid if you like
+        - Shifts worked count as volunteer hours
+    - id: versammlungen
+      titel: Meetings
+      nutzen: Invite, vote and take minutes, also with remote participation.
+      punkte:
+        - Agenda with sub-items, HUBIplan watches the notice period
+        - Check in on site by QR code in the app, the quorum stays up to date
+        - Vote on the phone, open or secret and with proxies, also remotely
+        - Results go into the minutes with one click, resolutions book, elected people straight into office
+      bild:
+        name: szene-versammlung
+        alt: Meeting of a made-up demo club with agenda and vote
+    - id: aufgaben
+      titel: Tasks and deadline calendar
+      nutzen: Nothing is forgotten, not even when the board changes.
+      punkte:
+        - Tasks with due date and reminder, for people or for an office
+        - Recurring work set up once as a series
+        - Deadline calendar with typical club duties such as tax returns or the register court
+        - After a board election, the task to notify the register court appears by itself
+      bild:
+        name: szene-aufgaben
+        alt: Open tasks of the board in a made-up demo club
+    - id: material
+      titel: Equipment, rooms and bookings
+      nutzen: Manage, lend and book equipment and rooms.
+      punkte:
+        - Tents, technology, instruments or flags with condition, photos and location
+        - Booking calendar for rooms and equipment with request and approval
+        - Booking for a member with rent and an invoice at the push of a button
+        - Hand-out and return when lending, bookings on the website if you like
+      bild:
+        name: szene-material
+        alt: Equipment cards with description, location and condition in a made-up demo club
+    - id: bestellungen
+      titel: Group orders
+      nutzen: Order club clothing, a festival booklet or uniform parts together, without slips and lists.
+      punkte:
+        - Items with sizes, deadline and maximum quantities if you like
+        - Members order in the member area and in the app and can change until the deadline
+        - Totals per item and size as Excel for the supplier, tick off hand-out
+        - Price and invoice are optional, for example for a pure size survey
+      bild:
+        name: szene-bestellungen
+        alt: Group order of club clothing with sizes in a made-up demo club
+  verwandt: [kommunikation, mitglieder, vereinsarten]
+
+kommunikation:
+  titel: Communication
+  kurz: Newsletters, notice board, polls, greetings, documents and the club's Nextcloud.
+  stichworte: [Newsletters, Notice board, Nextcloud]
+  beschreibung: >-
+    Club communication with HUBIplan: newsletters by email, letter and app, notice board, polls,
+    birthday greetings, document storage, letterhead and Nextcloud with groups, files, calendar and Talk.
+  einleitung: >-
+    HUBIplan reaches every member the way they prefer: by email, by letter or in the app. Members
+    without email get post.
+  bild:
+    name: szene-mein-bereich
+    alt: Personal area of a demo member with tasks, membership card, meetings and competitions
+  funktionen:
+    - id: rundschreiben
+      titel: Newsletters
+      nutzen: One message to everyone or to groups, by email, letter or app.
+      punkte:
+        - Mail merge on the club letterhead for members without email
+        - Mailing lists that turn a mail to a club address into a newsletter
+        - A newsletter about an event to those invited, with the event's attachments
+        - Letterhead to your own style guide with logo and fonts
+    - id: pinnwand
+      titel: Notice board
+      nutzen: Short news for everyone, such as "The bus leaves 10 minutes later".
+      punkte:
+        - Posts with up to six photos, for the club or a department
+        - Members read them in the member area and in the app, new posts are marked
+        - A phone notification if you like, never an email
+        - Deliberately not a chat; whoever may post can also post from the app
+      bild:
+        name: szene-pinnwand
+        alt: Notice board of a made-up demo club with short news and photos
+    - id: umfragen
+      titel: Polls and opinion polls
+      nutzen: Find a date, choose meals or gauge opinion, anonymously if you like.
+      punkte:
+        - Date finding, meal choice including guests, "Who is coming along?"
+        - Opinion poll with yes, no and abstain or open questions
+        - Open, with names for the board only, or anonymous
+        - Answers in the member area, in the app or via the link in the email
+    - id: glueckwuensche
+      titel: Greetings
+      nutzen: No birthday and no anniversary slips through any more.
+      punkte:
+        - For milestone or all birthdays and for club anniversaries
+        - By app, email or letter, with a draft a few days ahead
+        - On the day it goes out by itself or after approval
+        - Members can opt out in the member area
+    - id: dokumente
+      titel: Documents
+      nutzen: Statutes, minutes and forms in folders with their own permissions.
+      punkte:
+        - Folders with permissions per role and department
+        - Documents for members in the member area and in the app
+        - Confidential files are stored encrypted
+    - id: nextcloud
+      titel: The club's Nextcloud
+      nutzen: If you already have a Nextcloud, link it to HUBIplan instead of maintaining things twice.
+      punkte:
+        - Sign in to Nextcloud with the HUBIplan login
+        - Groups follow roles, offices and departments; whoever leaves an office loses its folders
+        - Store minutes, treasurer's reports and documents in Nextcloud, with a retention period per type
+        - Events appear in the Nextcloud calendar, a Talk video room is attached to the event
+      gut: Nextcloud is optional; HUBIplan runs just as well without it.
+  verwandt: [vereinsleben, webseite_app, mitglieder]
+
+webseite_app:
+  titel: Website and app
+  kurz: The club website as a construction kit and the app for members and board, from the same data.
+  stichworte: [Club website, Android app, Board on the go]
+  beschreibung: >-
+    Club website and app from HUBIplan: website as a construction kit on your own domain, design
+    without technical knowledge, Android app with membership card, events, notice board and board tasks.
+  einleitung: >-
+    Website and app take events, board, chronicle and results straight from the management side.
+    Whatever you change in HUBIplan shows everywhere at once.
+  bild:
+    name: baustein-website
+    alt: Part of the home page of a made-up demo club's website
+  funktionen:
+    - id: webseite
+      titel: Club website
+      nutzen: A website on the club's own domain, without a second content system.
+      punkte:
+        - Events, board, departments, gallery, chronicle, results and application form come from HUBIplan
+        - Home page and text pages built from sections such as banners, tiles, countdown or directions
+        - Search across everything the website shows
+      bild:
+        name: szene-kapelle
+        alt: Home page of the website of a made-up demo band with welcome text and upcoming events
+    - id: gestaltung
+      titel: Design without technical knowledge
+      nutzen: Set colours, fonts and layout with sliders, as a draft with preview first.
+      punkte:
+        - Designs to choose from, fine-tuning in fixed steps instead of CSS
+        - Preview as phone, tablet and desktop, public only after publishing
+        - Versions of design and texts to restore
+        - Dark mode, higher contrast and large text for good readability
+    - id: ki
+      titel: AI assistant
+      nutzen: If you like, an AI assistant helps with texts, images and website design.
+      punkte:
+        - Connected through a separate interface, only with permission and sign-in
+        - Changes are saved as drafts; a person publishes them
+        - Drafts for social media posts
+      gut: Optional and without access to member data.
+    - id: app-mitglieder
+      titel: App for members
+      nutzen: Events, membership card, notice board and more in your pocket, without ads.
+      punkte:
+        - Events with replies, messages, notice board, polls and group orders
+        - Membership card, also in Google Wallet, invoices and own details
+        - Volunteer shifts, meetings with online voting, expenses with photo
+        - Music stand for musicians and a home page with tiles as in the browser
+      bild:
+        name: baustein-android
+        alt: Event list in the Android app
+      gut: For Android on Google Play, entirely without Google services. An iPhone app is in progress; until then HUBIplan runs in the browser on any phone.
+    - id: app-vorstand
+      titel: Board on the go
+      nutzen: The board can deal with urgent matters on the phone.
+      punkte:
+        - Review and accept membership applications
+        - Approve booking requests for rooms and equipment
+        - Chair a meeting with attendance and voting
+        - Entry check by QR code at events
+  verwandt: [kommunikation, vereinsleben, sicherheit]
+
+vereinsarten:
+  titel: Music, sport and competitions
+  kurz: Building blocks for bands, sports clubs and shooting clubs that other clubs simply switch off.
+  stichworte: [Performances and sheet music, Training, Competitions]
+  beschreibung: >-
+    HUBIplan for bands, sports clubs and shooting clubs: performances, line-up and sheet music,
+    training with attendance, shooting record, competitions with rankings and certificates.
+  einleitung: >-
+    The basics fit every club. On top come building blocks for particular kinds of club; whoever
+    does not need them switches them off and never sees them.
+  bild:
+    name: szene-musik
+    alt: >-
+      Target line-up of a performance with parts, target numbers and assigned musicians in a made-up
+      demo club
+  funktionen:
+    - id: musik
+      titel: Music and performances
+      nutzen: For bands and marching bands, with line-up, sheet music and rehearsals.
+      punkte:
+        - Musicians with instruments and parts, target line-up per performance
+        - Replies, cover for absences, guest musicians reply via a link
+        - Sheet music archive with a music stand in the app, instruments and uniforms
+        - Quote, invoice and fees by SEPA for performances for organisers
+    - id: training
+      titel: Training and attendance
+      nutzen: Who was at training? Tick them off or let them check in by QR code.
+      punkte:
+        - Attendance at practice evenings and training sessions per group
+        - Members check in themselves by QR code
+        - Report on who came how often, also as Excel
+      bild:
+        name: szene-training
+        alt: Attendance at training sessions in a made-up demo club
+    - id: schiessnachweis
+      titel: Shooting record
+      nutzen: The shooting log per member and the confirmation for the association.
+      punkte:
+        - Shooting log per member from the training sessions
+        - Status under section 14 of the German Weapons Act at a glance, with a warning about gaps
+        - Confirmation of shooting dates as PDF for the association
+        - Members report sessions at other clubs themselves
+    - id: wettbewerbe
+      titel: Competitions
+      nutzen: Record competitions, show rankings and print certificates.
+      punkte:
+        - Individual and team scoring, results on site, also offline and in the app
+        - Rankings update live, also on the club website
+        - Certificates from templates, statistics with averages and trends
+        - Entries for competitions run by others
+      bild:
+        name: szene-statistik
+        alt: Statistics of a competition with average values
+    - id: ehrungen
+      titel: Honours and titles
+      nutzen: Kings, queens, honours and chronicle over the years.
+      punkte:
+        - Titles per year, with a picture on the club website
+        - Honours and anniversaries on the member record
+        - Chronicle as a timeline with pictures
+  verwandt: [vereinsleben, webseite_app, mitglieder]
+
+sicherheit:
+  titel: Data protection and security
+  kurz: Everyone sees only what they may. Confidential data is encrypted, GDPR duties are built in.
+  stichworte: [Encryption, Roles and permissions, GDPR tools]
+  beschreibung: >-
+    Data protection and security in HUBIplan: encryption per club, roles and permissions, passkey and
+    two-factor sign-in, change log, record of processing activities and data breaches under the GDPR.
+  einleitung: >-
+    A club is responsible for its members' data. HUBIplan helps: with technology that protects the
+    data and with tools for the duties under the GDPR.
+  bild:
+    name: szene-rollen
+    alt: Roles and permissions of a made-up demo club
+  funktionen:
+    - id: daten
+      titel: Your data stays with you
+      nutzen: The data lives on the server the club chooses, not with the maker.
+      punkte:
+        - Confidential fields and files encrypted, with one key per club
+        - Each club's data additionally kept apart
+        - Daily encrypted backup
+        - Full export at any time; no provider holds on to the data
+    - id: rechte
+      titel: Roles and permissions
+      nutzen: Decide per club and department who may see and change what.
+      punkte:
+        - Roles with freely chosen permissions, tied to offices
+        - 'With "View as role" you see in advance what someone will see'
+        - Every change is in the change log and can be traced
+    - id: anmeldung
+      titel: Secure sign-in
+      nutzen: A login for every person, without a password if you like.
+      punkte:
+        - Passkey instead of password
+        - Second factor for everyone with management rights
+        - Sensitive steps such as full exports require a fresh code
+    - id: dsgvo
+      titel: GDPR tools
+      nutzen: Your duties under the GDPR in one place, instead of in folders and spreadsheets.
+      punkte:
+        - Record of processing activities from the building blocks in use, as PDF
+        - Processors with their agreement, taken from business partners
+        - Document data breaches with the 72-hour deadline for reporting
+        - Consent, for example for photos, retention periods, access and erasure with guides
+      gut: The club remains the controller under the GDPR.
+  verwandt: [mitglieder, finanzen, webseite_app]

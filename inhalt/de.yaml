@@ -7,7 +7,8 @@ titel_zusatz: Freie Vereinsverwaltung
 navigation:
   menue: Menü
   funktionen: Funktionen
-  webseite_app: Webseite und App
+  bereiche: Bereiche
+  neuigkeiten: Neuigkeiten
   loslegen: Loslegen
   fragen: Fragen
   technik: Technik
@@ -18,8 +19,8 @@ start:
   beschreibung: >-
     HUBIplan ist eine freie, webbasierte Vereinsverwaltung für Vereine jeder Art, von 10 bis 10.000
     Mitgliedern: Mitglieder, Beiträge und SEPA, Kasse und E-Rechnungen, Termine, Anmeldungen mit
-    Teilnahmegebühr, Versammlungen, Helferdienste, Aufgaben, Umfragen, Musik und Auftritte,
-    Material und Räume, Rundschreiben, Vereinswebseite und App.
+    Teilnahmegebühr, Versammlungen, Helferdienste, Aufgaben, Pinnwand, Umfragen, Sammelbestellungen,
+    Training, Musik und Auftritte, Material und Räume, Rundschreiben, Vereinswebseite und App.
   kopf:
     zeile: Freie Vereinsverwaltung
     ueberschrift: Ihr Verein an einem Ort, im Browser, am Handy und auf der eigenen Webseite.
@@ -41,6 +42,11 @@ start:
       abspielen: Bildwechsel starten
       bild_nr: Bild {n} von {m}
     bilder:
+      - name: szene-start
+        titel: Die Startseite zeigt, was ansteht
+        bild: >-
+          Startseite der Verwaltung eines erfundenen Demovereins mit Kacheln für Kasse, Anmeldungen
+          und nächste Versammlung
       - name: mitglieder
         titel: Mitglieder im Blick
         bild: >-
@@ -51,6 +57,9 @@ start:
         bild: >-
           Ausschnitt des Monatskalenders mit Übungsabenden, einer Sitzung und einem Ständchen in
           einem erfundenen Demoverein
+      - name: szene-pinnwand
+        titel: Neuigkeiten auf der Pinnwand
+        bild: Pinnwand eines erfundenen Demovereins mit kurzen Neuigkeiten und Fotos
       - name: szene-kapelle
         titel: Die eigene Webseite, auch für Musikvereine
         bild: >-
@@ -61,15 +70,6 @@ start:
         bild: >-
           Sollbesetzung eines Auftritts mit Stimmen, Sollzahlen und eingeteilten Musikern in einem
           erfundenen Demoverein
-      - name: szene-aufgaben
-        titel: Aufgaben teilen und erledigen
-        bild: Offene Aufgaben des Vorstands in einem erfundenen Demoverein
-      - name: szene-material
-        titel: Material im Blick
-        bild: Materialkarten mit Beschreibung, Standort und Zustand in einem erfundenen Demoverein
-      - name: szene-statistik
-        titel: Wettbewerbe auswerten
-        bild: Statistik eines Wettbewerbs mit Durchschnittswerten
       - name: szene-mein-bereich
         titel: Mein Bereich für jedes Mitglied
         bild: >-
@@ -79,8 +79,9 @@ start:
   versprechen:
     - titel: Alles an einem Ort
       text: >-
-        Mitglieder, Beiträge, Kasse, Termine, Aufgaben, Auftritte, Material, Rundschreiben,
-        Dokumente, Vereinswebseite und App greifen ineinander. Nichts wird doppelt gepflegt.
+        Mitglieder, Beiträge, Kasse, Termine, Rundschreiben, Vereinswebseite und App greifen
+        ineinander. Nichts wird doppelt gepflegt, und die Startseite zeigt von selbst, was gerade
+        ansteht.
     - titel: Frei und unabhängig
       text: >-
         Freie Software ohne Lizenzgebühren. Ihre Daten liegen auf einem Server Ihrer Wahl, ohne
@@ -92,203 +93,24 @@ start:
   funktionen:
     ueberschrift: Was HUBIplan kann
     einleitung: >-
-      Jeder Verein schaltet nur ein, was er braucht. Zu jeder Seite gibt es Hilfe mit Bildern und
-      Anleitungen Schritt für Schritt, auf Deutsch oder Englisch.
-    mehr: Mehr dazu
-    gruppen:
-      - titel: Mitglieder und Beiträge
-        liste:
-          - titel: Mitglieder
-            nutzen: Alle Mitglieder in einer Liste, vom Antrag über die Webseite bis zur Kündigung.
-            mehr: >-
-              Neue Mitglieder stellen ihren Antrag online über die Vereinswebseite; Sie
-              prüfen ihn und nehmen sie mit einem Klick auf, eine Dublettenprüfung warnt vor
-              doppelten Einträgen. Bestehende Listen übernehmen Sie per Excel-Import und
-              geben sie jederzeit wieder als Excel aus.
-
-              Familien und Haushalte bekommen einen gemeinsamen Brief und haben einen
-              Zahler, auch Firmen oder andere Vereine können Mitglied sein. Ehrungen,
-              Jubiläen und Ämter sind am Mitglied vermerkt, Qualifikationen wie Erste Hilfe
-              mit Ablaufdatum. Jedes Mitglied hat einen Ausweis mit QR-Code, auch in Google
-              und Apple Wallet, und kann im Mitgliederbereich seine Daten ansehen,
-              Änderungen melden oder selbst kündigen.
-          - titel: Beiträge und Rechnungen
-            nutzen: Beiträge einziehen und Rechnungen schreiben, mit SEPA-Lastschrift und Mahnung.
-            mehr: >-
-              Ein Beitragslauf erstellt die Rechnungen für alle Mitglieder auf einmal, auch
-              als Familienbeitrag, nach Größe für Organisationen oder anteilig bei Eintritt
-              im laufenden Jahr. Für Ermäßigungen etwa von Studierenden erinnert HUBIplan
-              rechtzeitig an den Nachweis; Mitglieder laden ihn im Mitgliederbereich, in der
-              App oder über einen Link aus der Erinnerungsmail hoch.
-
-              Rechnungen tragen einen QR-Code zum Bezahlen, offene Beträge laufen über
-              Mahnstufen, und Beiträge ziehen Sie per SEPA-Lastschrift ein, auch als
-              Firmenlastschrift. E-Rechnungen als XRechnung und ZUGFeRD stellen Sie aus und
-              empfangen sie, auch an Behörden mit Leitweg-ID; eingehende Rechnungen kommen
-              über ein eigenes Postfach direkt in HUBIplan an.
-          - titel: Zugänge und Datenschutz
-            nutzen: Jede Person sieht nur, was sie sehen darf. Vertrauliches ist verschlüsselt.
-            mehr: >-
-              Jede Person meldet sich mit eigenem Zugang an, auf Wunsch mit Passkey statt
-              Passwort. Wer Verwaltungsrechte hat, braucht einen zweiten Faktor. Rollen mit
-              frei wählbaren Rechten legen je Verein oder Abteilung fest, wer was sehen und
-              ändern darf; mit „Ansicht als Rolle“ prüfen Sie das vorab.
-
-              Vertrauliche Felder und Dateien liegen verschlüsselt, jede Änderung steht im
-              Änderungsprotokoll. Einwilligungen und Löschfristen sind eingebaut, damit der
-              Verein die Datenschutzregeln einhalten kann. Auf Wunsch melden sich Mitglieder
-              mit demselben Zugang auch an der Nextcloud des Vereins an.
-      - titel: Finanzen
-        liste:
-          - titel: Kasse
-            nutzen: Das Kassenbuch mit Kontoauszügen und Belegen, sauber für Kassenprüfung und Finanzamt.
-            mehr: >-
-              Das Kassenbuch führen Sie nach GoBD, wie es das Finanzamt erwartet:
-              Kontoauszüge und Belege hängen direkt an der Buchung, eine Zahlung lässt sich
-              auf mehrere Kategorien aufteilen.
-
-              Anlagen werden abgeschrieben und Rücklagen geplant. Mitglieder melden Auslagen
-              und Fahrtkosten mit Foto des Belegs, auch in der App; die Kasse gibt frei, eine
-              zweite Person sieht mit drauf, und HUBIplan bucht die Erstattung samt Beleg,
-              einzeln oder als Sammelüberweisung. Für die Kassenprüfung
-              zieht HUBIplan Stichproben, und die Prüfer bekommen eine Rolle, die die Kasse
-              liest, aber nicht führt.
-          - titel: Haushaltsplan
-            nutzen: Plan und Ist je Bereich im Blick, mit Hochrechnung bis zum Jahresende.
-            mehr: >-
-              Für jedes Jahr planen Sie Einnahmen und Ausgaben je Kategorie und Abteilung.
-              HUBIplan stellt dem Plan das Ist aus der Kasse gegenüber und rechnet bis zum
-              Jahresende hoch, so sehen Sie früh, wo es eng wird.
-
-              Planwerte lassen sich auch an einzelne Veranstaltungen wie das Sommerfest
-              hängen. Für Vorstandssitzung und Mitgliederversammlung geben Sie den Plan als
-              PDF oder Excel aus.
-          - titel: Steuern und Spenden
-            nutzen: Spenden bescheinigen und die steuerlichen Freigrenzen im Blick behalten.
-            mehr: >-
-              Spenden erfassen Sie mit Zweck und stellen die Zuwendungsbestätigung direkt
-              aus HUBIplan aus. Zweckgebundene Spenden bleiben bis zur Verwendung sichtbar.
-
-              Die steuerliche Auswertung teilt die Einnahmen nach den Bereichen des Vereins
-              auf und zeigt mit einer Ampel, wie nah Sie an den Freigrenzen sind.
-              Übungsleiter- und Ehrenamtspauschalen behalten Sie je Person im Blick.
-          - titel: Geschäftspartner und Sponsoren
-            nutzen: Lieferanten, Sponsoren und Behörden an einer Stelle, mit Ansprechpartnern und Verträgen.
-            mehr: >-
-              Firmen, Behörden und andere Vereine außerhalb der Mitgliederliste führen Sie
-              mit Ansprechpartnern, Notizen und Bankverbindung. Im Kassenbuch und beim
-              Rechnungseingang schlägt HUBIplan den passenden Partner vor und warnt, wenn
-              sich die Bankverbindung geändert hat.
-
-              Sponsoring-Vereinbarungen und Verträge haben eine Laufzeit und erinnern
-              rechtzeitig an Verlängerung oder Kündigung. Sponsoren erscheinen auf Wunsch
-              mit Logo auf der Vereinswebseite.
-      - titel: Vereinsleben
-        liste:
-          - titel: Termine und Helferdienste
-            nutzen: Ein Kalender für alle, mit Zusagen und Dienstplänen zum Selbsteintragen.
-            mehr: >-
-              Ein Kalender zeigt Termine des Verbands, des Vereins und der Abteilungen;
-              jedes Mitglied sieht, was es betrifft. Mitglieder sagen zu oder ab, auf Wunsch
-              mit Anmeldeschluss, und Anhänge wie Anfahrt oder Ablaufplan kommen direkt aus
-              der Ablage.
-
-              Das Jahresprogramm geben Sie als PDF aus oder lassen es als Kalender-Abo in
-              Handy oder Outlook laufen; der Vorstand bekommt dazu ein eigenes Abo mit
-              seinen internen Terminen. Für Feste und Veranstaltungen legen Sie Dienstpläne
-              mit Schichten an, in die sich Helfer selbst eintragen, auf Wunsch nur mit
-              gültigem Nachweis wie Erste Hilfe.
-          - titel: Anmeldungen mit Teilnahmegebühr
-            nutzen: Verbindliche Anmeldung zu Festen, Fahrten und Kursen, mit Rechnung, Eintrittskarte und Einlass.
-            mehr: >-
-              Statt Zu- und Absagen bekommt ein Termin eine verbindliche Anmeldung mit Preisen
-              für Mitglieder, Gäste und Altersstufen, Frühbucherpreis, Platzgrenze und
-              Warteliste. Mitglieder melden sich und ihre Familie an, Gäste auch über die
-              Vereinswebseite; die Rechnung kommt mit der Bestätigung, Abmeldungen und
-              Stornogebühren regelt HUBIplan nach Ihren Fristen.
-
-              Am Tag selbst gibt es Eintrittskarten mit QR-Code, Namensschilder und eine
-              Einlassliste, die live mitläuft. Helfer am Einlass und an der Abendkasse
-              bekommen einen eigenen Link zum Scannen und Kassieren, ganz ohne Zugang zu
-              HUBIplan, auch am iPhone.
-          - titel: Versammlungen
-            nutzen: Einladen, abstimmen und Protokoll führen, auch mit Teilnahme aus der Ferne.
-            mehr: >-
-              Mitgliederversammlungen und Vorstandssitzungen bereiten Sie mit Tagesordnung
-              samt Unterpunkten vor; HUBIplan achtet auf die Einladungsfrist und verschickt
-              die Einladung. Vor Ort melden sich Mitglieder per QR-Code in der App an.
-
-              Wer nicht kommen kann, nimmt aus der Ferne teil und stimmt online ab, offen
-              oder geheim. Abstimmungsergebnisse übernehmen Sie direkt ins Protokoll, das
-              danach freigegeben wird; Beschlüsse landen im Beschlussbuch, und gewählte
-              Personen übernimmt HUBIplan direkt ins Amt.
-          - titel: Aufgaben und Fristen
-            nutzen: Nichts vergessen, mit Aufgaben samt Erinnerung und einem Kalender für Vereinspflichten.
-            mehr: >-
-              Aufgaben bekommen eine Frist und eine Erinnerung und lassen sich an Personen
-              oder an ein Amt geben, damit sie beim Wechsel im Vorstand nicht verloren
-              gehen. Wiederkehrendes legen Sie einmal als Serie an.
-
-              Der Fristenkalender kennt typische Vereinspflichten wie Steuererklärung,
-              Freistellungsbescheid oder Meldungen ans Registergericht und erinnert
-              rechtzeitig das zuständige Amt.
-          - titel: Kommunikation
-            nutzen: Rundschreiben per E-Mail, Brief oder App, dazu Umfragen und Dokumente.
-            mehr: >-
-              Rundschreiben verschicken Sie als E-Mail, als Serienbrief auf dem Briefbogen
-              des Vereins oder als Nachricht in die App, an alle oder an ausgewählte
-              Gruppen. Über einen Mailverteiler wird eine Mail an eine Vereinsadresse zum
-              Rundschreiben.
-
-              Mit Umfragen und Meinungsbildern finden Sie einen Termin, fragen die
-              Essenswahl ab oder holen Stimmungen ein, auf Wunsch anonym. In der
-              Dokumentenablage liegen Satzung, Protokolle und Formulare in Ordnern mit
-              eigenen Rechten.
-          - titel: Material und Räume
-            nutzen: Inventar und Räume verwalten, verleihen und buchen.
-            mehr: >-
-              Im Inventar verwalten Sie Zelte, Technik, Instrumente oder Fahnen mit Zustand,
-              Fotos und Standort, dazu Orte mit ihren Räumen wie Vereinsheim oder
-              Sportplatz.
-
-              Räume und Material werden über einen Buchungskalender mit Anfrage und Freigabe
-              gebucht, mit Woche, Monat oder ganzem Jahr im Blick. Bucht ein Mitglied, steht
-              die Buchung in seiner Akte; ist ein Mietpreis hinterlegt, legt „Rechnung anlegen“
-              die Rechnung gleich an. Bei der Ausleihe vermerken Sie Ausgabe und Rückgabe, und
-              auf Wunsch zeigt die Vereinswebseite die Belegung.
-      - titel: Mehr für Ihren Verein
-        liste:
-          - titel: Musik und Auftritte
-            nutzen: Für Musikvereine und Spielleute, mit Besetzung, Noten und Proben.
-            mehr: >-
-              Musiker sind mit Instrumenten und Stimmen erfasst. Für jeden Auftritt legen
-              Sie die Sollbesetzung fest, sehen Zu- und Absagen und finden Ersatz bei
-              Abwesenheit; Gastmusiker sagen über einen Link zu.
-
-              Das Notenarchiv zeigt die Stücke am Notenpult in der App. Proben, Instrumente
-              und Uniformen sind ebenso verwaltet wie das Geschäft mit Veranstaltern:
-              Angebot, Rechnung und Gagen per SEPA.
-          - titel: Wettbewerbe
-            nutzen: Wettkämpfe erfassen, Ranglisten zeigen und Urkunden drucken.
-            mehr: >-
-              Wettbewerbe aller Art, auch Schießwettbewerbe, erfassen Sie mit Einzel- und
-              Mannschaftswertung. Ergebnisse tragen Sie vor Ort ein, auch ohne Netz und in
-              der App, die Ranglisten laufen live mit.
-
-              Urkunden drucken Sie aus Vorlagen. Die Statistik zeigt Durchschnitte und
-              Verläufe je Mitglied, und Meldungen zu Wettbewerben fremder Veranstalter
-              behalten Sie ebenfalls im Blick.
-          - titel: Webseite und App
-            nutzen: Vereinswebseite und Mitglieder-App aus denselben Daten, ohne doppelte Pflege.
-            mehr: >-
-              Die Vereinswebseite läuft unter der eigenen Domain und zieht Termine,
-              Vorstand, Chronik und Ergebnisse direkt aus der Verwaltung; Sie pflegen nichts
-              doppelt. Gestaltung, Farben und Schriften stellen Sie ohne Technikwissen ein.
-
-              Die App für Android und iPhone zeigt Mitgliedern Termine, Ausweis,
-              Rundschreiben und mehr aus denselben Daten. Auf Wunsch hilft ein KI-Assistent
-              über eine eigene Schnittstelle bei Texten, Bildern und der Gestaltung der
-              Webseite.
+      Sieben Bereiche, die ineinandergreifen. Jeder Verein schaltet nur ein, was er braucht; zu jeder
+      Seite gibt es Hilfe mit Bildern und Anleitungen, auf Deutsch oder Englisch.
+    alle: Alle Funktionen von A bis Z
+  szenen:
+    ueberschrift: Ein ganz normaler Monat im Verein
+    liste:
+      - titel: Die Kasse
+        text: >-
+          holt die Umsätze von der Bank. HUBIplan erkennt die Beiträge, hakt die Rechnungen ab und
+          hängt die Belege an.
+      - titel: Die Jugendleitung
+        text: >-
+          schreibt auf die Pinnwand, dass der Bus später fährt. Alle sehen es in der App, ohne
+          Kettenmail.
+      - titel: Der Vorsitz
+        text: >-
+          leitet die Versammlung. Wer nicht kommen kann, stimmt online ab, das Ergebnis steht gleich
+          im Protokoll.
   ebenen:
     ueberschrift: Für einzelne Vereine und ganze Verbände
     text: >-
@@ -322,9 +144,8 @@ start:
         bild: Ausschnitt der Startseite der Webseite eines erfundenen Demovereins
       - titel: Android-App
         text: >-
-          Termine, Mitteilungen, Aufgaben, Helferdienste, Umfragen, Versammlungen mit
-          Online-Abstimmung, Auslagen und Nachweise mit Foto, Einlass per QR-Code, Notenpult,
-          Mitgliedsausweis (auch in Google Wallet) und Vereinsverwaltung unterwegs. Ohne Werbung. Eine App fürs iPhone ist im Aufbau.
+          Termine, Pinnwand, Ausweis und Abstimmungen für Mitglieder, Anträge, Belegung und Einlass
+          für den Vorstand. Ohne Werbung. Eine App fürs iPhone ist im Aufbau.
         repo: android
         bild: Terminliste in der Android-App
     play_alt: Jetzt bei Google Play
@@ -339,8 +160,8 @@ start:
         text: >-
           Sehen Sie sich Funktionen und Bilder an und klären Sie im Vorstand, welche Bereiche Ihr
           Verein braucht.
-        link: Funktionen ansehen
-        ziel: funktionen
+        link: Zu den Funktionen
+        ziel: ansehen
       - titel: 2 Ausprobieren
         text: >-
           Eine Person mit etwas Technikerfahrung startet HUBIplan in wenigen Minuten auf ihrem
@@ -353,59 +174,11 @@ start:
           einzige laufende Ausgabe; Ihre Mitglieder übernehmen Sie aus einer Excel-Tabelle.
         link: Was der Betrieb braucht
         ziel: betreiben
+    mehr: Alles zum Einstieg
   fragen:
     ueberschrift: Häufige Fragen
-    liste:
-      - frage: Was kostet HUBIplan?
-        antwort: >-
-          Nichts. HUBIplan ist freie Software unter der AGPL, ohne Lizenzgebühren und ohne Preis je
-          Mitglied. Kosten entstehen nur für den eigenen Server, also die Miete eines kleinen
-          Linux-Servers.
-      - frage: Wer betreibt den Server, und was braucht man dafür?
-        antwort: >-
-          Der Verein selbst oder jemand seines Vertrauens. Es genügt ein kleiner gemieteter
-          Linux-Server; das HTTPS-Zertifikat holt sich HUBIplan selbst, Sicherungen laufen täglich
-          und verschlüsselt. Was die betreuende Person braucht, steht unter
-          [Technik](technik/#betreiben).
-      - frage: Wo liegen unsere Daten, und ist das DSGVO-tauglich?
-        antwort: >-
-          Die Daten liegen nur auf dem Server, den der Verein wählt, nicht in einer Cloud des
-          Herstellers. Vertrauliche Felder und Dateien sind mit einem Schlüssel je Verein
-          verschlüsselt. Es gibt Rechte je Rolle, ein Änderungsprotokoll, Einwilligungen für Fotos
-          und Löschfristen. Verantwortlich im Sinne der DSGVO bleibt der Verein.
-      - frage: Wie kommen unsere Mitglieder aus Excel oder einem anderen Programm hinein?
-        antwort: >-
-          Mitglieder lassen sich aus einer Excel-Tabelle einlesen, mit Prüfung auf Dubletten.
-          Ganze Vereine lassen sich zwischen HUBIplan-Installationen als Datei übertragen.
-      - frage: Brauchen alle Mitglieder einen Zugang?
-        antwort: >-
-          Nein. Der Vorstand pflegt die Daten auch für Mitglieder ohne Zugang, und Rundschreiben
-          gehen an Mitglieder ohne E-Mail als Serienbrief. Wer möchte, bekommt einen eigenen
-          Zugang für Termine, Ausweis und eigene Daten.
-      - frage: Passt das auch zu Sport-, Musik- oder Kulturvereinen?
-        antwort: >-
-          Ja. Die Bilder zeigen einen erfundenen Schützenverein und eine Musikkapelle, weil
-          HUBIplan in einem Schützenverein entstanden ist. Abteilungen heißen so, wie der Verein es
-          will, und Bereiche wie Wettbewerbe oder Ehrungen lassen sich abschalten. Für
-          Musikvereine und Spielmannszüge gibt es den Bereich Musik mit Auftritten, Besetzung,
-          Noten und Proben.
-      - frage: Gibt es eine App für Android und iPhone?
-        antwort: >-
-          Für Android gibt es die App [bei Google Play](https://play.google.com/store/apps/details?id=de.hubiplan.app),
-          ganz ohne Google-Dienste. Eine App fürs iPhone ist im Aufbau. Bis dahin läuft HUBIplan
-          im Browser auf jedem Handy.
-      - frage: Wer hilft, wenn etwas nicht klappt?
-        antwort: >-
-          In der Anwendung gibt es Hilfe mit Bildschirmfotos und Erklärungen direkt auf den Seiten,
-          dazu Anleitungen für Anlässe wie Vorstandswechsel, Jahreswechsel oder Rücklastschrift.
-          Unter jeder Anleitung lässt sich sagen, ob sie geholfen hat und was gefehlt hat.
-          Fehler und Fragen gehen an die [Fehlermeldungen bei GitHub](https://github.com/hubiplan/hubiplan/issues).
-          Bezahlten Support oder Hosting gibt es nicht; HUBIplan ist zum Selbstbetreiben gedacht.
-      - frage: Kommen wir wieder heraus, und was passiert, wenn das Projekt endet?
-        antwort: >-
-          Die Daten gehören dem Verein und liegen auf seinem Server. Mitgliederlisten lassen sich
-          jederzeit als Excel exportieren. Weil der Quellcode offen ist, kann jeder HUBIplan
-          weiter betreiben und weiterentwickeln.
+    alle: Alle Fragen
+
   wer:
     ueberschrift: Wer steckt dahinter
     text: >-
@@ -418,15 +191,6 @@ start:
     aenderungen: Alle Änderungen
     kontakt_titel: "Kontakt:"
     kontakt: "[kontakt@philipsen-edv.de](mailto:kontakt@philipsen-edv.de)"
-  mitmachen:
-    ueberschrift: Mitmachen
-    text: >-
-      HUBIplan ist freie Software. Fehlermeldungen, Ideen und Verbesserungen sind willkommen,
-      auch auf Englisch.
-    issues: Fehler oder Idee melden
-    mitwirken: Hinweise zum Mitwirken
-    sicherheit: Sicherheitslücke vertraulich melden
-    technik: Technik und Quellcode
 
 technik:
   titel: Für Technikkundige
@@ -494,6 +258,18 @@ bildansicht:
   schliessen: Schließen
 
 bild_folgt: Bildschirmfoto folgt
+
+# Beschriftungen der Bereichsseiten (vorlagen/bereich.html) und der Übersicht
+bereich_seite:
+  alle_bereiche: Alle Bereiche
+  auf_dieser_seite: Auf dieser Seite
+  gut_zu_wissen: "Gut zu wissen:"
+  verwandt: Passt dazu
+  loslegen_text: >-
+    HUBIplan kostet nichts. Sie brauchen eine Person, die einen Server betreuen kann; alles Weitere
+    steht unter „So fangen Sie an“.
+  loslegen_link: So fangen Sie an
+  neu: neu
 
 fuss:
   nutzungsbedingungen: Nutzungsbedingungen der App

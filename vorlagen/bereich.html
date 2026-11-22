@@ -1,0 +1,67 @@
+{% extends "basis.html" %}
+{% from "_foto.html" import foto_rahmen with context %}
+{% from "_bereiche.html" import bereichskacheln, ist_neu, loslegen_band with context %}
+{% set b = t.bereiche[seite.bereich] %}
+{% set l = t.bereich_seite %}
+{% block titel %}{{ b.titel }} · HUBIplan{% endblock %}
+{% block beschreibung %}{{ b.beschreibung }}{% endblock %}
+{% block inhalt %}
+<nav class="bereichsleiste" aria-label="{{ l.alle_bereiche }}">
+  <div class="breite">
+    <ul>
+      {% for s in seiten if s.bereich is defined %}
+      <li><a href="{{ url(s.name) }}"{% if s.name == seite.name %} aria-current="page"{% endif %}>{{ t.bereiche[s.bereich].titel }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
+
+<section class="held held-bereich">
+  <div class="breite held-raster">
+    <div>
+      <p class="zeile"><a href="{{ url('funktionen') }}">{{ t.navigation.funktionen }}</a></p>
+      <h1>{{ b.titel }}</h1>
+      <p class="gross">{{ b.einleitung }}</p>
+      <p class="klein">{{ l.auf_dieser_seite }}</p>
+      <ul class="sprungliste">
+        {% for f in b.funktionen %}<li><a href="#{{ f.id }}">{{ f.titel }}</a></li>{% endfor %}
+      </ul>
+    </div>
+    <div>{{ foto_rahmen(b.bild.name, b.bild.alt, "browser", sofort=true) }}</div>
+  </div>
+</section>
+
+<section class="abschnitt">
+  <div class="breite funktionen-liste">
+    {% for f in b.funktionen %}
+    <article id="{{ f.id }}" class="funktion{% if f.bild is defined %} funktion-mit-bild{% endif %}">
+      <div class="funktion-text">
+        <h2>{{ f.titel }}{% if ist_neu(seite.bereich, f.id) %} <span class="abzeichen">{{ l.neu }}</span>{% endif %}</h2>
+        <p class="nutzen">{{ f.nutzen }}</p>
+        <ul class="punkte">
+          {% for p in f.punkte %}<li>{{ p | seitenlinks(url) | md }}</li>{% endfor %}
+        </ul>
+        {% if f.gut is defined %}<p class="gut"><strong>{{ l.gut_zu_wissen }}</strong> {{ f.gut | seitenlinks(url) | md }}</p>{% endif %}
+      </div>
+      {% if f.bild is defined %}
+      <div class="funktion-bild">
+        {% if f.bild.name.endswith('-android') %}
+        {{ foto_rahmen(f.bild.name, f.bild.alt, "handy", sizes="210px") }}
+        {% else %}
+        {{ foto_rahmen(f.bild.name, f.bild.alt, "browser", sizes="(max-width: 860px) calc(100vw - 2rem), 520px") }}
+        {% endif %}
+      </div>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="abschnitt abschnitt-flaeche">
+  <div class="breite">
+    <h2>{{ l.verwandt }}</h2>
+    {{ bereichskacheln(b.verwandt) }}
+  </div>
+</section>
+{{ loslegen_band() }}
+{% endblock %}

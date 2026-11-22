@@ -1,0 +1,27 @@
+{% extends "basis.html" %}
+{% from "_bereiche.html" import loslegen_band with context %}
+{% set r = t.fragen_seite %}
+{% block titel %}{{ r.titel }} · HUBIplan{% endblock %}
+{% block beschreibung %}{{ r.beschreibung }}{% endblock %}
+{% block inhalt %}
+<section class="abschnitt">
+  <div class="breite">
+    <h1>{{ r.titel }}</h1>
+    <p class="einleitung">{{ r.einleitung }}</p>
+    {% for g in r.gruppen %}
+    <div class="gruppe">
+      <h2 class="h3">{{ g.titel }}</h2>
+      <div class="fragen">
+        {% for f in g.liste %}
+        <details>
+          <summary>{{ f.frage }}</summary>
+          <p>{{ f.antwort | seitenlinks(url) | md }}</p>
+        </details>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{{ loslegen_band() }}
+{% endblock %}

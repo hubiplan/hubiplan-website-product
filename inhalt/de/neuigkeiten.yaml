@@ -1,0 +1,60 @@
+# Seite neuigkeiten/: je Monat die wichtigsten Neuerungen in Vorstandssprache (neueste oben).
+# ziel = Bereich#Sprungmarke auf einer Bereichsseite (Schlüssel aus bereiche.yaml, id der Funktion).
+titel: Neuigkeiten
+beschreibung: Was in HUBIplan neu ist, Monat für Monat, in einfachen Worten.
+einleitung: >-
+  HUBIplan wächst laufend. Hier stehen die wichtigsten Neuerungen je Monat; jede Kleinigkeit steht
+  in der vollständigen Liste der Änderungen.
+alle: Alle Änderungen
+start_ueberschrift: Neu in HUBIplan
+start_mehr: Alle Neuigkeiten
+monate:
+  - monat: November 2026
+    punkte:
+      - titel: Umsätze von der Bank
+        text: HUBIplan holt Kontoumsätze selbst bei der Bank und ordnet sie zu.
+        ziel: finanzen#bank
+      - titel: Pinnwand
+        text: Kurze Neuigkeiten mit Fotos für alle, im Mitgliederbereich und in der App.
+        ziel: kommunikation#pinnwand
+      - titel: Sammelbestellungen
+        text: Vereinskleidung und mehr gemeinsam bestellen, mit Größen und Frist.
+        ziel: vereinsleben#bestellungen
+      - titel: Training und Schießnachweis
+        text: Anwesenheit beim Training, Schießbuch und Bestätigung für den Verband.
+        ziel: vereinsarten#training
+      - titel: Arbeitsstunden mit Ersatzbeitrag
+        text: Pflichtstunden zählen sich von selbst, fehlende kommen auf die nächste Rechnung.
+        ziel: mitglieder#arbeitsstunden
+      - titel: Glückwünsche
+        text: Zu Geburtstag und Vereinsjubiläum per App, E-Mail oder Brief.
+        ziel: kommunikation#glueckwuensche
+      - titel: DSGVO-Werkzeuge
+        text: Verarbeitungsverzeichnis, Auftragsverarbeiter und Datenpannen an einer Stelle.
+        ziel: sicherheit#dsgvo
+      - titel: Nextcloud verzahnt
+        text: Gruppen, Dateien, Kalender und Videoraum laufen mit HUBIplan zusammen.
+        ziel: kommunikation#nextcloud
+      - titel: Termine aus dem Mailprogramm
+        text: Einladen in Outlook oder Thunderbird legt den Termin gleich in HUBIplan an.
+        ziel: vereinsleben#mailprogramm
+      - titel: Stichtagsstatistik
+        text: Mitgliederzahlen für Sportbund und Verband als PDF, Excel und CSV.
+        ziel: mitglieder#statistik
+      - titel: Vorstand unterwegs
+        text: Anträge, Belegung und Versammlung auch in der App erledigen.
+        ziel: webseite_app#app-vorstand
+      - titel: Startseite mit Kacheln bei Anlass
+        text: Kasse, Anmeldungen oder Versammlung erscheinen auf der Startseite, wenn etwas ansteht.
+        ziel: ""
+      - titel: Versammlungen, Anmeldungen, Haushaltsplan und mehr
+        text: >-
+          Außerdem neu im November: Versammlungen mit Online-Abstimmung, Anmeldungen mit
+          Teilnahmegebühr, Haushaltsplan, Helferdienste, Umfragen, Fristenkalender, Geschäftspartner,
+          die Webseite als Baukasten und ein frisches Aussehen mit Dunkelmodus.
+        ziel: ""
+  - monat: Oktober 2026
+    punkte:
+      - titel: Vereinswebseite aus HUBIplan
+        text: Die Webseite des Vereins wird aus HUBIplan gefüllt, mit Fassungen jedes Textes.
+        ziel: webseite_app#webseite

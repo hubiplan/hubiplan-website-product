@@ -1,0 +1,94 @@
+# Page fragen/: all frequently asked questions in groups. start: true = also on the home page (five).
+titel: Frequently asked questions
+beschreibung: >-
+  Answers to frequent questions about HUBIplan: costs, hosting, data protection, moving from Excel,
+  kinds of club, apps and help.
+einleitung: Your question is not here? Write to us; the address is at the bottom of the home page.
+gruppen:
+  - titel: Costs and running it
+    liste:
+      - frage: What does HUBIplan cost?
+        start: true
+        antwort: >-
+          Nothing. HUBIplan is free software under the AGPL, with no licence fees and no price per
+          member. The only cost is your own server, i.e. the rent for a small Linux server.
+      - frage: Who runs the server, and what does it take?
+        start: true
+        antwort: >-
+          The club itself or someone it trusts. A small rented Linux server is enough; HUBIplan gets
+          its own HTTPS certificate, and backups run daily and encrypted. What the person in charge
+          needs is described under [Technical](@technik#betreiben).
+      - frage: Do we have to use everything at once?
+        start: false
+        antwort: >-
+          No. Each club switches on only the building blocks it needs and can add more later.
+          Whatever is switched off does not appear anywhere.
+      - frage: Can we get out again, and what if the project ends?
+        start: false
+        antwort: >-
+          The data belongs to the club and lives on its server. Member lists can be exported to
+          Excel at any time. Because the source code is open, anyone can keep running and
+          developing HUBIplan.
+  - titel: Data and data protection
+    liste:
+      - frage: Where is our data, and is this GDPR-compliant?
+        start: true
+        antwort: >-
+          The data lives only on the server the club chooses, not in a cloud run by the maker.
+          Confidential fields and files are encrypted with one key per club. There are permissions
+          per role, a change log, consent for photos, retention periods and a record of processing
+          activities. The club remains the controller under the GDPR.
+      - frage: Does every member need a login?
+        start: false
+        antwort: >-
+          No. The board also maintains data for members without a login, and newsletters reach
+          members without email as letters. Anyone who wants one gets their own login for events,
+          membership card and their own details.
+  - titel: Moving over
+    liste:
+      - frage: How do we get our members in from Excel or another program?
+        start: true
+        antwort: >-
+          Members can be read in from an Excel sheet, with a duplicate check. Whole clubs can be
+          moved between HUBIplan installations as a file.
+      - frage: Can HUBIplan fetch transactions straight from the bank?
+        start: false
+        antwort: >-
+          Yes, via FinTS, once the person in charge has set up the bank connection. The PIN is never
+          stored. Without a bank connection you import the file from online banking.
+      - frage: We already have a Nextcloud. Does it fit?
+        start: false
+        antwort: >-
+          Yes. Members sign in to Nextcloud with their HUBIplan login, groups follow the offices,
+          events appear in the calendar and files can be stored in Nextcloud. Without Nextcloud
+          HUBIplan works just the same.
+  - titel: Kinds of club and apps
+    liste:
+      - frage: Does it suit sports, music or cultural clubs too?
+        start: true
+        antwort: >-
+          Yes. The pictures show a made-up shooting club and a made-up band because HUBIplan started
+          in a shooting club. Departments are named the way the club wants, and areas such as
+          competitions or honours can be switched off. Bands get performances, line-up and sheet
+          music, sports clubs get training with attendance and statistics for the sports federation.
+      - frage: Is there an app for Android and iPhone?
+        start: false
+        antwort: >-
+          For Android the app is [on Google Play](https://play.google.com/store/apps/details?id=de.hubiplan.app),
+          entirely without Google services. An iPhone app is in progress. Until then HUBIplan runs in
+          the browser on any phone.
+      - frage: Is HUBIplan suitable for an umbrella association?
+        start: false
+        antwort: >-
+          Yes. One installation carries many clubs; the umbrella association sees only what its
+          clubs share. Separate installations can be linked with encryption.
+  - titel: Help
+    liste:
+      - frage: Who helps when something goes wrong?
+        start: false
+        antwort: >-
+          The application has help with screenshots and explanations right on its pages, plus guides
+          for occasions such as a change of board, the turn of the year or a returned direct debit.
+          Under every guide you can say whether it helped and what was missing. Bugs and questions go
+          to the [issue tracker on GitHub](https://github.com/hubiplan/hubiplan/issues). There is no
+          paid support or hosting; HUBIplan is made for running yourself.

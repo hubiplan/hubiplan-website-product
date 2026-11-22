@@ -1,0 +1,98 @@
+# Seite fragen/: alle häufigen Fragen in Gruppen. start: true = steht auch auf der Startseite (fünf).
+titel: Häufige Fragen
+beschreibung: >-
+  Antworten auf häufige Fragen zu HUBIplan: Kosten, Betrieb, Datenschutz, Umstieg aus Excel,
+  Vereinsarten, Apps und Hilfe.
+einleitung: Ihre Frage ist nicht dabei? Schreiben Sie uns, die Adresse steht unten auf der Startseite.
+gruppen:
+  - titel: Kosten und Betrieb
+    liste:
+      - frage: Was kostet HUBIplan?
+        start: true
+        antwort: >-
+          Nichts. HUBIplan ist freie Software unter der AGPL, ohne Lizenzgebühren und ohne Preis je
+          Mitglied. Kosten entstehen nur für den eigenen Server, also die Miete eines kleinen
+          Linux-Servers.
+      - frage: Wer betreibt den Server, und was braucht man dafür?
+        start: true
+        antwort: >-
+          Der Verein selbst oder jemand seines Vertrauens. Es genügt ein kleiner gemieteter
+          Linux-Server; das HTTPS-Zertifikat holt sich HUBIplan selbst, Sicherungen laufen täglich
+          und verschlüsselt. Was die betreuende Person braucht, steht unter
+          [Technik](@technik#betreiben).
+      - frage: Müssen wir alles auf einmal nutzen?
+        start: false
+        antwort: >-
+          Nein. Jeder Verein schaltet nur die Bausteine ein, die er braucht, und kann später weitere
+          dazunehmen. Was ausgeschaltet ist, taucht nirgends auf.
+      - frage: Kommen wir wieder heraus, und was passiert, wenn das Projekt endet?
+        start: false
+        antwort: >-
+          Die Daten gehören dem Verein und liegen auf seinem Server. Mitgliederlisten lassen sich
+          jederzeit als Excel exportieren. Weil der Quellcode offen ist, kann jeder HUBIplan
+          weiter betreiben und weiterentwickeln.
+  - titel: Daten und Datenschutz
+    liste:
+      - frage: Wo liegen unsere Daten, und ist das DSGVO-tauglich?
+        start: true
+        antwort: >-
+          Die Daten liegen nur auf dem Server, den der Verein wählt, nicht in einer Cloud des
+          Herstellers. Vertrauliche Felder und Dateien sind mit einem Schlüssel je Verein
+          verschlüsselt. Es gibt Rechte je Rolle, ein Änderungsprotokoll, Einwilligungen für Fotos,
+          Löschfristen und ein Verzeichnis der Verarbeitungstätigkeiten. Verantwortlich im Sinne der
+          DSGVO bleibt der Verein.
+      - frage: Brauchen alle Mitglieder einen Zugang?
+        start: false
+        antwort: >-
+          Nein. Der Vorstand pflegt die Daten auch für Mitglieder ohne Zugang, und Rundschreiben
+          gehen an Mitglieder ohne E-Mail als Serienbrief. Wer möchte, bekommt einen eigenen
+          Zugang für Termine, Ausweis und eigene Daten.
+  - titel: Umstieg
+    liste:
+      - frage: Wie kommen unsere Mitglieder aus Excel oder einem anderen Programm hinein?
+        start: true
+        antwort: >-
+          Mitglieder lassen sich aus einer Excel-Tabelle einlesen, mit Prüfung auf Dubletten.
+          Ganze Vereine lassen sich zwischen HUBIplan-Installationen als Datei übertragen.
+      - frage: Kann HUBIplan Umsätze direkt von der Bank holen?
+        start: false
+        antwort: >-
+          Ja, über FinTS, wenn die betreuende Person die Bankanbindung eingerichtet hat. Die PIN
+          wird nicht gespeichert. Ohne Bankanbindung lesen Sie die Datei aus dem Onlinebanking ein.
+      - frage: Wir haben schon eine Nextcloud. Passt das zusammen?
+        start: false
+        antwort: >-
+          Ja. Mitglieder melden sich an der Nextcloud mit dem HUBIplan-Zugang an, die Gruppen folgen
+          den Ämtern, Termine erscheinen im Kalender, und Dateien lassen sich in die Nextcloud
+          ablegen. Ohne Nextcloud läuft HUBIplan genauso.
+  - titel: Vereinsarten und Apps
+    liste:
+      - frage: Passt das auch zu Sport-, Musik- oder Kulturvereinen?
+        start: true
+        antwort: >-
+          Ja. Die Bilder zeigen einen erfundenen Schützenverein und eine Musikkapelle, weil
+          HUBIplan in einem Schützenverein entstanden ist. Abteilungen heißen so, wie der Verein es
+          will, und Bereiche wie Wettbewerbe oder Ehrungen lassen sich abschalten. Für
+          Musikvereine gibt es Auftritte, Besetzung und Noten, für Sportvereine Training mit
+          Anwesenheit und die Stichtagsstatistik für den Sportbund.
+      - frage: Gibt es eine App für Android und iPhone?
+        start: false
+        antwort: >-
+          Für Android gibt es die App [bei Google Play](https://play.google.com/store/apps/details?id=de.hubiplan.app),
+          ganz ohne Google-Dienste. Eine App fürs iPhone ist im Aufbau. Bis dahin läuft HUBIplan
+          im Browser auf jedem Handy.
+      - frage: Eignet sich HUBIplan auch für einen Dachverband?
+        start: false
+        antwort: >-
+          Ja. Eine Installation trägt viele Vereine; der Dachverband sieht nur, was seine Vereine
+          freigeben. Getrennte Installationen lassen sich verschlüsselt koppeln.
+  - titel: Hilfe
+    liste:
+      - frage: Wer hilft, wenn etwas nicht klappt?
+        start: false
+        antwort: >-
+          In der Anwendung gibt es Hilfe mit Bildschirmfotos und Erklärungen direkt auf den Seiten,
+          dazu Anleitungen für Anlässe wie Vorstandswechsel, Jahreswechsel oder Rücklastschrift.
+          Unter jeder Anleitung lässt sich sagen, ob sie geholfen hat und was gefehlt hat.
+          Fehler und Fragen gehen an die [Fehlermeldungen bei GitHub](https://github.com/hubiplan/hubiplan/issues).
+          Bezahlten Support oder Hosting gibt es nicht; HUBIplan ist zum Selbstbetreiben gedacht.

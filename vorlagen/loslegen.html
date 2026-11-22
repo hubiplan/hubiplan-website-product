@@ -1,0 +1,42 @@
+{% extends "basis.html" %}
+{% set r = t.loslegen_seite %}
+{% block titel %}{{ r.titel }} · HUBIplan{% endblock %}
+{% block beschreibung %}{{ r.beschreibung }}{% endblock %}
+{% block inhalt %}
+<section class="abschnitt">
+  <div class="breite">
+    <h1>{{ r.titel }}</h1>
+    <p class="einleitung hervor">{{ r.einleitung | md }}</p>
+    <ol class="schritte">
+      {% for sch in r.schritte %}
+      <li id="{{ sch.id }}">
+        <h2 class="h3">{{ sch.titel }}</h2>
+        <p>{{ sch.text }}</p>
+        <p><a href="{% if sch.id == 'ansehen' %}{{ url('funktionen') }}{% else %}{{ url('technik') }}#{{ sch.id }}{% endif %}">{{ sch.link }} →</a></p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section id="umstieg" class="abschnitt abschnitt-flaeche">
+  <div class="breite zwei-spalten oben">
+    <div>
+      <h2>{{ r.umstieg.ueberschrift }}</h2>
+      <ul class="punkte">{% for p in r.umstieg.punkte %}<li>{{ p }}</li>{% endfor %}</ul>
+    </div>
+    <div>
+      <h2>{{ r.kosten.ueberschrift }}</h2>
+      <p>{{ r.kosten.text }}</p>
+    </div>
+  </div>
+</section>
+
+<section id="klaeren" class="abschnitt">
+  <div class="breite"><div class="text">
+    <h2>{{ r.klaeren.ueberschrift }}</h2>
+    <ul class="punkte">{% for p in r.klaeren.punkte %}<li>{{ p }}</li>{% endfor %}</ul>
+    <p>{{ r.technik | seitenlinks(url) | md }}</p>
+  </div></div>
+</section>
+{% endblock %}

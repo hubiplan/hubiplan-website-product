@@ -4,6 +4,7 @@
     python3 scripts/bauen.py [Zielordner]      (Standard: _site)
 
 Liest die Seitenliste aus inhalt/seiten.yaml, die Texte je Sprache aus inhalt/<sprache>.yaml
+und inhalt/<sprache>/*.yaml (je Datei ein Teil, Dateiname = Schlüssel, z. B. bereiche.yaml → t.bereiche)
 und die Vorlagen aus vorlagen/. Jede Seite wird zu <pfad>/index.html, alle Links sind relativ.
 Das Ergebnis läuft auf jedem Webserver und jedem Webspace, ohne Programme auf dem Server.
 
@@ -17,6 +18,7 @@ from __future__ import annotations
 import hashlib
 import json
 import posixpath
+import re
 import shutil
 import sys
 from io import BytesIO
@@ -66,6 +68,29 @@ def lade_yaml(pfad: Path):
         return yaml.safe_load(f)
 
 
+def lade_texte(sprache: str) -> dict:
+    """Texte einer Sprache: inhalt/<sprache>.yaml und je Datei in inhalt/<sprache>/ ein Teil."""
+    texte = lade_yaml(INHALT / f"{sprache}.yaml")
+    ordner = INHALT / sprache
+    for datei in sorted(ordner.glob("*.yaml")) if ordner.is_dir() else []:
+        if datei.stem in texte:
+            raise SystemExit(f"inhalt/{sprache}/{datei.name}: Schlüssel {datei.stem} steht schon in {sprache}.yaml.")
+        texte[datei.stem] = lade_yaml(datei)
+    return texte
+
+
+# Sortierschlüssel für deutsche Wörter (Umlaute wie Grundbuchstaben, ß wie ss)
+_SORT = str.maketrans({"ä": "a", "ö": "o", "ü": "u", "ß": "ss", "Ä": "a", "Ö": "o", "Ü": "u"})
+
+
+def alphabetisch(eintraege, schluessel: str = "titel") -> list:
+    return sorted(eintraege, key=lambda e: e[schluessel].translate(_SORT).casefold())
+
+
+def anfangsbuchstabe(wort: str) -> str:
+    return wort[:1].translate(_SORT).upper()
+
+
 def seiten_pfad(sprache: str, seite: str) -> str:
     """Ordner einer Seite relativ zur Wurzel, z. B. "", "funktionen/", "en/funktionen/"."""
     teile = [] if sprache == SPRACHEN[0] else [sprache]
@@ -90,6 +115,14 @@ def md(text: str) -> Markup:
     if html.startswith("<p>") and html.endswith("</p>") and html.count("<p>") == 1:
         html = html[3:-4]
     return Markup(html)
+
+
+_SEITENLINK = re.compile(r"\]\(@([a-z_]+)(#[\w-]+)?\)")
+
+
+def seitenlinks(text: str, url) -> str:
+    """Links auf eigene Seiten in Markdown-Texten: [Technik](@technik#betreiben) → relativer Link."""
+    return _SEITENLINK.sub(lambda m: f"]({url(m.group(1))}{m.group(2) or ''})", text or "")
 
 
 def webp(bild: Image.Image, breite: int, ziel: Path, stamm: str) -> tuple[str, int, int]:
@@ -153,6 +186,9 @@ def baue(ziel: Path) -> list[Path]:
         lstrip_blocks=True,
     )
     env.filters["md"] = md
+    env.filters["alphabetisch"] = alphabetisch
+    env.filters["seitenlinks"] = seitenlinks
+    env.filters["anfangsbuchstabe"] = anfangsbuchstabe
     env.globals["richtlinie"] = RICHTLINIE
 
     if ziel.exists():
@@ -167,7 +203,7 @@ def baue(ziel: Path) -> list[Path]:
         return {k: v[sprache] if isinstance(v, dict) else v for k, v in links.items()}
 
     for sprache in SPRACHEN:
-        texte = lade_yaml(INHALT / f"{sprache}.yaml")
+        texte = lade_texte(sprache)
         for seite in seiten:
             ordner = seiten_pfad(sprache, seite["pfad"])
 
@@ -214,7 +250,7 @@ def baue(ziel: Path) -> list[Path]:
 
     # Fehlerseite für Webserver, die eine 404.html ausliefern, in allen Sprachen auf einer Seite.
     # Links ab Wurzel, weil sie unter jeder fehlenden Adresse erscheint.
-    alle = {s: lade_yaml(INHALT / f"{s}.yaml") for s in SPRACHEN}
+    alle = {s: lade_texte(s) for s in SPRACHEN}
 
     def wurzel_url(name: str, sprache_ziel: str | None = None) -> str:
         eintrag = next(s for s in seiten if s["name"] == name)

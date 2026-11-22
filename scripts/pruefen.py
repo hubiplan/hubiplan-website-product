@@ -9,9 +9,12 @@ Prüft:
 - alle relativen Links und Bilder zeigen auf vorhandene Dateien, Sprungmarken gibt es,
 - keine Dateien von fremden Servern (Stile, Skripte, Bilder, Schriften nur relativ),
 - jedes Bild hat einen Alternativtext sowie Breite und Höhe, jede Seite eine Sprache und einen Titel,
-- „So fangen Sie an“ kommt ohne Technikwörter aus (für Vorstände, nicht für Betreibende),
+- „So fangen Sie an“ (Startseite und Seite loslegen/) kommt ohne Technikwörter aus (für Vorstände),
+- jede Funktion einer Bereichsseite hat eine eindeutige Sprungmarke und ein Bild nur aus fotos.json,
+- keine Seite ist samt Stil, Skripten, Schrift und sofort geladenen Bildern schwerer als 300 KB,
 - keine Serveradressen, IP-Adressen, Mailadressen oder Namen echter Vereine.
-Mit --veroeffentlichen zusätzlich: keine Platzhalter „[Angaben folgen]“ mehr.
+Mit --veroeffentlichen zusätzlich: keine Platzhalter „[Angaben folgen]“ und keine fehlenden
+Bildschirmfotos („Bildschirmfoto folgt“) mehr.
 """
 
 from __future__ import annotations
@@ -27,7 +30,7 @@ import yaml
 
 WURZEL = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(WURZEL / "scripts"))
-from bauen import RICHTLINIE, SPRACHEN, baue  # noqa: E402
+from bauen import RICHTLINIE, SPRACHEN, baue, lade_texte  # noqa: E402
 
 # Kleingeschrieben; Treffer in Texten, Vorlagen, Stilen und gebauten Seiten sind Fehler.
 # Namen echter Server und Vereine stehen nicht im Repo, sondern lokal, eine Zeile je Wort
@@ -48,6 +51,8 @@ PLATZHALTER = "[Angaben folgen]"
 WIDMUNG = "Hubertus-Schützenverein Neuss-Grimlinghausen von 1920"
 # Der Abschnitt „So fangen Sie an“ richtet sich an Vorstände ohne Technikkenntnis
 TECHNIKWOERTER = ["docker", "repository", "repositories", "pull request", "terminal", "github", "git "]
+# Höchstgewicht einer Seite: HTML, Stil, Skripte, Schrift und Bilder ohne loading="lazy"
+HOECHSTGEWICHT = 300 * 1024
 
 
 def struktur(wert, pfad="") -> set[str]:
@@ -77,6 +82,7 @@ class Leser(HTMLParser):
         self._im_titel = False
         self.richtlinie = None
         self.eingebettet: list[str] = []  # was die Inhaltsrichtlinie der Seite sperren würde
+        self.sofort: list[tuple[str, str, str]] = []  # beim Aufruf geladen: Stil, Skripte, Bilder ohne lazy
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
@@ -101,6 +107,12 @@ class Leser(HTMLParser):
         for attr in ("href", "src"):
             if a.get(attr):
                 self.verweise.append((tag, attr, a[attr]))
+        if tag == "img" and a.get("src") and a.get("loading") != "lazy":
+            self.sofort.append((tag, "src", a["src"]))
+        if tag == "script" and a.get("src"):
+            self.sofort.append((tag, "src", a["src"]))
+        if tag == "link" and a.get("rel") == "stylesheet" and a.get("href"):
+            self.sofort.append((tag, "href", a["href"]))
 
     def handle_endtag(self, tag):
         if tag == "title":
@@ -118,22 +130,46 @@ def lies(datei: Path) -> Leser:
 
 
 def pruefe_texte(fehler: list[str]) -> None:
-    basis = struktur(yaml.safe_load((WURZEL / "inhalt" / f"{SPRACHEN[0]}.yaml").read_text(encoding="utf-8")))
+    basis = struktur(lade_texte(SPRACHEN[0]))
     for sprache in SPRACHEN[1:]:
-        andere = struktur(yaml.safe_load((WURZEL / "inhalt" / f"{sprache}.yaml").read_text(encoding="utf-8")))
+        andere = struktur(lade_texte(sprache))
         for k in sorted(basis - andere):
-            fehler.append(f"inhalt/{sprache}.yaml: fehlt {k}")
+            fehler.append(f"inhalt/{sprache}: fehlt {k}")
         for k in sorted(andere - basis):
-            fehler.append(f"inhalt/{sprache}.yaml: zu viel {k} (nicht in {SPRACHEN[0]}.yaml)")
+            fehler.append(f"inhalt/{sprache}: zu viel {k} (nicht in {SPRACHEN[0]})")
 
 
 def pruefe_loslegen(fehler: list[str]) -> None:
     for sprache in SPRACHEN:
-        texte = yaml.safe_load((WURZEL / "inhalt" / f"{sprache}.yaml").read_text(encoding="utf-8"))
-        klein = yaml.safe_dump(texte["start"]["loslegen"], allow_unicode=True).lower()
-        for wort in TECHNIKWOERTER:
-            if wort in klein:
-                fehler.append(f"inhalt/{sprache}.yaml: start.loslegen enthält das Technikwort „{wort.strip()}“")
+        texte = lade_texte(sprache)
+        for name, teil in (("start.loslegen", texte["start"]["loslegen"]), ("loslegen_seite", texte["loslegen_seite"])):
+            klein = yaml.safe_dump(teil, allow_unicode=True).lower()
+            for wort in TECHNIKWOERTER:
+                if wort in klein:
+                    fehler.append(f"inhalt/{sprache}: {name} enthält das Technikwort „{wort.strip()}“")
+
+
+def pruefe_bereiche(fehler: list[str]) -> None:
+    import json
+
+    bekannt = {b["name"] for b in json.loads((WURZEL / "fotos.json").read_text(encoding="utf-8"))["bilder"]}
+    seiten = yaml.safe_load((WURZEL / "inhalt" / "seiten.yaml").read_text(encoding="utf-8"))
+    namen = {s["bereich"] for s in seiten if "bereich" in s}
+    for sprache in SPRACHEN:
+        bereiche = lade_texte(sprache)["bereiche"]
+        if set(bereiche) != namen:
+            fehler.append(f"inhalt/{sprache}/bereiche.yaml: Bereiche {sorted(bereiche)} passen nicht zu seiten.yaml")
+        for name, b in bereiche.items():
+            ids = [f["id"] for f in b["funktionen"]]
+            if len(ids) != len(set(ids)):
+                fehler.append(f"inhalt/{sprache}/bereiche.yaml: {name} hat doppelte Sprungmarken")
+            for v in b["verwandt"]:
+                if v not in namen:
+                    fehler.append(f"inhalt/{sprache}/bereiche.yaml: {name} verweist auf unbekannten Bereich {v}")
+            bilder = [b["bild"]] + [f["bild"] for f in b["funktionen"] if "bild" in f]
+            for bild in bilder:
+                if bild["name"] not in bekannt and not bild["name"].startswith("baustein-"):
+                    fehler.append(f"inhalt/{sprache}/bereiche.yaml: Bild {bild['name']} fehlt in fotos.json")
 
 
 def pruefe_verbotenes(datei: Path, text: str, fehler: list[str], name: str) -> None:
@@ -168,6 +204,16 @@ def pruefe_seiten(ordner: Path, fehler: list[str], veroeffentlichen: bool) -> in
         text = datei.read_text(encoding="utf-8")
         if veroeffentlichen and PLATZHALTER in text:
             fehler.append(f"{name}: enthält noch „{PLATZHALTER}“")
+        if veroeffentlichen and 'class="platzhalter"' in text:
+            fehler.append(f"{name}: zeigt noch einen Platzhalter statt eines Bildschirmfotos")
+        if datei.name != "404.html":
+            gewicht = datei.stat().st_size
+            for _tag, _attr, wert in leser.sofort:
+                ziel = (datei.parent / unquote(urlsplit(wert).path)).resolve()
+                if ziel.is_file():
+                    gewicht += ziel.stat().st_size
+            if gewicht > HOECHSTGEWICHT:
+                fehler.append(f"{name}: wiegt {gewicht // 1024} KB, höchstens {HOECHSTGEWICHT // 1024} KB")
         for tag, attr, wert in leser.verweise:
             teile = urlsplit(wert)
             if teile.scheme or wert.startswith("//"):
@@ -203,6 +249,7 @@ def main() -> int:
     fehler: list[str] = []
     pruefe_texte(fehler)
     pruefe_loslegen(fehler)
+    pruefe_bereiche(fehler)
     for teil in ("inhalt", "vorlagen", "statisch"):
         for datei in sorted((WURZEL / teil).rglob("*")):
             if datei.is_file() and datei.suffix in (".yaml", ".html", ".css", ".svg", ".js", ".txt", ".md"):

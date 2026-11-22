@@ -6,7 +6,8 @@ titel_zusatz: Free and open-source club management
 navigation:
   menue: Menu
   funktionen: Features
-  webseite_app: Website and app
+  bereiche: Areas
+  neuigkeiten: News
   loslegen: Getting started
   fragen: FAQ
   technik: Technical
@@ -17,8 +18,8 @@ start:
   beschreibung: >-
     HUBIplan is free, web-based club management for clubs and associations of any kind, from 10
     to 10,000 members: members, fees and SEPA, cash book and e-invoices, events, paid event
-    registration, meetings, volunteer shifts, tasks, polls, music and performances, equipment and
-    rooms, newsletters, club website and app.
+    registration, meetings, volunteer shifts, tasks, notice board, polls, group orders, training,
+    music and performances, equipment and rooms, newsletters, club website and app.
   kopf:
     zeile: Free and open-source club management
     ueberschrift: Your club in one place, in the browser, on the phone and on its own website.
@@ -40,40 +41,40 @@ start:
       abspielen: Play slideshow
       bild_nr: Picture {n} of {m}
     bilder:
+      - name: szene-start
+        titel: The home page shows what is due
+        bild: >-
+          Management home page of a made-up demo club with tiles for cash, registrations and the next meeting
       - name: mitglieder
         titel: Members at a glance
-        bild: Detail of a made-up demo club's member list with name, membership type and date of birth
+        bild: >-
+          Detail of a made-up demo club's member list with name, membership type and date of birth
       - name: szene-termine
         titel: Events for the club and its sections
         bild: >-
-          Detail of the monthly calendar with practice evenings, a meeting and a serenade in a
-          made-up demo club
+          Detail of the monthly calendar with practice evenings, a meeting and a serenade in a made-up demo club
+      - name: szene-pinnwand
+        titel: News on the notice board
+        bild: >-
+          Notice board of a made-up demo club with short news and photos
       - name: szene-kapelle
         titel: Your own website, for bands too
-        bild: Home page of the club website of a made-up demo band with welcome text and upcoming events
+        bild: >-
+          Home page of the club website of a made-up demo band with welcome text and upcoming events
       - name: szene-musik
         titel: Staffing performances
         bild: >-
-          Target line-up of a performance with parts, required numbers and assigned musicians in a
-          made-up demo club
-      - name: szene-aufgaben
-        titel: Sharing and completing tasks
-        bild: Open tasks of the board in a made-up demo club
-      - name: szene-material
-        titel: Keeping track of equipment
-        bild: Equipment cards with description, location and condition in a made-up demo club
-      - name: szene-statistik
-        titel: Competition statistics
-        bild: Statistics of a competition with averages
+          Target line-up of a performance with parts, required numbers and assigned musicians in a made-up demo club
       - name: szene-mein-bereich
         titel: A personal area for every member
-        bild: Personal area of a demo member with tasks, membership card, meetings and competitions
+        bild: >-
+          Personal area of a demo member with tasks, membership card, meetings and competitions
   versprechen_name: At a glance
   versprechen:
     - titel: Everything in one place
       text: >-
-        Members, fees, cash book, events, tasks, performances, equipment, newsletters, documents,
-        club website and app work together. Nothing is maintained twice.
+        Members, fees, cash book, events, newsletters, club website and app work together. Nothing
+        is maintained twice, and the home page shows by itself what is due.
     - titel: Free and independent
       text: >-
         Free software with no licence fees. Your data stays on a server of your choice, with no
@@ -83,197 +84,26 @@ start:
         Confidential data encrypted with one key per club, each club's data also kept separate,
         permissions per role and department.
   funktionen:
-    ueberschrift: What HUBIplan does
+    ueberschrift: What HUBIplan can do
     einleitung: >-
-      Each club switches on only what it needs. Every page has help with pictures and
-      step-by-step guides, in German or English.
-    mehr: More
-    gruppen:
-      - titel: Members and fees
-        liste:
-          - titel: Members
-            nutzen: All members in one list, from the application on the website to resignation.
-            mehr: >-
-              New members apply online through the club website; you review the application
-              and admit them with one click, and a duplicate check warns about double
-              entries. Existing lists come in via Excel import and go out again as Excel at
-              any time.
-
-              Families and households get one shared letter and one payer, and companies or
-              other clubs can be members too. Awards, anniversaries and offices are recorded
-              on the member, qualifications such as first aid with an expiry date. Every
-              member has a card with a QR code, also in Google and Apple Wallet, and can
-              view their data in the members' area, report changes or resign themselves.
-          - titel: Fees and invoices
-            nutzen: Collect fees and write invoices, with SEPA direct debit and reminders.
-            mehr: >-
-              A fee run creates the invoices for all members at once, also as family fees,
-              by size for organisations or pro rata for members joining during the year.
-              For reductions, for students for example, HUBIplan reminds members of the
-              proof in good time; they upload it in the members' area, in the app or via a
-              link in the reminder email.
-
-              Invoices carry a QR code for payment, open amounts go through dunning levels,
-              and fees are collected by SEPA direct debit, including B2B. You issue and
-              receive e-invoices as XRechnung and ZUGFeRD, to public authorities with a
-              routing ID too; incoming invoices arrive in HUBIplan through a dedicated
-              mailbox.
-          - titel: Access and privacy
-            nutzen: Everyone only sees what they may see. Confidential data is encrypted.
-            mehr: >-
-              Everyone logs in with their own account, with a passkey instead of a password
-              if they like. Anyone with admin rights needs a second factor. Roles with
-              freely chosen permissions decide, per club or department, who may see and
-              change what; “view as role” lets you check this beforehand.
-
-              Confidential fields and files are stored encrypted, and every change is in the
-              change log. Consents and retention periods are built in so the club can keep
-              to data protection rules. If wanted, members use the same account to log in to
-              the club's Nextcloud.
-      - titel: Finances
-        liste:
-          - titel: Cash book
-            nutzen: The cash book with bank statements and receipts, ready for audits and the tax office.
-            mehr: >-
-              You keep the cash book according to the German GoBD rules the tax office
-              expects: bank statements and receipts hang directly on the entry, and a
-              payment can be split across several categories.
-
-              Assets are depreciated and reserves planned. Members report expenses and
-              travel costs with a photo of the receipt, in the app too; the treasurer
-              approves, a second person reviews, and HUBIplan books the refund with the
-              receipt, individually or as a bulk transfer. For the audit, HUBIplan draws samples, and
-              the auditors get a role that can read the cash book but not keep it.
-          - titel: Budget
-            nutzen: Plan and actuals per area at a glance, with a forecast to the end of the year.
-            mehr: >-
-              For each year you plan income and expenses per category and department.
-              HUBIplan sets the actuals from the cash book against the plan and forecasts to
-              the end of the year, so you see early where money gets tight.
-
-              Planned figures can also be attached to individual events such as the summer
-              fête. For board and general meetings you export the budget as PDF or Excel.
-          - titel: Tax and donations
-            nutzen: Issue donation receipts and keep an eye on the tax thresholds.
-            mehr: >-
-              You record donations with their purpose and issue the donation receipt
-              straight from HUBIplan. Earmarked donations stay visible until they are used.
-
-              The tax evaluation splits income by the club's tax areas and shows with a
-              traffic light how close you are to the thresholds. Coach and volunteer
-              allowances are tracked per person.
-          - titel: Business partners and sponsors
-            nutzen: Suppliers, sponsors and authorities in one place, with contacts and contracts.
-            mehr: >-
-              Companies, authorities and other clubs outside the member list are kept with
-              contacts, notes and bank details. In the cash book and for incoming invoices,
-              HUBIplan suggests the matching partner and warns if the bank details have
-              changed.
-
-              Sponsorship agreements and contracts have a term and remind you in good time
-              to renew or cancel. Sponsors can appear with their logo on the club website.
-      - titel: Club life
-        liste:
-          - titel: Events and volunteer shifts
-            nutzen: One calendar for everyone, with replies and rotas members sign up for.
-            mehr: >-
-              One calendar shows events of the association, the club and its departments;
-              every member sees what concerns them. Members accept or decline, with a
-              deadline if needed, and attachments such as directions or a schedule come
-              straight from the document store.
-
-              You export the annual programme as PDF or subscribe to it as a calendar feed
-              on phone or Outlook; the board gets its own feed with its internal events. For
-              fêtes and events you set up rotas with shifts that helpers sign up for
-              themselves, optionally only with a valid certificate such as first aid.
-          - titel: Paid event registration
-            nutzen: Binding registration for fêtes, trips and courses, with invoice, ticket and admission.
-            mehr: >-
-              Instead of yes and no replies, an event gets binding registration with prices
-              for members, guests and age groups, early-bird prices, a place limit and a
-              waiting list. Members register themselves and their family, guests also via
-              the club website; the invoice comes with the confirmation, and HUBIplan handles
-              cancellations and cancellation fees according to your deadlines.
-
-              On the day there are tickets with a QR code, name badges and an admission list
-              that updates live. Helpers at the entrance and the box office get their own
-              link to scan and take payments, without any HUBIplan account, on the iPhone
-              too.
-          - titel: Meetings
-            nutzen: Invite, vote and keep the minutes, with remote attendance too.
-            mehr: >-
-              You prepare general meetings and board meetings with an agenda including sub-
-              items; HUBIplan watches the notice period and sends the invitation. On site,
-              members check in by QR code in the app.
-
-              Anyone who cannot come attends remotely and votes online, openly or by secret
-              ballot. Voting results go straight into the minutes, which are then approved;
-              resolutions go into the resolution book, and HUBIplan carries elected people
-              straight into office.
-          - titel: Tasks and deadlines
-            nutzen: Forget nothing, with task reminders and a calendar for club duties.
-            mehr: >-
-              Tasks get a due date and a reminder and can be given to people or to an
-              office, so they are not lost when the board changes. Recurring work is set up
-              once as a series.
-
-              The deadline calendar knows typical club duties such as tax returns, exemption
-              notices or filings with the register court and reminds the office in charge in
-              good time.
-          - titel: Communication
-            nutzen: Circulars by email, letter or app, plus polls and documents.
-            mehr: >-
-              You send circulars by email, as a mail merge on the club's letterhead or as a
-              message to the app, to everyone or to selected groups. With a mailing list, an
-              email to a club address becomes a circular.
-
-              Polls and surveys help you find a date, ask for meal choices or sound out
-              opinions, anonymously if wanted. The document store keeps statutes, minutes
-              and forms in folders with their own permissions.
-          - titel: Equipment and rooms
-            nutzen: Manage, lend and book equipment and rooms.
-            mehr: >-
-              The inventory holds tents, equipment, instruments or banners with condition,
-              photos and location, plus places with their rooms such as the clubhouse or
-              sports ground.
-
-              Rooms and equipment are booked through a booking calendar with request and
-              approval, with the week, month or whole year at a glance. When a member books,
-              the booking appears in their record; if a rent is set, “Create invoice” creates
-              the invoice straight away. When lending, you record issue and return, and the
-              club website can show occupancy if you like.
-      - titel: More for your club
-        liste:
-          - titel: Music and performances
-            nutzen: For bands and music societies, with line-ups, sheet music and rehearsals.
-            mehr: >-
-              Musicians are recorded with their instruments and parts. For each performance
-              you set the target line-up, see acceptances and declines and find substitutes
-              for absences; guest musicians reply via a link.
-
-              The sheet music archive shows the pieces on a music stand in the app.
-              Rehearsals, instruments and uniforms are managed as well as the business side
-              with organisers: quote, invoice and fees via SEPA.
-          - titel: Competitions
-            nutzen: Record competitions, show rankings and print certificates.
-            mehr: >-
-              You record competitions of any kind, shooting included, with individual and
-              team scoring. Results are entered on site, even offline and in the app, and
-              rankings update live.
-
-              Certificates are printed from templates. Statistics show averages and trends
-              per member, and you keep track of entries for competitions run by outside
-              organisers too.
-          - titel: Website and app
-            nutzen: Club website and members' app from the same data, nothing maintained twice.
-            mehr: >-
-              The club website runs on your own domain and takes events, board, chronicle
-              and results straight from the administration, so nothing is maintained twice.
-              You set design, colours and fonts without technical knowledge.
-
-              The app for Android and iPhone shows members their events, card, circulars and
-              more from the same data. If wanted, an AI assistant helps with texts, images
-              and the design of the website through a dedicated interface.
+      Seven areas that work together. Each club switches on only what it needs; every page comes
+      with help, pictures and guides, in German or English.
+    alle: All features from A to Z
+  szenen:
+    ueberschrift: An ordinary month at the club
+    liste:
+      - titel: The treasurer
+        text: >-
+          fetches the transactions from the bank. HUBIplan recognises the fees, marks the invoices as
+          paid and attaches the receipts.
+      - titel: The youth leader
+        text: >-
+          posts on the notice board that the bus leaves later. Everyone sees it in the app, without
+          a chain email.
+      - titel: The chair
+        text: >-
+          runs the general meeting. Whoever cannot come votes online, and the result goes straight
+          into the minutes.
   ebenen:
     ueberschrift: For single clubs and whole associations
     text: >-
@@ -307,9 +137,8 @@ start:
         bild: Detail of the home page of a made-up demo club's website
       - titel: Android app
         text: >-
-          Events, messages, tasks, volunteer shifts, polls, meetings with online voting,
-          expenses and proofs by photo, admission by QR code, music stand, membership card (also in Google Wallet) and club management on the go. No ads.
-          An iPhone app is in the works.
+          Events, notice board, membership card and voting for members; applications, bookings and
+          admission for the board. No ads. An iPhone app is in the works.
         repo: android
         bild: Event list in the Android app
     play_alt: Get it on Google Play
@@ -325,7 +154,7 @@ start:
           Look at the features and pictures, and agree with your board which areas your club
           needs.
         link: See the features
-        ziel: funktionen
+        ziel: ansehen
       - titel: 2 Try it out
         text: >-
           Someone with a little technical experience starts HUBIplan on their own computer in a
@@ -338,56 +167,11 @@ start:
           you bring your members over from an Excel spreadsheet.
         link: What running it takes
         ziel: betreiben
+    mehr: All about getting started
   fragen:
     ueberschrift: Frequently asked questions
-    liste:
-      - frage: What does HUBIplan cost?
-        antwort: >-
-          Nothing. HUBIplan is free software under the AGPL, with no licence fees and no price per
-          member. The only cost is your own server, i.e. renting a small Linux server.
-      - frage: Who runs the server, and what does it take?
-        antwort: >-
-          The club itself or someone it trusts. A small rented Linux server is enough; HUBIplan
-          obtains its HTTPS certificate by itself, and backups run daily and encrypted. What the
-          person looking after it needs is on the [technical page](technik/#betreiben).
-      - frage: Where is our data, and is it GDPR-compliant?
-        antwort: >-
-          The data is only on the server the club chooses, not in a vendor's cloud. Confidential
-          fields and files are encrypted with one key per club. There are permissions per role, a
-          change log, consent for photos and retention periods. The club remains the controller
-          under the GDPR.
-      - frage: How do we get our members in from Excel or another program?
-        antwort: >-
-          Members can be imported from an Excel spreadsheet, with a duplicate check. Whole clubs
-          can be transferred between HUBIplan installations as a file.
-      - frage: Do all members need an account?
-        antwort: >-
-          No. The board maintains the data for members without an account too, and newsletters
-          reach members without email as a mail merge letter. Anyone who wants one gets their own
-          account for events, membership card and personal data.
-      - frage: Does it suit sports, music or cultural clubs?
-        antwort: >-
-          Yes. The pictures show a made-up shooting club and a band because HUBIplan was born in a
-          shooting club. Departments are named the way the club wants, and areas such as
-          competitions or honours can be switched off. For music societies and marching bands
-          there is the music area with performances, line-ups, sheet music and rehearsals.
-      - frage: Is there an app for Android and iPhone?
-        antwort: >-
-          The Android app is [on Google Play](https://play.google.com/store/apps/details?id=de.hubiplan.app),
-          entirely without Google services. An iPhone app is in the works. Until then, HUBIplan
-          runs in the browser on any phone.
-      - frage: Who helps when something does not work?
-        antwort: >-
-          The application has help with screenshots and explanations right on the pages, plus
-          guides for occasions such as a change of board, the turn of the year or a returned direct
-          debit. Below each guide you can say whether it helped and what was missing. Bugs and
-          questions go to the [issues on GitHub](https://github.com/hubiplan/hubiplan/issues). There is
-          no paid support or hosting; HUBIplan is meant to be run by the club itself.
-      - frage: Can we leave again, and what happens if the project ends?
-        antwort: >-
-          The data belongs to the club and lives on its server. Member lists can be exported to
-          Excel at any time. Because the source code is open, anyone can keep running and
-          developing HUBIplan.
+    alle: All questions
+
   wer:
     ueberschrift: Who is behind it
     text: >-
@@ -399,14 +183,6 @@ start:
     aenderungen: All changes
     kontakt_titel: "Contact:"
     kontakt: "[kontakt@philipsen-edv.de](mailto:kontakt@philipsen-edv.de) (German or English)"
-  mitmachen:
-    ueberschrift: Contribute
-    text: >-
-      HUBIplan is free software. Bug reports, ideas and improvements are welcome, in English too.
-    issues: Report a bug or idea
-    mitwirken: Contributing guide (in German, with English summary)
-    sicherheit: Report a vulnerability privately
-    technik: Technical details and source code
 
 technik:
   titel: For the technically minded
@@ -474,6 +250,18 @@ bildansicht:
   schliessen: Close
 
 bild_folgt: Screenshot coming soon
+
+# Labels of the area pages (vorlagen/bereich.html) and the overview
+bereich_seite:
+  alle_bereiche: All areas
+  auf_dieser_seite: On this page
+  gut_zu_wissen: "Good to know:"
+  verwandt: Goes well with
+  loslegen_text: >-
+    HUBIplan costs nothing. You need someone who can look after a server; everything else is under
+    "Getting started".
+  loslegen_link: Getting started
+  neu: new
 
 fuss:
   nutzungsbedingungen: App terms of use
