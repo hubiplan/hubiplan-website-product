@@ -45,13 +45,13 @@ monate:
         ziel: webseite_app#app-vorstand
       - titel: Home page with tiles when needed
         text: Cash, registrations or the next meeting appear on the home page when something is due.
-        ziel: ""
+        ziel: webseite_app#app-mitglieder
       - titel: Meetings, registrations, budget and more
         text: >-
           Also new in November: meetings with online voting, paid registration, budget, volunteer
           shift plans, polls, deadline calendar, business partners, the website as a construction kit and
           a fresh look with dark mode.
-        ziel: ""
+        ziel: vereinsleben
   - monat: October 2026
     punkte:
       - titel: Club website from HUBIplan

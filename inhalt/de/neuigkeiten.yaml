@@ -46,13 +46,13 @@ monate:
         ziel: webseite_app#app-vorstand
       - titel: Startseite mit Kacheln bei Anlass
         text: Kasse, Anmeldungen oder Versammlung erscheinen auf der Startseite, wenn etwas ansteht.
-        ziel: ""
+        ziel: webseite_app#app-mitglieder
       - titel: Versammlungen, Anmeldungen, Haushaltsplan und mehr
         text: >-
           Außerdem neu im November: Versammlungen mit Online-Abstimmung, Anmeldungen mit
           Teilnahmegebühr, Haushaltsplan, Helferdienste, Umfragen, Fristenkalender, Geschäftspartner,
           die Webseite als Baukasten und ein frisches Aussehen mit Dunkelmodus.
-        ziel: ""
+        ziel: vereinsleben
   - monat: Oktober 2026
     punkte:
       - titel: Vereinswebseite aus HUBIplan
