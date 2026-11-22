@@ -116,6 +116,9 @@ finanzen:
         - Comparison with the cash book and a forecast, so you see early where money gets tight
         - Planned figures also for single events such as the summer party
         - As PDF or Excel for the board meeting and the general meeting
+      bild:
+        name: szene-haushalt
+        alt: Budget of a made-up demo club with plan, actuals and forecast
     - id: steuern
       titel: Tax and donations
       nutzen: Issue donation receipts and keep an eye on the tax thresholds.
@@ -199,6 +202,9 @@ vereinsleben:
         - Check in on site by QR code in the app, the quorum stays up to date
         - Vote on the phone, open or secret and with proxies, also remotely
         - Results go into the minutes with one click, resolutions book, elected people straight into office
+      bild:
+        name: szene-versammlung
+        alt: Meetings of a made-up demo club, a general meeting in preparation and a board meeting with approved minutes
     - id: aufgaben
       titel: Tasks and deadline calendar
       nutzen: Nothing is forgotten, not even when the board changes.
@@ -229,6 +235,9 @@ vereinsleben:
         - Members order in the member area and in the app and can change until the deadline
         - Totals per item and size as Excel for the supplier, tick off hand-out
         - Price and invoice are optional, for example for a pure size survey
+      bild:
+        name: szene-bestellungen
+        alt: Group order of club clothing with sizes in a made-up demo club
   verwandt: [kommunikation, mitglieder, vereinsarten]
 
 kommunikation:
@@ -261,6 +270,9 @@ kommunikation:
         - Members read them in the member area and in the app, new posts are marked
         - A phone notification if you like, never an email
         - Deliberately not a chat; whoever may post can also post from the app
+      bild:
+        name: szene-pinnwand
+        alt: Notice board of a made-up demo club with short news, one of them pinned to the top
     - id: umfragen
       titel: Polls and opinion polls
       nutzen: Find a date, choose meals or gauge opinion, anonymously if you like.
@@ -388,6 +400,9 @@ vereinsarten:
         - Attendance at practice evenings and training sessions per group
         - Members check in themselves by QR code
         - Report on who came how often, also as Excel
+      bild:
+        name: szene-training
+        alt: Attendance at training sessions in a made-up demo club
     - id: schiessnachweis
       titel: Shooting record
       nutzen: The shooting log per member and the confirmation for the association.

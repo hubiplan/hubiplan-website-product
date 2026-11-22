@@ -120,6 +120,9 @@ finanzen:
         - Vergleich mit dem Kassenbuch und Hochrechnung, so sehen Sie früh, wo es eng wird
         - Planwerte auch für einzelne Veranstaltungen wie das Sommerfest
         - Als PDF oder Excel für Vorstandssitzung und Mitgliederversammlung
+      bild:
+        name: szene-haushalt
+        alt: Haushaltsplan eines erfundenen Demovereins mit Plan, Ist und Hochrechnung
     - id: steuern
       titel: Steuern und Spenden
       nutzen: Zuwendungsbestätigungen ausstellen und die Freigrenzen im Blick behalten.
@@ -203,6 +206,9 @@ vereinsleben:
         - Anmelden vor Ort per QR-Code in der App, die Beschlussfähigkeit stimmt laufend
         - Abstimmen am Handy, offen oder geheim und mit Vollmachten, auch aus der Ferne
         - Ergebnis mit einem Klick ins Protokoll, Beschlussbuch, Gewählte direkt ins Amt
+      bild:
+        name: szene-versammlung
+        alt: "Versammlungen eines erfundenen Demovereins: Generalversammlung in Vorbereitung und Vorstandssitzung mit freigegebenem Protokoll"
     - id: aufgaben
       titel: Aufgaben und Fristenkalender
       nutzen: Nichts vergessen, auch nicht beim Wechsel im Vorstand.
@@ -233,6 +239,9 @@ vereinsleben:
         - Mitglieder bestellen im Mitgliederbereich und in der App und ändern bis zur Frist
         - Summen je Artikel und Größe als Excel für den Händler, Ausgabe abhaken
         - Preis und Rechnung sind freiwillig, etwa für eine reine Größenabfrage
+      bild:
+        name: szene-bestellungen
+        alt: Sammelbestellung von Vereinskleidung mit Größen in einem erfundenen Demoverein
   verwandt: [kommunikation, mitglieder, vereinsarten]
 
 kommunikation:
@@ -266,6 +275,9 @@ kommunikation:
         - Mitglieder lesen im Mitgliederbereich und in der App, Neues ist markiert
         - Auf Wunsch eine Mitteilung aufs Handy, nie eine E-Mail
         - Bewusst kein Chat; wer schreiben darf, schreibt auch aus der App
+      bild:
+        name: szene-pinnwand
+        alt: Pinnwand eines erfundenen Demovereins mit kurzen Neuigkeiten, eine davon oben angeheftet
     - id: umfragen
       titel: Umfragen und Meinungsbilder
       nutzen: Termin finden, Essen wählen oder ein Meinungsbild einholen, auf Wunsch anonym.
@@ -395,6 +407,9 @@ vereinsarten:
         - Anwesenheit bei Übungsabenden und Trainings je Gruppe
         - Mitglieder checken per QR-Code selbst ein
         - Auswertung, wer wie oft da war, auch als Excel
+      bild:
+        name: szene-training
+        alt: Anwesenheit bei Trainings in einem erfundenen Demoverein
     - id: schiessnachweis
       titel: Schießnachweis
       nutzen: Das Schießbuch je Mitglied und die Bestätigung für den Verband.

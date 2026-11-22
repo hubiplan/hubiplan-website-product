@@ -1,17 +1,22 @@
 {
   "_hinweis": "Bildschirmfotos der Produktwebseite, erzeugt mit scripts/fotos.sh aus den erfundenen Demovereinen (seed_demoverein, seed_demokapelle). quelle: hubiplan (Oberfläche, mit zugang) oder website (Vereinswebseite; verein: schuetzen (Standard) oder kapelle); seite: Pfad; breite/hoehe: Fenstergröße in Pixeln. Name = Datei statisch/fotos/<sprache>/<name>.png. ausschnitt: [x, y, Breite, Höhe] in Fensterpixeln; diesen Teil zeigt die Seite (lesbar auch am Handy), die Bildansicht das ganze Bild.",
   "bilder": [
-    {"name": "mitglieder", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/mitglieder", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
-    {"name": "baustein-hubiplan", "quelle": "hubiplan", "zugang": "kasse", "seite": "/finanzen/kassenbuch", "breite": 1280, "hoehe": 800, "ausschnitt": [240, 58, 1040, 728]},
+    {"name": "mitglieder", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/mitglieder", "breite": 1528, "hoehe": 900, "ausschnitt": [328, 58, 1200, 840]},
+    {"name": "baustein-hubiplan", "quelle": "hubiplan", "zugang": "kasse", "seite": "/finanzen/kassenbuch", "breite": 1368, "hoehe": 800, "ausschnitt": [328, 58, 1040, 728]},
     {"name": "baustein-website", "quelle": "website", "seite": "/", "breite": 1280, "hoehe": 800, "ausschnitt": [113, 0, 1040, 728]},
-    {"name": "szene-termine", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/termine?datum=2027-07-10", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
+    {"name": "szene-termine", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/termine?datum=2027-07-10", "breite": 1528, "hoehe": 900, "ausschnitt": [328, 58, 1200, 840]},
     {"name": "szene-kapelle", "quelle": "website", "verein": "kapelle", "seite": "/", "breite": 1440, "hoehe": 900, "ausschnitt": [113, 0, 1200, 840]},
-    {"name": "szene-musik", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/musik?besetzung=1", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
-    {"name": "szene-aufgaben", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/aufgaben", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
-    {"name": "szene-material", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/material", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
-    {"name": "szene-statistik", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/wettbewerbe/statistik", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
-    {"name": "szene-mein-bereich", "quelle": "hubiplan", "zugang": "mitglied", "seite": "/mein-bereich", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
-    {"name": "szene-start", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
-    {"name": "szene-rollen", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/einstellungen/rollen", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]}
+    {"name": "szene-musik", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/musik?besetzung=1", "breite": 1528, "hoehe": 900, "ausschnitt": [328, 58, 1200, 840]},
+    {"name": "szene-aufgaben", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/aufgaben", "breite": 1528, "hoehe": 900, "ausschnitt": [328, 58, 1200, 840]},
+    {"name": "szene-material", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/material", "breite": 1528, "hoehe": 900, "ausschnitt": [328, 58, 1200, 840]},
+    {"name": "szene-statistik", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/wettbewerbe/statistik", "breite": 1528, "hoehe": 900, "ausschnitt": [328, 58, 1200, 840]},
+    {"name": "szene-mein-bereich", "quelle": "hubiplan", "zugang": "mitglied", "seite": "/mein-bereich", "breite": 1528, "hoehe": 900, "ausschnitt": [328, 58, 1200, 840]},
+    {"name": "szene-start", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/", "breite": 1308, "hoehe": 900, "ausschnitt": [108, 58, 1200, 840]},
+    {"name": "szene-pinnwand", "quelle": "hubiplan", "zugang": "mitglied", "seite": "/mein-bereich/pinnwand", "breite": 1528, "hoehe": 900, "ausschnitt": [328, 58, 1200, 840]},
+    {"name": "szene-versammlung", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/versammlungen", "breite": 1528, "hoehe": 900, "ausschnitt": [328, 58, 1200, 840]},
+    {"name": "szene-haushalt", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/finanzen/haushaltsplan", "breite": 1528, "hoehe": 1400, "ausschnitt": [328, 450, 1200, 840]},
+    {"name": "szene-bestellungen", "quelle": "hubiplan", "zugang": "mitglied", "seite": "/mein-bereich/bestellungen", "breite": 1528, "hoehe": 900, "ausschnitt": [328, 58, 1200, 840]},
+    {"name": "szene-training", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/training", "breite": 1528, "hoehe": 1400, "ausschnitt": [328, 200, 1200, 840]},
+    {"name": "szene-rollen", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/einstellungen/rollen", "breite": 1528, "hoehe": 900, "ausschnitt": [328, 58, 1200, 840]}
   ]
 }

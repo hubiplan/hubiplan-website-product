@@ -53,10 +53,10 @@ start:
         titel: Events for the club and its sections
         bild: >-
           Detail of the monthly calendar with practice evenings, a meeting and a serenade in a made-up demo club
-      - name: szene-aufgaben
-        titel: Sharing and completing tasks
+      - name: szene-pinnwand
+        titel: News on the notice board
         bild: >-
-          Open tasks of the board in a made-up demo club
+          Notice board of a made-up demo club with short news, one of them pinned to the top
       - name: szene-kapelle
         titel: Your own website, for bands too
         bild: >-
