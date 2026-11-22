@@ -45,8 +45,8 @@ start:
       - name: szene-start
         titel: Die Startseite zeigt, was ansteht
         bild: >-
-          Startseite der Verwaltung eines erfundenen Demovereins mit Kacheln für Kasse, Anmeldungen
-          und nächste Versammlung
+          Startseite der Verwaltung eines erfundenen Demovereins mit den anstehenden Aufgaben und
+          dem Knopf „Startseite anpassen“
       - name: mitglieder
         titel: Mitglieder im Blick
         bild: >-

@@ -44,7 +44,7 @@ start:
       - name: szene-start
         titel: The home page shows what is due
         bild: >-
-          Management home page of a made-up demo club with tiles for cash, registrations and the next meeting
+          Management home page of a made-up demo club with upcoming tasks and the button to customise the home page
       - name: mitglieder
         titel: Members at a glance
         bild: >-
