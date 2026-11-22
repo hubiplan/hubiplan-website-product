@@ -12,11 +12,6 @@
     {"name": "szene-statistik", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/wettbewerbe/statistik", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
     {"name": "szene-mein-bereich", "quelle": "hubiplan", "zugang": "mitglied", "seite": "/mein-bereich", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
     {"name": "szene-start", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
-    {"name": "szene-pinnwand", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/pinnwand", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
-    {"name": "szene-versammlung", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/versammlungen", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
-    {"name": "szene-haushalt", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/finanzen/haushaltsplan", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
-    {"name": "szene-bestellungen", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/bestellungen", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
-    {"name": "szene-training", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/training", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
     {"name": "szene-rollen", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/einstellungen/rollen", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]}
   ]
 }

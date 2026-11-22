@@ -44,7 +44,7 @@ start:
       - name: szene-start
         titel: The home page shows what is due
         bild: >-
-          Management home page of a made-up demo club with tiles for cash, registrations and the next meeting
+          Management home page of a made-up demo club with upcoming tasks and the button to customise the home page
       - name: mitglieder
         titel: Members at a glance
         bild: >-
@@ -53,10 +53,10 @@ start:
         titel: Events for the club and its sections
         bild: >-
           Detail of the monthly calendar with practice evenings, a meeting and a serenade in a made-up demo club
-      - name: szene-pinnwand
-        titel: News on the notice board
+      - name: szene-aufgaben
+        titel: Sharing and completing tasks
         bild: >-
-          Notice board of a made-up demo club with short news and photos
+          Open tasks of the board in a made-up demo club
       - name: szene-kapelle
         titel: Your own website, for bands too
         bild: >-
