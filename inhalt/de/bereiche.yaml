@@ -208,7 +208,7 @@ vereinsleben:
         - Ergebnis mit einem Klick ins Protokoll, Beschlussbuch, Gewählte direkt ins Amt
       bild:
         name: szene-versammlung
-        alt: Versammlungen eines erfundenen Demovereins: Generalversammlung in Vorbereitung und Vorstandssitzung mit freigegebenem Protokoll
+        alt: "Versammlungen eines erfundenen Demovereins: Generalversammlung in Vorbereitung und Vorstandssitzung mit freigegebenem Protokoll"
     - id: aufgaben
       titel: Aufgaben und Fristenkalender
       nutzen: Nichts vergessen, auch nicht beim Wechsel im Vorstand.
