@@ -36,7 +36,18 @@ docker compose up --build</code></pre>
   </div></div>
 </section>
 
-<section id="quellcode" class="abschnitt abschnitt-flaeche">
+<section id="schnittstelle" class="abschnitt abschnitt-flaeche">
+  <div class="breite"><div class="text">
+    <h2>{{ r.schnittstelle.ueberschrift }}</h2>
+    <p>{{ r.schnittstelle.text }}</p>
+    <ul class="punkte">
+      {% for p in r.schnittstelle.punkte %}<li>{{ p | md }}</li>{% endfor %}
+    </ul>
+    <p><a href="{{ links.api }}">{{ r.schnittstelle.link }}</a></p>
+  </div></div>
+</section>
+
+<section id="quellcode" class="abschnitt">
   <div class="breite">
     <h2>{{ r.quellcode.ueberschrift }}</h2>
     <p class="einleitung">{{ r.quellcode.text }}</p>
@@ -53,7 +64,7 @@ docker compose up --build</code></pre>
   </div>
 </section>
 
-<section id="mitmachen" class="abschnitt">
+<section id="mitmachen" class="abschnitt abschnitt-flaeche">
   <div class="breite">
     <h2>{{ r.mitmachen.ueberschrift }}</h2>
     <p class="einleitung">{{ r.mitmachen.text }}</p>

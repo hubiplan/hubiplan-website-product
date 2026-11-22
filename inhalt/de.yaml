@@ -218,6 +218,21 @@ technik:
       - Wer HUBIplan für andere betreibt, beachtet die AGPL und bietet den Quellcode der
         laufenden Fassung an.
     link: Anleitung zum Betreiben
+  schnittstelle:
+    ueberschrift: Schnittstelle für andere Programme
+    text: >-
+      Verbandssoftware, eine eigene Webseite oder eine Auswertesoftware können über eine
+      dokumentierte Schnittstelle (REST, JSON, OpenAPI 3) mit HUBIplan arbeiten.
+    punkte:
+      - Den Schlüssel vergibt der Vorstand einer Einheit unter Einstellungen › API-Zugänge; er
+        gilt für genau eine Einheit, nur für die angekreuzten Bereiche und läuft von selbst ab.
+      - Personendaten gibt es nur mit benanntem Empfänger und bestätigter Rechtsgrundlage, jeder
+        Abruf wird protokolliert.
+      - Schreiben ist eigens freizugeben; Änderungen an Mitgliedern kommen nur als Vorschlag an,
+        nichts wird gelöscht oder versendet.
+      - "Jede Instanz beschreibt ihre Schnittstelle ohne Anmeldung: lesbar unter
+        `/api/partner/v1/docs/`, maschinenlesbar unter `/api/partner/v1/openapi.json`."
+    link: Anleitung für Entwickler
   quellcode:
     ueberschrift: Technik und Quellcode
     text: Fünf Repositories gehören zu HUBIplan, alle frei unter der AGPL.
