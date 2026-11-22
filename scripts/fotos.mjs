@@ -18,7 +18,7 @@ const spec = JSON.parse(readFileSync(process.env.FOTOS_JSON, 'utf8'))
 const only = new Set(process.argv.slice(2))
 const images = spec.bilder.filter((b) => !only.size || only.has(b.name))
 
-const browser = await chromium.launch()
+let browser = await chromium.launch()
 let failed = 0
 
 async function ruhig(page) {
@@ -58,8 +58,12 @@ for (const b of images.filter((i) => i.quelle === 'website')) {
   await context.close()
 }
 
-// HUBIplan: je Sprache und Zugang anmelden, Sprache am Konto setzen
+// HUBIplan: je Sprache und Zugang anmelden, Sprache am Konto setzen. Datumsfelder zeigt
+// Chromium im Format der Browsersprache (nicht der Kontext-Sprache), daher je Sprache neu starten.
 for (const language of ['de', 'en']) {
+  await browser.close()
+  const lang = language === 'en' ? 'en-GB' : 'de-DE'
+  browser = await chromium.launch({ args: [`--lang=${lang}`], env: { ...process.env, LANG: `${lang.replace('-', '_')}.UTF-8`, LANGUAGE: lang } })
   const byUser = Map.groupBy(images.filter((i) => i.quelle === 'hubiplan'), (b) => b.zugang)
   for (const [user, list] of byUser) {
     for (const b of list) {
