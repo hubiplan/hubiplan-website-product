@@ -1,0 +1,50 @@
+# Page loslegen/: for boards, without technical terms (scripts/pruefen.py checks this).
+titel: Getting started
+beschreibung: >-
+  How a club gets started with HUBIplan: look, try, run, bring members over from Excel, what it
+  costs and what the board should settle first.
+einleitung: >-
+  HUBIplan costs nothing, but it does not run by itself. **You need someone who can look after a
+  server.** We do not offer hosting or paid support.
+schritte:
+  - id: ansehen
+    titel: 1 Look
+    text: >-
+      Look through the areas and agree on the board what your club needs. Start small, for example
+      with members, fees and events; everything else can be switched on later.
+    link: See the features
+  - id: ausprobieren
+    titel: 2 Try
+    text: >-
+      Someone with a little technical experience starts HUBIplan on their own computer in a few
+      minutes, with made-up sample clubs to click through. That way the board sees how it feels
+      before real data goes in.
+    link: How to try it
+  - id: betreiben
+    titel: 3 Run
+    text: >-
+      For live use a small rented Linux server is enough. HUBIplan fetches the certificate for the
+      encrypted connection itself, and backups run every day.
+    link: What running it takes
+umstieg:
+  ueberschrift: Moving over from Excel or another program
+  punkte:
+    - Members are read in from an Excel sheet with a duplicate check, households and companies included.
+    - Switch on areas one at a time. Nobody has to change everything on day one.
+    - Members without email or a phone stay included; they get letters.
+    - Whole clubs can be moved between HUBIplan installations as a file.
+kosten:
+  ueberschrift: What it costs
+  text: >-
+    HUBIplan itself costs nothing, not even per member. The only running cost is the rent for a
+    small server from a provider of your choice, plus the time of the person who looks after it,
+    for example for updates.
+klaeren:
+  ueberschrift: What the board should settle first
+  punkte:
+    - Who looks after the server, and who stands in during holidays?
+    - Which areas do we need first, and who maintains them?
+    - Who gets which permissions, for example treasurer, secretary, departments?
+    - Sign a data processing agreement with the server provider.
+    - Let members know that their data will be kept in HUBIplan from now on.
+technik: Everything technical for the person in charge is on the [Technical](@technik) page.

@@ -1,0 +1,59 @@
+# Page neuigkeiten/: the main news per month in plain words (newest first).
+titel: News
+beschreibung: What is new in HUBIplan, month by month, in plain words.
+einleitung: >-
+  HUBIplan keeps growing. Here are the main changes per month; every detail is in the full list of
+  changes.
+alle: All changes
+start_ueberschrift: New in HUBIplan
+start_mehr: All news
+monate:
+  - monat: November 2026
+    punkte:
+      - titel: Transactions from the bank
+        text: HUBIplan fetches account transactions from the bank itself and matches them.
+        ziel: finanzen#bank
+      - titel: Notice board
+        text: Short news with photos for everyone, in the member area and in the app.
+        ziel: kommunikation#pinnwand
+      - titel: Group orders
+        text: Order club clothing and more together, with sizes and a deadline.
+        ziel: vereinsleben#bestellungen
+      - titel: Training and shooting record
+        text: Attendance at training, shooting log and confirmation for the association.
+        ziel: vereinsarten#training
+      - titel: Volunteer hours with substitute fee
+        text: Required hours count themselves; missing ones appear on the next invoice.
+        ziel: mitglieder#arbeitsstunden
+      - titel: Greetings
+        text: For birthdays and club anniversaries by app, email or letter.
+        ziel: kommunikation#glueckwuensche
+      - titel: GDPR tools
+        text: Record of processing, processors and data breaches in one place.
+        ziel: sicherheit#dsgvo
+      - titel: Nextcloud linked up
+        text: Groups, files, calendar and video room work together with HUBIplan.
+        ziel: kommunikation#nextcloud
+      - titel: Events from your mail program
+        text: Inviting in Outlook or Thunderbird creates the event in HUBIplan straight away.
+        ziel: vereinsleben#mailprogramm
+      - titel: Key-date statistics
+        text: Membership figures for sports federations and associations as PDF, Excel and CSV.
+        ziel: mitglieder#statistik
+      - titel: Board on the go
+        text: Handle applications, bookings and meetings in the app too.
+        ziel: webseite_app#app-vorstand
+      - titel: Home page with tiles when needed
+        text: Cash, registrations or the next meeting appear on the home page when something is due.
+        ziel: ""
+      - titel: Meetings, registrations, budget and more
+        text: >-
+          Also new in November: meetings with online voting, paid registration, budget, volunteer
+          shift plans, polls, deadline calendar, business partners, the website as a construction kit and
+          a fresh look with dark mode.
+        ziel: ""
+  - monat: October 2026
+    punkte:
+      - titel: Club website from HUBIplan
+        text: The club website is filled from HUBIplan, with versions of every text.
+        ziel: webseite_app#webseite

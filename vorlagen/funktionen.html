@@ -1,0 +1,51 @@
+{% extends "basis.html" %}
+{% from "_bereiche.html" import bereichskacheln, loslegen_band with context %}
+{% set r = t.uebersicht %}
+{% block titel %}{{ r.titel }} · HUBIplan{% endblock %}
+{% block beschreibung %}{{ r.beschreibung }}{% endblock %}
+{% block inhalt %}
+<section class="abschnitt">
+  <div class="breite">
+    <h1>{{ r.titel }}</h1>
+    <p class="einleitung">{{ r.einleitung }}</p>
+    <h2 class="unsichtbar">{{ r.bereiche_ueberschrift }}</h2>
+    {{ bereichskacheln() }}
+  </div>
+</section>
+
+<section id="a-bis-z" class="abschnitt abschnitt-flaeche">
+  <div class="breite">
+    <h2>{{ r.az_ueberschrift }}</h2>
+    <p class="einleitung">{{ r.az_text }}</p>
+    {% set az = [] %}
+    {% for s in seiten if s.bereich is defined %}
+    {% for f in t.bereiche[s.bereich].funktionen %}
+    {% set _ = az.append({"titel": f.titel, "ziel": url(s.name) ~ "#" ~ f.id, "bereich": t.bereiche[s.bereich].titel, "buchstabe": f.titel | anfangsbuchstabe}) %}
+    {% endfor %}
+    {% endfor %}
+    <div class="az">
+      {% for gruppe in az | alphabetisch | groupby("buchstabe") %}
+      <div>
+        <h3>{{ gruppe.grouper }}</h3>
+        <ul>
+          {% for e in gruppe.list | alphabetisch %}<li><a href="{{ e.ziel }}">{{ e.titel }}</a> <span>{{ e.bereich }}</span></li>{% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<section id="verbaende" class="abschnitt">
+  <div class="breite">
+    <h2>{{ t.start.ebenen.ueberschrift }}</h2>
+    <p class="einleitung">{{ t.start.ebenen.text }}</p>
+    <ol class="ebenen">
+      {% for e in t.start.ebenen.stufen %}
+      <li><strong>{{ e.titel }}</strong> <span>{{ e.text }}</span></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+{{ loslegen_band() }}
+{% endblock %}

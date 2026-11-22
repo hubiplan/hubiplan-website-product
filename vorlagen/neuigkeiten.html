@@ -1,0 +1,26 @@
+{% extends "basis.html" %}
+{% from "_bereiche.html" import ziel_link with context %}
+{% set r = t.neuigkeiten %}
+{% block titel %}{{ r.titel }} · HUBIplan{% endblock %}
+{% block beschreibung %}{{ r.beschreibung }}{% endblock %}
+{% block inhalt %}
+<section class="abschnitt">
+  <div class="breite">
+    <h1>{{ r.titel }}</h1>
+    <p class="einleitung">{{ r.einleitung }} <a href="{{ links.releases }}">{{ r.alle }}</a></p>
+    {% for m in r.monate %}
+    <div class="gruppe">
+      <h2 class="h3">{{ m.monat }}</h2>
+      <ul class="neu-liste">
+        {% for p in m.punkte %}
+        <li>
+          <h3 class="h4">{% if p.ziel %}<a href="{{ ziel_link(p.ziel) }}">{{ p.titel }}</a>{% else %}{{ p.titel }}{% endif %}</h3>
+          <p>{{ p.text }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

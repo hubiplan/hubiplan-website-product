@@ -1,0 +1,29 @@
+{# Kacheln der sieben Bereiche (Startseite, Übersicht, „Passt dazu“). namen: Bereichsschlüssel, sonst alle. #}
+{% macro bereichskacheln(namen=none, ueberschrift_ebene=3) %}
+<ul class="bereiche">
+  {% for b in seiten if b.bereich is defined and (namen is none or b.bereich in namen) %}
+  {% set x = t.bereiche[b.bereich] %}
+  <li>
+    <h{{ ueberschrift_ebene }}><a href="{{ url(b.name) }}">{{ x.titel }}</a></h{{ ueberschrift_ebene }}>
+    <p>{{ x.kurz }}</p>
+    <p class="stichworte">{{ x.stichworte | join(' · ') }}</p>
+  </li>
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{# Ziele der Neuigkeiten des letzten Monats, z. B. "finanzen#bank", für das Abzeichen „neu“ #}
+{% macro ist_neu(bereich, id) %}{% if (bereich ~ '#' ~ id) in (t.neuigkeiten.monate[0].punkte | map(attribute='ziel') | list) %}ja{% endif %}{% endmacro %}
+
+{# Link auf ein Neuigkeiten-Ziel "bereich#id"; leer = kein Link #}
+{% macro ziel_link(ziel) %}{% if ziel %}{% set teile = ziel.split('#') %}{{ url(teile[0]) }}{% if teile | length > 1 %}#{{ teile[1] }}{% endif %}{% endif %}{% endmacro %}
+
+{# Band „So fangen Sie an“ am Ende von Unterseiten #}
+{% macro loslegen_band() %}
+<section class="abschnitt abschnitt-flaeche band">
+  <div class="breite band-zeile">
+    <p>{{ t.bereich_seite.loslegen_text }}</p>
+    <a class="knopf" href="{{ url('loslegen') }}">{{ t.bereich_seite.loslegen_link }}</a>
+  </div>
+</section>
+{% endmacro %}

@@ -1,0 +1,50 @@
+# Seite loslegen/: für Vorstände, ohne Technikwörter (scripts/pruefen.py prüft das).
+titel: So fangen Sie an
+beschreibung: >-
+  So kommt ein Verein zu HUBIplan: ansehen, ausprobieren, betreiben, Mitglieder aus Excel übernehmen,
+  was es kostet und was der Vorstand vorher klären sollte.
+einleitung: >-
+  HUBIplan kostet nichts, läuft aber nicht von allein. **Sie brauchen eine Person, die einen
+  Server betreuen kann.** Hosting und bezahlten Support bieten wir nicht an.
+schritte:
+  - id: ansehen
+    titel: 1 Ansehen
+    text: >-
+      Sehen Sie sich die Bereiche an und klären Sie im Vorstand, was Ihr Verein braucht. Fangen Sie
+      klein an, etwa mit Mitgliedern, Beiträgen und Terminen; der Rest lässt sich später einschalten.
+    link: Zu den Funktionen
+  - id: ausprobieren
+    titel: 2 Ausprobieren
+    text: >-
+      Eine Person mit etwas Technikerfahrung startet HUBIplan in wenigen Minuten auf ihrem Rechner,
+      mit erfundenen Beispielvereinen zum Durchklicken. So sieht der Vorstand, wie es sich anfühlt,
+      bevor echte Daten hineinkommen.
+    link: Anleitung zum Ausprobieren
+  - id: betreiben
+    titel: 3 Betreiben
+    text: >-
+      Für den Echtbetrieb genügt ein kleiner gemieteter Linux-Server. Das Zertifikat für die
+      verschlüsselte Verbindung holt sich HUBIplan selbst, Sicherungen laufen täglich.
+    link: Was der Betrieb braucht
+umstieg:
+  ueberschrift: Umstieg aus Excel oder einem anderen Programm
+  punkte:
+    - Mitglieder lesen Sie aus einer Excel-Tabelle ein, mit Prüfung auf Dubletten; Haushalte und Firmen gleich mit.
+    - Bereiche schalten Sie nach und nach ein. Niemand muss am ersten Tag alles umstellen.
+    - Mitglieder ohne E-Mail oder Handy bleiben dabei, sie bekommen Briefe.
+    - Ganze Vereine lassen sich zwischen HUBIplan-Installationen als Datei übertragen.
+kosten:
+  ueberschrift: Was es kostet
+  text: >-
+    HUBIplan selbst kostet nichts, auch nicht je Mitglied. Einzige laufende Ausgabe ist die Miete
+    eines kleinen Servers bei einem Anbieter Ihrer Wahl. Dazu kommt die Zeit der Person, die ihn
+    betreut, etwa für Updates.
+klaeren:
+  ueberschrift: Was der Vorstand vorher klären sollte
+  punkte:
+    - Wer betreut den Server, und wer vertritt diese Person im Urlaub?
+    - Welche Bereiche brauchen wir zuerst, und wer pflegt sie?
+    - Wer bekommt welche Rechte, etwa Kasse, Schriftführung, Abteilungen?
+    - Mit dem Anbieter des Servers einen Vertrag zur Auftragsverarbeitung schließen.
+    - Mitglieder informieren, dass ihre Daten künftig in HUBIplan liegen.
+technik: Alles Technische für die betreuende Person steht auf der Seite [Technik](@technik).

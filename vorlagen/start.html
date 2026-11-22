@@ -1,5 +1,6 @@
 {% extends "basis.html" %}
 {% from "_foto.html" import foto_rahmen with context %}
+{% from "_bereiche.html" import bereichskacheln, ziel_link with context %}
 {% set s = t.start %}
 {% block titel %}{{ s.titel }}{% endblock %}
 {% block beschreibung %}{{ s.beschreibung }}{% endblock %}
@@ -55,42 +56,21 @@
   <div class="breite">
     <h2>{{ s.funktionen.ueberschrift }}</h2>
     <p class="einleitung">{{ s.funktionen.einleitung }}</p>
-    {% for g in s.funktionen.gruppen %}
-    <div class="gruppe">
-      <h3>{{ g.titel }}</h3>
-      <ul class="kacheln">
-        {% for f in g.liste %}
-        <li>
-          <h4>{{ f.titel }}</h4>
-          {# Nutzensatz am Handy erst im aufgeklappten Teil, damit die Seite kurz bleibt; nie doppelt sichtbar #}
-          <p class="nutzen-breit">{{ f.nutzen }}</p>
-          <details>
-            {# Am Handy ist die Überschrift selbst der Aufklapper (PW-07: kürzere Seite), breit „Mehr dazu“ #}
-            <summary><span class="titel-schmal">{{ f.titel }}</span><span class="mehr-breit">{{ s.funktionen.mehr }}<span class="unsichtbar">: {{ f.titel }}</span></span></summary>
-            <p class="nutzen-schmal">{{ f.nutzen }}</p>
-            {% for absatz in f.mehr.split("\n") %}<p>{{ absatz }}</p>{% endfor %}
-          </details>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-    {% endfor %}
+    {{ bereichskacheln() }}
+    <p class="weiter"><a href="{{ url('funktionen') }}#a-bis-z">{{ s.funktionen.alle }} →</a></p>
   </div>
 </section>
 
-<section id="verbaende" class="abschnitt abschnitt-flaeche">
+<section class="abschnitt abschnitt-flaeche szenen-abschnitt">
   <div class="breite">
-    <h2>{{ s.ebenen.ueberschrift }}</h2>
-    <p class="einleitung">{{ s.ebenen.text }}</p>
-    <ol class="ebenen">
-      {% for e in s.ebenen.stufen %}
-      <li><strong>{{ e.titel }}</strong> <span>{{ e.text }}</span></li>
-      {% endfor %}
-    </ol>
+    <h2>{{ s.szenen.ueberschrift }}</h2>
+    <ul class="szenen">
+      {% for sz in s.szenen.liste %}<li><strong>{{ sz.titel }}</strong> {{ sz.text }}</li>{% endfor %}
+    </ul>
   </div>
 </section>
 
-<section id="webseite-app" class="abschnitt">
+<section id="webseite-app" class="abschnitt abschnitt-flaeche">
   <div class="breite">
     <h2>{{ s.bausteine.ueberschrift }}</h2>
     <div class="bausteine">
@@ -113,7 +93,7 @@
   </div>
 </section>
 
-<section id="loslegen" class="abschnitt abschnitt-flaeche">
+<section id="loslegen" class="abschnitt">
   <div class="breite">
     <h2>{{ s.loslegen.ueberschrift }}</h2>
     <p class="einleitung hervor">{{ s.loslegen.text | md }}</p>
@@ -122,10 +102,27 @@
       <li>
         <h3>{{ sch.titel }}</h3>
         <p>{{ sch.text }}</p>
-        <p><a href="{% if sch.ziel == 'funktionen' %}#funktionen{% else %}{{ url('technik') }}#{{ sch.ziel }}{% endif %}">{{ sch.link }} →</a></p>
+        <p><a href="{{ url('loslegen') }}#{{ sch.ziel }}">{{ sch.link }} →</a></p>
       </li>
       {% endfor %}
     </ol>
+    <p class="weiter"><a href="{{ url('loslegen') }}">{{ s.loslegen.mehr }} →</a></p>
+  </div>
+</section>
+
+{% set n = t.neuigkeiten %}
+<section id="neu" class="abschnitt abschnitt-flaeche">
+  <div class="breite">
+    <h2>{{ n.start_ueberschrift }}</h2>
+    <ul class="neu-liste">
+      {% for p in n.monate[0].punkte[:3] %}
+      <li>
+        <h3 class="h4"><a href="{{ ziel_link(p.ziel) }}">{{ p.titel }}</a></h3>
+        <p>{{ p.text }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+    <p class="weiter"><a href="{{ url('neuigkeiten') }}">{{ n.start_mehr }} →</a></p>
   </div>
 </section>
 
@@ -133,13 +130,16 @@
   <div class="breite">
     <h2>{{ s.fragen.ueberschrift }}</h2>
     <div class="fragen">
-      {% for f in s.fragen.liste %}
+      {% for g in t.fragen_seite.gruppen %}
+      {% for f in g.liste if f.start %}
       <details>
         <summary>{{ f.frage }}</summary>
-        <p>{{ f.antwort | md }}</p>
+        <p>{{ f.antwort | seitenlinks(url) | md }}</p>
       </details>
       {% endfor %}
+      {% endfor %}
     </div>
+    <p class="weiter"><a href="{{ url('fragen') }}">{{ s.fragen.alle }} →</a></p>
   </div>
 </section>
 
@@ -152,18 +152,5 @@
       <li><strong>{{ s.wer.kontakt_titel }}</strong> {{ s.wer.kontakt | md }}</li>
     </ul>
   </div></div>
-</section>
-
-<section id="mitmachen" class="abschnitt">
-  <div class="breite">
-    <h2>{{ s.mitmachen.ueberschrift }}</h2>
-    <p class="einleitung">{{ s.mitmachen.text }}</p>
-    <ul class="linkliste">
-      <li><a href="{{ links.issues }}">{{ s.mitmachen.issues }}</a></li>
-      <li><a href="{{ links.mitwirken }}">{{ s.mitmachen.mitwirken }}</a></li>
-      <li><a href="{{ links.sicherheit }}">{{ s.mitmachen.sicherheit }}</a></li>
-      <li><a href="{{ url('technik') }}">{{ s.mitmachen.technik }}</a></li>
-    </ul>
-  </div>
 </section>
 {% endblock %}

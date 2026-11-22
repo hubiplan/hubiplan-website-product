@@ -1,8 +1,52 @@
 # Seiten der Produktwebseite. pfad = Ordner unter der Wurzel ("" = Startseite).
 # Jede Seite gibt es in jeder Sprache (scripts/bauen.py, SPRACHEN).
+# bereich = Schlüssel in inhalt/<sprache>/bereiche.yaml; die Reihenfolge hier ist die der Bereiche.
 - name: start
   pfad: ""
   vorlage: start.html
+- name: funktionen
+  pfad: funktionen
+  vorlage: funktionen.html
+- name: mitglieder
+  pfad: mitglieder
+  vorlage: bereich.html
+  bereich: mitglieder
+- name: finanzen
+  pfad: finanzen
+  vorlage: bereich.html
+  bereich: finanzen
+- name: vereinsleben
+  pfad: vereinsleben
+  vorlage: bereich.html
+  bereich: vereinsleben
+- name: kommunikation
+  pfad: kommunikation
+  vorlage: bereich.html
+  bereich: kommunikation
+- name: webseite_app
+  pfad: webseite-app
+  vorlage: bereich.html
+  bereich: webseite_app
+- name: vereinsarten
+  pfad: vereinsarten
+  vorlage: bereich.html
+  bereich: vereinsarten
+- name: sicherheit
+  pfad: sicherheit
+  vorlage: bereich.html
+  bereich: sicherheit
+- name: loslegen
+  pfad: loslegen
+  vorlage: loslegen.html
+- name: fragen
+  pfad: fragen
+  vorlage: fragen.html
+- name: neuigkeiten
+  pfad: neuigkeiten
+  vorlage: neuigkeiten.html
+- name: technik
+  pfad: technik
+  vorlage: technik.html
 - name: impressum
   pfad: impressum
   vorlage: rechtliches.html
@@ -15,9 +59,6 @@
 - name: nutzungsbedingungen
   pfad: nutzungsbedingungen
   vorlage: rechtliches.html
-- name: technik
-  pfad: technik
-  vorlage: technik.html
 - name: barrierefreiheit
   pfad: barrierefreiheit
   vorlage: rechtliches.html

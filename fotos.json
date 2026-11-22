@@ -10,6 +10,8 @@
     {"name": "szene-aufgaben", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/aufgaben", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
     {"name": "szene-material", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/material", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
     {"name": "szene-statistik", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/wettbewerbe/statistik", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
-    {"name": "szene-mein-bereich", "quelle": "hubiplan", "zugang": "mitglied", "seite": "/mein-bereich", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]}
+    {"name": "szene-mein-bereich", "quelle": "hubiplan", "zugang": "mitglied", "seite": "/mein-bereich", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
+    {"name": "szene-start", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]},
+    {"name": "szene-rollen", "quelle": "hubiplan", "zugang": "vorstand", "seite": "/einstellungen/rollen", "breite": 1440, "hoehe": 900, "ausschnitt": [240, 58, 1200, 840]}
   ]
 }
