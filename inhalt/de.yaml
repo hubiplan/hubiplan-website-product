@@ -45,8 +45,8 @@ start:
       - name: szene-start
         titel: Die Startseite zeigt, was ansteht
         bild: >-
-          Startseite der Verwaltung eines erfundenen Demovereins mit den anstehenden Aufgaben und
-          dem Knopf „Startseite anpassen“
+          Startseite der Verwaltung eines erfundenen Demovereins mit Kacheln für Kasse, Anmeldungen
+          und nächste Versammlung
       - name: mitglieder
         titel: Mitglieder im Blick
         bild: >-
@@ -57,9 +57,9 @@ start:
         bild: >-
           Ausschnitt des Monatskalenders mit Übungsabenden, einer Sitzung und einem Ständchen in
           einem erfundenen Demoverein
-      - name: szene-aufgaben
-        titel: Aufgaben teilen und erledigen
-        bild: Offene Aufgaben des Vorstands in einem erfundenen Demoverein
+      - name: szene-pinnwand
+        titel: Neuigkeiten auf der Pinnwand
+        bild: Pinnwand eines erfundenen Demovereins mit kurzen Neuigkeiten, eine davon oben angeheftet
       - name: szene-kapelle
         titel: Die eigene Webseite, auch für Musikvereine
         bild: >-
