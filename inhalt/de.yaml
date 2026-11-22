@@ -232,6 +232,7 @@ technik:
         nichts wird gelöscht oder versendet.
       - "Jede Instanz beschreibt ihre Schnittstelle ohne Anmeldung: lesbar unter
         `/api/partner/v1/docs/`, maschinenlesbar unter `/api/partner/v1/openapi.json`."
+    beschreibung: Alle Aufrufe und Datenformen ansehen
     link: Anleitung für Entwickler
   quellcode:
     ueberschrift: Technik und Quellcode

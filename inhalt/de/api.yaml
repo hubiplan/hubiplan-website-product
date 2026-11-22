@@ -1,0 +1,31 @@
+# Seite technik/api/: Beschreibung der API für andere Programme aus inhalt/openapi.json
+titel: API für andere Programme
+beschreibung: >-
+  Alle Aufrufe und Datenformen der Schnittstelle von HUBIplan für Verbandssoftware, Webseiten
+  und Fachsoftware
+einleitung: >-
+  Diese Seite zeigt zur Information, was die Schnittstelle von HUBIplan kann, im Stand der
+  aktuellen Entwicklung. Maßgeblich ist die Beschreibung der Instanz, mit der Ihr Programm
+  arbeitet: Jede HUBIplan-Instanz zeigt sie ohne Anmeldung unter `/api/partner/v1/docs/`, für
+  eigene Werkzeuge als OpenAPI unter `/api/partner/v1/openapi.json`.
+fassung: Fassung der Schnittstelle
+anleitung: Ausführliche Anleitung für Entwickler
+openapi: OpenAPI-Datei dieses Stands
+ueberblick: Überblick
+aufrufe: Aufrufe
+formen: Datenformen
+formen_hinweis: Mit * markierte Felder sind immer vorhanden bzw. Pflicht.
+deutsch_hinweis: ""
+woerter:
+  bereich: "Bereich:"
+  parameter: Parameter
+  name: Name
+  ort: Ort
+  typ: Typ
+  bedeutung: Bedeutung
+  feld: Feld
+  inhalt: "Inhalt (JSON):"
+  antworten: Antworten
+  liste_von: Liste von {0}
+  bis_zeichen: bis {0} Zeichen
+  auch_null: auch null

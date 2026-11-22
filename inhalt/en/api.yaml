@@ -1,0 +1,31 @@
+# Page technik/api/: description of the API for other programs from inhalt/openapi.json
+titel: API for other programs
+beschreibung: >-
+  All calls and data shapes of the HUBIplan interface for association software, websites and
+  specialist software
+einleitung: >-
+  This page shows for information what the HUBIplan interface can do, as of the current
+  development state. What counts is the description of the instance your program works with:
+  every HUBIplan instance shows it without sign-in at `/api/partner/v1/docs/`, and for your own
+  tools as OpenAPI at `/api/partner/v1/openapi.json`.
+fassung: Interface version
+anleitung: Detailed guide for developers (in German)
+openapi: OpenAPI file of this state
+ueberblick: Overview
+aufrufe: Calls
+formen: Data shapes
+formen_hinweis: Fields marked with * are always present or required.
+deutsch_hinweis: The descriptions of the interface itself are in German.
+woerter:
+  bereich: "Area:"
+  parameter: Parameters
+  name: Name
+  ort: Location
+  typ: Type
+  bedeutung: Meaning
+  feld: Field
+  inhalt: "Body (JSON):"
+  antworten: Responses
+  liste_von: list of {0}
+  bis_zeichen: up to {0} characters
+  auch_null: may be null

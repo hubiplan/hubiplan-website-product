@@ -47,6 +47,9 @@
 - name: technik
   pfad: technik
   vorlage: technik.html
+- name: api
+  pfad: technik/api
+  vorlage: api.html
 - name: impressum
   pfad: impressum
   vorlage: rechtliches.html

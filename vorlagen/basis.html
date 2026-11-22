@@ -39,7 +39,7 @@
       {% set in_funktionen = seite is defined and (seite.bereich is defined or aktiv == 'funktionen') %}
       <a href="{{ url('funktionen') }}"{% if in_funktionen %} aria-current="{{ 'page' if aktiv == 'funktionen' else 'true' }}"{% endif %}>{{ t.navigation.funktionen }}</a>
       {% for name in ['loslegen', 'fragen', 'neuigkeiten', 'technik'] %}
-      <a href="{{ url(name) }}"{% if aktiv == name %} aria-current="page"{% endif %}>{{ t.navigation[name] }}</a>
+      <a href="{{ url(name) }}"{% if aktiv == name %} aria-current="page"{% elif name == 'technik' and aktiv == 'api' %} aria-current="true"{% endif %}>{{ t.navigation[name] }}</a>
       {% endfor %}
       {% if seite is defined %}
       {% for s in sprachen if s != sprache %}

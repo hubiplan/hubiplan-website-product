@@ -224,6 +224,7 @@ technik:
         nothing is deleted or sent.
       - "Every instance describes its interface without sign-in: readable at
         `/api/partner/v1/docs/`, machine-readable at `/api/partner/v1/openapi.json`."
+    beschreibung: View all calls and data shapes
     link: Guide for developers (in German)
   quellcode:
     ueberschrift: Technology and source code
