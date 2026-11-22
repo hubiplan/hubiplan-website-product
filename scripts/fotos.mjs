@@ -59,11 +59,12 @@ for (const b of images.filter((i) => i.quelle === 'website')) {
 }
 
 // HUBIplan: je Sprache und Zugang anmelden, Sprache am Konto setzen. Datumsfelder zeigt
-// Chromium im Format der Browsersprache (nicht der Kontext-Sprache), daher je Sprache neu starten.
+// Chromium im Format der Browsersprache (nicht der Kontext-Sprache), daher je Sprache neu starten,
+// und zwar das volle Chromium: die kleine Headless-Shell beachtet --lang nicht.
 for (const language of ['de', 'en']) {
   await browser.close()
   const lang = language === 'en' ? 'en-GB' : 'de-DE'
-  browser = await chromium.launch({ args: [`--lang=${lang}`], env: { ...process.env, LANG: `${lang.replace('-', '_')}.UTF-8`, LANGUAGE: lang } })
+  browser = await chromium.launch({ channel: 'chromium', args: [`--lang=${lang}`], env: { ...process.env, LANG: `${lang.replace('-', '_')}.UTF-8`, LANGUAGE: lang } })
   const byUser = Map.groupBy(images.filter((i) => i.quelle === 'hubiplan'), (b) => b.zugang)
   for (const [user, list] of byUser) {
     for (const b of list) {
