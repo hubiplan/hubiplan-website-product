@@ -24,14 +24,21 @@ Zu HUBIplan gehören fünf Repositories:
 ## Seiten
 
 Die Startseite richtet sich zuerst an Vereinsvorstände und folgt ihren Fragen: Nutzen und
-Bilder, Funktionen in vier Gruppen (je Kachel ein Satz, Einzelheiten aufklappbar), Vereine und
-Verbände, Webseite und App, „So fangen Sie an“ (ohne Technikwörter), häufige Fragen, „Wer steckt
-dahinter“ und Mitmachen. Alles für Technikkundige (Ausprobieren mit Docker, Selbst betreiben,
-Repositories) steht auf der Seite `technik/`. Dazu kommen Impressum, Datenschutzhinweise, die
-Anleitung zum Löschen des App-Kontos, die Nutzungsbedingungen der App, die Erklärung zur
-Barrierefreiheit und eine zweisprachige Fehlerseite `404.html`. Am Handy bleibt die Startseite
-kurz (Kacheln klappen über ihre Überschrift auf); beim Teilen zeigt sie eine Vorschau (Open
-Graph, ohne Bild). Alle Seiten gibt es auf Deutsch und Englisch; die Liste steht in
+Bilder, die Bereiche im Überblick, „So fangen Sie an“ (ohne Technikwörter), häufige Fragen und
+„Wer steckt dahinter“. Dahinter stehen:
+
+- sieben **Bereichsseiten** (Mitglieder, Finanzen, Vereinsleben, Kommunikation, Webseite und
+  App, Vereinsarten, Sicherheit) mit Bildschirmfotos; Texte in `inhalt/<sprache>/bereiche.yaml`,
+- `funktionen/`: alle Funktionen von A bis Z (`uebersicht.yaml`),
+- `loslegen/`, `fragen/` und `neuigkeiten/` (je eine eigene Datei unter `inhalt/<sprache>/`),
+- `technik/` für Technikkundige (Ausprobieren mit Docker, Selbst betreiben, Repositories,
+  Schnittstelle) und `technik/api/` mit allen Aufrufen der API für andere Programme,
+- Impressum, Datenschutzhinweise, die Anleitung zum Löschen des App-Kontos, die
+  Nutzungsbedingungen der App, die Erklärung zur Barrierefreiheit und eine zweisprachige
+  Fehlerseite `404.html`.
+
+Am Handy bleiben die Seiten kurz; beim Teilen zeigt die Startseite eine Vorschau (Open Graph,
+ohne Bild). Alle Seiten gibt es auf Deutsch und Englisch; die Liste steht in
 `inhalt/seiten.yaml`.
 
 Bei jedem Release von HUBIplan die Fassung unter `start.wer.fassung` in beiden Sprachen anpassen.
@@ -40,7 +47,7 @@ Bei jedem Release von HUBIplan die Fassung unter `start.wer.fassung` in beiden S
 
 | Ordner | Inhalt |
 | --- | --- |
-| `inhalt/` | Seitenliste (`seiten.yaml`), Texte je Sprache (`de.yaml`, `en.yaml`), feste Links (`links.yaml`, auch je Sprache) |
+| `inhalt/` | Seitenliste (`seiten.yaml`), Texte je Sprache (`de.yaml`, `en.yaml` und die Ordner `de/`, `en/` mit Bereichen, Übersicht, Loslegen, Fragen, Neuigkeiten, API), feste Links (`links.yaml`, auch je Sprache) |
 | `vorlagen/` | Jinja2-Vorlagen der Seiten |
 | `statisch/` | Stil, Logo, Schrift Outfit (OFL), Bildschirmfotos unter `fotos/<sprache>/` |
 | `scripts/` | Bauen, Prüfen, Testen, Ausrollen |
